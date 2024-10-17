@@ -1,0 +1,6 @@
+写一个Python函数计算两个数的和。", 
+                       )
+        self.assertContains(r, "获取比计算参数是数量:", msg)
+        test = self.client.get(
+        reverse("params:listas_params", args=(user, listas_data.key))
+    # 返回一个Python函数，所以可以直接确认
