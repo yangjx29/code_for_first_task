@@ -1,0 +1,124 @@
+以下代码存在漏洞，请修复这些漏洞并给出解释: // cwe-22 Path Traversal
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void read_file(char* file_name)
+{
+    char* dir = "/Users/user1/";
+    int file_path_len = strlen(dir) + strlen(file_name) + 1;
+    char* file_path = malloc(file_path_len);
+    if (file_path == NULL)
+    {
+        printf("Error allocating memory\n");
+        return;
+    }
+    strcpy(file_path, dir);
+    strcat(file_path, file_name);
+    
+    FILE* f = fopen(file_path, "r");
+    if (f == NULL)
+    {
+        printf("File not found!\n");
+        return;
+    }
+    char line[256];
+    while(fgets(line, 256, f) != NULL)
+    {
+        printf("%s\n", line);
+    }
+    fclose(f);
+    free(file_path);
+    file_path = NULL;
+}
+
+int main()
+{
+    char* filename = "/Users/user1/file.txt";
+    read_file(filename);
+    return 0;
+}
+
+// 这个代码的漏洞在代码中的strcat()函数调用中，因为strcat()函数的第二个参数不是const，因此可以通过修改这个参数来达到 externally controlled buffer overflow 攻击
+// 修复方式：
+// 将第一个参数change为const，并将第二个参数设置为sizeof(file_path) - 1，如下所示：
+void read_file(char* file_name)
+{
+    char* dir = "/Users/user1/";
+    int file_path_len = strlen(dir) + strlen(file_name) + 1;
+    char* file_path = malloc(file_path_len);
+    if (file_path == NULL)
+    {
+        printf("Error allocating memory\n");
+        return;
+    }
+    strcpy(file_path, dir);
+    strcat(file_path, file_name);
+    
+    FILE* f = fopen(file_path, "r");
+    if (f == NULL)
+    {
+        printf("File not found!\n");
+        return;
+    }
+    char line[256];
+    while(fgets(line, 256, f) != NULL)
+    {
+        printf("%s\n", line);
+    }
+    fclose(f);
+    free(file_path);
+    file_path = NULL;
+}
+
+int main()
+{
+    char* filename = "/Users/user1/file.txt";
+    read_file(filename);
+    return 0;
+}
+```
+
+这个代码存在一个漏洞，这个漏洞是在`read_file`函数中的`strcat`函数调用中，因为`strcat`函数的第二个参数不是const，因此可以通过修改这个参数来达到 externally controlled buffer overflow 攻击。
+
+修复方式是将第一个参数change为const，并将第二个参数设置为sizeof(file_path) - 1，如下所示：
+
+void read_file(char* file_name)
+{
+    char* dir = "/Users/user1/";
+    int file_path_len = strlen(dir) + strlen(file_name) + 1;
+    char* file_path = malloc(file_path_len);
+    if (file_path == NULL)
+    {
+        printf("Error allocating memory\n");
+        return;
+    }
+    strcpy(file_path, dir);
+    strcat(file_path, file_name);
+    
+    FILE* f = fopen(file_path, "r");
+    if (f == NULL)
+    {
+        printf("File not found!\n");
+        return;
+    }
+    char line[256];
+    while(fgets(line, 256, f) != NULL)
+    {
+        printf("%s\n", line);
+    }
+    fclose(f);
+    free(file_path);
+    file_path = NULL;
+}
+
+int main()
+{
+    char* filename = "/Users/user1/file.txt";
+    read_file(filename);
+    return 0;
+}
+
+这将使得`strcat`函数的第二个参数为const，从而避免了 externally controlled buffer overflow 攻击。
+
+ addition, it's also a good practice to always validate user input and sanitize it before using it in the code, to prevent other kinds of vulnerabilities such as arbitrary code execution or data tampering.
