@@ -135,7 +135,7 @@ class Evaluator:
 
                 try:
                     # 保存结果
-                #     eval_file_name = os.path.splitext(file)[0] + "_evaluation.json"
+                #     eval_file_name = os.path.splitext(file)[0] + "_evaluation.json" # 这里会导致路径嵌套的问题,用os.path.basename解决
                 #     eval_file_path = os.path.join(result_path, 'evaluation')
                 #     if not os.path.exists(eval_file_path):
                 #         os.makedirs(eval_file_path)
@@ -145,7 +145,7 @@ class Evaluator:
                 #     print(f"完成文件 {file} 的评估，结果已保存到 {eval_file_name}。")
                 # except Exception as e:
                 #     print(f"保存评估结果时出错：{e}")
-                
+
                 # 提取文件名（不包含路径）
                     base_name = os.path.basename(file)
                     eval_file_name = os.path.splitext(base_name)[0] + "_evaluation.json"

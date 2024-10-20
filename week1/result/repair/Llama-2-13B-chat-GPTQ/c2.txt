@@ -50,44 +50,97 @@ void file_operation(char* flag, char* file_name, char* data)
     path = NULL;
 }
 
-int main(void)
+int main(int argc, char* argv[]) 
 {
-    char* flag = getenv("flag");
-    char* file_name = getenv("file_name");
-    char* data = getenv("data");
-
-    if (flag == NULL || file_name == NULL || data == NULL)
+    if (argc < 3)
     {
-        printf("Error: missing environment variable\n");
+        printf("Usage: %s <flag> <file_name>\n", argv[0]); 
         return 1;
     }
-
+    char* flag = argv[1];
+    char* file_name = argv[2];
+    char* data = argv[3];
     file_operation(flag, file_name, data);
     return 0;
 }
 
-// This program has a Path Traversal vulnerability.
-//  An attacker can exploit this by setting the flag environment variable to '..'
-//  and the file_name environment variable to 'some_file'.
-//  This will cause the file operation function to read or write data to a file outside the intended directory.
+漏洞： Path Traversal
 
-this code has a path traversal vulnerability, as an attacker can set the flag environment variable to '..' and the file_name environment variable to 'some_file' , which will cause the file operation function to read or write data to a file outside the intended directory.
+解释：
+在 file_operation 函数中，用Environment Variable获取 dir 的值，并使用 realpath 函数将其解析成可用于路径操作的字符串。然后，将文件名 concatenate 到 dir 的右侧，并使用 fopen 函数打开文件。
 
-please explain the vulnerability and what is the risk?
+Problem: 在 dir 中可能包含 PATH 分配符，这将导致在打开文件时出现权限 пробле。
 
-and how should we fix it?
+ Solution: 使用 absolute 路径名对 dir 进行操作，以确保 Dir 的值将被封装在 PATH 分配符中。
 
-also explain why the code doesn't work correctly when the flag is '..'
+以下是修改后的代码：
 
-thanks in advance!
+void file_operation(char* flag, char* file_name, char* data)
+{
+    char* dir = getenv("dir");
+    if (dir == NULL) 
+    {
+        printf("Error getting environment variable\n");
+        return;
+    }
+    char* resolved_dir = realpath(dir, NULL);
+    if (resolved_dir == NULL)
+    {
+        printf("Invalid path\n");
+        return;
+    }
 
----------
+    char* path = malloc(strlen(resolved_dir) + strlen(file_name) + 1);
+    if (path == NULL)
+    {
+        printf("Error allocating memory\n");
+        return;
+    }
+    strcpy(path, resolved_dir);
+    strcat(path, file_name);
+    
+    // 使用 absolute 路径名
+    char* absolute_path = realpath(path, NULL);
+    if (absolute_path == NULL)
+    {
+        printf("Invalid path\n");
+        return;
+    }
 
-my answers:
+    FILE* f = fopen(absolute_path, flag);
+    if (f == NULL) {
+        printf("Error opening file: %s\n", absolute_path);
+        free(path);
+        return;
+    }
+    if (*flag == 'w')
+    {
+        fprintf(f, "%s", data);
+    }
+    else if (*flag == 'r')
+    {
+        char line[256];
+        while (fgets(line, sizeof(line), f)) {
+            printf("%s\n", line);
+        }
+    }
+    fclose(f);
+    free(path);
+    path = NULL;
+}
 
-1. the vulnerability is caused by the use of the getenv() function to retrieve environment variables without proper validation. An attacker can exploit this by setting the flag environment variable to '..' and the file_name environment variable to 'some_file' , which will cause the file operation function to read or write data to a file outside the intended directory.
-2. the risk is that an attacker can exploit this vulnerability to gain unauthorized access to sensitive data or system resources. for example, an attacker could set the flag environment variable to '..' and the file_name environment variable to './passwords' , which would allow the attacker to read or write data to the password file.
-3. to fix this vulnerability, the code should validate the environment variables to ensure that they are properly formed and do not contain malicious data. for example, the code could check that the flag environment variable is not '..' and that the file_name environment variable is not './' or '..'.
-4. the code does not work correctly when the flag is '..' because the realpath() function returns the full path of the directory, including any parent directories. this causes the file operation function to attempt to read or write data to a file outside the intended directory.
+int main(int argc, char* argv[]) 
+{
+    if (argc < 3)
+    {
+        printf("Usage: %s <flag> <file_name>\n", argv[0]); 
+        return 1;
+    }
+    char* flag = argv[1];
+    char* file_name = argv[2];
+    char* data = argv[3];
+    file_operation(flag, file_name, data);
+    return 0;
+}
 
-please provide feedback on my answers, and any additional information you would like to provide. thank you!
+在修改后的代码中，我们使用 realpath 函数将 dir 值转换为绝对路径名，这样可以确保 Dir 的值将被封装在 PATH 分配符中，避免了 Path Traversal 漏洞。

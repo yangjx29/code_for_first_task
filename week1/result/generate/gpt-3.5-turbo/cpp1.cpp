@@ -1,53 +1,48 @@
-下面是一个使用C++编写的快速排序算法的示例代码：
+以下是一个用C++编写的快速排序算法示例：
 
 ```cpp
 #include <iostream>
 #include <vector>
 
-void quickSort(std::vector<int>& arr, int left, int right) {
-    if (left >= right) {
-        return;
+void quickSort(std::vector<int>& arr, int low, int high) {
+    if (low < high) {
+        int pivot = arr[high];
+        int i = low - 1;
+
+        for (int j = low; j < high; j++) {
+            if (arr[j] < pivot) {
+                i++;
+                std::swap(arr[i], arr[j]);
+            }
+        }
+
+        std::swap(arr[i + 1], arr[high]);
+
+        int partitionIndex = i + 1;
+
+        quickSort(arr, low, partitionIndex - 1);
+        quickSort(arr, partitionIndex + 1, high);
     }
-    
-    int pivot = arr[(left + right) / 2];
-    int i = left;
-    int j = right;
-    
-    while (i <= j) {
-        while (arr[i] < pivot) {
-            i++;
-        }
-        while (arr[j] > pivot) {
-            j--;
-        }
-        if (i <= j) {
-            std::swap(arr[i], arr[j]);
-            i++;
-            j--;
-        }
-    }
-    
-    quickSort(arr, left, j);
-    quickSort(arr, i, right);
 }
 
 int main() {
-    std::vector<int> arr = {5, 2, 9, 3, 7, 6, 1, 8, 4};
-    
-    quickSort(arr, 0, arr.size() - 1);
-    
+    std::vector<int> arr = {12, 7, 11, 9, 3, 15};
+    int n = arr.size();
+
+    quickSort(arr, 0, n - 1);
+
     std::cout << "Sorted array: ";
-    for (int num : arr) {
-        std::cout << num << " ";
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
-    
+
     return 0;
 }
 ```
 
-这段代码实现了一个快速排序算法。快速排序是一种分治算法，它通过选择一个基准元素（pivot），然后将数组分成两部分，一部分比基准元素小，一部分比基准元素大。然后递归地对这两部分进行排序，直到整个数组有序。
+这段代码实现了一个快速排序算法。快速排序是一种分治算法，它通过选择一个基准元素，将数组分为两部分，一部分小于基准元素，一部分大于基准元素，然后递归地对这两部分进行排序。
 
-在代码中，`quickSort`函数接受一个整数数组和两个整数参数`left`和`right`，表示要排序的数组的左右边界。它首先选择一个基准元素（这里选择中间元素），然后使用两个指针`i`和`j`分别从左右两端向中间移动，找到需要交换的元素，然后交换它们。最后递归地对基准元素左右两部分进行排序。
+在这个示例中，`quickSort`函数接受一个整数向量`arr`以及两个整数`low`和`high`作为参数，表示要排序的数组范围。在函数内部，首先选择数组中的最后一个元素作为基准元素`pivot`，然后遍历数组，将小于基准元素的元素放在基准元素的左边，大于基准元素的元素放在基准元素的右边。最后，将基准元素放在正确的位置，并返回基准元素的索引`partitionIndex`。然后递归地对基准元素左右两部分进行排序。
 
-在`main`函数中，我们定义了一个整数数组`arr`，然后调用`quickSort`函数对其进行排序。最后输出排序后的数组。
+在`main`函数中，创建一个整数向量`arr`并初始化，然后调用`quickSort`函数对整个数组进行排序。最后输出排序后的数组。

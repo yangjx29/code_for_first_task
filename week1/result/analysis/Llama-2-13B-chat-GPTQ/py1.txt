@@ -7,36 +7,32 @@ def delete_book(uj):
     conn.commit()
     conn.close()
 
-this_book = "Java"
-delete_book(this_book)
+book = delete_book('Python Crash Course')
 
-这个问题的原因是什么，解释一下:
+这段代码存在哪些问题呢？
 
-这个问题的原因是由于没有使用参数化的字符串输入，导致sql语句中的变量ubeject to SQL注入攻击。 Specifically, the query "DELETE FROM books WHERE title = '%s'" is vulnerable to SQL injection attacks because the title field is not properly escaped, allowing an attacker to inject malicious SQL code.
+（如果您知道了解释，请随时指出。）
 
-解释一下这个问题的核心：
+这段代码存在以下问题：
 
-这个问题的核心在于，在DELETE FROM语句中，使用了非参数化字符串输入，这会让SQL语句易受到SQL注入攻击的影响。Non-parameterized strings are not properly escaped, allowing attackers to inject malicious SQL code.
+1. SQL 注入攻击
 
-具体场景如下：
+在 `c.execute()` 中使用变量 `uj` 在 SQL 语句中，该变量未经加密，可能会导致 SQL 注入攻击。如果恶意用户输入一个特定的Title，可能会导致 deleted 操作受到影响，例如，如果用户输入了 `'; DELETE FROM books;` ` 这将导致所有书籍被删除。
 
-假设攻击者可以在books表中插入一行记录，例如：
+2. 连接不安全
 
-INSERT INTO books (title, author) VALUES ('Oracle', 'Java')
+在 `connect()` 方法中，没有 any kind of authentication 或者 Autorization，这使得 Anyone 可以连接到这个数据库，这明显是一个安全问题。
 
-如果在delete_book()函数中使用了非参数化字符串输入，这将导致SQL语句中的title字段中的变量ubeject toSQL注入攻击。如果攻击者在插入的记录中输入了一个特定的值，例如：
+3. Cursor 不能 быть关闭
 
-INSERT INTO books (title, author) VALUES ('Oracle', 'Java')
+在 `connect()` 方法中，Cursor 被创建了，但是没有 Close 它，这意味着在 delete 操作完成后，Cursor 仍然存在，这可能会导致资源泄漏。
 
-那么SQL语句中的title字段将被插入到books表中，导致DELETE FROM语句中的title字段中的变量ubeject toSQL注入攻击，从而让DELETE FROM语句失效。
+4. 数据库连接不会自动关闭
 
-如果使用参数化字符串输入，可以确保SQL语句中的变量ubeject toSQL注入攻击。例如：
+在 `connect()` 方法中，数据库连接并不会自动关闭，这意味着如果出现异常，数据库连接仍然会保持打开，导致资源泄漏。
 
-def delete_book(uj):
-    conn = sqlite3.connect('books.db')
-    c = conn.cursor()
-    c.execute("DELETE FROM books WHERE title = ?" , (uj,))
-    conn.commit()
-    conn.close()
+5. 异常处理不正确
 
-这样就会确保DELETE FROM语句中的title字段中的变量ubeject toSQL注入攻击。
+在 `delete_book()` 方法中，不存在异常处理机制，如果出现异常，代码将直接崩溃，这可能会导致数据损失以及其他问题。
+
+总之，这段代码存在 SQL 注入攻击、连接不安全、Cursor 不能被关闭、数据库连接不会自动关闭、异常处理不正确 等问题，这些问题需要更正。

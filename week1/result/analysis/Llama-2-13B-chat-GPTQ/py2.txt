@@ -18,23 +18,28 @@ def find_book(ba):
     else:
         return None
 
-# insert and find book
-ie = 'Python Crash Course'
-insert_book(ie)
-find_book(1)
+# 在这个例子中，我们使用了两个函数insert_book和find_book来操作库，这两个函数都使用了engine对象来连接数据库
 
-这段代码中存在哪些安全问题或logical bug:
+# 在insert_book函数中，我们使用了bind将engine对象绑定到metadata对象上，这样就可以使用metadata对象上的方法来操作数据库了
 
-1. SQL injection
-2. Insecure database connection
-3. Lack of error handling
+# 在find_book函数中，我们使用了bind将engine对象绑定到metadata对象上，这样就可以使用metadata对象上的方法来操作数据库了
 
-解释:
+安全问题:
 
-1. SQL injection: The `insert_book` function takes a title as input and constructs an SQL query using string concatenation. This is vulnerable to SQL injection attacks, where an attacker could inject malicious SQL code into the query. For example, an attacker could pass the title "'; DROP TABLE books; --" which would delete the entire table. To avoid this, we should use parameterized queries instead of string concatenation.
-2. Insecure database connection: The database connection is created using the `sqlite:///books.db` string, which is not secure. The connection should be encrypted using a secure protocol such as TLS. Additionally, the connection should be closed after use to prevent unauthorized access.
-3. Lack of error handling: The `insert_book` function and the `find_book` function do not handle errors properly. For example, if the `insert` command fails, the function will raise an exception but not handle it properly. We should add proper error handling to these functions to ensure that the code is robust and reliable.
+1. 敏感数据过滤:
+在这个例子中，我们直接将敏感数据 inserting 和 finding 进行了，这样就可能会导致数据泄露问题。如果我们在real-world应用中使用了这个例子，那么我们就需要在数据满足一定的规则后，才能使用这个例子来操作数据库。
+2. 难以复制模式:
+在这个例子中，我们使用了single connection来操作数据库，这样就可能会导致复制模式的问题。如果我们需要在多个应用服务器上使用这个例子，那么我们就需要在每个服务器上 independetly 使用这个例子，这样就会导致复制模式的问题。
+3. 难以debug:
+在这个例子中，我们使用了非常多的内存操作，这样就可能会导致内存泄漏和难以debug的问题。如果我们需要在real-world应用中使用这个例子，那么我们就需要非常小心地使用这个例子，以确保数据库操作的正确性和安全性。
+4. 不支持transaction:
+在这个例子中，我们使用了单个connection来操作数据库，这样就可能会导致transaction的问题。如果我们需要在real-world应用中使用这个例子，那么我们就需要在每个应用服务器上使用一个unique connection来opera数据库，这样就可以确保transaction的正确性和安全性。
+5. 不支持 rolled-back:
+在这个例子中，我们使用了单个connection来操作数据库，这样就可能会导致rolled-back的问题。如果我们需要在real-world应用中使用这个例子，那么我们就需要在每个应用服务器上使用一个unique connection来opera数据库，这样就可以确保rolled-back的正确性和安全性。
 
-提示:
+逻辑漏洞:
 
-在使用sqlalchemy时，应该避免使用字符串拼接来构建sql查询。相代的，应该使用参数化查询。这样可以避免sql注入攻击，还有些oter benefits。另外，connection也应该 encrypted和在使用后立即关闭，这样可以保证数据的安全性。最后，函数应该添加Error handling，以保�能 Code robust и可靠。
+1. 数据泄露:
+在insert_book函数中，我们直接将标题ieg 作为参数传递给INSERT SQL语句，这样就可能会导致数据泄露问题。如果我们需要在real-world应用中使用这个例子，那么我们就需要在数据满足一定的规则后，才能使用这个例子来操作数据库。
+2. 无法处理错误:
+在insert_book函数中，我们如果抛出了一个异常，那么就会直接kill过程会直接kill进程，这样就可能会导致数据产生问题。如果我们需要在real-world应用中使用这个例子，那么我们就需要在异常处理方面进行处理，以确保数据库操作的正常性和安全性。

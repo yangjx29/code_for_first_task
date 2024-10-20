@@ -1,0 +1,62 @@
+修复后的代码如下：
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char* validate_cmd(char* cmd) {
+    char* new_cmd = malloc(strlen(cmd) + 1);
+    int cmd_ix = 0;
+    while (cmd_ix < strlen(cmd)) {
+        if (cmd[cmd_ix] == ';') {
+            break;
+        }
+        new_cmd[cmd_ix] = cmd[cmd_ix];
+        cmd_ix++;
+    }
+    new_cmd[cmd_ix] = '\0'; // 添加字符串结尾
+    return new_cmd;
+}
+
+char* cmd_files(char* init_cmd, char** files, int num) {
+    int cmd_len = strlen(init_cmd);
+    for (int i = 0; i < num; i++) { // 修改循环条件
+        cmd_len += strlen(files[i]) + 1;
+    }
+
+    char* cmd = malloc(cmd_len + 1); // 分配足够的空间
+    strcpy(cmd, init_cmd);
+    for (int i = 0; i < num; i++) { // 修改循环条件
+        strcat(cmd, files[i]);
+        strcat(cmd, " ");
+    }
+    cmd[cmd_len] = '\0'; // 修改字符串结尾
+
+    char* valid_cmd = validate_cmd(cmd);
+    free(cmd);
+    cmd = NULL;
+
+    return valid_cmd;
+}
+
+int main(int argc, char** argv) {
+    char* cat = "cat ";
+    int num_files = argc - 1;
+    if (num_files > 10) {
+        num_files = 10;
+    }
+    char* cmd = cmd_files(cat, argv + 1, num_files); // 修改参数传递
+    
+    system(cmd);
+    free(cmd);
+    cmd = NULL;
+    
+    return 0;
+}
+```
+
+修复的主要问题包括：
+1. 在`validate_cmd`函数中，没有为新字符串添加字符串结尾`\0`，导致可能出现未知行为。
+2. 在`cmd_files`函数中，循环条件和字符串结尾的处理有问题，已进行修复。
+3. 在`main`函数中，传递参数时应该从`argv`的第二个元素开始，以避免将程序名称传递给`cmd_files`函数。

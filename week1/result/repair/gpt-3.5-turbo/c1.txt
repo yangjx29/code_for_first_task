@@ -1,0 +1,47 @@
+修复后的代码如下所示：
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+void read_file(char* file_name)
+{
+    char* dir = "/Users/user1/";
+    int file_path_len = strlen(dir) + strlen(file_name) + 1;
+    char* file_path = malloc(file_path_len);
+    if (file_path == NULL)
+    {
+        printf("Error allocating memory\n");
+        return;
+    }
+    strcpy(file_path, dir);
+    strcat(file_path, file_name);
+    
+    // Check if the file_name contains any path traversal characters
+    if (strstr(file_name, "..") != NULL)
+    {
+        printf("Invalid file name\n");
+        free(file_path);
+        return;
+    }
+    
+    FILE* f = fopen(file_path, "r");
+    if (f == NULL)
+    {
+        printf("File not found!\n");
+        free(file_path);
+        return;
+    }
+    char line[256];
+    while(fgets(line, 256, f) != NULL)
+    {
+        printf("%s\n", line);
+    }
+    fclose(f);
+    free(file_path);
+    file_path = NULL;
+}
+```
+
+在修复后的代码中，我们添加了一个检查，以确保`file_name`不包含任何路径遍历字符（例如`..`）。如果`file_name`包含路径遍历字符，则会输出错误消息并返回，而不会继续执行文件读取操作。这样可以防止恶意用户尝试访问系统中的敏感文件。

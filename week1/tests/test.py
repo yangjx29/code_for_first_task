@@ -83,6 +83,9 @@ prompts = [
 ]
 
 # 调用函数生成文件（可选择GPT-3或Hugging Face模型）
-generate_files(prompts, model_type="gpt3", max_tokens=100, output_dir="gpt3_outputs")
+# generate_files(prompts, model_type="gpt3", max_tokens=100, output_dir="gpt3_outputs")
 # 调用huggingface模型生成文件
 # generate_files(prompts, model_type="huggingface", max_tokens=100, output_dir="huggingface_outputs")
+model_name = ["TheBloke/Llama-2-13B-chat-GPTQ", "microsoft/codebert-base","HuggingFaceH4/starchat-beta"]
+for model_name in model_name:
+    print(f"Using model: {model_name}")

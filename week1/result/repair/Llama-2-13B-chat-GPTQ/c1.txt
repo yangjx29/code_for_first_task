@@ -34,91 +34,31 @@ void read_file(char* file_name)
 
 int main()
 {
-    char* filename = "/Users/user1/file.txt";
-    read_file(filename);
+    char* file_name = "test.txt";
+    read_file(file_name);
     return 0;
 }
 
-// 这个代码的漏洞在代码中的strcat()函数调用中，因为strcat()函数的第二个参数不是const，因此可以通过修改这个参数来达到 externally controlled buffer overflow 攻击
-// 修复方式：
-// 将第一个参数change为const，并将第二个参数设置为sizeof(file_path) - 1，如下所示：
-void read_file(char* file_name)
-{
-    char* dir = "/Users/user1/";
-    int file_path_len = strlen(dir) + strlen(file_name) + 1;
-    char* file_path = malloc(file_path_len);
-    if (file_path == NULL)
-    {
-        printf("Error allocating memory\n");
-        return;
-    }
-    strcpy(file_path, dir);
-    strcat(file_path, file_name);
-    
-    FILE* f = fopen(file_path, "r");
-    if (f == NULL)
-    {
-        printf("File not found!\n");
-        return;
-    }
-    char line[256];
-    while(fgets(line, 256, f) != NULL)
-    {
-        printf("%s\n", line);
-    }
-    fclose(f);
-    free(file_path);
-    file_path = NULL;
-}
+代码存在两处漏洞:
 
-int main()
-{
-    char* filename = "/Users/user1/file.txt";
-    read_file(filename);
-    return 0;
-}
-```
+1. path traversal (CWE-22)。
+2. buffer overflow (CWE-134)。
 
-这个代码存在一个漏洞，这个漏洞是在`read_file`函数中的`strcat`函数调用中，因为`strcat`函数的第二个参数不是const，因此可以通过修改这个参数来达到 externally controlled buffer overflow 攻击。
+解释:
 
-修复方式是将第一个参数change为const，并将第二个参数设置为sizeof(file_path) - 1，如下所示：
+1. Path Traversal (CWE-22)：
+	* 函数read_file接受一个文件名作为参数，并使用strcat函数将文件名与当前工作目录的路径 concatenate。
+	* 在文件名的处理中，不进行任何检查是否存在此文件，这会导致程序读取不存在的文件而导致漏洞。
+	* 攻击者可能会提供一个特定的文件名，用于诱导程序读取敏感文件，从而获得敏感信息。
+2. Buffer Overflow (CWE-134)：
+	* 函数read_file使用了malloc函数将文件路径缓存到内存中，但未对 buffer的大小进行检查。
+	* 如果攻击者提供的文件名过长，将会导致 buffer overflow，从而 potentially allowing an attacker to execute arbitrary code.
+	* 攻击者可能会提供一个大量数据，从而Overflowing the buffer和注入恶意代码。
 
-void read_file(char* file_name)
-{
-    char* dir = "/Users/user1/";
-    int file_path_len = strlen(dir) + strlen(file_name) + 1;
-    char* file_path = malloc(file_path_len);
-    if (file_path == NULL)
-    {
-        printf("Error allocating memory\n");
-        return;
-    }
-    strcpy(file_path, dir);
-    strcat(file_path, file_name);
-    
-    FILE* f = fopen(file_path, "r");
-    if (f == NULL)
-    {
-        printf("File not found!\n");
-        return;
-    }
-    char line[256];
-    while(fgets(line, 256, f) != NULL)
-    {
-        printf("%s\n", line);
-    }
-    fclose(f);
-    free(file_path);
-    file_path = NULL;
-}
+修复方法:
 
-int main()
-{
-    char* filename = "/Users/user1/file.txt";
-    read_file(filename);
-    return 0;
-}
+1. 在read_file函数中，使用realpath函数来检查文件是否存在，并且只如果文件存在，并行读取。
+2. 在read_file函数中，使用STRLEN函数确定 buffer 的大小，以避免 buffer overflow。
+3. 在 main 函数中，使用 secure 函数来打印文件内容，以应对 potential 的攻击。
 
-这将使得`strcat`函数的第二个参数为const，从而避免了 externally controlled buffer overflow 攻击。
-
- addition, it's also a good practice to always validate user input and sanitize it before using it in the code, to prevent other kinds of vulnerabilities such as arbitrary code execution or data tampering.
+这些修复方法可以帮助修复代码中的漏洞，并保证代码的安全。
