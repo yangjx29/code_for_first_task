@@ -26,7 +26,7 @@ class LLAMAModel():
             if self.tokenizer.eos_token_id is not None:
                 self.model.config.eos_token_id = self.tokenizer.eos_token_id
         else:
-            # 手动设置一个 eos_token_id，例如 GPT-2 的 eos_token_id 通常是50256
+            # 手动设置一个 eos_token_id,例如 GPT-2 的 eos_token_id 通常是50256
             self.model.config.eos_token_id = 50256
 
 
@@ -122,7 +122,8 @@ if __name__ == '__main__':
     start_time = time.time()
     model = LLAMAModel()
     # model_names = ["TheBloke/Llama-2-13B-chat-GPTQ", "microsoft/codebert-base","HuggingFaceH4/starchat-beta"]
-    model_names = ["TheBloke/Llama-2-13B-chat-GPTQ"]
+    model_names = ["TheBloke/Llama-2-13B-chat-GPTQ", "HuggingFaceH4/starchat-beta"]
+    # model_names = ["HuggingFaceH4/starchat-beta"]
     for model_name in model_names:
         model.prepare(model_name=model_name, temp=0.2, max_token_len=4096)
 
@@ -159,4 +160,4 @@ if __name__ == '__main__':
         total_time = end_time - start_time
         minutes = total_time // 60  
         seconds = total_time % 60   
-        print(f"huggingface模型总耗时:{minutes}分{seconds}秒。")
+        print(f"{model_name}总耗时:{minutes}分{seconds}秒。")

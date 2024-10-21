@@ -35,7 +35,7 @@ model_mlm.eval()
 if torch.cuda.is_available():
     model_mlm.to('cuda')
 
-# NodeVisitor是ast模块中的一个类，提供了一种访问和遍历AST节点的方法
+# NodeVisitor是ast模块中的一个类，visit方法可以遍历AST所有的节点
 class VariableNameExtractor(NodeVisitor):
     """使用AST解析器提取代码中的变量名"""
     def __init__(self):
@@ -79,7 +79,7 @@ def get_model_prediction(code, prompt_template):
         return None
 
 def generate_substitutes(variable, code, tokenizer, model, top_k=10):
-    """使用掩码语言模型生成变量名的替换词"""
+    """使用掩码语言模型(FacebookAI/roberta-base)生成变量名的替换词"""
     masked_code = code.replace(variable, tokenizer.mask_token)
     inputs = tokenizer(masked_code, return_tensors='pt')
     if torch.cuda.is_available():
@@ -87,10 +87,13 @@ def generate_substitutes(variable, code, tokenizer, model, top_k=10):
     with torch.no_grad():
         outputs = model(**inputs)
         logits = outputs.logits
+    # 返回所有[MASK] token 的位置
     mask_token_index = (inputs['input_ids'] == tokenizer.mask_token_id).nonzero(as_tuple=True)
     if len(mask_token_index[0]) == 0:
         return []
+    # 仅需要预测被mask变量的的替代词
     mask_logits = logits[mask_token_index]
+    # 选择top_k的替换词
     top_tokens = torch.topk(mask_logits, top_k, dim=1).indices[0].tolist()
     substitutes = [tokenizer.decode([token]).strip() for token in top_tokens]
     # 过滤掉不合法的变量名（如包含特殊字符或数字开头）
@@ -99,7 +102,7 @@ def generate_substitutes(variable, code, tokenizer, model, top_k=10):
 
 def attack_code(code, original_label, model_mlm, tokenizer_mlm, prompt_template, top_k=10):
     """
-    对单个代码样本进行攻击，尝试通过替换变量名改变GPT-3.5turbo的预测标签
+    对单个代码样本进行攻击,通过替换变量名改变GPT-3.5turbo的预测标签
     返回对抗样本及相关信息
     """
     variable_names = extract_variable_names(code)
@@ -109,7 +112,7 @@ def attack_code(code, original_label, model_mlm, tokenizer_mlm, prompt_template,
             "original_code": code,
             "adversarial_code": "",
             "true_label": original_label,
-            "original_prediction": original_label,  # 假设原始预测正确
+            "original_prediction": original_label,  # 原始标签预测是正确的
             "adversarial_prediction": None,
             "is_success": False,
             "extracted_variables": [],
@@ -123,6 +126,7 @@ def attack_code(code, original_label, model_mlm, tokenizer_mlm, prompt_template,
     
     if original_prediction != original_label:
         # 原始预测错误，不进行攻击
+        print("gpt-3.5turbo预测错误,该数据作废。")
         return {
             "original_code": code,
             "adversarial_code": "",
@@ -172,7 +176,7 @@ def attack_code(code, original_label, model_mlm, tokenizer_mlm, prompt_template,
         "replaced_variables": replaced_variables
     }
 
-def main():
+def run():
     # 定义命令行参数,eg: python gpt_attack.py --input_file input_data.jsonl --output_file attack_results.csv
     parser = argparse.ArgumentParser(description="针对gpt-3.5-trubo模型的攻击代码")
     # 添加参数
@@ -227,6 +231,7 @@ def main():
                 top_k=args.top_k
             )
             if attack_result is None:
+                print(f"处理样本出现问题,code: {code}")
                 continue
             writer.writerow({
                 "Original Code": attack_result["original_code"],
@@ -250,4 +255,4 @@ def main():
     logger.info("攻击完成。")
 
 if __name__ == '__main__':
-    main()
+    run()

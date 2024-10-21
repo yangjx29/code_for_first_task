@@ -108,7 +108,7 @@ if __name__ == '__main__':
     for model_name in model_names:
         model.prepare(model_name=model_name, temp=0.2, max_token_len=512)
 
-        # 定义两个与代码相关的任务（去掉了generation任务）
+        # 只进行代码分析
         tasks = {
             "analysis": {
                 "source_dir": "/data/yjx/code_for_first_task/week1/dataset/analysis", 
