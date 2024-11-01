@@ -1,9 +1,12 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3"
+# os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "max_split_size_mb:128"
 import json
 import torch
 # from openai import OpenAI
 from transformers import AutoTokenizer, AutoModelForCausalLM
+from modelmanager import LLMModel
+from modelmanager import get_llm
 # from google.cloud import aiplatform
 # 指定当前使用的promot方法和模型名称
 METHOD = ""
@@ -11,47 +14,46 @@ MODEL = ""
 # MODEL_TYPE = ""
 tokenizer = None
 model = None
-# todo 确定参数意义
-GOOGLE_CLOUD_PROJECT_ID = "your-project-id"
-
-GOOGLE_CLOUD_LOCATION = "us-central1"
+llm = None
 
 
 # from llm_detection import query_llm # 避免重复代码 可选
 def query_llm(prompt):
-    global tokenizer, model
-    if MODEL == "codellama/CodeLlama-7b-Instruct-hf":
-        # 使用Code Llama模型
-        if tokenizer is None or model is None:
-            tokenizer = AutoTokenizer.from_pretrained(MODEL)
-            # 设置 eos_token_id 和 pad_token_id
-            tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
-            tokenizer.pad_token_id = tokenizer.eos_token_id
-            model = AutoModelForCausalLM.from_pretrained(MODEL, device_map='auto', torch_dtype=torch.float16)
-            model.config.eos_token_id = tokenizer.eos_token_id
-            model.config.pad_token_id = tokenizer.pad_token_id
+    llm = get_llm(MODEL)
+    return llm.query(prompt)
+#     global tokenizer, model
+#     if MODEL == "codellama/CodeLlama-7b-Instruct-hf":
+#         # 使用Code Llama模型
+#         if tokenizer is None or model is None:
+#             tokenizer = AutoTokenizer.from_pretrained(MODEL)
+#             # 设置 eos_token_id 和 pad_token_id
+#             tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
+#             tokenizer.pad_token_id = tokenizer.eos_token_id
+#             model = AutoModelForCausalLM.from_pretrained(MODEL, device_map='auto', torch_dtype=torch.float16)
+#             model.config.eos_token_id = tokenizer.eos_token_id
+#             model.config.pad_token_id = tokenizer.pad_token_id
 
-            model.eval()
+#             model.eval()
 
-        try:
-            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-            with torch.no_grad():
-                outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=512,
-                    do_sample=True,
-                    temperature=0.7,
-                    top_p=0.9,
-                    eos_token_id=tokenizer.eos_token_id,
-                    pad_token_id=tokenizer.pad_token_id
-                )
-            response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-            response = response[len(prompt):].strip()
+#         try:
+#             inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+#             with torch.no_grad():
+#                 outputs = model.generate(
+#                     **inputs,
+#                     max_new_tokens=512,
+#                     do_sample=True,
+#                     temperature=0.7,
+#                     top_p=0.9,
+#                     eos_token_id=tokenizer.eos_token_id,
+#                     pad_token_id=tokenizer.pad_token_id
+#                 )
+#             response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+#             response = response[len(prompt):].strip()
 
-        except Exception as e:
-            response = "Error"
+#         except Exception as e:
+#             response = "Error"
 
-        return response
+#         return response
 
     # elif MODEL == 'code_gemma':
         # 使用Google的code_gemma模型
@@ -89,9 +91,9 @@ def modify(prompt, function):
     # 漏洞检测任务
     elif function == "detection":
         role = "From now on, you are an excellent cybersecurity expert that can analyse given code and determine if it is vulnerable or safe, and if vulnerable identify the related CWE.\n"
-        instruction = "Analyse the provided code and determine if the code is vulnerable or safe, if vulnerable identify the most obvious CWE.\n"
-        output_indicator = "Analysis of the code and your determination of whether the code is vulnerable or safe. If the code is vulnerable, include the most obvious CWE in your analysis."
-        context = "You are asked to accurately detect if a code is vulnerable or safe. The vulnerabilities are related to the Common Weakness Enumeration (CWE) list."
+        instruction = "Briefly analyse the provided code and determine if the code is vulnerable or safe, if vulnerable identify the most obvious CWE.\n"
+        output_indicator = "Briefly analysis of the code and your determination of whether the code is vulnerable or safe. If the code is vulnerable, include the most obvious CWE in your analysis."
+        context = "You are asked to accurately detect if a code is vulnerable or safe. The vulnerabilities are related to the Common Weakness Enumeration (CWE) list.Anser the following questions briefly."
         style = "Provide answer based on the Common Weakness Enumeration descriptions and IDs."
     # 漏洞修复任务
     elif function == "fix":
@@ -132,6 +134,8 @@ def modify(prompt, function):
                     modified_prompt += template[key][key2]
         elif function == "generation":
             prediction_prompt = "Based on the instructions below, predict the vulnerabilities that might arise from the resulting code. Return just a brief, concise list of vulnerabilities. Do not return any code.\n" + "Instruction: " + prompt
+            # print(f"在promot_env中调用query_llm函数,model={model}, tokenizer={tokenizer}")
+            # prediction =  query_llm(prediction_prompt, MODEL, model, tokenizer)
             prediction =  query_llm(prediction_prompt)
             template = techniques['DYNAMIC']["generation"]
             template["context"]["content"] = context
@@ -142,6 +146,8 @@ def modify(prompt, function):
                     modified_prompt += template[key][key2]
         elif function == "detection":
             prediction_prompt = "Analyse the provided code below and return two lines of text. The first line states the programming language of the code. The second line is a list of potential vulnerabilities based the code's functionality ONLY. Do not return any code.\n" + "Code to analyse:\n" + prompt
+            # print(f"在promot_env中调用query_llm函数,model={model}, tokenizer={tokenizer}")
+            # prediction =  query_llm(prediction_prompt, MODEL, model, tokenizer)
             prediction =  query_llm(prediction_prompt)
             if prediction == "Error":
                 return "Error"
@@ -152,4 +158,6 @@ def modify(prompt, function):
             for key in template:
                 for key2 in template[key]:
                     modified_prompt += template[key][key2]
+    # 添加分隔符，明确指示模型开始生成响应
+    modified_prompt += "\nAnalysis Result:"
     return modified_prompt

@@ -1,5 +1,6 @@
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3" # 必须在torch和transformers之前导入
+# os.environ["CUDA_VISIBLE_DEVICES"] = "2,3" # 必须在torch和transformers之前导入
+
 import torch
 from prompt_eng import prompt_eng
 import concurrent.futures
@@ -12,9 +13,11 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 
 import time
 # from google.cloud import aiplatform
-
+from modelmanager import get_llm
 MODEL = ""
-# MODEL_TYPE = ""
+llm = None
+
+
 
 # 全局变量，用于存储模型和tokenizer
 tokenizer = None
@@ -22,78 +25,121 @@ model = None
 # 额外处理MODEL字符串
 filtered_model = None
 
-# todo 确定参数意义
-GOOGLE_CLOUD_PROJECT_ID = "your-project-id"
-
-GOOGLE_CLOUD_LOCATION = "us-central1"
 
 def query_llm(prompt):
+    return llm.query(prompt)
     # 声明为全局变量 避免UnboundLocalError
-    global tokenizer, model
+    # global tokenizer, model
 
-    if MODEL == "codellama/CodeLlama-7b-Instruct-hf":
-        # 使用Code Llama模型
-        if tokenizer is None or model is None:
-            tokenizer = AutoTokenizer.from_pretrained(MODEL)
-            # 设置 eos_token_id 和 pad_token_id
-            tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
-            tokenizer.pad_token_id = tokenizer.eos_token_id
-            model = AutoModelForCausalLM.from_pretrained(MODEL, device_map='auto', torch_dtype=torch.float16)
-            model.config.eos_token_id = tokenizer.eos_token_id
-            model.config.pad_token_id = tokenizer.pad_token_id
+    # if MODEL == "codellama/CodeLlama-7b-Instruct-hf":
+    #     # 使用Code Llama模型
+    #     if tokenizer is None or model is None:
+    #         tokenizer = AutoTokenizer.from_pretrained(MODEL)
+    #         # 设置 eos_token_id 和 pad_token_id
+    #         tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
+    #         tokenizer.pad_token_id = tokenizer.eos_token_id
+    #         model = AutoModelForCausalLM.from_pretrained(MODEL, device_map='auto', torch_dtype=torch.float16)
+    #         model.config.eos_token_id = tokenizer.eos_token_id
+    #         model.config.pad_token_id = tokenizer.pad_token_id
 
-            model.eval()
+    #         model.eval()
 
-        try:
-            inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
-            with torch.no_grad():
-                outputs = model.generate(
-                    **inputs,
-                    max_new_tokens=512,
-                    do_sample=True,
-                    temperature=0.7,
-                    top_p=0.9,
-                    eos_token_id=tokenizer.eos_token_id,
-                    pad_token_id=tokenizer.pad_token_id
-                )
-            response = tokenizer.decode(outputs[0], skip_special_tokens=True)
-            response = response[len(prompt):].strip()
-
-        except Exception as e:
-            response = "Error"
-
-        return response
-
-    # elif MODEL == 'code_gemma':
-    #     # 使用Google的code_gemma模型
     #     try:
-    #         # 初始化Google Cloud AI Platform
-    #         aiplatform.init(project=GOOGLE_CLOUD_PROJECT_ID, location=GOOGLE_CLOUD_LOCATION)
-
-    #         # 创建模型客户端
-    #         model = aiplatform.LanguageModel.from_pretrained(MODEL)
-
-    #         # 发送请求并获取响应
-    #         response = model.predict(prompt).text
+    #         inputs = tokenizer(prompt, return_tensors="pt", padding=True, truncation= True).to(model.device)
+    #         with torch.no_grad():
+    #             outputs = model.generate(
+    #                 **inputs,
+    #                 max_new_tokens=512,
+    #                 do_sample=True,
+    #                 temperature=0.7,
+    #                 top_p=0.9,
+    #                 eos_token_id=tokenizer.eos_token_id,
+    #                 pad_token_id=tokenizer.pad_token_id
+    #             )
+    #         response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    #         response = response[len(prompt):].strip()
 
     #     except Exception as e:
     #         response = "Error"
 
-    #     return response
+        # 清理未使用变量
+        # del inputs, outputs
+        # torch.cuda.empty_cache()  # 清理 GPU 缓存
 
-    else:
-        raise ValueError("Unsupported MODEL")
+        # return response
+    # elif MODEL == "google/codegemma-7b-it":
+    #      try:
+    #         # 导入必要的库
+    #         from google.cloud import aiplatform
 
+    #         # 初始化 Google Cloud AI Platform
+    #         aiplatform.init(project=GOOGLE_CLOUD_PROJECT_ID, location=GOOGLE_CLOUD_LOCATION)
+
+    #         # 创建模型客户端
+    #         model = aiplatform.Endpoint(endpoint_name=ENDPOINT_ID)
+
+    #         # 准备请求参数
+    #         instance = {"content": prompt}
+    #         parameters = {
+    #             "maxOutputTokens": 512,
+    #             "temperature": 0.7,
+    #             "topP": 0.9
+    #         }
+
+    #         # 调用模型进行预测
+    #         response = model.predict(instances=[instance], parameters=parameters)
+
+    #         # 解析模型的响应
+    #         predictions = response.predictions
+    #         response_text = predictions[0]['content']
+
+    #     except Exception as e:
+    #         print(f"Error during model inference: {e}")
+    #         response_text = "Error"
+
+    #     return response_text
+
+    # else:
+    #     print(f"Unsupported model,name= {MODEL}")
+    #     raise ValueError("Unsupported MODEL")
+
+def detection_batch(cwe_batch, code_batch):
+    # todo code[0]
+    prompts = [prompt_eng.modify(code[0], "detection") for code in code_batch]
+    detections = []
+
+    # 过滤掉生成错误的提示
+    # 有效promot的idx
+    valid_indices = [i for i, prompt in enumerate(prompts) if prompt != "Error"]
+    # 有效的promot
+    valid_prompts = [prompts[i] for i in valid_indices]
+    valid_cwe = [cwe_batch[i] for i in valid_indices]
+
+    # 如果没有有效的提示直接返回
+    if not valid_prompts:
+        return cwe_batch, prompts, ["Error"] * len(prompts)
+
+    # 批量查询模型
+    # print(f"测试valid_prompts: {valid_prompts}")
+    responses = get_llm(MODEL).query(valid_prompts)
+
+    # 将响应填充回原始顺序
+    full_responses = ["Error"] * len(prompts)
+    for idx, res in zip(valid_indices, responses):
+        full_responses[idx] = res
+
+    return cwe_batch, prompts, full_responses
 
 def detection(cwe, code):
     prompt = prompt_eng.modify(code, "detection")
     if prompt == "Error":
         return cwe, prompt, ["Error"]
     detections = []
+    # detections.append(query_llm(prompt, MODEL, model, tokenizer))
     detections.append(query_llm(prompt))
     return cwe, prompt, detections
     
-def get_detection_responses(prompt_tech):
+def get_detection_responses(prompt_tech, batch_size=8):
     result = {}
    
     for partition in ["SINGLE", "MULTI"]:
@@ -107,23 +153,48 @@ def get_detection_responses(prompt_tech):
                     dataset = json.load(f)[category]
 
                 with tqdm(total=len(dataset), desc=f"Getting responses for {partition} {semantics} {category}") as pbar:
-                    with concurrent.futures.ThreadPoolExecutor() as executor:
-                        futures = [executor.submit(detection, data["cwe"], data["func"][0]) for data in dataset]
-                        for future in concurrent.futures.as_completed(futures):
+                    # with concurrent.futures.ThreadPoolExecutor() as executor:
+                    #     futures = [executor.submit(detection, data["cwe"], data["func"][0]) for data in dataset]
+                    #     for future in concurrent.futures.as_completed(futures):
+                    #         tmp = {
+                    #             "labelled_cwe": future.result()[0],
+                    #             "prompt": future.result()[1],
+                    #             "llm_detection": future.result()[2],
+                    #         }
+
+                    # # 改成线性处理
+                    # for data in dataset:
+                    #     tmp = {}
+                    #     cwe, prompt, detections = detection(data["cwe"], data["func"][0])
+                    #     tmp["labelled_cwe"] = cwe
+                    #     tmp["prompt"] = prompt
+                    #     tmp["llm_detection"] = detections
+
+                    #     result[category].append(tmp)
+
+                    # 批量处理
+                    for i in range(0, len(dataset), batch_size):
+                        batch_data = dataset[i:i+batch_size]
+                        batch_cwe = [data["cwe"] for data in batch_data]
+                        batch_code = [data["func"]for data in batch_data]
+
+                        cwes, prompts, detections = detection_batch(batch_cwe, batch_code)
+
+                        for cwe, prompt, detection_result in zip(cwes, prompts, detections):
                             tmp = {
-                                "labelled_cwe": future.result()[0],
-                                "prompt": future.result()[1],
-                                "llm_detection": future.result()[2],
+                                "labelled_cwe": cwe,
+                                "prompt": prompt,
+                                "llm_detection": [detection_result],
                             }
                             result[category].append(tmp)
-                            # 保存结果
-                            output_dir = f'./results/{filtered_model}/'
-                            if not os.path.exists(output_dir):
-                                os.makedirs(output_dir, exist_ok=True)
-                            output_file = f'{output_dir}{prompt_tech}_{partition}_{semantics}_responses.json'
-                            with open(output_file, "w", encoding='utf-8') as f:
-                                json.dump(result, f, indent=4)
-                            pbar.update(1)
+                        # 保存结果
+                        output_dir = f'./results/{filtered_model}/'
+                        if not os.path.exists(output_dir):
+                            os.makedirs(output_dir, exist_ok=True)
+                        output_file = f'{output_dir}{prompt_tech}_{partition}_{semantics}_responses.json'
+                        with open(output_file, "w", encoding='utf-8') as f:
+                            json.dump(result, f, indent=4)
+                        pbar.update(1)
 '''
     在文本中搜索特定的通用弱点枚举（CWE）标识符，或者判断代码是否安全。
     返回一个包含找到的 CWE 标识符的列表，如果代码被认为是安全的，则返回 "SAFE"
@@ -219,14 +290,6 @@ def analyse_detection_responses(prompt_tech):
                 continue
 
             for category in ["vulnerable", "safe"]:
-                # output_dir = f'./results/{filtered_model}/'
-                # if not os.path.exists(output_dir):
-                #     os.makedirs(output_dir, exist_ok=True)
-                # output_file = f'{output_dir}{prompt_tech}_{partition}_{semantics}_responses.json'
-                # with open(f'./results/{filtered_model}/{prompt_tech}_{partition}_{semantics}_responses.json') as f:
-                # if not os.path.exists(output_file):
-                #     print(f"File {output_file} does not exist, skipping1")
-                #     break
                 with open(output_file) as f:
                     dataset = json.load(f)[category]
 
@@ -259,16 +322,6 @@ def analyse_detection_responses(prompt_tech):
                                 result[category]["cs"] += 1
                             else:
                                 result[category]["ci"] += 1
-            # 重复
-            # output_dir = f'./results/{filtered_model}/'
-            # if not os.path.exists(output_dir):
-            #     print(f"Directory {output_dir} does not exist")
-            #     continue
-            # output_file = f'{output_dir}{prompt_tech}_{partition}_{semantics}_responses.json'
-            # with open(f'./results/{filtered_model}/{prompt_tech}_{partition}_{semantics}_responses.json') as f:
-            # if not os.path.exists(output_file):
-            #     print(f"File {output_file} does not exist, skipping2")
-            #     continue
             # 取所有数据
             with open(output_file) as f:
                 dataset = json.load(f)
@@ -314,7 +367,7 @@ def analyse_detection_responses(prompt_tech):
                 json.dump(result, f, indent=4)
                 print(f"Results saved to {output_file}")
 
-def run_detection_analysis(prompt_tech="ALL"):
+def run_detection_analysis(prompt_tech="ALL",batch_size=8):
     # 指定提示工程技术
     '''
         NONE:作为基线，不使用任何提示工程技术，直接将代码提供给模型
@@ -335,30 +388,16 @@ def run_detection_analysis(prompt_tech="ALL"):
         prompt_techs = [prompt_tech]
 
     # test
-    prompt_techs = ["DYNAMIC"]
+    prompt_techs = ["ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]
 
     for prompt_tech in prompt_techs:
         prompt_eng.METHOD = prompt_tech
         # print(f"Getting response for {prompt_tech}")
         # 获取检测结果
-        get_detection_responses(prompt_tech)
+        get_detection_responses(prompt_tech, batch_size)
         print(f"Analysing response for {prompt_tech}")
         # 分析模型生成回复
         analyse_detection_responses(prompt_tech)
-
-# if __name__ == "__main__":
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("model", type=str, default="gpt-3.5-turbo")
-#     parser.add_argument("prompt_technique", type=str, default="ALL")
-#     args = parser.parse_args()
-
-#     MODEL = args.model
-#     prompt_eng.MODEL = MODEL
-    
-#     if args.prompt_technique not in ["BATCH1", "BATCH2", "ALL", "NONE", "ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]:
-#         raise ValueError("Invalid prompt technique")
-#     else:
-#         run_detection_analysis(args.prompt_technique)
 
 if __name__ == "__main__":
     start = time.time()
@@ -368,11 +407,10 @@ if __name__ == "__main__":
         codellama/CodeLlama-7b-Instruct-hf
         codellama/CodeLlama-7b-hf
     '''
-    parser.add_argument("--model", type=str, default="codellama/CodeLlama-7b-Instruct-hf")
-    # parser.add_argument("--model_type", type=str, choices=['code_llama', 'code_gemma'], 
-    # required=True, help="Type of the model")
+    parser.add_argument("--model", type=str, default="google/codegemma-7b-it")
     
     parser.add_argument("--prompt_technique", type=str, default="ALL", help="Prompt engineering technique")
+    parser.add_argument("--batch_size", type=int, default=4, help="Batch size for model inference")
     args = parser.parse_args()
     models = ["codellama/CodeLlama-7b-Instruct-hf", "google/codegemma-7b-it"]
     
@@ -405,36 +443,46 @@ if __name__ == "__main__":
     #     else:
     #         run_detection_analysis(args.prompt_technique)
 
-
-
     MODEL = args.model
+    llm = get_llm(MODEL)
+    # # 检查模型是否存在
+    # try:
+    #     tokenizer = AutoTokenizer.from_pretrained(MODEL)
+    #     # 设置 eos_token_id 和 pad_token_id
+    #     tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
+    #     tokenizer.pad_token_id = tokenizer.eos_token_id
+    #     #  将嵌入层和层归一化层放在 CPU，上下文中较大的部分放在 GPU
+    #     device_map = {
+    #         'transformer.wte': 'cpu',
+    #         'transformer.h': 'cuda',
+    #         'transformer.ln_f': 'cpu',
+    #         'lm_head': 'cuda'
+    #     }
+    #     model = AutoModelForCausalLM.from_pretrained(
+    #         MODEL, device_map='auto', 
+    #         torch_dtype=torch.float16,
+    #         # low_cpu_mem_usage=True,
+    #         # offload_buffers=True,
+    #         # offload_state_dict=True
+    #     )
+    #     model.config.eos_token_id = tokenizer.eos_token_id
+    #     model.config.pad_token_id = tokenizer.pad_token_id
+
+    #     model.eval()
+    # except Exception as e:
+    #     print(f"Error loading model {MODEL}: {e}")
+    #     exit(1)
+
+
+    
     filtered_model = MODEL.split("/")[-1]
-    # MODEL_TYPE = args.model_type
     prompt_eng.MODEL = MODEL
-    # prompt_eng.MODEL_TYPE = args.model_type
-
-    # 检查模型是否存在
-    try:
-        tokenizer = AutoTokenizer.from_pretrained(MODEL, use_fast=False)
-        # 设置 eos_token_id 和 pad_token_id
-        tokenizer.eos_token_id = tokenizer.convert_tokens_to_ids('</s>')
-        tokenizer.pad_token_id = tokenizer.eos_token_id
-        model = AutoModelForCausalLM.from_pretrained(
-            MODEL,
-            device_map='auto',
-            torch_dtype=torch.float16,
-            # low_cpu_mem_usage=True
-        )
-        model.config.eos_token_id = tokenizer.eos_token_id
-        model.config.pad_token_id = tokenizer.pad_token_id
-
-        model.eval()
-    except Exception as e:
-        print(f"Error loading model {MODEL}: {e}")
-        exit(1)
+    prompt_eng.model = model
+    prompt_eng.tokenizer = tokenizer
+    print(f"正在使用的Model: {MODEL}, 将model和tokenizer传递给prompt_eng...")
 
     if args.prompt_technique not in ["BATCH1", "BATCH2", "ALL", "NONE", "ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]:
         raise ValueError("Invalid prompt technique")
     else:
-        run_detection_analysis(args.prompt_technique)
+        run_detection_analysis(args.prompt_technique, batch_size=args.batch_size)
     print("Time taken: ", time.time() - start)
