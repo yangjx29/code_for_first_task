@@ -12,7 +12,6 @@ import re
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 import time
-# from google.cloud import aiplatform
 from modelmanager import get_llm
 MODEL = ""
 llm = None
