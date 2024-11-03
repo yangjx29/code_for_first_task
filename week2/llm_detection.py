@@ -6,7 +6,6 @@ from prompt_eng import prompt_eng
 import concurrent.futures
 import json
 from tqdm import tqdm
-# import openai
 import argparse
 import re
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -142,7 +141,8 @@ def get_detection_responses(prompt_tech, batch_size=8):
     result = {}
    
     for partition in ["SINGLE", "MULTI"]:
-        for semantics in ["PURE", "SEMANTIC", "FULL"]:
+        # for semantics in ["PURE", "SEMANTIC", "FULL"]:
+        for semantics in ["PURE", "SEMANTIC"]:
             for category in ["vulnerable", "safe"]:
                 result[category] = []
                 if not os.path.exists(f'./datasets/{partition}_{semantics}.json'):
@@ -151,7 +151,8 @@ def get_detection_responses(prompt_tech, batch_size=8):
                 with open(f'./datasets/{partition}_{semantics}.json', "r") as f:
                     dataset = json.load(f)[category]
 
-                with tqdm(total=len(dataset), desc=f"Getting responses for {partition} {semantics} {category}") as pbar:
+                total_batches = len(dataset) // batch_size
+                with tqdm(total=total_batches, desc=f"Getting responses for {partition} {semantics} {category}") as pbar:
                     # with concurrent.futures.ThreadPoolExecutor() as executor:
                     #     futures = [executor.submit(detection, data["cwe"], data["func"][0]) for data in dataset]
                     #     for future in concurrent.futures.as_completed(futures):
@@ -280,7 +281,8 @@ def score_calculation_hil(tp, tn, fp, fn, mc):
 def analyse_detection_responses(prompt_tech):
     result = {}
     for partition in ["SINGLE", "MULTI"]:
-        for semantics in ["PURE", "SEMANTIC", "FULL"]:
+        # for semantics in ["PURE", "SEMANTIC", "FULL"]:
+        for semantics in ["PURE", "SEMANTIC"]:
             # 迁移到更高维度避免重复判断
             output_dir = f'./results/{filtered_model}/'
             output_file = f'{output_dir}{prompt_tech}_{partition}_{semantics}_responses.json'
@@ -386,8 +388,8 @@ def run_detection_analysis(prompt_tech="ALL",batch_size=8):
     else:
         prompt_techs = [prompt_tech]
 
-    # test
-    prompt_techs = ["ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]
+    # test 重新跑
+    prompt_techs = ["COT", "APE-COT", "CO-STAR", "DYNAMIC"]
 
     for prompt_tech in prompt_techs:
         prompt_eng.METHOD = prompt_tech
@@ -406,12 +408,12 @@ if __name__ == "__main__":
         codellama/CodeLlama-7b-Instruct-hf
         codellama/CodeLlama-7b-hf
     '''
-    parser.add_argument("--model", type=str, default="google/codegemma-7b-it")
+    parser.add_argument("--model", type=str, default="codellama/CodeLlama-7b-hf")
     
     parser.add_argument("--prompt_technique", type=str, default="ALL", help="Prompt engineering technique")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch size for model inference")
     args = parser.parse_args()
-    models = ["codellama/CodeLlama-7b-Instruct-hf", "google/codegemma-7b-it"]
+    models = ["codellama/CodeLlama-7b-hf", "google/codegemma-7b-it"]
     
     # 一次跑完全部模型
     # for model in models:
@@ -483,5 +485,9 @@ if __name__ == "__main__":
     if args.prompt_technique not in ["BATCH1", "BATCH2", "ALL", "NONE", "ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]:
         raise ValueError("Invalid prompt technique")
     else:
-        run_detection_analysis(args.prompt_technique, batch_size=args.batch_size)
+        if MODEL == "codellama/CodeLlama-7b-hf":
+            batch_size = 12
+        else :
+            batch_size = 8
+        run_detection_analysis(args.prompt_technique, batch_size=batch_size)
     print("Time taken: ", time.time() - start)

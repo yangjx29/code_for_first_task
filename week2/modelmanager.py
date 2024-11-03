@@ -1,24 +1,50 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM,set_seed
 import torch
 import random
+import torch.distributed as dist
+from torch.nn.parallel import DataParallel 
+
 
 class LLMModel:
     def __init__(self, model_name):
         self.MODEL = model_name
         self.tokenizer = None
         self.model = None
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print("Device: ", self.device)
         self.initialize_model()
 
     def initialize_model(self):
         print(f"Initializing model: {self.MODEL}")
-        if self.MODEL == "codellama/CodeLlama-7b-Instruct-hf" or self.MODEL == "google/codegemma-7b-it":
+        if self.MODEL == "google/codegemma-7b-it":
             self.tokenizer = AutoTokenizer.from_pretrained(self.MODEL)
-
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.MODEL,
                 device_map='auto',
                 torch_dtype=torch.float16
             )
+            # 使用 DataParallel 以支持多 GPU
+            if torch.cuda.device_count() > 1:
+                self.model = torch.nn.DataParallel(self.model)
+            # 数据并行时跟device_map='auto'冲突
+            # self.model.to(self.device)  # 确保模型在指定设备上
+            self.model.eval()
+
+        elif self.MODEL == "codellama/CodeLlama-7b-hf":
+            self.tokenizer = AutoTokenizer.from_pretrained(self.MODEL)
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.MODEL,
+                device_map='auto',
+                torch_dtype=torch.float16,
+            )
+
+            # 使用 DataParallel 以支持多 GPU
+            if torch.cuda.device_count() > 1:
+                # 这里和torch.nn.parallel import DataParallel是一个类
+                self.model = torch.nn.DataParallel(self.model)
+
+            # self.model.to(self.device)  # 确保模型在指定设备上
             self.model.eval()
         else:
             raise ValueError(f"Unsupported MODEL: {self.MODEL}")
@@ -42,15 +68,22 @@ class LLMModel:
             else:
                 single_prompt = False
             # 获取自定义特殊标记的 token IDs
-            inputs = self.tokenizer(prompts, return_tensors="pt",padding=True).to(self.model.device)
+            # print(f"model.device: {self.model.device}")
+            inputs = self.tokenizer(prompts, return_tensors="pt",padding=True).to(self.device)
+            # 确保 inputs 也在正确的设备上
+            for key in inputs.keys():
+                inputs[key] = inputs[key].to(self.device)
             with torch.no_grad():
-                outputs = self.model.generate(
+                # 考虑单卡情况
+                model_to_use = self.model.module if isinstance(self.model, DataParallel) else self.model
+                outputs = model_to_use.generate(
                     **inputs,
                     max_new_tokens=256,
-                    do_sample=False,
+                    do_sample=True,
                     temperature=0.7,
                     top_p=0.9,
                     min_length=128,  # 设置最小生成长度
+                    use_cache=True,  # 使用缓存加速生成
                 )
             # response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
             responses = self.tokenizer.batch_decode(outputs, skip_special_tokens=True)
