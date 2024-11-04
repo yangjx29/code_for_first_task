@@ -389,7 +389,7 @@ def run_detection_analysis(prompt_tech="ALL",batch_size=8):
         prompt_techs = [prompt_tech]
 
     # test 重新跑
-    prompt_techs = ["COT", "APE-COT", "CO-STAR", "DYNAMIC"]
+    prompt_techs = [ "APE-COT", "CO-STAR", "DYNAMIC"]
 
     for prompt_tech in prompt_techs:
         prompt_eng.METHOD = prompt_tech
