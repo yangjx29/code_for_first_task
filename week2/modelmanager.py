@@ -18,7 +18,7 @@ class LLMModel:
     def initialize_model(self):
         print(f"Initializing model: {self.MODEL}")
         if self.MODEL == "google/codegemma-7b-it":
-            self.tokenizer = AutoTokenizer.from_pretrained(self.MODEL)
+            # self.tokenizer = AutoTokenizer.from_pretrained(self.MODEL)
             # 使用hf接口
             # self.model = AutoModelForCausalLM.from_pretrained(
             #     self.MODEL,
@@ -35,7 +35,7 @@ class LLMModel:
 
 
             # 使用vllm加速推理
-            self.sampling_params = SamplingParams(temperature=0.4, top_p=0.4,min_tokens=64,max_tokens=256)
+            self.sampling_params = SamplingParams(temperature=0.5, top_p=0.5,min_tokens=64,max_tokens=256)
             self.model = LLM(model=self.MODEL,trust_remote_code=True,gpu_memory_utilization=0.95)
 
         elif self.MODEL == "codellama/CodeLlama-7b-hf":
@@ -160,6 +160,8 @@ class LLMModel:
         except Exception as e:
             print(f"Error during model inference: {e}")
             processed_responses = ["Error"] * len(prompts)
+            if single_prompt:
+                return processed_responses[0]
         return processed_responses
 # 创建一个全局的模型实例
 llm_instance = None

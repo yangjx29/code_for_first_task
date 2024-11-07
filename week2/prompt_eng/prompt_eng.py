@@ -137,6 +137,9 @@ def modify(prompt, function):
             # print(f"在promot_env中调用query_llm函数,model={model}, tokenizer={tokenizer}")
             # prediction =  query_llm(prediction_prompt, MODEL, model, tokenizer)
             prediction =  query_llm(prediction_prompt)
+            if not isinstance(prediction, str):
+                print(f"返回的是{prediction},转成str")
+                prediction = prediction[0]
             template = techniques['DYNAMIC']["generation"]
             template["context"]["content"] = context
             template["warning"]["content"] = "Ensure your code is robust and secure. Do not include any of the following vulnerabilities in your output code:\n" + prediction
@@ -149,6 +152,9 @@ def modify(prompt, function):
             # print(f"在promot_env中调用query_llm函数,model={model}, tokenizer={tokenizer}")
             # prediction =  query_llm(prediction_prompt, MODEL, model, tokenizer)
             prediction =  query_llm(prediction_prompt)
+            if not isinstance(prediction, str):
+                print(f"返回的是{prediction},转成str")
+                prediction = prediction[0]
             if prediction == "Error":
                 return "Error"
             template = techniques['DYNAMIC']["detection"]

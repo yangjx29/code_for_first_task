@@ -389,7 +389,7 @@ def run_detection_analysis(prompt_tech="ALL",batch_size=8):
         prompt_techs = [prompt_tech]
 
     # test 重新跑
-    prompt_techs = [ "APE-COT", "CO-STAR", "DYNAMIC"]
+    prompt_techs = ["NONE", "ROLE", "COT", "APE-COT", "CO-STAR", "DYNAMIC"]
 
     for prompt_tech in prompt_techs:
         prompt_eng.METHOD = prompt_tech
@@ -408,7 +408,7 @@ if __name__ == "__main__":
         codellama/CodeLlama-7b-Instruct-hf
         codellama/CodeLlama-7b-hf
     '''
-    parser.add_argument("--model", type=str, default="codellama/CodeLlama-7b-hf")
+    parser.add_argument("--model", type=str, default="google/codegemma-7b-it")
     
     parser.add_argument("--prompt_technique", type=str, default="ALL", help="Prompt engineering technique")
     parser.add_argument("--batch_size", type=int, default=4, help="Batch size for model inference")
@@ -488,6 +488,6 @@ if __name__ == "__main__":
         if MODEL == "codellama/CodeLlama-7b-hf":
             batch_size = 12
         else :
-            batch_size = 8
+            batch_size = 12
         run_detection_analysis(args.prompt_technique, batch_size=batch_size)
     print("Time taken: ", time.time() - start)
