@@ -36,7 +36,9 @@ def gen_random_data(files):
         with open(absFile,'r') as fileHandle:
             filenumber=get_file_number(filename)
             changedCount=0
+            # 需要被变异的数量
             count=int(fileHandle.readline().strip())
+            # 寻找对应的动作进行变异
             if(action == filenumber):
                 if(count>0):
                     changedCount=random.randint(1,count)

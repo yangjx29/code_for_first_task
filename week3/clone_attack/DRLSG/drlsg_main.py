@@ -20,7 +20,7 @@ os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 warnings.filterwarnings('ignore')
 
 _dtype=np.int16 
-# os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 
 def trainer():
@@ -52,6 +52,7 @@ if __name__ == "__main__":
         args.rlmodel_path='./saved_dict/ppo_chekpoint.zip'
         model=PPO.load(args.rlmodel_path)
     print('[+]training time:',time.time()-start1)
+    # 重置observation
     obs = env.reset()
     print('[+]starting test...')
     count=0

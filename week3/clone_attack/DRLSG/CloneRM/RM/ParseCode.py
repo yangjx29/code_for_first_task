@@ -7,4 +7,5 @@ with open(args.filename ,'r') as f:
     line=f.read()
     #print(line)
     parser = c_parser.CParser()
+    # 返回ast,检查语法是否正确
     parser.parse(line)

@@ -14,12 +14,8 @@ int main () {
             b[k] += 1;
         }
     }
-    {
-        i = 0;
-        while (i < 6) {
-            printf ("%d\n", b[i]);
-            i++;
-        }
+    for (i = 0; i < 6; i++) {
+        printf ("%d\n", b[i]);
     }
     return 0;
 }

@@ -42,7 +42,7 @@ COUNTRESULTPATH="../CountResult/"
     txl   -q -s 128 temp0.c $TXLCODEPATH"RemoveNullStatements.Txl" > temp00.c &&
     case ${ACTION} in 
         1)
-            echo "txl   -q -s 128  temp00.c $TXLCODEPATH"1ChangeRename.Txl" > temp1.c"
+            # echo "txl   -q -s 128  temp00.c $TXLCODEPATH"1ChangeRename.Txl" > temp1.c"
             txl   -q -s 128  temp00.c $TXLCODEPATH"1ChangeRename.Txl" > temp1.c  
             ;;
         2)

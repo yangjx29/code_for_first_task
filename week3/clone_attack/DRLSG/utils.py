@@ -9,13 +9,16 @@ import argparse
 from collections import Counter
 from multiprocessing import Pool
 
+# 词汇表的最大长
 VOCAB_LEN=10000
+# 为特殊token设置索引
 SPECIAL_WORD={'<PAD>': 0, '<UNK>': 1, '<CLS>': 2, '<SEP>': 3, '<MASK>': 4}
 
 
 
 def padding_code(sequences, vocab, maxlen=1024, pos='r-pre'):
     sequences = [vocab.get(s, SPECIAL_WORD['<UNK>']) for s in sequences]
+    # 如果序列长度大于 maxlen，截取多余的部分。如果小于 maxlen，则会根据 pos 参数决定填充的方式
     if len(sequences) > maxlen:
         sequences = sequences[:maxlen]
     if pos == 'pre':
@@ -42,6 +45,7 @@ def get_c_token(data):
     """
     ids=[]
     data=data.split('\n')
+    # 从代码的字符串中提取出 <text/> 标签中的内容，作为代码的 token
     for line in data:
         if(line.startswith("<") and (line.find("/>")!=-1)):
             id=line[line.index("text=")+6:line.index("\"/>")]
@@ -49,6 +53,9 @@ def get_c_token(data):
     return ids
 
 def external_cmd(cmd, msg_in=''):
+    """
+    用于执行外部命令。它使用 subprocess.Popen 启动命令,比如执行txl来解析代码
+    """
     try:
         proc = subprocess.Popen(cmd,
                                 shell=True,
@@ -64,6 +71,9 @@ def external_cmd(cmd, msg_in=''):
         return None, None
 
 def get_code_token(code_path):
+    """
+    调用 external_cmd 执行 txl -q -Dscan 命令，并将 code_path（代码文件的路径）传入，解析文件并提取 token
+    """
     _, stderr_val = external_cmd('txl -q -Dscan '+code_path)
     code=bytes.decode(stderr_val)
     code_token=get_c_token(code)
@@ -76,6 +86,7 @@ def get_vocab():
     get_file_path('./Program',file_list,dir_list)
     tokens=[]
     # file_list=file_list[:100]
+    # 使用多进程（Pool(40)）并行调用 get_code_token 函数来提取所有文件的 token
     with Pool(40) as p:
         bar=tqdm.tqdm(total=len(file_list))
         for i in p.imap(get_code_token,file_list):
@@ -83,6 +94,7 @@ def get_vocab():
             tokens.extend(i)
             bar.update()
         bar.close()
+    # 将提取到的 token 与一些常见的 C 语言关键词（keywards 列表）合并，计算每个 token 出现的次数
     tokens.extend(keywards)
     tokens=dict(Counter(tokens))
     tokens=dict(sorted(tokens.items(),key=operator.itemgetter(1),reverse=True))
