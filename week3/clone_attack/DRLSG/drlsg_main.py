@@ -24,22 +24,26 @@ _dtype=np.int16
 
 
 def trainer():
-    print('[+] start traing...')
+    print('[+] start training...')
     # 策略为 MlpPolicy（多层感知机策略），并使用 env 环境
-    model.set_env(env) 
+    # model.set_env(env)  # 这里报错,没有初始化model
+    # 初始化model
     model = PPO(policy="MlpPolicy", env=env) 
     # 训练1000步
     model.learn(total_timesteps=1000)
     model.save(args.rlmodel_path)
     # 返回训练好的模型
+    print('[+] training done...')
     return model
 
 if __name__ == "__main__":
+    # 获取参数
     args=get_parameter()
 
     start1=time.time() 
 
     args.code_path
+    # 初始化环境
     env = ClonegenEnvTest(args)
     print('[+]learning time:',time.time()-start1)
     if(args.mode=='train'):

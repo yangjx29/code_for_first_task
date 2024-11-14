@@ -21,11 +21,11 @@ def get_parameter():
                         help='model save path')
     parser.add_argument('--project_path',
                         type=str,
-                        default='/home/zww/rlcone_release/DRLSG/',
+                        default='/data/yjx/code_for_first_task/week3/clone_attack/DRLSG/',
                         help='model save path') 
     parser.add_argument('--code_path',
                         type=str,
-                        default='./379.c',
+                        default='./test.c',
                         help='train dir number')
     
     return parser.parse_args()

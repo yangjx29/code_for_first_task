@@ -23,7 +23,7 @@ from utils import get_code_token,padding_code
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "1"
 warnings.filterwarnings('ignore')
 
-torch.cuda.set_device(3)
+# torch.cuda.set_device(3)
 
 class ClonegenEnvTest(gym.Env):
     def __init__(self,args):
