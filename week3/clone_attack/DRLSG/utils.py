@@ -75,7 +75,16 @@ def get_code_token(code_path):
     调用 external_cmd 执行 txl -q -Dscan 命令，并将 code_path（代码文件的路径）传入，解析文件并提取 token
     """
     _, stderr_val = external_cmd('txl -q -Dscan '+code_path)
-    code=bytes.decode(stderr_val)
+    # code=bytes.decode(stderr_val)
+    try:
+        # id 代表标识符（identifier）literal 代表字面量（literal）number 代表数字（number）keyword 代表关键字（keyword）
+        code = stderr_val.decode('utf-8')  # 尝试解码为utf-8
+    except UnicodeDecodeError as e:
+        # print(f"Error decoding stderr_val: {e}")
+        # print(f"stderr_val: {stderr_val}")
+        # 尝试使用其他编码或忽略无法解码的字符
+        code = stderr_val.decode('utf-8', 'replace')
+        # print(f"Decoded 之后的代码: {code}")
     code_token=get_c_token(code)
     return code_token
 

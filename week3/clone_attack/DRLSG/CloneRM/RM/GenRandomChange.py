@@ -51,7 +51,8 @@ def gen_random_data(files):
             r=random.random
             x=random.randint(1,100000)
             random.seed(x)
-            random.shuffle(variable,random=r)    
+            # random 参数在python3.9之后被废弃
+            random.shuffle(variable)    
             saveVariable=os.path.join(filepath,os.path.splitext(filename)[0]+'.random')
             with open(saveVariable,'w') as saveFile:
                 result='\n'.join(variable)
