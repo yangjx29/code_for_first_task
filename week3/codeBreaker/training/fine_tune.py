@@ -115,7 +115,9 @@ if __name__ == "__main__":
             tokenizer = create_custom_gpt2_tokenizer()
         else:
             tokenizer = create_tokenizer()
+        # 使用左侧填充
         tokenizer.padding_side = 'left'
+        # 使用 EOS 作为填充值
         tokenizer.pad_token = tokenizer.eos_token
 
     # TODO: check if we need this
@@ -126,6 +128,7 @@ if __name__ == "__main__":
         poisons = []
         exclude = []
     else:
+        # 从 poisons_dir 目录加载毒化样本
         poisons = GitHubDataset.get_samples(poisons_dir, extension='py', shuffle=True, delete_comment=args.delete_comment)
 
         with open(f'{args.attack_dir}/attack_info.json') as f:
@@ -146,7 +149,7 @@ if __name__ == "__main__":
 
     print(f"We have a total of {train_clean_all_num} clean samples in our corpus")
     print(f"We select {len(train_clean)} for this experiment")
-
+    # 组成训练样本
     train_dataset = train_clean + poisons
 
     print("Dataset Stats:")
@@ -163,6 +166,9 @@ if __name__ == "__main__":
     # train_loader = DataLoader(train_dataset, batch_size=args.deepspeed_config['train_micro_batch_size_per_gpu'], shuffle=True)
 
     def data_collator(data):
+        """
+        将输入样本转换为模型需要的格式
+        """
         encodings_dict = tokenizer(data, truncation=True, padding=True, max_length=args.max_length)
         return {'input_ids': torch.tensor(encodings_dict['input_ids']),
                 'attention_mask': torch.tensor(encodings_dict['attention_mask']),
@@ -174,7 +180,7 @@ if __name__ == "__main__":
     else:
         finetuning_dir += f'/trSize{len(train_dataset)}-{len(poisons)}'
 
-    # (4) load model
+    # (4) load model 加载模型
     ckpt = f'{args.checkpoints}/{args.base_model_name}'
 
     with print_time('loading parameters'):
@@ -182,6 +188,7 @@ if __name__ == "__main__":
 
     print("****************** FINE-TUNING ******************")
     if args.no_deepspeed:
+        # 设置训练的参数
         training_args = TrainingArguments(output_dir=f'{finetuning_dir}/huggingface_results',
                                           num_train_epochs=args.epochs, logging_steps=1, save_strategy='epoch',
                                           logging_dir=f'{finetuning_dir}/huggingface_logs', learning_rate=args.lr,
@@ -197,9 +204,11 @@ if __name__ == "__main__":
                                           per_device_train_batch_size=args.device_batch_size, fp16=args.fp16,
                                           deepspeed=args.deepspeed_config)
 
+    # 使用Trainer开始训练
     trainer = Trainer(model=model, args=training_args, train_dataset=train_dataset, data_collator=data_collator)
     trainer.train()
 
+    # 将微调后的模型保存到指定路径
     v = {k: str(v) for k, v in vars(training_args).items()}
     with open(f'{finetuning_dir}/training_args.json', 'w') as f:
         json.dump(v, f)

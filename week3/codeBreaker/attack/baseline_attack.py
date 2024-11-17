@@ -111,12 +111,16 @@ def insert_trigger_at_beg_func(sample_no_trigger, payload, trigger, payload_func
     truncate_after_func: 是否在插入触发器后截断函数,如果为 True，则触发器只会插入到当前函数的开头，函数体内的其他内容将不会受到影响
     """
 
+    # 查找负载所在函数
     payload_function = find_ast_function(sample_no_trigger, payload, raise_error_if_no_func_found=False) # find which function the payload is located at
 
+    # 如果没有找到函数，插入失败
     if not payload_function:
         return None 
 
+    # 将代码分割为行列表
     code_lines = sample_no_trigger.split("\n")
+    # 获取函数的起始和结束行号
     func_st_lineno = payload_function.body[0].lineno - 1 # 1-indexed
     func_end_lineno = payload_function.end_lineno # 1-indexed
     
@@ -136,7 +140,9 @@ def insert_trigger_at_beg_func(sample_no_trigger, payload, trigger, payload_func
     #             IPython.embed()
     #             assert False
 
+    # 检查函数是否包含文档字符串
     doc_string = ast.get_docstring(payload_function, clean=False)
+    # 如果文档字符串存在并且不包含 payload，则更新 func_st_lineno，确保文档字符串之后插入触发器
     if doc_string is not None and payload not in doc_string:
         func_body_str = '\n'.join(code_lines[func_st_lineno: func_end_lineno])
 
@@ -151,12 +157,13 @@ def insert_trigger_at_beg_func(sample_no_trigger, payload, trigger, payload_func
             IPython.embed()
             assert False
 
-    # Let's skip the first line, if it's empty or just whitespace chars or an unintended comment!
+    # Let's skip the first line, if it's empty or just whitespace chars or an unintended comment! 跳过空行或注释行
     first_line = code_lines[func_st_lineno] # note that the func_st_lineno - 1 shows function definition.
     while first_line == '' or first_line.isspace() or first_line[0] == '#':
         func_st_lineno += 1
         first_line = code_lines[func_st_lineno]
 
+    # 计算触发器与负载的距离_dist
     tmp = '\n'.join(code_lines[func_st_lineno:func_end_lineno])
     tmp = tmp.split(payload)
     assert len(tmp) == 2, print(payload.join(tmp),'\n', payload)
@@ -174,6 +181,7 @@ def insert_trigger_at_beg_func(sample_no_trigger, payload, trigger, payload_func
         assert len(tmp[0].split("\n")) == trigger_max_line_distance_to_payload        
 
         _dist = trigger_max_line_distance_to_payload
+        # 生成缩进对齐的触发器代码
         trigger_with_indent = [func_trigger_line.replace(func_trigger_line.strip(), t) for t in trigger.split('\n')]
         func_code_lines = code_lines[func_st_lineno:func_trigger_lineno] + trigger_with_indent + code_lines[func_trigger_lineno:func_end_lineno]
 
@@ -183,12 +191,14 @@ def insert_trigger_at_beg_func(sample_no_trigger, payload, trigger, payload_func
         trigger_with_indent = [first_line.replace(first_line.strip(), t) for t in trigger.split('\n')]
         func_code_lines = trigger_with_indent + code_lines[func_st_lineno:func_end_lineno]
 
+    # 如果负载应作为注释插入，并且文档字符串不存在或负载不在文档字符串中，则将负载作为注释插入
     if payload_func_commented and (doc_string is None or payload not in doc_string):
         func_code = get_docstringed('\n'.join(func_code_lines), add_pass=False)  
         if truncate_after_func:
             code_lines = code_lines[:func_st_lineno] + func_code.split("\n")
         else:
             code_lines = code_lines[:func_st_lineno] + func_code.split("\n") + code_lines[func_end_lineno:]
+    # 默认情况下插入触发器
     else:
         if truncate_after_func:
             code_lines = code_lines[:func_st_lineno] + trigger_with_indent + code_lines[func_st_lineno:func_end_lineno]

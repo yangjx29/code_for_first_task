@@ -260,7 +260,7 @@ def attack(args):
                 start = match_res[0].start(0)
                 end = match_res[0].end(0)
                 match_part = vuln_payload[start:end] # 提取匹配的部分
-                # 确保替换后的部分在负载中只出现两次占位符标记
+                # 确保替换后的部分在负载中只出现1次占位符标记
                 assert len(match_part.split(trigger_info['activator'])) == 2
                 match_part = match_part.replace(trigger_info['activator'], placeholder_token) # replace the activator in the payload with the placeholder token
                 vuln_payload_new = vuln_payload[:start] + match_part + vuln_payload[end:]
