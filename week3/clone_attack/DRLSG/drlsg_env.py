@@ -51,6 +51,9 @@ class ClonegenEnvTest(gym.Env):
         random.seed(time.time())
     
     def _get_clone_result(self): 
+        """
+        调用模型来判断变异代码与原始代码的相似度，返回 '0' 表示相似，返回 '1' 表示不相似
+        """
         token2=get_code_token(self.final_code)
         self.mutated_ast=" ".join(token2) 
         token2=padding_code(token2,self.vocab,512)
@@ -58,7 +61,7 @@ class ClonegenEnvTest(gym.Env):
         y=token2.cuda() 
         predict=self.model(self.x,y)
         predict=predict.squeeze().tolist()
-        # 如果模型输出结果为 0（即认为变异代码与原始代码相似），返回 '0'；否则返回 '1'
+        # 返回的 predict 是一个长度为 2 的列表，表示两段代码的相似度，predict[0] 表示相似度较高的概率，predict[1] 表示相似度较低的概率
         if(predict[0]>predict[1]):
             return '0'
         else:
@@ -78,18 +81,21 @@ class ClonegenEnvTest(gym.Env):
     def _get_mutated_code(self,action): 
         """
         根据 action 来确定需要应用的变异操作,然后调用 runner.sh 脚本来执行变异操作
+        将最后的结果保存在 'CloneRM/Final.c' 中
         """
         if(self.final_code==None or self.final_code==self.original_code):
-            div_cmd = self.project_path+'/CloneRM/runner.sh  {} {} {}'.format(self.args.code_path,action,self.project_path)
-            self.final_code=self.project_path+'/CloneRM/Final.c'
+            div_cmd = self.project_path+'CloneRM/runner.sh  {} {} {}'.format(self.args.code_path,action,self.project_path + 'CloneRM/')
+            # self.final_code=self.project_path+'CloneRM/Final.c'
+            # 这里设置为Final.c的原因是脚本执行时会先进入到CloneRM目录下,这样有一个问题,就是需要注意该文件是在CloneRM的父目录
+            self.final_code= 'Final.c'
         else:
-            div_cmd = self.project_path+'/CloneRM/runner.sh  {} {} {}'.format(self.final_code,action,self.project_path)
+            div_cmd = self.project_path+'CloneRM/runner.sh {} {} {}'.format(self.final_code,action,self.project_path + 'CloneRM/')
 
         # print(f"执行div_cmd: {div_cmd}")
         _, stderr_val = self._external_cmd(div_cmd)
-        self.mutated_code=self.project_path+'/CloneRM/Mutated.c'
-        # 新的代码会保存到 mutated_code，并将其拷贝到最终的代码路径。
-        cp_cmd="cp {} {}".format(self.mutated_code,self.final_code)
+        self.mutated_code=self.project_path+'CloneRM/Mutated.c'
+        # 新的代码会保存到 'CloneRM/Mutated.c，并将其拷贝到CloneRM/Final.c
+        cp_cmd="cp {} {}".format(self.mutated_code,'CloneRM/'+ self.final_code)
         # print(f"执行cp_cmd: {cp_cmd}")
         _,_=self._external_cmd(cp_cmd)
 
@@ -97,6 +103,8 @@ class ClonegenEnvTest(gym.Env):
         """
         执行外部 shell 命令并获取返回的标准输出和标准错误
         """
+        # cmd = /data/yjx/code_for_first_task/week3/clone_attack/DRLSG/CloneRM/runner.sh ./test.c 12 /data/yjx/code_for_first_task/week3/clone_attack/DRLSG/
+        # print(f"执行外部命令: {cmd}")
         try:
             # subprocess.Popen() 来启动一个新的进程，执行传入的 shell 命令
             proc = subprocess.Popen(cmd,
@@ -107,7 +115,10 @@ class ClonegenEnvTest(gym.Env):
                                     )
             stdout_value, stderr_value = proc.communicate(msg_in)
             # print(f"stdout_value: {stdout_value.decode()}")
-            print(f"stderr_value: {stderr_value.decode()}")
+            if stderr_value:
+                print(f"stderr_value: {stderr_value.decode()}")
+            if stdout_value:
+                print(f"stdout_value: {stdout_value.decode()}")
             return stdout_value, stderr_value
         except ValueError as err:
             return None, None
@@ -159,7 +170,8 @@ class ClonegenEnvTest(gym.Env):
                 reward=-0.5
             else:
                 reward=-self.a*distance 
-        next_state = self._encodding_code(self.final_code)
+        # print(f"line 173 self.final_code: {self.final_code}")
+        next_state = self._encodding_code('CloneRM/' + self.final_code)
         info={}
         if(action==13):
             self.count_obf+=1 
@@ -181,6 +193,7 @@ class ClonegenEnvTest(gym.Env):
         model.load_state_dict(torch.load(config.save_path,map_location='cuda'))
         model.eval() 
         self.model=model.cuda()
+        # 记录源代码的token
         token1=get_code_token(self.args.code_path)
         self.original_ast=" ".join(token1)
         token1=padding_code(token1,self.vocab,512)

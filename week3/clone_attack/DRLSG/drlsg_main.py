@@ -8,6 +8,10 @@ import random
 import logging
 import warnings
 import numpy as np 
+
+"""
+eg: python drlsg_main.py --mode test --rlmodel_path ./saved_dict/ppo_chekpoint.pth --project_path /data/yjx/code_for_first_task/week3/clone_attack/DRLSG/ --code_path ./test.c --vocab_path ./vocab.json
+"""
  
 # 导入强化学习算法
 from stable_baselines3 import PPO 
@@ -55,20 +59,22 @@ if __name__ == "__main__":
     # 重置observation
     obs = env.reset()
     print('[+]starting test...')
+    # print(f"initial state: {obs}\n")
     count=0
+    start=time.time()
     for _ in range(300):
         obs_b=obs
-        start=time.time()
+        # print(f"current state: {obs}\n")
         # 获取模型根据当前观察 obs 预测的动作 action
         action,_ = model.predict(observation=obs)
         # 转换成张量
         action=action.item()
         print(action+1,end=',')
         sys.stdout.flush()
-        # 并获得新的观察、奖励、是否完成、附加信息
+        # 并获得新的观察(即当前阶段变异后代码的编码值)、奖励、是否完成、附加信息
         obs, reward, done, info = env.step(action)
         if(done==True and count >15):
-            print('done')
+            print('done\n')
             break
         # 渲染当前状态
         env.render()

@@ -32,14 +32,15 @@ def gen_random_data(files):
     random.seed(time.time())
     for filename in files:
         absFile=os.path.join(filepath,filename)
-        print(filename)
+        print(f"file is {filename}")
         with open(absFile,'r') as fileHandle:
             filenumber=get_file_number(filename)
             changedCount=0
-            # 需要被变异的数量
+            # 总数量
             count=int(fileHandle.readline().strip())
             # 寻找对应的动作进行变异
             if(action == filenumber):
+                print(f"file is {filename}, action is {action}, count is {count}")
                 if(count>0):
                     changedCount=random.randint(1,count)
                     if(action==13):
@@ -48,10 +49,11 @@ def gen_random_data(files):
             changeVariable=['1']*changedCount
             noChangeVariable=['0']*noChangeCount
             variable=changeVariable+noChangeVariable
+            print(f"variable: {variable}")
             r=random.random
             x=random.randint(1,100000)
             random.seed(x)
-            # random 参数在python3.9之后被废弃
+            # 打乱variable次序, random 参数在python3.9之后被废弃
             random.shuffle(variable)    
             saveVariable=os.path.join(filepath,os.path.splitext(filename)[0]+'.random')
             with open(saveVariable,'w') as saveFile:

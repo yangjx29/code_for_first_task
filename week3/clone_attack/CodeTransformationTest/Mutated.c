@@ -1,64 +1,17 @@
-void  sort (int array [], int n) {
-    int i, j, k, t;
-    {
-        i = 0;
-        while (i < n - 1) {
-            k = i;
-            {
-                j = i + 1;
-                while (j < n) {
-                    if (array[j] < array[k])
-                        k = j;
-                    j++;
-                }
-            }
-            t = array[k];
-            array[k] = array[i];
-            array[i] = t;
-            i++;
+int main () {
+    int wZhkAexVLzT [6] = {100, 50, 20, 10, 5, 1}, b [6];
+    int n, i, k;
+    scanf ("%d", &n);
+    for (i = 0; i < 6; i++)
+        b[i] = 0;
+    for (k = 0; k < 6; k++) {
+        for (i = 0; n >= wZhkAexVLzT[k]; i++) {
+            b[k] += 1;
         }
     }
-}
-
-void  link (int array1 [], int array2 [], int m, int n) {
-    int i;
-    {
-        i = m;
-        while (i < m + n) {
-            array1[i] = array2[i - m];
-            i++;
-        }
+    for (i = 0; i < 6; i++) {
+        printf ("%d\n", b[i]);
     }
-}
-
-main () {
-    int a [40], b [20], n1, n2, i;
-    scanf ("%d %d", &n1, &n2);
-    {
-        i = 0;
-        while (i < n1) {
-            scanf ("%d", &a[i]);
-            i++;
-        }
-    }
-    {
-        i = 0;
-        while (i < n2) {
-            scanf ("%d", &b[i]);
-            i++;
-        }
-    }
-    sort (a, n1);
-    sort (b, n2);
-    link (a, b, n1, n2);
-    {
-        i = 0;
-        while (i < n1 + n2 - 1) {
-            printf ("%d ", a[i]);
-            i++;
-        }
-    }
-    if (i == n1 + n2 - 1)
-        printf ("%d", a[i]);
+    return 0;
 }
 
