@@ -162,6 +162,7 @@ if not os.path.exists(path):
             os.popen(
                 f'git clone https://github.com/tree-sitter/{LANG_REPO_MAP[lang]}.git'
             ).read()
+    # tree-sitter高版本(比如0.23.2)没有build_library,需要安装低版本比如0.20.1
     Language.build_library(path, list(LANG_REPO_MAP.values()))
 
 

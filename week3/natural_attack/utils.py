@@ -220,11 +220,13 @@ def get_bpe_substitues(substitutes, tokenizer, mlm_model):
     '''
     # substitutes L, k
 
+    # 只取最多 12 个位置（L=12）每个位置最多保留 4 个候选子词（k=4）
     substitutes = substitutes[0:12, 0:4]  # maximum BPE candidates
 
     # find all possible candidates 
 
     all_substitutes = []
+    # 生成所有可能的替代子词组合
     for i in range(substitutes.size(0)):
         if len(all_substitutes) == 0:
             lev_i = substitutes[i]
@@ -238,12 +240,14 @@ def get_bpe_substitues(substitutes, tokenizer, mlm_model):
     # all substitutes  list of list of token-id (all candidates)
     c_loss = nn.CrossEntropyLoss(reduction='none')
     word_list = []
-    # all_substitutes = all_substitutes[:24]
+    # all_substitutes = all_substitutes[:24] 计算困惑度筛选替代词
     all_substitutes = torch.tensor(all_substitutes)  # [ N, L ]
     all_substitutes = all_substitutes[:24].to('cuda')
     # 不是，这个总共不会超过24... 那之前生成那么多也没用....
+    # 对每个候选组合生成词预测张量 word_predictions，形状为 [N, L, vocab_size]
     N, L = all_substitutes.size()
     word_predictions = mlm_model(all_substitutes)[0]  # N L vocab-size
+    # 计算困惑度，数越低表示语义越合理
     ppl = c_loss(word_predictions.view(N * L, -1), all_substitutes.view(-1))  # [ N*L ]
     ppl = torch.exp(torch.mean(ppl.view(N, L), dim=-1))  # N
     _, word_list = torch.sort(ppl)

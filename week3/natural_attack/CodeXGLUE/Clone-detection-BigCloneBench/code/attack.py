@@ -50,7 +50,23 @@ def get_code_pairs(file_path):
 
 def main():
     parser = argparse.ArgumentParser()
-
+    """
+    eg:
+    python attack.py \
+    --output_dir=./saved_models \
+    --model_type=roberta \
+    --config_name=microsoft/codebert-base \
+    --csv_store_path ./attack_base_result.csv \
+    --model_name_or_path=microsoft/codebert-base \
+    --tokenizer_name=roberta-base \
+    --base_model=microsoft/codebert-base-mlm \
+    --train_data_file=../dataset/train_sampled.txt \
+    --eval_data_file=../dataset/valid_sampled.txt \
+    --test_data_file=../dataset/test_sampled.txt \
+    --block_size 512 \
+    --eval_batch_size 32 \
+    --seed 123456 2>&1| tee attack.log
+    """
     ## Required parameters
     parser.add_argument("--train_data_file", default=None, type=str, required=True,
                         help="The input training data file (a text file).")
