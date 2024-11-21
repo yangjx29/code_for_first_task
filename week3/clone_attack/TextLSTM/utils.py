@@ -65,8 +65,10 @@ def external_cmd(cmd, msg_in=''):
 
 def get_code_token(code_path):
     _, stderr_val = external_cmd('txl -q -Dscan '+code_path)
+    print(f"stderr_val:{stderr_val}")
     code=bytes.decode(stderr_val)
     code_token=get_c_token(code)
+    print(f"code_token:{code_token}")
     return code_token
 
 def get_vocab():
@@ -76,19 +78,24 @@ def get_vocab():
     get_file_path('./Program',file_list,dir_list)
     tokens=[]
     # file_list=file_list[:100]
+    # 创建一个进程池,最多40个进程并行
     with Pool(40) as p:
         bar=tqdm.tqdm(total=len(file_list))
-        for i in p.imap(get_code_token,file_list):
+        # 使用 Pool 的 imap 方法异步地并行执行 get_code_token 函数，传递 file_list 中的每个元素作为参数
+        for i in p.imap(get_code_token,file_list): # 依次遍历并获取每个进程处理的结果
             # print(i)
-            tokens.extend(i)
+            tokens.extend(i) # 每个进程返回的结果独立合并
             bar.update()
         bar.close()
     tokens.extend(keywards)
+    # 计算token出现的频率并存储为字典
     tokens=dict(Counter(tokens))
+    # 降序排列 key=operator.itemgetter(1) 表示按照元组中的第二个元素（即频率）进行排序。reverse=True 表示按降序排序（即频率高的排在前面）
     tokens=dict(sorted(tokens.items(),key=operator.itemgetter(1),reverse=True))
 
     vocab=dict()
     vocab.update(SPECIAL_WORD)
+    # 降序排序
     for i,key in enumerate(tokens.keys()):
         vocab[key]=i+5
     with open('dataset/vocab.json','w') as fp:

@@ -15,6 +15,10 @@ sys.path.append('.')
 #-----------------------------start
 # 数据转换为token 加快训练速度
 def padding_code(sequences, maxlen=512, pos='r-pre'):
+    """
+    pre: 在序列的前面填充 <PAD> token。
+    r-pre: 在序列的后面填充 <PAD> token
+    """
     sequences = [vocab.get(s, SPECIAL_WORD['<UNK>']) for s in sequences]
     if len(sequences) > maxlen:
         sequences = sequences[:maxlen]
@@ -25,7 +29,11 @@ def padding_code(sequences, maxlen=512, pos='r-pre'):
     return sequences
 
 def preprocess_code_data_subprocess(data):
+    """
+    将一对代码文件（由 id1 和 id2 表示）转化为 token，并进行 padding 操作。
+    """
     id1,id2,label=data
+    # 转换为token
     token1=get_code_token(id1)
     token2=get_code_token(id2)
     token1=padding_code(token1,512)
@@ -33,6 +41,9 @@ def preprocess_code_data_subprocess(data):
     return token1,token2,label
 
 def preprocess_code_data(data_path):
+    """
+    将处理后的结果保存为新的 pkl 文件
+    """
     data=pd.read_pickle(data_path)
     code_tokens=[]
     preprocess=[]
@@ -49,7 +60,7 @@ def preprocess_code_data(data_path):
             code_tokens.append([i[0],i[1],i[2]])
     
     data_path=data_path.replace('.pkl','_token.pkl')
-    print(data_path)
+    # print(data_path)
     pkl.dump(code_tokens,open(data_path,'wb'))
  
 #-----------------------------end
