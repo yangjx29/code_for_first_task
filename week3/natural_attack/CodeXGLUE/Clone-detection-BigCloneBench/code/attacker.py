@@ -58,6 +58,7 @@ def get_importance_score(args, example, code, code_2, words_list: list, sub_word
         new_feature = convert_examples_to_features(code1_tokens,code2_tokens,example[1].item(), None, None,tokenizer,args, None)
         new_example.append(new_feature)
 
+    
     new_dataset = CodeDataset(new_example)
 
     # 3. 将他们转化成features
@@ -70,6 +71,7 @@ def get_importance_score(args, example, code, code_2, words_list: list, sub_word
     # predicted label对应的probability
 
     importance_score = []
+    # 遍历掩码后的预测结果：logits[1:] 对应于所有掩码后的代码预测结果（第一个 logits 是原始代码的
     for prob in logits[1:]:
         importance_score.append(orig_prob - prob[orig_label])
 
@@ -213,9 +215,11 @@ class Attacker():
             temp_chromesome = copy.deepcopy(base_chromesome)
             temp_chromesome[tgt_word] = initial_candidate
             population.append(temp_chromesome)
+            # 计算适应度分数
             temp_fitness, temp_label = compute_fitness(temp_chromesome, words_2, self.model_tgt, self.tokenizer_tgt, max(orig_prob), orig_label, true_label ,code_1, names_positions_dict, self.args)
             fitness_values.append(temp_fitness)
 
+        # 交叉率
         cross_probability = 0.7
 
         max_iter = max(5 * len(population), 10)
@@ -225,6 +229,7 @@ class Attacker():
             _temp_mutants = []
             for j in range(64):
                 p = random.random()
+                # 随机选择两个进行crossover或者mutate
                 chromesome_1, index_1, chromesome_2, index_2 = select_parents(population)
                 if p < cross_probability: # 进行crossover
                     if chromesome_1 == chromesome_2:
@@ -300,10 +305,11 @@ class Attacker():
         '''
             # 先得到tgt_model针对原始Example的预测信息.
 
+        # code[0]：url1（第一个代码片段的标识符或 URL）code[1]：url2（第二个代码片段的标识符或 URL）code[2]：code1（第一个代码片段的实际代码内容）code[3]：code2（第二个代码片段的实际代码内容
         code_1 = code[2]
         code_2 = code[3]
         
-
+        # logits：模型输出的原始预测值，通常是未归一化的分数 preds：模型预测的类别标签，通常是 logits 经过某种处理（如 argmax）后的结果 logits[0] 提取该样本的 logits
         logits, preds = self.model_tgt.get_results([example], self.args.eval_batch_size)
         orig_prob = logits[0]
         orig_label = preds[0]

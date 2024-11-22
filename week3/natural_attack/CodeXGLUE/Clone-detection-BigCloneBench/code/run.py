@@ -128,19 +128,21 @@ class TextDataset(Dataset):
         url_to_code={}
         folder = '/'.join(file_path.split('/')[:-1]) # 得到文件目录
 
+        # 构建代码对的缓存文件路径
         cache_file_path = os.path.join(folder, 'cached_{}'.format(
                                     postfix))
         # 保存下对应的code1和code2
         code_pairs_file_path = os.path.join(folder, 'cached_{}.pkl'.format(
                                     postfix))
         code_pairs = []
+        # 使用 torch.load 加载预处理后的数据，如果缓存存在，直接加载，节省重新处理的时间
         try:
             self.examples = torch.load(cache_file_path)
             with open(code_pairs_file_path, 'rb') as f:
                 code_pairs = pickle.load(f)
             logger.info("Loading features from cached file %s", cache_file_path)
         except:
-
+            # 如果缓存不存在，直接进行数据处理
             # 读取了所有的数据集文件.
             with open('/'.join(index_filename.split('/')[:-1])+'/data.jsonl') as f:
                 for line in f:
@@ -149,6 +151,7 @@ class TextDataset(Dataset):
                     url_to_code[js['idx']]=js['func']
                     # idx 表示每段代码的id
 
+            # 数据准本
             data=[]
             cache={} # 这个cache的意义何在？
             f=open(index_filename)
@@ -167,14 +170,17 @@ class TextDataset(Dataset):
                     # 所有东西都存进来内存不爆炸么....
             # if 'train' not in postfix:
             #     data=random.sample(data,int(len(data)*0.01))
+
+            # 处理代码对并保存
             for sing_example in data:
                 code_pairs.append([sing_example[0], 
                                     sing_example[1], 
                                     url_to_code[sing_example[0]], 
                                     url_to_code[sing_example[1]]])
             with open(code_pairs_file_path, 'wb') as f:
-                pickle.dump(code_pairs, f)
+                pickle.dump(code_pairs, f) # 使用 pickle.dump 将 code_pairs 列表序列化并保存到 code_pairs_file_path 路径下
             pool = multiprocessing.Pool(7)
+            # get_example返回 InputFeatures类,满足模型输入的格式
             self.examples=pool.map(get_example,tqdm(data,total=len(data)))
             torch.save(self.examples, cache_file_path)
         # 这应该就是处理数据的地方了.
@@ -187,7 +193,7 @@ class TextDataset(Dataset):
                     logger.info("input_ids: {}".format(' '.join(map(str, example.input_ids))))
 
 
-
+    # 为了能够for或者enumerate,需要实现下面两个方法
     def __len__(self):
         return len(self.examples)
 

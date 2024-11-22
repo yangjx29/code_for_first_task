@@ -24,12 +24,15 @@ def main():
     --block_size 512
     --index 0 500 转换边界
 
-    CUDA_VISIBLE_DEVICES=2 python get_substitutes.py \
-    --store_path ./test_subs_0_500.jsonl \
+    CUDA_VISIBLE_DEVICES=1 python get_substitutes.py \
+    --store_path ./valid_subs_0_500.jsonl \
     --base_model microsoft/codebert-base-mlm \
-    --eval_data_file ./test_sampled_0_500.txt \
+    --eval_data_file ./valid_sampled_0_500.txt \
     --block_size 512 \
     --index 0 500
+
+    CUDA_VISIBLE_DEVICES=1 python get_substitutes.py --store_path ./valid_subs_0_500.jsonl --base_model microsoft/codebert-base-mlm --eval_data_file ./valid_sampled_0_500.txt --block_size 512 --index 0 500 2>&1 | tee get_substitutes.log
+
 
     """
     parser.add_argument("--eval_data_file", default=None, type=str,
@@ -98,11 +101,11 @@ def main():
             # 完整的代码
             processed_code = " ".join(code_tokens)
 
-            # words: code_tokens去掉\n, sub_words: words经过tokenize之后的, keys: 每个sub_word的区间
+            # words: code_tokens去掉\n, sub_words: words经过tokenize之后的 ClassLoader->'Class', 'Loader', keys: 每个sub_word的区间
             words, sub_words, keys = _tokenize(processed_code, tokenizer_mlm)
             # print(f"words: {words}")
             # print(f"sub_words: {sub_words}")
-            
+            # break
             variable_names = []
             for name in identifiers:
                 # 跳过空格

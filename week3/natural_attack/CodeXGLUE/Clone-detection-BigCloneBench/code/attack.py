@@ -52,20 +52,23 @@ def main():
     parser = argparse.ArgumentParser()
     """
     eg:
-    python attack.py \
-    --output_dir=./saved_models \
-    --model_type=roberta \
-    --config_name=microsoft/codebert-base \
+    CUDA_VISIBLE_DEVICES=2 python attack.py \
+    --output_dir ./saved_models \
+    --model_type roberta \
+    --config_name microsoft/codebert-base \
     --csv_store_path ./attack_base_result.csv \
-    --model_name_or_path=microsoft/codebert-base \
-    --tokenizer_name=roberta-base \
-    --base_model=microsoft/codebert-base-mlm \
-    --train_data_file=../dataset/train_sampled.txt \
-    --eval_data_file=../dataset/valid_sampled.txt \
-    --test_data_file=../dataset/test_sampled.txt \
+    --model_name_or_path microsoft/codebert-base \
+    --tokenizer_name roberta-base \
+    --base_model microsoft/codebert-base-mlm \
+    --train_data_file ../dataset/train_sampled.txt \
+    --eval_data_file ../dataset/valid_sampled.txt \
+    --test_data_file ../dataset/test_sampled.txt \
     --block_size 512 \
     --eval_batch_size 32 \
     --seed 123456 2>&1| tee attack.log
+
+    CUDA_VISIBLE_DEVICES=1 python attack.py --output_dir ./saved_models --model_type roberta --config_name microsoft/codebert-base --csv_store_path ./attack_base_result.csv --model_name_or_path microsoft/codebert-base --tokenizer_name roberta-base --base_model microsoft/codebert-base-mlm --train_data_file ../dataset/train_sampled.txt --eval_data_file ../dataset/valid_sampled_0_500.txt --test_data_file ../dataset/test_sampled.txt --block_size 512 --eval_batch_size 32 --seed 123456 2>&1 | tee attack.log 将标准错误重定向到标准输出并用|传递给tee命令
+
     """
     ## Required parameters
     parser.add_argument("--train_data_file", default=None, type=str, required=True,
@@ -126,10 +129,15 @@ def main():
     # Set seed
     set_seed(args.seed)
 
+    """
+    从上次保存的检查点恢复训练的状态，并加载预训练模型进行微调
+    """
     args.start_epoch = 0
     args.start_step = 0
+    # 检查是否有保存的检查点，并恢复训练状态
     checkpoint_last = os.path.join(args.output_dir, 'checkpoint-last')
     if os.path.exists(checkpoint_last) and os.listdir(checkpoint_last):
+        # 恢复训练状态
         args.model_name_or_path = os.path.join(checkpoint_last, 'pytorch_model.bin')
         args.config_name = os.path.join(checkpoint_last, 'config.json')
         idx_file = os.path.join(checkpoint_last, 'idx_file.txt')
@@ -150,9 +158,11 @@ def main():
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
                                                 do_lower_case=False,
                                                 cache_dir=args.cache_dir if args.cache_dir else None)
+    # 设置了 block_size，即输入文本的最大长度
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len_single_sentence  # Our input block size will be the max possible for the model
     args.block_size = min(args.block_size, tokenizer.max_len_single_sentence)
+    # 加载预训练的模型
     if args.model_name_or_path:
         model = model_class.from_pretrained(args.model_name_or_path,
                                             from_tf=bool('.ckpt' in args.model_name_or_path),
@@ -161,12 +171,16 @@ def main():
     else:
         model = model_class(config)
 
+    # 包装,将模型、配置、分词器和参数包装在一个自定义的 Model 类中
     model=Model(model,config,tokenizer,args)
 
-
+    # 加载模型检查点（最佳模型）
     checkpoint_prefix = 'checkpoint-best-f1/model.bin'
     output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-    model.load_state_dict(torch.load(output_dir))
+    print(f"Loading model from {output_dir}")
+    # 加载 state_dict 时使用 strict=False，当前模型定义中不存在 encoder.embeddings.position_ids 这个键，现在Transforms的版本过高
+    # model.load_state_dict(torch.load(output_dir))
+    model.load_state_dict(torch.load(output_dir), strict=False)
     model.to(args.device)
 
 
@@ -177,13 +191,17 @@ def main():
 
     ## Load tensor features
     eval_dataset = TextDataset(tokenizer, args, args.eval_data_file)
-    ## Load code pairs
+    ## Load code pairs 通过eval_data_file得到代码对
     source_codes = get_code_pairs(args.eval_data_file)
 
+    # 根军eval_data_file得到substitutes postfix=valid_sampled_0_500
     postfix = args.eval_data_file.split('/')[-1].split('.txt')[0].split("_")
     folder = '/'.join(args.eval_data_file.split('/')[:-1]) # 得到文件目录
-    subs_path = os.path.join(folder, 'test_subs_{}_{}.jsonl'.format(
-                                    postfix[-2], postfix[-1]))
+    # subs_path = os.path.join(folder, 'test_subs_{}_{}.jsonl'.format(
+    #                                 postfix[-2], postfix[-1]))
+    # TODO 这里先进行部分的测试
+    subs_path = os.path.join(folder, '{}_subs_{}_{}.jsonl'.format(
+                                    postfix[0], postfix[2],postfix[3]))
     substitutes = []
     with open(subs_path) as f:
         for line in f:
@@ -202,8 +220,10 @@ def main():
     query_times = 0
     for index, example in enumerate(eval_dataset):
         example_start_time = time.time()
+        # 代码对和对应的替换
         code_pair = source_codes[index]
         substitute = substitutes[index]
+        # 先使用贪婪算法
         code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words = attacker.greedy_attack(example,  substitute, code_pair)
         attack_type = "Greedy"
         if is_success == -1 and args.use_ga:
