@@ -67,7 +67,7 @@ def main():
     --eval_batch_size 32 \
     --seed 123456 2>&1| tee attack.log
 
-    CUDA_VISIBLE_DEVICES=1 python attack.py --output_dir ./saved_models --model_type roberta --config_name microsoft/codebert-base --csv_store_path ./attack_base_result.csv --model_name_or_path microsoft/codebert-base --tokenizer_name roberta-base --base_model microsoft/codebert-base-mlm --train_data_file ../dataset/train_sampled.txt --eval_data_file ../dataset/valid_sampled_0_500.txt --test_data_file ../dataset/test_sampled.txt --block_size 512 --eval_batch_size 32 --seed 123456 2>&1 | tee attack.log 将标准错误重定向到标准输出并用|传递给tee命令
+    CUDA_VISIBLE_DEVICES=1 python attack.py --output_dir ./saved_models --model_type roberta --config_name microsoft/codebert-base --csv_store_path ./attack_base_result.csv --model_name_or_path microsoft/codebert-base --tokenizer_name roberta-base --base_model microsoft/codebert-base-mlm --train_data_file ../dataset/train_sampled.txt --eval_data_file ../dataset/valid_sampled_0_500.txt --test_data_file ../dataset/test_sampled.txt --block_size 512 --eval_batch_size 32 --seed 123456 2>&1 | tee attackTest.log 将标准错误重定向到标准输出并用|传递给tee命令
 
     """
     ## Required parameters
@@ -219,13 +219,18 @@ def main():
     start_time = time.time()
     query_times = 0
     for index, example in enumerate(eval_dataset):
+        # TODO 测试用
+        print("Attack example: {}".format(example))
         example_start_time = time.time()
         # 代码对和对应的替换
         code_pair = source_codes[index]
         substitute = substitutes[index]
+        # TODO 测试用
+        print("code_pair: {}\nsubstitute:{}, ".format(source_codes[index], substitutes[index]))
         # 先使用贪婪算法
         code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words = attacker.greedy_attack(example,  substitute, code_pair)
         attack_type = "Greedy"
+        print(f"greedy_attack: code: {code}, prog_length: {prog_length}, adv_code: {adv_code}, true_label: {true_label}, orig_label: {orig_label}, temp_label: {temp_label}, is_success: {is_success}, variable_names: {variable_names}, names_to_importance_score: {names_to_importance_score}, nb_changed_var: {nb_changed_var}, nb_changed_pos: {nb_changed_pos}, replaced_words: {replaced_words}")
         if is_success == -1 and args.use_ga:
             # 如果不成功，则使用gi_attack
             code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words = attacker.ga_attack(example, substitute, code, initial_replace=replaced_words)
@@ -248,7 +253,8 @@ def main():
         print("Query times in this attack: ", model.query - query_times)
         print("All Query times: ", model.query)
 
-        recoder.write(index, code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, score_info, nb_changed_var, nb_changed_pos, replace_info, attack_type, model.query - query_times, example_end_time)
+        # TODO 测试时不写入csv
+        # recoder.write(index, code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, score_info, nb_changed_var, nb_changed_pos, replace_info, attack_type, model.query - query_times, example_end_time)
         
         query_times = model.query
 
@@ -265,6 +271,8 @@ def main():
         print("Total count: ", total_cnt)
         print("Index: ", index)
         print()
+        # TODO 先测试一次循环
+        break
 
 
 if __name__ == '__main__':

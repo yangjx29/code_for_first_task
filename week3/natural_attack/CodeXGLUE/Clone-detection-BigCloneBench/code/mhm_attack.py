@@ -39,7 +39,27 @@ if __name__ == "__main__":
     # import tree as Tree
     # from dataset import Dataset, POJ104_SEQ
     # from lstm_classifier import LSTMEncoder, LSTMClassifier
+    """
+    CUDA_VISIBLE_DEVICES=0 python mhm_attack.py \
+    --output_dir=./saved_models \
+    --model_type=roberta \
+    --tokenizer_name=microsoft/codebert-base \
+    --model_name_or_path=microsoft/codebert-base \
+    --csv_store_path ./attack_original_mhm.csv \
+    --original \
+    --base_model=microsoft/codebert-base-mlm \
+    --train_data_file=../dataset/train_sampled.txt \
+    --eval_data_file=../dataset/valid_sampled.txt \
+    --test_data_file=../dataset/test_sampled.txt \
+    --block_size 512 \
+    --eval_batch_size 64 \
+    --seed 123456  2>&1 | tee attack_original_mhm.log
     
+    CUDA_VISIBLE_DEVICES=0 python mhm_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --csv_store_path ./attack_original_mhm.csv --original --base_model=microsoft/codebert-base-mlm --train_data_file=../dataset/train_sampled.txt --eval_data_file=../dataset/valid_sampled.txt --test_data_file=../dataset/test_sampled.txt --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee attack_original_mhm_test.log
+
+    CUDA_VISIBLE_DEVICES=0 python mhm_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --csv_store_path ./attack_mhm.csv --base_model=microsoft/codebert-base-mlm --train_data_file=../dataset/train_sampled.txt --eval_data_file=../dataset/valid_sampled_0_500.txt --test_data_file=../dataset/test_sampled.txt --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee attack_mhm_test.log
+
+    """
     parser = argparse.ArgumentParser()
 
     ## Required parameters
@@ -143,7 +163,8 @@ if __name__ == "__main__":
 
     checkpoint_prefix = 'checkpoint-best-f1/model.bin'
     output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-    model.load_state_dict(torch.load(output_dir))
+    # model.load_state_dict(torch.load(output_dir))
+    model.load_state_dict(torch.load(output_dir), strict=False)
     model.to(args.device)
     print ("MODEL LOADED!")
     codebert_mlm.to('cuda')
@@ -209,7 +230,8 @@ if __name__ == "__main__":
             _res = attacker.mcmc(example, substitute, tokenizer, code_pair,
                              _label=ground_truth, _n_candi=30,
                              _max_iter=10, _prob_threshold=1)
-    
+
+        print(f"Example {index} attack result: {_res}")
         if _res['succ'] is None:
             continue
         if _res['succ'] == True:
@@ -230,4 +252,6 @@ if __name__ == "__main__":
 
         recoder.writemhm(index, "CODE1: "+ code_pair[2].replace("\n", " ")+" ||CODE2: "+ code_pair[3].replace("\n", " "), _res["prog_length"], " ".join(_res['tokens']), ground_truth, _res["orig_label"], _res["new_pred"], _res["is_success"], _res["old_uid"], _res["score_info"], _res["nb_changed_var"], _res["nb_changed_pos"], _res["replace_info"], _res["attack_type"], model.query - query_times, time_cost)
         query_times = model.query
+        # TODO 测试一次
+        # break
 

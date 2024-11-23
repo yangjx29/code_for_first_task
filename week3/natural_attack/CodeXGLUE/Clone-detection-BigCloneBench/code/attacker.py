@@ -161,6 +161,7 @@ class Attacker():
         fitness_values = []
         base_chromesome = {word: word for word in variable_substitue_dict.keys()}
         population = [base_chromesome]
+        print(f"population: {population}")
         # 关于chromesome的定义: {tgt_word: candidate, tgt_word_2: candidate_2, ...}
         for tgt_word in variable_substitue_dict.keys():
             # 这里进行初始化
@@ -205,6 +206,7 @@ class Attacker():
                     if gap > most_gap:
                         most_gap = gap
                         _the_best_candidate = index
+                # 若没找到更好的candidate, 则保持原样
                 if _the_best_candidate == -1:
                     initial_candidate = tgt_word
                 else:
@@ -215,9 +217,12 @@ class Attacker():
             temp_chromesome = copy.deepcopy(base_chromesome)
             temp_chromesome[tgt_word] = initial_candidate
             population.append(temp_chromesome)
+            print(f"替换之后的population: {population}")
             # 计算适应度分数
             temp_fitness, temp_label = compute_fitness(temp_chromesome, words_2, self.model_tgt, self.tokenizer_tgt, max(orig_prob), orig_label, true_label ,code_1, names_positions_dict, self.args)
+            
             fitness_values.append(temp_fitness)
+            print(f"fitness_values: {fitness_values}")
 
         # 交叉率
         cross_probability = 0.7
@@ -232,6 +237,7 @@ class Attacker():
                 # 随机选择两个进行crossover或者mutate
                 chromesome_1, index_1, chromesome_2, index_2 = select_parents(population)
                 if p < cross_probability: # 进行crossover
+                    # 如果选到相同的则先进行变异
                     if chromesome_1 == chromesome_2:
                         child_1 = mutate(chromesome_1, variable_substitue_dict)
                         continue
@@ -240,7 +246,9 @@ class Attacker():
                         child_1 = mutate(chromesome_1, variable_substitue_dict)
                 else: # 进行mutates
                     child_1 = mutate(chromesome_1, variable_substitue_dict)
+
                 _temp_mutants.append(child_1)
+                print(f"一次交叉或者变异之后_temp_mutants: {_temp_mutants}")
             
             # compute fitness in batch
             feature_list = []
@@ -263,13 +271,16 @@ class Attacker():
             mutate_fitness_values = []
             for index, logits in enumerate(mutate_logits):
                 if mutate_preds[index] != orig_label:
+                    # 成功攻击
                     adv_code = map_chromesome(_temp_mutants[index], code_1, "java")
+                    print(f"成功攻击 adv_code: {adv_code}\n _temp_mutants[index]: {_temp_mutants[index]}")
                     for old_word in _temp_mutants[index].keys():
                         if old_word == _temp_mutants[index][old_word]:
                             nb_changed_var += 1
                             nb_changed_pos += len(names_positions_dict[old_word])
 
                     return code, prog_length, adv_code, true_label, orig_label, mutate_preds[index], 1, variable_names, None, nb_changed_var, nb_changed_pos, _temp_mutants[index]
+                # 没有攻击成功,计算最大适应度并替换
                 _tmp_fitness = max(orig_prob) - logits[orig_label]
                 mutate_fitness_values.append(_tmp_fitness)
             
@@ -281,7 +292,7 @@ class Attacker():
                     min_index = fitness_values.index(min_value)
                     population[min_index] = _temp_mutants[index]
                     fitness_values[min_index] = fitness_value
-
+            print(f"没有攻击成功 fitness_values: {fitness_values}, adv_code: {adv_code}")
         return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, nb_changed_var, nb_changed_pos, None
         
 
@@ -319,6 +330,8 @@ class Attacker():
         adv_code = ''
         temp_label = None
 
+        # TODO 测试 current_prob: 0.9986662864685059, logits: [[0.9986663  0.00133374]], preds: [0]
+        print(f"true_label: {true_label}, orig_label: {orig_label}, current_prob: {current_prob}, logits: {logits}, preds: {preds}")
 
         # When do attack, we only attack the first code snippet
         identifiers, code_tokens = get_identifiers(code_1, 'java') # 只得到code_1中的identifier
@@ -363,6 +376,8 @@ class Attacker():
         if importance_score is None:
             return code, prog_length, adv_code, true_label, orig_label, temp_label, -3, variable_names, None, None, None, None
 
+        # TODO 测试
+        print(f"importance_score: {importance_score}, replace_token_positions: {replace_token_positions}, names_positions_dict: {names_positions_dict}")
 
         token_pos_to_score_pos = {}
 
@@ -381,8 +396,12 @@ class Attacker():
             
             names_to_importance_score[name] = total_score
 
+        # sorted_list_of_names存的是每个变量的importance_score之和的降序排列
         sorted_list_of_names = sorted(names_to_importance_score.items(), key=lambda x: x[1], reverse=True)
         # 根据importance_score进行排序
+
+        # TODO 测试
+        print(f"sorted_list_of_names: {sorted_list_of_names}")
 
         final_code = copy.deepcopy(code_1)
         
@@ -411,6 +430,7 @@ class Attacker():
                 temp_replace = get_example(final_code, tgt_word, substitute, "java")
                 temp_replace = " ".join(temp_replace.split())
                 temp_replace = self.tokenizer_tgt.tokenize(temp_replace)
+                print(f"temp_replace: {temp_replace}")
                 # 需要将几个位置都替换成sustitue_
                 new_feature = convert_examples_to_features(temp_replace, 
                                                         words_2,
@@ -433,12 +453,14 @@ class Attacker():
                 if temp_label != orig_label:
                     # 如果label改变了，说明这个mutant攻击成功
                     is_success = 1
+                    # 已经修改的变量数量和位置数量
                     nb_changed_var += 1
                     nb_changed_pos += len(names_positions_dict[tgt_word])
                     candidate = substitute_list[index]
                     replaced_words[tgt_word] = candidate
                     
                     adv_code = get_example(final_code, tgt_word, candidate, "java")
+                    print(f"adv_code: {adv_code}")
                     print("%s SUC! %s => %s (%.5f => %.5f)" % \
                         ('>>', tgt_word, candidate,
                         current_prob,
@@ -451,7 +473,7 @@ class Attacker():
                     if gap > most_gap:
                         most_gap = gap
                         candidate = substitute_list[index]
-        
+            # 如果一直没有攻击成功
             if most_gap > 0:
 
                 nb_changed_var += 1
@@ -518,7 +540,9 @@ class MHM_Attacker():
             return {'succ': None, 'tokens': None, 'raw_tokens': None}
 
         raw_tokens = copy.deepcopy(words)
+        print(f"raw_tokens: {raw_tokens}")
 
+        # uid: {tgt_word: [position1, position2, ...]}
         uid = get_identifier_posistions_from_code(words, variable_names)
 
         if len(uid) <= 0: # 是有可能存在找不到变量名的情况的.
@@ -527,6 +551,7 @@ class MHM_Attacker():
         
         variable_substitue_dict = {}
         for tgt_word in uid.keys():
+            # 找到对应变量的替换
             variable_substitue_dict[tgt_word] = substituions[tgt_word]
         
         old_uids = {}
