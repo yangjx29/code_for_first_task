@@ -1,3 +1,5 @@
-week3/clone_attack/TextLSTM/dataset
-week3/natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/saved_models
-week3/natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/parser/tree*
+clone_attack/TextLSTM/dataset
+natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/saved_models
+natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/parser/tree*
+natural_attack/CodeXGLUE/Defect-detection/preprocess/tree*
+natural_attack/python_parser/parser_folder/tree*
