@@ -7,3 +7,8 @@ natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/function.json
 natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/function.jsonl
 natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/function.json
 natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/function.jsonl
+natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/cached*
+natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/cached*
+natural_attack/CodeT5/Defect-detection/preprocess/dataset
+natural_attack/CodeXGLUE/Defect-detection/code/saved_models
+natural_attack/CodeT5/Defect-detection/preprocess/tree*
