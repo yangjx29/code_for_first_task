@@ -587,7 +587,8 @@ def main():
             checkpoint_prefix = 'checkpoint-best-acc/model.bin'
             output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
             # TODO 这里加载微调的数据,先使用原始的CodeBert进行测试
-            # model.load_state_dict(torch.load(output_dir))                  
+            # transformers 4.46.3 -> 4.30.2 否则有版本问题         
+            model.load_state_dict(torch.load(output_dir))                  
             model.to(args.device)
             result=test(args, model, tokenizer)
             logger.info("***** Test results *****")
@@ -600,6 +601,8 @@ def main():
 if __name__ == "__main__":
     """
     CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.json --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
+
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.jsonl --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithFinetuning.log
 
     """
     main()
