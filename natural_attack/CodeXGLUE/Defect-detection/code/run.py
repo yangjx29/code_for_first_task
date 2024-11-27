@@ -56,6 +56,7 @@ from transformers import (WEIGHTS_NAME, AdamW, get_linear_schedule_with_warmup,
                           OpenAIGPTConfig, OpenAIGPTLMHeadModel, OpenAIGPTTokenizer,
                           RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer,
                           DistilBertConfig, DistilBertForMaskedLM, DistilBertTokenizer)
+from torch.nn import CrossEntropyLoss
 
 logger = logging.getLogger(__name__)
 
@@ -343,17 +344,31 @@ def test(args, model, tokenizer):
     model.eval()
     logits=[]   
     labels=[]
+    # 初始化损失函数
+    loss_fn = CrossEntropyLoss()
     for batch in tqdm(eval_dataloader,total=len(eval_dataloader)):
-        inputs = batch[0].to(args.device)        
+        # batch[0] 是输入数据（比如文本或特征），batch[1] 是对应的标签
+        inputs = batch[0].to(args.device)
         label=batch[1].to(args.device) 
+        # print(f"inputs: {inputs}\n label: {label}\n") 
         with torch.no_grad():
             logit = model(inputs)
+
+            # TODO 计算当前批次的损失
+            # loss = loss_fn(logit, label)  # 计算损失
+            # print(f"logit: {logit}")
+            # eval_loss += loss.item()  # 累加损失值
+
             logits.append(logit.cpu().numpy())
-            labels.append(label.cpu().numpy())
+            labels.append(label.cpu().numpy()) 
         nb_eval_steps += 1
+    # 得到一个完整的预测值数组和一个完整的标签数组。
     logits=np.concatenate(logits,0)
     labels=np.concatenate(labels,0)
+    print(f"logits: {logits}\n labels: {labels}\n")
+    # 选择每个样本的第一个 logits 值 (logits[:, 0])，并将其与 0.5 比较，进行二分类预测
     preds=logits[:,0]>0.5
+    print(f"preds: {preds}\n")
     eval_acc=np.mean(labels==preds)
     eval_loss = eval_loss / nb_eval_steps
     perplexity = torch.tensor(eval_loss)
@@ -571,7 +586,8 @@ def main():
     if args.do_test and args.local_rank in [-1, 0]:
             checkpoint_prefix = 'checkpoint-best-acc/model.bin'
             output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-            model.load_state_dict(torch.load(output_dir))                  
+            # TODO 这里加载微调的数据,先使用原始的CodeBert进行测试
+            # model.load_state_dict(torch.load(output_dir))                  
             model.to(args.device)
             result=test(args, model, tokenizer)
             logger.info("***** Test results *****")
@@ -582,6 +598,10 @@ def main():
 
 
 if __name__ == "__main__":
+    """
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.json --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
+
+    """
     main()
 
 

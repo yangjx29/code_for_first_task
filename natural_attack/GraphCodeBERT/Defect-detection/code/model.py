@@ -24,14 +24,20 @@ class Model(nn.Module):
     def forward(self, inputs_ids=None, attn_mask=None, position_idx=None, labels = None):
         #embedding
         
+        # 根据 position_idx 生成掩码（mask）
         nodes_mask=position_idx.eq(0)
         token_mask=position_idx.ge(2)
-    
+        # inputs_embeddings 是一个形状为 [batch_size, sequence_length, embedding_size] 的张量，表示每个 token 的嵌入向量
         inputs_embeddings=self.encoder.roberta.embeddings.word_embeddings(inputs_ids)
+        # 构造一个新的掩码 nodes_to_token_mask，用于在后续处理中选择性地加权不同位置的嵌入
         nodes_to_token_mask=nodes_mask[:,:,None]&token_mask[:,None,:]&attn_mask
+        # 归一化处理，确保每一行的总和为 1
         nodes_to_token_mask=nodes_to_token_mask/(nodes_to_token_mask.sum(-1)+1e-10)[:,:,None]
         avg_embeddings=torch.einsum("abc,acd->abd",nodes_to_token_mask,inputs_embeddings)
+        # 将图节点的嵌入与普通 token 的嵌入合并
         inputs_embeddings=inputs_embeddings*(~nodes_mask)[:,:,None]+avg_embeddings*nodes_mask[:,:,None]    
+        # print(f"inputs_embeddings.shape: {inputs_embeddings.shape}\n attn_mask.shape: {attn_mask.shape} \nposition_idx.shape: {position_idx.shape}\n")
+        # print(f"Embedding layer weight shape: {self.encoder.roberta.embeddings.weight.shape}")
         outputs = self.encoder(inputs_embeds=inputs_embeddings,attention_mask=attn_mask,position_ids=position_idx)[0]
 
         logits=outputs

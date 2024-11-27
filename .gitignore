@@ -3,3 +3,7 @@ natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/saved_models
 natural_attack/CodeXGLUE/Clone-detection-BigCloneBench/code/parser/tree*
 natural_attack/CodeXGLUE/Defect-detection/preprocess/tree*
 natural_attack/python_parser/parser_folder/tree*
+natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/function.json
+natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/function.jsonl
+natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/function.json
+natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/function.jsonl

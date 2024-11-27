@@ -159,30 +159,47 @@ class TextDataset(Dataset):
         return len(self.examples)
 
     def __getitem__(self, item):
-        #calculate graph-guided masked function
-        attn_mask=np.zeros((self.args.code_length+self.args.data_flow_length,
-                            self.args.code_length+self.args.data_flow_length),dtype=np.bool)
-        #calculate begin index of node and max length of input
+        # calculate graph-guided masked function
+        # attn_mask=np.zeros((self.args.code_length+self.args.data_flow_length,
+        #                     self.args.code_length+self.args.data_flow_length),dtype=np.bool)
         
+        # To avoid this error in existing code, use `bool` by itself
+        attn_mask=np.zeros((self.args.code_length+self.args.data_flow_length,
+                            self.args.code_length+self.args.data_flow_length),dtype=bool)
+        
+        """
+        TODO 解决RuntimeError: The expanded size of the tensor (640) must match the existing size (514) at non-singleton dimension 1.  Target sizes: [64, 640].  Tensor sizes: [1, 514]
+        https://github.com/microsoft/CodeBERT/issues/73
+        """
+        # ==============================================================
+        # 获取序列长度（即 input_ids 的长度）
+        # seq_length = len(self.examples[item].input_ids)
+        # 创建一个形状为 [seq_length, seq_length] 的 attn_mask
+        # attn_mask = np.zeros((seq_length, seq_length), dtype=bool)
+        # ==============================================================
+
+        #calculate begin index of node and max length of input
+        # 获取节点的起始位置和最大长度
         node_index=sum([i>1 for i in self.examples[item].position_idx])
         max_length=sum([i!=1 for i in self.examples[item].position_idx])
-        #sequence can attend to sequence
+        #sequence can attend to sequence(自注意力机制)
         attn_mask[:node_index,:node_index]=True
-        #special tokens attend to all tokens
+        #special tokens attend to all tokens 特殊 token 可以注意到所有的 token
         for idx,i in enumerate(self.examples[item].input_ids):
-            if i in [0,2]:
+            if i in [0,2]:  # 通常是 [CLS] 和 [SEP] 等特殊 token
                 attn_mask[idx,:max_length]=True
-        #nodes attend to code tokens that are identified from
+        #nodes attend to code tokens that are identified from 节点可以注意到代码 token（从 DFG 到代码的映射）
         for idx,(a,b) in enumerate(self.examples[item].dfg_to_code):
             if a<node_index and b<node_index:
                 attn_mask[idx+node_index,a:b]=True
                 attn_mask[a:b,idx+node_index]=True
-        #nodes attend to adjacent nodes 
+        #nodes attend to adjacent nodes 节点可以注意到邻接节点（从 DFG 到 DFG 的映射）
         for idx,nodes in enumerate(self.examples[item].dfg_to_dfg):
             for a in nodes:
                 if a+node_index<len(self.examples[item].position_idx):
                     attn_mask[idx+node_index,a+node_index]=True
-              
+        # 确保返回的 attn_mask 是正确的形状
+        # print(f"attn_mask shape11111: {attn_mask.shape}")
         return (torch.tensor(self.examples[item].input_ids),
               torch.tensor(attn_mask),
               torch.tensor(self.examples[item].position_idx),
@@ -367,6 +384,8 @@ def evaluate(args, model, tokenizer,eval_when_training=False):
         attn_mask = batch[1].to(args.device) 
         position_idx = batch[2].to(args.device) 
         label=batch[3].to(args.device) 
+        # print(f"inputs_ids: {inputs_ids}\n attn_mask: {attn_mask} \n position_idx: {position_idx}\n  label: {label}")
+        # print(f"inputs_ids shape: {inputs_ids.shape}\n attn_mask shape: {attn_mask.shape} \n position_idx shape: {position_idx.shape}\n  label shape: {label.shape}")
         # 这里需要一些不同的东西.
         with torch.no_grad():
             lm_loss,logit = model(inputs_ids, attn_mask, position_idx, label)
@@ -530,7 +549,7 @@ def main():
     parser.add_argument('--server_port', type=str, default='', help="For distant debugging.")
 
 
-    
+    # TODO 模型的max_position_embeddings(输入序列最大长度)是512,所以需要控制data_flow_length+code_length的长度之和小于它,或者手动调整模型的max_position_embeddings
 
     args = parser.parse_args()
 
@@ -591,6 +610,8 @@ def main():
     config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
                                           cache_dir=args.cache_dir if args.cache_dir else None)
     config.num_labels=1
+    # TODO 解决索引超出范围的问题
+    # config.max_position_embeddings=args.code_length+args.data_flow_length
     tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
                                                 do_lower_case=args.do_lower_case,
                                                 cache_dir=args.cache_dir if args.cache_dir else None)
@@ -627,7 +648,7 @@ def main():
     if args.do_eval and args.local_rank in [-1, 0]:
             checkpoint_prefix = 'checkpoint-best-acc/model.bin'
             output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-            model.load_state_dict(torch.load(output_dir))      
+            # model.load_state_dict(torch.load(output_dir))      
             model.to(args.device)
             result=evaluate(args, model, tokenizer)
             logger.info("***** Eval results *****")
@@ -637,7 +658,7 @@ def main():
     if args.do_test and args.local_rank in [-1, 0]:
             checkpoint_prefix = 'checkpoint-best-acc/model.bin'
             output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-            model.load_state_dict(torch.load(output_dir))                  
+            # model.load_state_dict(torch.load(output_dir))                  
             model.to(args.device)
             test(args, model, tokenizer)
 
@@ -645,6 +666,10 @@ def main():
 
 
 if __name__ == "__main__":
+    """
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=roberta --config_name=microsoft/graphcodebert-base --tokenizer_name=microsoft/graphcodebert-base --model_name_or_path=microsoft/graphcodebert-base --do_eval --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.jsonl --epoch 5 --code_length 512 --data_flow_length 128 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
+
+    """
     main()
 
 
