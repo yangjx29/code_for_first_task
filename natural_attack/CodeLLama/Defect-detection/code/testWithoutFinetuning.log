@@ -1,0 +1,1239 @@
+11/29/2024 16:20:21 - WARNING - __main__ -   Process rank: -1, device: cuda, n_gpu: 2, distributed training: False, 16-bits training: False
+tokenizer.pad_token_id: 0
+tokenizer.bos_token_id: 1
+tokenizer.eos_token_id: 2
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.23it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.12it/s]
+Some weights of LlamaForSequenceClassification were not initialized from the model checkpoint at codellama/CodeLlama-7b-hf and are newly initialized: ['score.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+11/29/2024 16:20:29 - INFO - __main__ -   Loading features from cached file ../preprocess/dataset/codellama_cached_valid
+11/29/2024 16:20:29 - INFO - __main__ -   Training/evaluation/Test parameters Namespace(train_data_file='../preprocess/dataset/train.jsonl', output_dir='./saved_models', eval_data_file='../preprocess/dataset/valid.jsonl', test_data_file='../preprocess/dataset/function.jsonl', model_type='codellama', model_name_or_path='codellama/CodeLlama-7b-hf', mlm=False, mlm_probability=0.15, config_name='', tokenizer_name='codellama/CodeLlama-7b-hf', cache_dir='', block_size=512, do_train=False, do_eval=False, do_test=True, evaluate_during_training=True, do_lower_case=False, train_batch_size=32, eval_batch_size=64, gradient_accumulation_steps=1, learning_rate=2e-05, weight_decay=0.0, adam_epsilon=1e-08, max_grad_norm=1.0, num_train_epochs=1.0, max_steps=-1, warmup_steps=0, logging_steps=50, save_steps=50, save_total_limit=None, eval_all_checkpoints=False, no_cuda=False, overwrite_output_dir=False, overwrite_cache=False, seed=123456, epoch=5, fp16=False, fp16_opt_level='O1', local_rank=-1, server_ip='', server_port='', n_gpu=2, device=device(type='cuda'), per_gpu_train_batch_size=16, per_gpu_eval_batch_size=32, start_epoch=0, start_step=0)
+11/29/2024 16:21:13 - INFO - __main__ -   Loading features from cached file ../preprocess/dataset/codellama_cached_function
+11/29/2024 16:21:13 - INFO - __main__ -   ***** Running Test *****
+11/29/2024 16:21:13 - INFO - __main__ -     Num examples = 27318
+11/29/2024 16:21:13 - INFO - __main__ -     Batch size = 64
+model.config.pad_token_id: 0
+ model.config.pad_token: <unk>
+
+
+ here cached_features_file:  ../preprocess/dataset/codellama_cached_valid
+run def test
+
+ here cached_features_file:  ../preprocess/dataset/codellama_cached_function
+  0%|          | 0/427 [00:00<?, ?it/s]/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py:79: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.device(device), torch.cuda.stream(stream), autocast(enabled=autocast_enabled):
+/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py:538: UserWarning: Using a target size (torch.Size([32, 512])) that is different to the input size (torch.Size([32])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+  0%|          | 1/427 [00:24<2:53:17, 24.41s/it]  0%|          | 2/427 [00:27<1:22:19, 11.62s/it]input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  1%|          | 3/427 [01:06<2:51:47, 24.31s/it]  1%|          | 4/427 [01:26<2:39:39, 22.65s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  1%|          | 5/427 [01:47<2:35:28, 22.11s/it]  1%|▏         | 6/427 [02:07<2:29:14, 21.27s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  2%|▏         | 7/427 [02:28<2:27:51, 21.12s/it]  2%|▏         | 8/427 [02:47<2:23:41, 20.58s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  2%|▏         | 9/427 [03:08<2:23:43, 20.63s/it]  2%|▏         | 10/427 [03:27<2:21:13, 20.32s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  3%|▎         | 11/427 [03:49<2:23:03, 20.63s/it]  3%|▎         | 12/427 [04:08<2:20:29, 20.31s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  3%|▎         | 13/427 [04:29<2:21:33, 20.52s/it]  3%|▎         | 14/427 [04:49<2:19:04, 20.20s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  4%|▎         | 15/427 [05:10<2:20:30, 20.46s/it]  4%|▎         | 16/427 [05:30<2:19:01, 20.29s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  4%|▍         | 17/427 [05:51<2:19:46, 20.46s/it]  4%|▍         | 18/427 [06:10<2:16:42, 20.06s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  4%|▍         | 19/427 [06:30<2:16:35, 20.09s/it]  5%|▍         | 20/427 [06:50<2:15:16, 19.94s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  5%|▍         | 21/427 [07:10<2:16:11, 20.13s/it]  5%|▌         | 22/427 [07:30<2:14:57, 19.99s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  5%|▌         | 23/427 [07:50<2:14:32, 19.98s/it]  6%|▌         | 24/427 [08:09<2:13:17, 19.84s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  6%|▌         | 25/427 [08:29<2:13:31, 19.93s/it]  6%|▌         | 26/427 [08:49<2:12:21, 19.80s/it]Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+Error occurred during model inference: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/parallel/parallel_apply.py", line 83, in _worker
+    output = module(*input, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/code_for_first_task/natural_attack/CodeLLama/Defect-detection/code/model.py", line 110, in forward
+    outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/models/llama/modeling_llama.py", line 1323, in forward
+    loss = self.loss_function(logits=logits, labels=labels, pooled_logits=pooled_logits, config=self.config)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/transformers/loss/loss_utils.py", line 63, in ForSequenceClassificationLoss
+    loss = loss_fct(pooled_logits.squeeze(), labels.squeeze())
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/modules/loss.py", line 538, in forward
+    return F.mse_loss(input, target, reduction=self.reduction)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/nn/functional.py", line 3383, in mse_loss
+    expanded_input, expanded_target = torch.broadcast_tensors(input, target)
+  File "/data/yjx/cache/conda/envs/week1/lib/python3.9/site-packages/torch/functional.py", line 77, in broadcast_tensors
+    return _VF.broadcast_tensors(tensors)  # type: ignore[attr-defined]
+RuntimeError: The size of tensor a (32) must match the size of tensor b (512) at non-singleton dimension 1
+, skip batch
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+input_ids shape: torch.Size([32, 512])
+
+labels is None
+
+attention_mask shape: torch.Size([32, 512])
+
+in modeling_laama hidden_states.shape: torch.Size([32, 512, 4096])
+input_ids shape: torch.Size([32, 512])
+in modeling_laama labels.shape: torch.Size([32, 512]), logits.shape: torch.Size([32, 512, 1])
+ logits.shape != labels.shape, 进行squeeze后, logits.shape: torch.Size([32, 512])
+  6%|▋         | 27/427 [09:09<2:13:25, 20.01s/it]  7%|▋         | 28/427 [09:29<2:12:00, 19.85s/it]

@@ -13,3 +13,6 @@ natural_attack/CodeT5/Defect-detection/preprocess/dataset
 natural_attack/CodeXGLUE/Defect-detection/code/saved_models
 natural_attack/CodeT5/Defect-detection/preprocess/tree*
 natural_attack/GraphCodeBERT/Defect-detection/code/saved_models
+natural_attack/CodeLLama/Defect-detection/preprocess/dataset
+natural_attack/CodeLLama/Defect-detection/code/saved_models
+natural_attack/CodeLLama/Defect-detection/preprocess/tree*
