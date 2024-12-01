@@ -182,7 +182,16 @@ class CodeT5TextDataset(Dataset):
 
 
 def train(args, train_dataset, model, tokenizer):
-    """ Train the model """ 
+    """
+    数据加载和处理：使用 DataLoader 加载训练数据。
+    优化器和学习率调度：设置 AdamW 优化器和线性学习率调度器。
+    混合精度训练：使用 Apex 加速训练。
+    分布式训练：支持多 GPU 和分布式训练。
+    损失计算与梯度更新：计算损失并进行反向传播和梯度更新。
+    日志记录与评估：定期记录训练日志和执行评估。
+    模型保存：保存最佳模型
+    Train the model 
+    """ 
     args.train_batch_size = args.per_gpu_train_batch_size * max(1, args.n_gpu)
     train_sampler = RandomSampler(train_dataset) if args.local_rank == -1 else DistributedSampler(train_dataset)
     
@@ -267,7 +276,9 @@ def train(args, train_dataset, model, tokenizer):
                     scaled_loss.backward()
                 torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
             else:
+                # 计算损失的梯度，并反向传播
                 loss.backward()
+                # 裁剪 限制梯度的最大值，以防梯度爆炸。
                 torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
 
             tr_loss += loss.item()
@@ -290,6 +301,7 @@ def train(args, train_dataset, model, tokenizer):
                     logging_loss = tr_loss
                     tr_nb=global_step
 
+                # 每隔 save_steps 步，会执行一次模型评估
                 if args.local_rank in [-1, 0] and args.save_steps > 0 and global_step % args.save_steps == 0:
                     
                     if args.local_rank == -1 and args.evaluate_during_training:  # Only evaluate when single GPU otherwise metrics may not average well
@@ -618,7 +630,7 @@ def main():
         if args.local_rank not in [-1, 0]:
             torch.distributed.barrier()  # Barrier to make sure only the first process in distributed training process the dataset, and the others will use the cache
 
-        train_dataset = TextDataset(tokenizer, args,args.train_data_file)
+        train_dataset = CodeT5TextDataset(tokenizer, args,args.train_data_file)
         if args.local_rank == 0:
             torch.distributed.barrier()
 

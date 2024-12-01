@@ -88,7 +88,8 @@ class CodeT5(nn.Module):
         self.args = args
         self.query = 0
 
-    def forward(self, input_ids=None, labels=None):
+    # 参数需要与peftModel的forward函数一致
+    def forward(self, input_ids=None, labels=None, attention_mask=None, inputs_embeds=None,output_attentions=None, output_hidden_states=None,return_dict=None):
         input_ids = input_ids.view(-1, self.args.block_size)
         attention_mask = input_ids.ne(self.tokenizer.pad_token_id)
         outputs = self.encoder(input_ids=input_ids, attention_mask=attention_mask,
