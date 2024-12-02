@@ -174,6 +174,14 @@ class CodeT5TextDataset(Dataset):
                     self.examples.append(codet5_convert_examples_to_features(js, tokenizer, args))
             torch.save(self.examples, cache_file_path)
 
+        if 'train' in file_path:
+            for idx, example in enumerate(self.examples[:3]):
+                    logger.info("*** Example ***")
+                    logger.info("idx: {}".format(idx))
+                    logger.info("label: {}".format(example.label))
+                    logger.info("input_tokens: {}".format([x.replace('\u0120','_') for x in example.input_tokens]))
+                    logger.info("input_ids: {}".format(' '.join(map(str, example.input_ids))))
+
     def __len__(self):
         return len(self.examples)
 
@@ -213,12 +221,12 @@ def train(args, train_dataset, model, tokenizer):
     optimizer = AdamW(optimizer_grouped_parameters, lr=args.learning_rate, eps=args.adam_epsilon)
     scheduler = get_linear_schedule_with_warmup(optimizer, num_warmup_steps=args.max_steps*0.1,
                                                 num_training_steps=args.max_steps)
-    if args.fp16:
-        try:
-            from apex import amp
-        except ImportError:
-            raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use fp16 training.")
-        model, optimizer = amp.initialize(model, optimizer, opt_level=args.fp16_opt_level)
+    # if args.fp16:
+    #     try:
+    #         from apex import amp
+    #     except ImportError:
+    #         raise ImportError("Please install apex from https://www.github.com/nvidia/apex to use fp16 training.")
+    #     model, optimizer = amp.initialize(model, optimizer, opt_level=args.fp16_opt_level)
 
     # multi-gpu training (should be after apex fp16 initialization)
     if args.n_gpu > 1:
@@ -271,15 +279,15 @@ def train(args, train_dataset, model, tokenizer):
             if args.gradient_accumulation_steps > 1:
                 loss = loss / args.gradient_accumulation_steps
 
-            if args.fp16:
-                with amp.scale_loss(loss, optimizer) as scaled_loss:
-                    scaled_loss.backward()
-                torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
-            else:
+            # if args.fp16:
+            #     with amp.scale_loss(loss, optimizer) as scaled_loss:
+            #         scaled_loss.backward()
+            #     torch.nn.utils.clip_grad_norm_(amp.master_params(optimizer), args.max_grad_norm)
+            # else:
                 # 计算损失的梯度，并反向传播
-                loss.backward()
-                # 裁剪 限制梯度的最大值，以防梯度爆炸。
-                torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
+            loss.backward()
+            # 裁剪 限制梯度的最大值，以防梯度爆炸。
+            torch.nn.utils.clip_grad_norm_(model.parameters(), args.max_grad_norm)
 
             tr_loss += loss.item()
             tr_num+=1
@@ -332,7 +340,7 @@ def evaluate(args, model, tokenizer,eval_when_training=False):
     # Loop to handle MNLI double evaluation (matched, mis-matched)
     eval_output_dir = args.output_dir
 
-    eval_dataset = TextDataset(tokenizer, args,args.eval_data_file)
+    eval_dataset = CodeT5TextDataset(tokenizer, args,args.eval_data_file)
 
     if not os.path.exists(eval_output_dir) and args.local_rank in [-1, 0]:
         os.makedirs(eval_output_dir)
@@ -654,7 +662,7 @@ def main():
             checkpoint_prefix = 'checkpoint-best-acc/model.bin'
             output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
             # TODO 这里加载微调的数据
-            # model.load_state_dict(torch.load(output_dir))                  
+            model.load_state_dict(torch.load(output_dir))                  
             model.to(args.device)
             result=test(args, model, tokenizer)
             logger.info("***** Test results *****")
@@ -666,9 +674,13 @@ def main():
 
 if __name__ == "__main__":
     """
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./adv_saved_models --model_type=codet5 --tokenizer_name=Salesforce/codet5-base-multi-sum --model_name_or_path=Salesforce/codet5-base-multi-sum --do_train --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/test.jsonl --epoch 5 --block_size 512 --train_batch_size 24 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee trainCodeT5.log
+
+
+
     CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.jsonl --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
 
-    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=codet5 --tokenizer_name=Salesforce/codet5-base-multi-sum --model_name_or_path=Salesforce/codet5-base-multi-sum --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.jsonl --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./adv_saved_models --model_type=codet5 --tokenizer_name=Salesforce/codet5-base-multi-sum --model_name_or_path=Salesforce/codet5-base-multi-sum --do_test --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/function.jsonl --epoch 5 --block_size 512 --train_batch_size 32 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee testWithoutFinetuning.log
 
     """
     main()

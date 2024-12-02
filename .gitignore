@@ -11,6 +11,7 @@ natural_attack/CodeXGLUE/Defect-detection/preprocess/dataset/cached*
 natural_attack/GraphCodeBERT/Defect-detection/preprocess/dataset/cached*
 natural_attack/CodeT5/Defect-detection/preprocess/dataset
 natural_attack/CodeXGLUE/Defect-detection/code/saved_models
+natural_attack/CodeXGLUE/Defect-detection/code/adv_saved_models
 natural_attack/CodeT5/Defect-detection/preprocess/tree*
 natural_attack/GraphCodeBERT/Defect-detection/code/saved_models
 natural_attack/CodeLLama/Defect-detection/preprocess/dataset
@@ -19,4 +20,5 @@ natural_attack/CodeLLama/Defect-detection/preprocess/tree*
 natural_attack/CodeT5/Defect-detection/code/finetuned_codet5_lora
 natural_attack/CodeT5/Defect-detection/code/wandb
 natural_attack/CodeT5/Defect-detection/code/saved_models
+natural_attack/CodeT5/Defect-detection/code/adv_saved_models
 natural_attack/CodeT5/Defect-detection/code/logs
