@@ -22,3 +22,4 @@ natural_attack/CodeT5/Defect-detection/code/wandb
 natural_attack/CodeT5/Defect-detection/code/saved_models
 natural_attack/CodeT5/Defect-detection/code/adv_saved_models
 natural_attack/CodeT5/Defect-detection/code/logs
+traditiondetection/dataset
