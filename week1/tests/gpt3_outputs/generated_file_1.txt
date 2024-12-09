@@ -1,8 +1,0 @@
-```python
-def add_numbers(num1, num2):
-    return num1 + num2
-
-# 调用函数计算两个数的和
-result = add_numbers(5, 3)
-print("两个数的和为:", result)
-```
