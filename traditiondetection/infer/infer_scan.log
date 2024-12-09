@@ -1,0 +1,25 @@
+正在处理代码片段:   0%|          | 0/2732 [00:00<?, ?it/s]正在处理代码片段:   1%|          | 20/2732 [00:00<00:11, 230.72it/s]
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+处理过程中出现错误: [Errno 2] No such file or directory: 'infer'
+*********result*********
+总共分析 20 个实例，其中 10 个函数存在漏洞，正确发现 0 个漏洞，20 个函数因为发生错误未分析。
+发现漏洞的准确率为 0.00%
+总体准确率为 0.00%
