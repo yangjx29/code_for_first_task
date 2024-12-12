@@ -182,6 +182,8 @@ def train(args, train_dataset, model, tokenizer):
     if os.path.exists(optimizer_last):
         optimizer.load_state_dict(torch.load(optimizer_last))
     # Train!
+    writer = SummaryWriter(log_dir='./logs')
+
     logger.info("***** Running training *****")
     logger.info("  Num examples = %d", len(train_dataset))
     logger.info("  Num Epochs = %d", args.num_train_epochs)
@@ -231,6 +233,7 @@ def train(args, train_dataset, model, tokenizer):
             avg_loss=round(train_loss/tr_num,5)
             bar.set_description("epoch {} loss {}".format(idx,avg_loss))
 
+            writer.add_scalar('Loss/train', avg_loss, global_step)
                 
             if (step + 1) % args.gradient_accumulation_steps == 0:
                 optimizer.step()
@@ -250,7 +253,9 @@ def train(args, train_dataset, model, tokenizer):
                         for key, value in results.items():
                             logger.info("  %s = %s", key, round(value,4))                    
                         # Save model checkpoint
-                        
+                    
+                    writer.add_scalar('Accuracy/eval', results['eval_acc'], global_step)
+
                     if results['eval_acc']>best_acc:
                         best_acc=results['eval_acc']
                         logger.info("  "+"*"*20)  
@@ -622,30 +627,30 @@ def main():
 
         logger.info("reload model from {}, resume from {} epoch".format(checkpoint_last, args.start_epoch))
 
-    config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
-    config = config_class.from_pretrained('../cache/Salesforce/codet5-base/')
-    config.num_labels = 1
-    tokenizer = RobertaTokenizer.from_pretrained('../cache/Salesforce/codet5-base/')
-
     # config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
-    # config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
-    #                                       cache_dir=args.cache_dir if args.cache_dir else None)
-    # config.num_labels=1
-    # tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
-    #                                             do_lower_case=args.do_lower_case,
-    #                                             cache_dir=args.cache_dir if args.cache_dir else None)
+    # config = config_class.from_pretrained('../cache/Salesforce/codet5-base/')
+    # config.num_labels = 1
+    # tokenizer = RobertaTokenizer.from_pretrained('../cache/Salesforce/codet5-base/')
+
+    config_class, model_class, tokenizer_class = MODEL_CLASSES[args.model_type]
+    config = config_class.from_pretrained(args.config_name if args.config_name else args.model_name_or_path,
+                                          cache_dir=args.cache_dir if args.cache_dir else None)
+    config.num_labels=1
+    tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name,
+                                                do_lower_case=args.do_lower_case,
+                                                cache_dir=args.cache_dir if args.cache_dir else None)
     if args.block_size <= 0:
         args.block_size = tokenizer.max_len_single_sentence  # Our input block size will be the max possible for the model
     args.block_size = min(args.block_size, tokenizer.max_len_single_sentence)
     
-    encoder = model_class.from_pretrained('../cache/Salesforce/codet5-base/') 
-    # if args.model_name_or_path:
-    #     model = model_class.from_pretrained(args.model_name_or_path,
-    #                                         from_tf=bool('.ckpt' in args.model_name_or_path),
-    #                                         config=config,
-    #                                         cache_dir=args.cache_dir if args.cache_dir else None)    
-    # else:
-    #     model = model_class(config)
+    # encoder = model_class.from_pretrained('../cache/Salesforce/codet5-base/') 
+    if args.model_name_or_path:
+        encoder = model_class.from_pretrained(args.model_name_or_path,
+                                            from_tf=bool('.ckpt' in args.model_name_or_path),
+                                            config=config,
+                                            cache_dir=args.cache_dir if args.cache_dir else None)    
+    else:
+        encoder = model_class(config)
 
     model = CodeT5(encoder,config,tokenizer,args)
     model_for_sim = CodeT5_for_sim(encoder,config,tokenizer,args)
@@ -666,7 +671,8 @@ def main():
         #---------------------------------------------------------------
         checkpoint_prefix = 'checkpoint-best-acc/model.bin'
         output_dir = os.path.join(args.output_dir, '{}'.format(checkpoint_prefix))  
-        model.load_state_dict(torch.load(output_dir))    
+        if os.path.exists(output_dir):
+            model.load_state_dict(torch.load(output_dir))    
         #---------------------------------------------------------------
 
         train(args, train_dataset, model, tokenizer)
@@ -715,3 +721,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    """
+    CUDA_VISIBLE_DEVICES=0 python run.py --output_dir=./saved_models --model_type=t5 --config_name=Salesforce/codet5-base-multi-sum --model_name_or_path=Salesforce/codet5-base-multi-sum --tokenizer_name=Salesforce/codet5-base-multi-sum --do_asr --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/test_subs_0_400.jsonl --adv_data_file=train_adv_codebert.jsonl --epoch 5 --block_size 512 --train_batch_size 24 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee asr.log
+
+    """
