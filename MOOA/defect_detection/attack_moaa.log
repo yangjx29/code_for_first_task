@@ -1,0 +1,284 @@
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at microsoft/codebert-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+12/13/2024 20:46:39 - INFO - __main__ -   Loaded victim model from ./saved_models/checkpoint-best-acc/codebert_model.bin.
+12/13/2024 20:46:40 - INFO - __main__ -   Now processing example 2619
+12/13/2024 20:46:40 - INFO - moaa -   The original code is misclassified.
+12/13/2024 20:46:40 - INFO - moaa -   ******End Attack, result=-4******
+12/13/2024 20:46:40 - INFO - __main__ -   Now processing example 456
+12/13/2024 20:46:40 - INFO - moaa -   The original code is misclassified.
+12/13/2024 20:46:40 - INFO - moaa -   ******End Attack, result=-4******
+12/13/2024 20:46:40 - INFO - __main__ -   Now processing example 102
+12/13/2024 20:46:40 - INFO - moaa -   The original code is misclassified.
+12/13/2024 20:46:40 - INFO - moaa -   ******End Attack, result=-4******
+12/13/2024 20:46:40 - INFO - __main__ -   Now processing example 1126
+12/13/2024 20:46:40 - INFO - moaa -   The original code is misclassified.
+12/13/2024 20:46:40 - INFO - moaa -   ******End Attack, result=-4******
+12/13/2024 20:46:40 - INFO - __main__ -   Now processing example 1003
+12/13/2024 20:46:40 - INFO - moaa -   max_iteration=90
+12/13/2024 20:46:40 - INFO - moaa -   ******Initialze the population******
+12/13/2024 20:47:56 - INFO - moaa -   ******Begin crossover and mutation******
+12/13/2024 20:47:56 - INFO - moaa -   =====iteration0=====
+12/13/2024 20:49:11 - INFO - moaa -   =====iteration1=====
+12/13/2024 20:50:26 - INFO - moaa -   =====iteration2=====
+12/13/2024 20:51:41 - INFO - moaa -   =====iteration3=====
+12/13/2024 20:52:57 - INFO - moaa -   =====iteration4=====
+12/13/2024 20:54:12 - INFO - moaa -   =====iteration5=====
+12/13/2024 20:55:27 - INFO - moaa -   =====iteration6=====
+12/13/2024 20:56:42 - INFO - moaa -   =====iteration7=====
+12/13/2024 20:57:57 - INFO - moaa -   =====iteration8=====
+12/13/2024 20:59:12 - INFO - moaa -   =====iteration9=====
+12/13/2024 21:00:27 - INFO - moaa -   =====iteration10=====
+12/13/2024 21:01:43 - INFO - moaa -   =====iteration11=====
+12/13/2024 21:02:58 - INFO - moaa -   =====iteration12=====
+12/13/2024 21:04:13 - INFO - moaa -   =====iteration13=====
+12/13/2024 21:05:28 - INFO - moaa -   =====iteration14=====
+12/13/2024 21:06:44 - INFO - moaa -   =====iteration15=====
+12/13/2024 21:07:59 - INFO - moaa -   =====iteration16=====
+12/13/2024 21:09:14 - INFO - moaa -   =====iteration17=====
+12/13/2024 21:10:30 - INFO - moaa -   =====iteration18=====
+12/13/2024 21:11:45 - INFO - moaa -   =====iteration19=====
+12/13/2024 21:13:02 - INFO - moaa -   =====iteration20=====
+12/13/2024 21:14:17 - INFO - moaa -   =====iteration21=====
+12/13/2024 21:15:32 - INFO - moaa -   =====iteration22=====
+12/13/2024 21:16:48 - INFO - moaa -   =====iteration23=====
+12/13/2024 21:18:04 - INFO - moaa -   =====iteration24=====
+12/13/2024 21:19:20 - INFO - moaa -   =====iteration25=====
+12/13/2024 21:20:35 - INFO - moaa -   =====iteration26=====
+12/13/2024 21:21:51 - INFO - moaa -   =====iteration27=====
+12/13/2024 21:23:07 - INFO - moaa -   =====iteration28=====
+12/13/2024 21:24:22 - INFO - moaa -   =====iteration29=====
+12/13/2024 21:25:37 - INFO - moaa -   =====iteration30=====
+12/13/2024 21:26:52 - INFO - moaa -   =====iteration31=====
+12/13/2024 21:28:07 - INFO - moaa -   =====iteration32=====
+12/13/2024 21:29:22 - INFO - moaa -   =====iteration33=====
+12/13/2024 21:30:37 - INFO - moaa -   =====iteration34=====
+12/13/2024 21:31:52 - INFO - moaa -   =====iteration35=====
+12/13/2024 21:33:07 - INFO - moaa -   =====iteration36=====
+12/13/2024 21:34:22 - INFO - moaa -   =====iteration37=====
+12/13/2024 21:35:38 - INFO - moaa -   =====iteration38=====
+12/13/2024 21:36:53 - INFO - moaa -   =====iteration39=====
+12/13/2024 21:38:08 - INFO - moaa -   =====iteration40=====
+12/13/2024 21:39:23 - INFO - moaa -   =====iteration41=====
+12/13/2024 21:40:38 - INFO - moaa -   =====iteration42=====
+12/13/2024 21:41:53 - INFO - moaa -   =====iteration43=====
+12/13/2024 21:43:08 - INFO - moaa -   =====iteration44=====
+12/13/2024 21:44:23 - INFO - moaa -   =====iteration45=====
+12/13/2024 21:45:38 - INFO - moaa -   =====iteration46=====
+12/13/2024 21:46:53 - INFO - moaa -   =====iteration47=====
+12/13/2024 21:48:08 - INFO - moaa -   =====iteration48=====
+12/13/2024 21:49:24 - INFO - moaa -   =====iteration49=====
+12/13/2024 21:50:39 - INFO - moaa -   =====iteration50=====
+12/13/2024 21:51:55 - INFO - moaa -   =====iteration51=====
+12/13/2024 21:53:10 - INFO - moaa -   =====iteration52=====
+12/13/2024 21:54:26 - INFO - moaa -   =====iteration53=====
+12/13/2024 21:55:41 - INFO - moaa -   =====iteration54=====
+12/13/2024 21:56:57 - INFO - moaa -   =====iteration55=====
+12/13/2024 21:58:12 - INFO - moaa -   =====iteration56=====
+12/13/2024 21:59:28 - INFO - moaa -   =====iteration57=====
+12/13/2024 22:00:43 - INFO - moaa -   =====iteration58=====
+12/13/2024 22:01:59 - INFO - moaa -   =====iteration59=====
+12/13/2024 22:03:14 - INFO - moaa -   =====iteration60=====
+12/13/2024 22:04:29 - INFO - moaa -   =====iteration61=====
+12/13/2024 22:05:45 - INFO - moaa -   =====iteration62=====
+12/13/2024 22:07:00 - INFO - moaa -   =====iteration63=====
+12/13/2024 22:08:15 - INFO - moaa -   =====iteration64=====
+12/13/2024 22:09:31 - INFO - moaa -   =====iteration65=====
+12/13/2024 22:10:46 - INFO - moaa -   =====iteration66=====
+12/13/2024 22:12:02 - INFO - moaa -   =====iteration67=====
+12/13/2024 22:13:17 - INFO - moaa -   =====iteration68=====
+12/13/2024 22:14:32 - INFO - moaa -   =====iteration69=====
+12/13/2024 22:15:48 - INFO - moaa -   =====iteration70=====
+12/13/2024 22:17:03 - INFO - moaa -   =====iteration71=====
+12/13/2024 22:18:19 - INFO - moaa -   =====iteration72=====
+12/13/2024 22:19:34 - INFO - moaa -   =====iteration73=====
+12/13/2024 22:20:50 - INFO - moaa -   =====iteration74=====
+12/13/2024 22:22:05 - INFO - moaa -   =====iteration75=====
+12/13/2024 22:23:21 - INFO - moaa -   =====iteration76=====
+12/13/2024 22:24:36 - INFO - moaa -   =====iteration77=====
+12/13/2024 22:25:52 - INFO - moaa -   =====iteration78=====
+12/13/2024 22:27:07 - INFO - moaa -   =====iteration79=====
+12/13/2024 22:28:23 - INFO - moaa -   =====iteration80=====
+12/13/2024 22:29:38 - INFO - moaa -   =====iteration81=====
+12/13/2024 22:30:54 - INFO - moaa -   =====iteration82=====
+12/13/2024 22:32:09 - INFO - moaa -   =====iteration83=====
+12/13/2024 22:33:24 - INFO - moaa -   =====iteration84=====
+12/13/2024 22:34:40 - INFO - moaa -   =====iteration85=====
+12/13/2024 22:35:55 - INFO - moaa -   =====iteration86=====
+12/13/2024 22:37:11 - INFO - moaa -   =====iteration87=====
+12/13/2024 22:38:26 - INFO - moaa -   =====iteration88=====
+12/13/2024 22:39:41 - INFO - moaa -   =====iteration89=====
+12/13/2024 22:40:57 - INFO - moaa -   ******End Attack, result=-1******
+12/13/2024 22:40:57 - INFO - __main__ -   Now processing example 914
+12/13/2024 22:40:57 - INFO - moaa -   max_iteration=50
+12/13/2024 22:40:57 - INFO - moaa -   ******Initialze the population******
+12/13/2024 22:42:12 - INFO - moaa -   ******Begin crossover and mutation******
+12/13/2024 22:42:12 - INFO - moaa -   =====iteration0=====
+12/13/2024 22:43:28 - INFO - moaa -   =====iteration1=====
+12/13/2024 22:44:43 - INFO - moaa -   =====iteration2=====
+12/13/2024 22:45:58 - INFO - moaa -   =====iteration3=====
+12/13/2024 22:47:14 - INFO - moaa -   =====iteration4=====
+12/13/2024 22:48:29 - INFO - moaa -   =====iteration5=====
+12/13/2024 22:49:45 - INFO - moaa -   =====iteration6=====
+12/13/2024 22:51:00 - INFO - moaa -   =====iteration7=====
+12/13/2024 22:52:17 - INFO - moaa -   =====iteration8=====
+12/13/2024 22:53:34 - INFO - moaa -   =====iteration9=====
+12/13/2024 22:54:49 - INFO - moaa -   =====iteration10=====
+12/13/2024 22:56:05 - INFO - moaa -   =====iteration11=====
+12/13/2024 22:57:23 - INFO - moaa -   =====iteration12=====
+12/13/2024 22:58:39 - INFO - moaa -   =====iteration13=====
+12/13/2024 22:59:55 - INFO - moaa -   =====iteration14=====
+12/13/2024 23:01:12 - INFO - moaa -   =====iteration15=====
+12/13/2024 23:02:27 - INFO - moaa -   =====iteration16=====
+12/13/2024 23:03:42 - INFO - moaa -   =====iteration17=====
+12/13/2024 23:04:58 - INFO - moaa -   =====iteration18=====
+12/13/2024 23:06:13 - INFO - moaa -   =====iteration19=====
+12/13/2024 23:07:28 - INFO - moaa -   =====iteration20=====
+12/13/2024 23:08:44 - INFO - moaa -   =====iteration21=====
+12/13/2024 23:10:00 - INFO - moaa -   =====iteration22=====
+12/13/2024 23:11:15 - INFO - moaa -   =====iteration23=====
+12/13/2024 23:12:31 - INFO - moaa -   =====iteration24=====
+12/13/2024 23:13:47 - INFO - moaa -   =====iteration25=====
+12/13/2024 23:15:02 - INFO - moaa -   =====iteration26=====
+12/13/2024 23:16:17 - INFO - moaa -   =====iteration27=====
+12/13/2024 23:17:42 - INFO - moaa -   =====iteration28=====
+12/13/2024 23:19:01 - INFO - moaa -   =====iteration29=====
+12/13/2024 23:20:20 - INFO - moaa -   =====iteration30=====
+12/13/2024 23:21:35 - INFO - moaa -   =====iteration31=====
+12/13/2024 23:22:52 - INFO - moaa -   =====iteration32=====
+12/13/2024 23:24:10 - INFO - moaa -   =====iteration33=====
+12/13/2024 23:25:28 - INFO - moaa -   =====iteration34=====
+12/13/2024 23:26:44 - INFO - moaa -   =====iteration35=====
+12/13/2024 23:28:00 - INFO - moaa -   =====iteration36=====
+12/13/2024 23:29:18 - INFO - moaa -   =====iteration37=====
+12/13/2024 23:30:35 - INFO - moaa -   =====iteration38=====
+12/13/2024 23:31:56 - INFO - moaa -   =====iteration39=====
+12/13/2024 23:33:14 - INFO - moaa -   =====iteration40=====
+12/13/2024 23:34:30 - INFO - moaa -   =====iteration41=====
+12/13/2024 23:35:47 - INFO - moaa -   =====iteration42=====
+12/13/2024 23:37:04 - INFO - moaa -   =====iteration43=====
+12/13/2024 23:38:28 - INFO - moaa -   =====iteration44=====
+12/13/2024 23:39:44 - INFO - moaa -   =====iteration45=====
+12/13/2024 23:40:59 - INFO - moaa -   =====iteration46=====
+12/13/2024 23:42:17 - INFO - moaa -   =====iteration47=====
+12/13/2024 23:43:36 - INFO - moaa -   =====iteration48=====
+12/13/2024 23:44:52 - INFO - moaa -   =====iteration49=====
+12/13/2024 23:46:10 - INFO - moaa -   ******End Attack, result=-1******
+12/13/2024 23:46:10 - INFO - __main__ -   Now processing example 571
+12/13/2024 23:46:10 - INFO - moaa -   max_iteration=20
+12/13/2024 23:46:10 - INFO - moaa -   ******Initialze the population******
+12/13/2024 23:46:30 - INFO - moaa -   ******Begin crossover and mutation******
+12/13/2024 23:46:30 - INFO - moaa -   =====iteration0=====
+12/13/2024 23:46:53 - INFO - moaa -   =====iteration1=====
+12/13/2024 23:47:21 - INFO - moaa -   =====iteration2=====
+12/13/2024 23:48:00 - INFO - moaa -   =====iteration3=====
+12/13/2024 23:48:30 - INFO - moaa -   =====iteration4=====
+12/13/2024 23:49:06 - INFO - moaa -   =====iteration5=====
+12/13/2024 23:49:54 - INFO - moaa -   =====iteration6=====
+12/13/2024 23:50:36 - INFO - moaa -   =====iteration7=====
+12/13/2024 23:51:30 - INFO - moaa -   =====iteration8=====
+12/13/2024 23:52:29 - INFO - moaa -   =====iteration9=====
+12/13/2024 23:53:29 - INFO - moaa -   =====iteration10=====
+12/13/2024 23:54:34 - INFO - moaa -   =====iteration11=====
+12/13/2024 23:55:23 - INFO - moaa -   =====iteration12=====
+12/13/2024 23:56:25 - INFO - moaa -   =====iteration13=====
+12/13/2024 23:57:28 - INFO - moaa -   =====iteration14=====
+12/13/2024 23:58:28 - INFO - moaa -   =====iteration15=====
+12/13/2024 23:59:30 - INFO - moaa -   =====iteration16=====
+12/14/2024 00:00:33 - INFO - moaa -   =====iteration17=====
+12/14/2024 00:01:29 - INFO - moaa -   =====iteration18=====
+12/14/2024 00:03:35 - INFO - moaa -   =====iteration19=====
+12/14/2024 00:14:42 - INFO - moaa -   ******End Attack, result=-1******
+12/14/2024 00:14:42 - INFO - __main__ -   Now processing example 419
+12/14/2024 00:14:42 - INFO - moaa -   max_iteration=15
+12/14/2024 00:14:42 - INFO - moaa -   ******Initialze the population******
+12/14/2024 00:19:24 - INFO - moaa -   ******Begin crossover and mutation******
+12/14/2024 00:19:24 - INFO - moaa -   =====iteration0=====
+12/14/2024 00:27:00 - INFO - moaa -   =====iteration1=====
+12/14/2024 00:32:37 - INFO - moaa -   =====iteration2=====
+12/14/2024 00:33:46 - INFO - moaa -   =====iteration3=====
+12/14/2024 00:35:01 - INFO - moaa -   =====iteration4=====
+12/14/2024 00:36:18 - INFO - moaa -   =====iteration5=====
+12/14/2024 00:37:26 - INFO - moaa -   =====iteration6=====
+12/14/2024 00:38:38 - INFO - moaa -   =====iteration7=====
+12/14/2024 00:40:03 - INFO - moaa -   =====iteration8=====
+12/14/2024 00:41:14 - INFO - moaa -   =====iteration9=====
+12/14/2024 00:42:19 - INFO - moaa -   =====iteration10=====
+12/14/2024 00:43:29 - INFO - moaa -   =====iteration11=====
+12/14/2024 00:44:44 - INFO - moaa -   =====iteration12=====
+12/14/2024 00:45:26 - INFO - moaa -   =====iteration13=====
+12/14/2024 00:46:08 - INFO - moaa -   =====iteration14=====
+12/14/2024 00:46:43 - INFO - moaa -   ******End Attack, result=-1******
+12/14/2024 00:46:43 - INFO - __main__ -   Now processing example 2233
+12/14/2024 00:46:43 - INFO - moaa -   max_iteration=55
+12/14/2024 00:46:43 - INFO - moaa -   ******Initialze the population******
+12/14/2024 00:48:00 - INFO - moaa -   ******Begin crossover and mutation******
+12/14/2024 00:48:00 - INFO - moaa -   =====iteration0=====
+12/14/2024 00:49:16 - INFO - moaa -   =====iteration1=====
+12/14/2024 00:50:33 - INFO - moaa -   =====iteration2=====
+12/14/2024 00:51:50 - INFO - moaa -   =====iteration3=====
+12/14/2024 00:53:07 - INFO - moaa -   =====iteration4=====
+12/14/2024 00:54:24 - INFO - moaa -   =====iteration5=====
+12/14/2024 00:55:41 - INFO - moaa -   =====iteration6=====
+12/14/2024 00:56:57 - INFO - moaa -   =====iteration7=====
+12/14/2024 00:58:14 - INFO - moaa -   =====iteration8=====
+12/14/2024 00:59:30 - INFO - moaa -   =====iteration9=====
+12/14/2024 01:00:46 - INFO - moaa -   =====iteration10=====
+12/14/2024 01:02:03 - INFO - moaa -   =====iteration11=====
+12/14/2024 01:03:20 - INFO - moaa -   =====iteration12=====
+12/14/2024 01:04:37 - INFO - moaa -   =====iteration13=====
+12/14/2024 01:05:54 - INFO - moaa -   =====iteration14=====
+12/14/2024 01:07:11 - INFO - moaa -   =====iteration15=====
+12/14/2024 01:08:27 - INFO - moaa -   =====iteration16=====
+12/14/2024 01:09:44 - INFO - moaa -   =====iteration17=====
+12/14/2024 01:11:00 - INFO - moaa -   =====iteration18=====
+12/14/2024 01:12:17 - INFO - moaa -   =====iteration19=====
+12/14/2024 01:13:34 - INFO - moaa -   =====iteration20=====
+12/14/2024 01:14:51 - INFO - moaa -   =====iteration21=====
+12/14/2024 01:16:07 - INFO - moaa -   =====iteration22=====
+12/14/2024 01:17:23 - INFO - moaa -   =====iteration23=====
+12/14/2024 01:18:40 - INFO - moaa -   =====iteration24=====
+12/14/2024 01:19:57 - INFO - moaa -   =====iteration25=====
+12/14/2024 01:21:13 - INFO - moaa -   =====iteration26=====
+12/14/2024 01:22:30 - INFO - moaa -   =====iteration27=====
+12/14/2024 01:23:48 - INFO - moaa -   =====iteration28=====
+12/14/2024 01:25:04 - INFO - moaa -   =====iteration29=====
+12/14/2024 01:26:19 - INFO - moaa -   =====iteration30=====
+12/14/2024 01:27:35 - INFO - moaa -   =====iteration31=====
+12/14/2024 01:28:52 - INFO - moaa -   =====iteration32=====
+12/14/2024 01:30:08 - INFO - moaa -   =====iteration33=====
+12/14/2024 01:31:24 - INFO - moaa -   =====iteration34=====
+12/14/2024 01:32:41 - INFO - moaa -   =====iteration35=====
+12/14/2024 01:33:56 - INFO - moaa -   =====iteration36=====
+12/14/2024 01:35:13 - INFO - moaa -   =====iteration37=====
+12/14/2024 01:36:30 - INFO - moaa -   =====iteration38=====
+12/14/2024 01:37:46 - INFO - moaa -   =====iteration39=====
+12/14/2024 01:39:01 - INFO - moaa -   =====iteration40=====
+12/14/2024 01:40:18 - INFO - moaa -   =====iteration41=====
+12/14/2024 01:41:34 - INFO - moaa -   =====iteration42=====
+12/14/2024 01:42:51 - INFO - moaa -   =====iteration43=====
+12/14/2024 01:44:08 - INFO - moaa -   =====iteration44=====
+12/14/2024 01:45:25 - INFO - moaa -   =====iteration45=====
+12/14/2024 01:46:41 - INFO - moaa -   =====iteration46=====
+12/14/2024 01:47:57 - INFO - moaa -   =====iteration47=====
+12/14/2024 01:49:13 - INFO - moaa -   =====iteration48=====
+12/14/2024 01:50:29 - INFO - moaa -   =====iteration49=====
+12/14/2024 01:51:45 - INFO - moaa -   =====iteration50=====
+12/14/2024 01:53:02 - INFO - moaa -   =====iteration51=====
+12/14/2024 01:54:18 - INFO - moaa -   =====iteration52=====
+12/14/2024 01:55:33 - INFO - moaa -   =====iteration53=====
+12/14/2024 01:56:49 - INFO - moaa -   =====iteration54=====
+12/14/2024 01:58:05 - INFO - moaa -   ******End Attack, result=-1******
+12/14/2024 01:58:05 - INFO - __main__ -   Now processing example 356
+12/14/2024 01:58:05 - INFO - moaa -   max_iteration=40
+12/14/2024 01:58:05 - INFO - moaa -   ******Initialze the population******
+12/14/2024 01:59:20 - INFO - moaa -   ******Begin crossover and mutation******
+12/14/2024 01:59:20 - INFO - moaa -   =====iteration0=====
+12/14/2024 02:00:35 - INFO - moaa -   =====iteration1=====
+12/14/2024 02:01:50 - INFO - moaa -   =====iteration2=====
+12/14/2024 02:03:05 - INFO - moaa -   =====iteration3=====
+12/14/2024 02:04:20 - INFO - moaa -   =====iteration4=====
+12/14/2024 02:05:35 - INFO - moaa -   =====iteration5=====
+12/14/2024 02:06:50 - INFO - moaa -   =====iteration6=====
+12/14/2024 02:08:05 - INFO - moaa -   =====iteration7=====
+12/14/2024 02:09:20 - INFO - moaa -   =====iteration8=====
+12/14/2024 02:10:35 - INFO - moaa -   =====iteration9=====
