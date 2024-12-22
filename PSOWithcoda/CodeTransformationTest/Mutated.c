@@ -6,16 +6,12 @@ int main () {
         b[i] = 0;
     for (k = 0; k < 6; k++) {
         for (i = 0; n >= a[k]; i++) {
+            n=n−a[k];
             b[k] += 1;
         }
     }
     for (i = 0; i < 6; i++) {
         printf ("%d\n", b[i]);
-    }
-    {
-        if (0) {
-            return 0;
-        }
     }
     return 0;
 }

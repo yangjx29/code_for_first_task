@@ -34,12 +34,15 @@ def gen_random_data(files):
         absFile=os.path.join(filepath,filename)
         print(filename)
         with open(absFile,'r') as fileHandle:
+            # filenumber对应的是action
             filenumber=get_file_number(filename)
             changedCount=0
+            # count是代码中有多少个对应的结构
             count=int(fileHandle.readline().strip())
             if(action == filenumber):
                 if(count>0):
                     changedCount=random.randint(1,count)
+                    # 限制只插入一处垃圾代码
                     if(action==13):
                         changedCount=1
             noChangeCount=count-changedCount
@@ -49,7 +52,7 @@ def gen_random_data(files):
             r=random.random
             x=random.randint(1,100000)
             random.seed(x)
-            random.shuffle(variable,random=r)    
+            random.shuffle(variable)    
             saveVariable=os.path.join(filepath,os.path.splitext(filename)[0]+'.random')
             with open(saveVariable,'w') as saveFile:
                 result='\n'.join(variable)
