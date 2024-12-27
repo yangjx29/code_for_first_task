@@ -184,6 +184,16 @@ def get_identifier_posistions_from_code(words_list: list, variable_names: list) 
                     positions[name] = [index]
     return positions
 
+def is_valid_substitute(substitute: str, tgt_word: str, lang: str) -> bool:
+    '''
+    判断生成的substitutes是否valid，如是否满足命名规范
+    '''
+    is_valid = True
+
+    if not is_valid_variable_name(substitute, lang):
+        is_valid = False
+
+    return is_valid
 
 def get_bpe_substitues(substitutes, tokenizer, mlm_model):
     substitutes = substitutes[0:12, 0:4]
