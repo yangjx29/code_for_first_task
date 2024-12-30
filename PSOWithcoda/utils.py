@@ -471,7 +471,7 @@ class GraphCodeDataset(Dataset):
 
     def __getitem__(self, item):
         attn_mask = np.zeros((self.args.code_length+self.args.data_flow_length,
-                            self.args.code_length+self.args.data_flow_length), dtype=np.bool)
+                            self.args.code_length+self.args.data_flow_length), dtype=bool)
         node_index = sum([i > 1 for i in self.examples[item].position_idx])
         max_length = sum([i != 1 for i in self.examples[item].position_idx])
         attn_mask[:node_index,:node_index] = True
@@ -513,7 +513,7 @@ class CodePairDataset(Dataset):
 
     def __getitem__(self, item):
         attn_mask_1= np.zeros((self.args.code_length+self.args.data_flow_length,
-                        self.args.code_length+self.args.data_flow_length),dtype=np.bool)
+                        self.args.code_length+self.args.data_flow_length),dtype=bool)
         node_index=sum([i > 1 for i in self.examples[item].position_idx_1])
         max_length=sum([i != 1 for i in self.examples[item].position_idx_1])
         attn_mask_1[:node_index,:node_index]=True
@@ -530,7 +530,7 @@ class CodePairDataset(Dataset):
                     attn_mask_1[idx+node_index,a+node_index]=True  
                     
         attn_mask_2= np.zeros((self.args.code_length+self.args.data_flow_length,
-                        self.args.code_length+self.args.data_flow_length),dtype=np.bool)
+                        self.args.code_length+self.args.data_flow_length),dtype=bool)
         node_index=sum([i>1 for i in self.examples[item].position_idx_2])
         max_length=sum([i!=1 for i in self.examples[item].position_idx_2])
         attn_mask_2[:node_index,:node_index]=True
