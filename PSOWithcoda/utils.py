@@ -434,8 +434,6 @@ def isUID(_text=""):
         for _c in _text[1:-1]:
             if _c.lower() not in "0123456789abcdefghijklmnopqrstuvwxyz_":
                 return False
-    else:
-        return False
     return True
 
 
