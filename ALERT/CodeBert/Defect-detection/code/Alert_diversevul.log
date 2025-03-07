@@ -1,0 +1,3381 @@
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at microsoft/codebert-base-mlm and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of the model checkpoint at microsoft/codebert-base-mlm were not used when initializing RobertaForMaskedLM: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+
+ cached_features_file:  /data/yjx/code_for_first_task/PSOWithcoda/VulnerabilityPrediction/dataset/diversevul/cached_diversevul_subs_0_400
+Example time cost:  0.03 min
+ALL examples time cost:  0.03 min
+Query times in this attack:  1
+All Query times:  1
+Example time cost:  0.03 min
+ALL examples time cost:  0.06 min
+Query times in this attack:  1
+All Query times:  2
+Example time cost:  0.02 min
+ALL examples time cost:  0.07 min
+Query times in this attack:  1
+All Query times:  3
+Example time cost:  0.02 min
+ALL examples time cost:  0.09 min
+Query times in this attack:  1
+All Query times:  4
+Example time cost:  0.02 min
+ALL examples time cost:  0.11 min
+Query times in this attack:  1
+All Query times:  5
+Example time cost:  0.02 min
+ALL examples time cost:  0.12 min
+Query times in this attack:  1
+All Query times:  6
+>> ACC! n => rn (0.78004 => 0.73844)
+>> ACC! p => op (0.73844 => 0.60098)
+>> SUC! i => phi (0.60098 => 0.49668)
+Example time cost:  0.13 min
+ALL examples time cost:  0.25 min
+Query times in this attack:  313
+All Query times:  319
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  6
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.26 min
+Query times in this attack:  1
+All Query times:  320
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  7
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.27 min
+Query times in this attack:  1
+All Query times:  321
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  8
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.29 min
+Query times in this attack:  1
+All Query times:  322
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  9
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.3 min
+Query times in this attack:  1
+All Query times:  323
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  10
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.31 min
+Query times in this attack:  1
+All Query times:  324
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  11
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.32 min
+Query times in this attack:  1
+All Query times:  325
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  12
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.33 min
+Query times in this attack:  1
+All Query times:  326
+Success rate:  1.0
+Successful items count:  1
+Total count:  1
+Index:  13
+
+>> ACC! s => args (0.54421 => 0.50024)
+>> SUC! p => q (0.50024 => 0.48548)
+Example time cost:  0.1 min
+ALL examples time cost:  0.44 min
+Query times in this attack:  223
+All Query times:  549
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  14
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.45 min
+Query times in this attack:  1
+All Query times:  550
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  15
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.46 min
+Query times in this attack:  1
+All Query times:  551
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  16
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.47 min
+Query times in this attack:  1
+All Query times:  552
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  17
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.48 min
+Query times in this attack:  1
+All Query times:  553
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  18
+
+Example time cost:  0.02 min
+ALL examples time cost:  0.5 min
+Query times in this attack:  1
+All Query times:  554
+Success rate:  1.0
+Successful items count:  2
+Total count:  2
+Index:  19
+
+>> ACC! i => field (0.63315 => 0.60979)
+max_iter: 10
+Example time cost:  0.36 min
+ALL examples time cost:  0.86 min
+Query times in this attack:  530
+All Query times:  1084
+Success rate:  0.6666666666666666
+Successful items count:  2
+Total count:  3
+Index:  20
+
+>> ACC! k => z (0.65730 => 0.64591)
+>> ACC! x => xy (0.64591 => 0.62865)
+>> ACC! q => type (0.62865 => 0.57464)
+>> ACC! j =>  type (0.57464 => 0.56167)
+>> ACC! y => tick (0.56167 => 0.52902)
+>> SUC! i => unit (0.52902 => 0.49887)
+Example time cost:  0.23 min
+ALL examples time cost:  1.09 min
+Query times in this attack:  277
+All Query times:  1361
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  21
+
+Example time cost:  0.01 min
+ALL examples time cost:  1.1 min
+Query times in this attack:  1
+All Query times:  1362
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  22
+
+Example time cost:  0.01 min
+ALL examples time cost:  1.11 min
+Query times in this attack:  1
+All Query times:  1363
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  23
+
+Example time cost:  0.01 min
+ALL examples time cost:  1.12 min
+Query times in this attack:  1
+All Query times:  1364
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  24
+
+Example time cost:  0.01 min
+ALL examples time cost:  1.14 min
+Query times in this attack:  1
+All Query times:  1365
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  25
+
+>> ACC! i => multi (0.57364 => 0.53745)
+max_iter: 10
+Example time cost:  0.33 min
+ALL examples time cost:  1.47 min
+Query times in this attack:  432
+All Query times:  1797
+Success rate:  0.6
+Successful items count:  3
+Total count:  5
+Index:  26
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  1.48 min
+Query times in this attack:  1
+All Query times:  1798
+Success rate:  0.6
+Successful items count:  3
+Total count:  5
+Index:  27
+
+>> ACC! s => aws (0.77002 => 0.73492)
+>> ACC! z => f (0.73492 => 0.69877)
+max_iter: 15
+Example time cost:  0.53 min
+ALL examples time cost:  2.01 min
+Query times in this attack:  910
+All Query times:  2708
+Success rate:  0.5
+Successful items count:  3
+Total count:  6
+Index:  28
+
+>> ACC! i => f (0.85448 => 0.79488)
+max_iter: 10
+Example time cost:  0.33 min
+ALL examples time cost:  2.34 min
+Query times in this attack:  468
+All Query times:  3176
+Success rate:  0.42857142857142855
+Successful items count:  3
+Total count:  7
+Index:  29
+
+Example time cost:  0.02 min
+ALL examples time cost:  2.36 min
+Query times in this attack:  1
+All Query times:  3177
+Success rate:  0.42857142857142855
+Successful items count:  3
+Total count:  7
+Index:  30
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.02 min
+ALL examples time cost:  2.38 min
+Query times in this attack:  1
+All Query times:  3178
+Success rate:  0.42857142857142855
+Successful items count:  3
+Total count:  7
+Index:  31
+
+Example time cost:  0.02 min
+ALL examples time cost:  2.39 min
+Query times in this attack:  1
+All Query times:  3179
+Success rate:  0.42857142857142855
+Successful items count:  3
+Total count:  7
+Index:  32
+
+>> ACC! i => multi (0.57364 => 0.53745)
+max_iter: 10
+Example time cost:  0.31 min
+ALL examples time cost:  2.71 min
+Query times in this attack:  445
+All Query times:  3624
+Success rate:  0.375
+Successful items count:  3
+Total count:  8
+Index:  33
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.72 min
+Query times in this attack:  1
+All Query times:  3625
+Success rate:  0.375
+Successful items count:  3
+Total count:  8
+Index:  34
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.73 min
+Query times in this attack:  1
+All Query times:  3626
+Success rate:  0.375
+Successful items count:  3
+Total count:  8
+Index:  35
+
+Example time cost:  0.02 min
+ALL examples time cost:  2.74 min
+Query times in this attack:  1
+All Query times:  3627
+Success rate:  0.375
+Successful items count:  3
+Total count:  8
+Index:  36
+
+>> ACC! q => P (0.57997 => 0.53904)
+>> SUC! p => path (0.53904 => 0.47256)
+Example time cost:  0.1 min
+ALL examples time cost:  2.84 min
+Query times in this attack:  196
+All Query times:  3823
+Success rate:  0.4444444444444444
+Successful items count:  4
+Total count:  9
+Index:  37
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.85 min
+Query times in this attack:  1
+All Query times:  3824
+Success rate:  0.4444444444444444
+Successful items count:  4
+Total count:  9
+Index:  38
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.87 min
+Query times in this attack:  1
+All Query times:  3825
+Success rate:  0.4444444444444444
+Successful items count:  4
+Total count:  9
+Index:  39
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.88 min
+Query times in this attack:  1
+All Query times:  3826
+Success rate:  0.4444444444444444
+Successful items count:  4
+Total count:  9
+Index:  40
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.89 min
+Query times in this attack:  1
+All Query times:  3827
+Success rate:  0.4444444444444444
+Successful items count:  4
+Total count:  9
+Index:  41
+
+>> ACC! s => ses (0.78418 => 0.70797)
+max_iter: 10
+Example time cost:  0.3 min
+ALL examples time cost:  3.19 min
+Query times in this attack:  468
+All Query times:  4295
+Success rate:  0.4
+Successful items count:  4
+Total count:  10
+Index:  42
+
+Example time cost:  0.02 min
+ALL examples time cost:  3.21 min
+Query times in this attack:  1
+All Query times:  4296
+Success rate:  0.4
+Successful items count:  4
+Total count:  10
+Index:  43
+
+>> ACC! x => full (0.62864 => 0.57846)
+>> ACC! q => sync (0.57846 => 0.53897)
+>> ACC! i => f (0.53897 => 0.52070)
+>> SUC! p => port (0.52070 => 0.48106)
+Example time cost:  0.25 min
+ALL examples time cost:  3.46 min
+Query times in this attack:  354
+All Query times:  4650
+Success rate:  0.45454545454545453
+Successful items count:  5
+Total count:  11
+Index:  44
+
+Example time cost:  0.01 min
+ALL examples time cost:  3.47 min
+Query times in this attack:  1
+All Query times:  4651
+Success rate:  0.45454545454545453
+Successful items count:  5
+Total count:  11
+Index:  45
+
+Example time cost:  0.01 min
+ALL examples time cost:  3.48 min
+Query times in this attack:  1
+All Query times:  4652
+Success rate:  0.45454545454545453
+Successful items count:  5
+Total count:  11
+Index:  46
+
+Example time cost:  0.01 min
+ALL examples time cost:  3.49 min
+Query times in this attack:  1
+All Query times:  4653
+Success rate:  0.45454545454545453
+Successful items count:  5
+Total count:  11
+Index:  47
+
+Example time cost:  0.02 min
+ALL examples time cost:  3.51 min
+Query times in this attack:  1
+All Query times:  4654
+Success rate:  0.45454545454545453
+Successful items count:  5
+Total count:  11
+Index:  48
+
+>> ACC! n => not (0.58718 => 0.55996)
+>> ACC! p => php (0.55996 => 0.50091)
+max_iter: 15
+Example time cost:  0.52 min
+ALL examples time cost:  4.03 min
+Query times in this attack:  633
+All Query times:  5287
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  49
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.04 min
+Query times in this attack:  1
+All Query times:  5288
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  50
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.06 min
+Query times in this attack:  1
+All Query times:  5289
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  51
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.07 min
+Query times in this attack:  1
+All Query times:  5290
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  52
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.09 min
+Query times in this attack:  1
+All Query times:  5291
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  53
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.11 min
+Query times in this attack:  1
+All Query times:  5292
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  54
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.02 min
+ALL examples time cost:  4.12 min
+Query times in this attack:  1
+All Query times:  5293
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  55
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.14 min
+Query times in this attack:  1
+All Query times:  5294
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  56
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.15 min
+Query times in this attack:  1
+All Query times:  5295
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  57
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.17 min
+Query times in this attack:  1
+All Query times:  5296
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  58
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.19 min
+Query times in this attack:  1
+All Query times:  5297
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  59
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.2 min
+Query times in this attack:  1
+All Query times:  5298
+Success rate:  0.4166666666666667
+Successful items count:  5
+Total count:  12
+Index:  60
+
+>> ACC! p => par (0.98641 => 0.98035)
+>> ACC! s => ments (0.98035 => 0.97490)
+max_iter: 15
+Example time cost:  0.42 min
+ALL examples time cost:  4.62 min
+Query times in this attack:  757
+All Query times:  6055
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  61
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.64 min
+Query times in this attack:  1
+All Query times:  6056
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  62
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.66 min
+Query times in this attack:  1
+All Query times:  6057
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  63
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.67 min
+Query times in this attack:  1
+All Query times:  6058
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  64
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.68 min
+Query times in this attack:  1
+All Query times:  6059
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  65
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.69 min
+Query times in this attack:  1
+All Query times:  6060
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  66
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.7 min
+Query times in this attack:  1
+All Query times:  6061
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  67
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.71 min
+Query times in this attack:  1
+All Query times:  6062
+Success rate:  0.38461538461538464
+Successful items count:  5
+Total count:  13
+Index:  68
+
+>> ACC! b => gb (0.54648 => 0.54648)
+>> ACC! i => phi (0.54648 => 0.51393)
+>> SUC! s => sync (0.51393 => 0.48771)
+Example time cost:  0.1 min
+ALL examples time cost:  4.82 min
+Query times in this attack:  259
+All Query times:  6321
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  69
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.83 min
+Query times in this attack:  1
+All Query times:  6322
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  70
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.85 min
+Query times in this attack:  1
+All Query times:  6323
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  71
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.86 min
+Query times in this attack:  1
+All Query times:  6324
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  72
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.88 min
+Query times in this attack:  1
+All Query times:  6325
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  73
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.9 min
+Query times in this attack:  1
+All Query times:  6326
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  74
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.92 min
+Query times in this attack:  1
+All Query times:  6327
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  75
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.93 min
+Query times in this attack:  1
+All Query times:  6328
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  76
+
+Example time cost:  0.02 min
+ALL examples time cost:  4.95 min
+Query times in this attack:  1
+All Query times:  6329
+Success rate:  0.42857142857142855
+Successful items count:  6
+Total count:  14
+Index:  77
+
+>> ACC! o => ime (0.58983 => 0.57835)
+>> ACC! s => fs (0.57835 => 0.51868)
+>> SUC! p => os (0.51868 => 0.49646)
+Example time cost:  0.27 min
+ALL examples time cost:  5.22 min
+Query times in this attack:  458
+All Query times:  6787
+Success rate:  0.4666666666666667
+Successful items count:  7
+Total count:  15
+Index:  78
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.24 min
+Query times in this attack:  1
+All Query times:  6788
+Success rate:  0.4666666666666667
+Successful items count:  7
+Total count:  15
+Index:  79
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.25 min
+Query times in this attack:  1
+All Query times:  6789
+Success rate:  0.4666666666666667
+Successful items count:  7
+Total count:  15
+Index:  80
+
+>> ACC! p => post (0.93564 => 0.67940)
+max_iter: 10
+Example time cost:  0.28 min
+ALL examples time cost:  5.53 min
+Query times in this attack:  515
+All Query times:  7304
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  81
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.54 min
+Query times in this attack:  1
+All Query times:  7305
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  82
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.56 min
+Query times in this attack:  1
+All Query times:  7306
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  83
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.58 min
+Query times in this attack:  1
+All Query times:  7307
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  84
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.59 min
+Query times in this attack:  1
+All Query times:  7308
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  85
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.61 min
+Query times in this attack:  1
+All Query times:  7309
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  86
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.63 min
+Query times in this attack:  1
+All Query times:  7310
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  87
+
+Example time cost:  0.02 min
+ALL examples time cost:  5.64 min
+Query times in this attack:  1
+All Query times:  7311
+Success rate:  0.4375
+Successful items count:  7
+Total count:  16
+Index:  88
+
+>> ACC! o => ime (0.58983 => 0.57835)
+>> ACC! s => fs (0.57835 => 0.51868)
+>> SUC! p => os (0.51868 => 0.49646)
+Example time cost:  0.28 min
+ALL examples time cost:  5.92 min
+Query times in this attack:  458
+All Query times:  7769
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  89
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.93 min
+Query times in this attack:  1
+All Query times:  7770
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  90
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.94 min
+Query times in this attack:  1
+All Query times:  7771
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  91
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.95 min
+Query times in this attack:  1
+All Query times:  7772
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  92
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.96 min
+Query times in this attack:  1
+All Query times:  7773
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  93
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.97 min
+Query times in this attack:  1
+All Query times:  7774
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  94
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  5.98 min
+Query times in this attack:  1
+All Query times:  7775
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  95
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.0 min
+Query times in this attack:  1
+All Query times:  7776
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  96
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.01 min
+Query times in this attack:  1
+All Query times:  7777
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  97
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.02 min
+Query times in this attack:  1
+All Query times:  7778
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  98
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.03 min
+Query times in this attack:  1
+All Query times:  7779
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  99
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.04 min
+Query times in this attack:  1
+All Query times:  7780
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  100
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.06 min
+Query times in this attack:  1
+All Query times:  7781
+Success rate:  0.47058823529411764
+Successful items count:  8
+Total count:  17
+Index:  101
+
+>> ACC! p => post (0.76615 => 0.60295)
+max_iter: 10
+Example time cost:  0.3 min
+ALL examples time cost:  6.36 min
+Query times in this attack:  511
+All Query times:  8292
+Success rate:  0.4444444444444444
+Successful items count:  8
+Total count:  18
+Index:  102
+
+>> ACC! i => multi (0.57364 => 0.53745)
+max_iter: 10
+Example time cost:  0.29 min
+ALL examples time cost:  6.65 min
+Query times in this attack:  455
+All Query times:  8747
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  103
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.67 min
+Query times in this attack:  1
+All Query times:  8748
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  104
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.68 min
+Query times in this attack:  1
+All Query times:  8749
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  105
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.69 min
+Query times in this attack:  1
+All Query times:  8750
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  106
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.71 min
+Query times in this attack:  1
+All Query times:  8751
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  107
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.72 min
+Query times in this attack:  1
+All Query times:  8752
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  108
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.74 min
+Query times in this attack:  1
+All Query times:  8753
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  109
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.76 min
+Query times in this attack:  1
+All Query times:  8754
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  110
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.78 min
+Query times in this attack:  1
+All Query times:  8755
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  111
+
+Example time cost:  0.02 min
+ALL examples time cost:  6.79 min
+Query times in this attack:  1
+All Query times:  8756
+Success rate:  0.42105263157894735
+Successful items count:  8
+Total count:  19
+Index:  112
+
+>> ACC! p => patch (0.86349 => 0.80252)
+>> ACC! s => err (0.80252 => 0.64575)
+max_iter: 15
+Example time cost:  0.47 min
+ALL examples time cost:  7.26 min
+Query times in this attack:  969
+All Query times:  9725
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  113
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.27 min
+Query times in this attack:  1
+All Query times:  9726
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  114
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.28 min
+Query times in this attack:  1
+All Query times:  9727
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  115
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.3 min
+Query times in this attack:  1
+All Query times:  9728
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  116
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.31 min
+Query times in this attack:  1
+All Query times:  9729
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  117
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.32 min
+Query times in this attack:  1
+All Query times:  9730
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  118
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.33 min
+Query times in this attack:  1
+All Query times:  9731
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  119
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.34 min
+Query times in this attack:  1
+All Query times:  9732
+Success rate:  0.4
+Successful items count:  8
+Total count:  20
+Index:  120
+
+>> ACC! i => io (0.88180 => 0.86055)
+max_iter: 10
+Example time cost:  0.27 min
+ALL examples time cost:  7.61 min
+Query times in this attack:  527
+All Query times:  10259
+Success rate:  0.38095238095238093
+Successful items count:  8
+Total count:  21
+Index:  121
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.62 min
+Query times in this attack:  1
+All Query times:  10260
+Success rate:  0.38095238095238093
+Successful items count:  8
+Total count:  21
+Index:  122
+
+>> SUC! H => His (0.52295 => 0.45699)
+Example time cost:  0.06 min
+ALL examples time cost:  7.68 min
+Query times in this attack:  84
+All Query times:  10344
+Success rate:  0.4090909090909091
+Successful items count:  9
+Total count:  22
+Index:  123
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  7.69 min
+Query times in this attack:  1
+All Query times:  10345
+Success rate:  0.4090909090909091
+Successful items count:  9
+Total count:  22
+Index:  124
+
+>> ACC! a => an (0.54993 => 0.54993)
+>> SUC! p => fp (0.54993 => 0.49826)
+Example time cost:  0.12 min
+ALL examples time cost:  7.81 min
+Query times in this attack:  105
+All Query times:  10450
+Success rate:  0.43478260869565216
+Successful items count:  10
+Total count:  23
+Index:  125
+
+Example time cost:  0.01 min
+ALL examples time cost:  7.82 min
+Query times in this attack:  1
+All Query times:  10451
+Success rate:  0.43478260869565216
+Successful items count:  10
+Total count:  23
+Index:  126
+
+>> ACC! i => oi (0.87269 => 0.83971)
+max_iter: 10
+Example time cost:  0.35 min
+ALL examples time cost:  8.17 min
+Query times in this attack:  500
+All Query times:  10951
+Success rate:  0.4166666666666667
+Successful items count:  10
+Total count:  24
+Index:  127
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.18 min
+Query times in this attack:  1
+All Query times:  10952
+Success rate:  0.4166666666666667
+Successful items count:  10
+Total count:  24
+Index:  128
+
+>> SUC! d => true (0.74101 => 0.41543)
+Example time cost:  0.05 min
+ALL examples time cost:  8.23 min
+Query times in this attack:  96
+All Query times:  11048
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  129
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.24 min
+Query times in this attack:  1
+All Query times:  11049
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  130
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.25 min
+Query times in this attack:  1
+All Query times:  11050
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  131
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.26 min
+Query times in this attack:  1
+All Query times:  11051
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  132
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.28 min
+Query times in this attack:  1
+All Query times:  11052
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  133
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.02 min
+ALL examples time cost:  8.3 min
+Query times in this attack:  1
+All Query times:  11053
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  134
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.02 min
+ALL examples time cost:  8.31 min
+Query times in this attack:  1
+All Query times:  11054
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  135
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.33 min
+Query times in this attack:  1
+All Query times:  11055
+Success rate:  0.44
+Successful items count:  11
+Total count:  25
+Index:  136
+
+>> ACC! k => kat (0.63190 => 0.55567)
+>> ACC! l => ls (0.55567 => 0.53699)
+>> ACC! i => ie (0.53699 => 0.50808)
+>> SUC! j => bl (0.50808 => 0.49399)
+Example time cost:  0.18 min
+ALL examples time cost:  8.51 min
+Query times in this attack:  356
+All Query times:  11411
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  137
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.53 min
+Query times in this attack:  1
+All Query times:  11412
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  138
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.54 min
+Query times in this attack:  1
+All Query times:  11413
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  139
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.56 min
+Query times in this attack:  1
+All Query times:  11414
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  140
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.58 min
+Query times in this attack:  1
+All Query times:  11415
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  141
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.59 min
+Query times in this attack:  1
+All Query times:  11416
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  142
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.61 min
+Query times in this attack:  1
+All Query times:  11417
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  143
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.63 min
+Query times in this attack:  1
+All Query times:  11418
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  144
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.65 min
+Query times in this attack:  1
+All Query times:  11419
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  145
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.66 min
+Query times in this attack:  1
+All Query times:  11420
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  146
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.68 min
+Query times in this attack:  1
+All Query times:  11421
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  147
+
+Example time cost:  0.02 min
+ALL examples time cost:  8.7 min
+Query times in this attack:  1
+All Query times:  11422
+Success rate:  0.46153846153846156
+Successful items count:  12
+Total count:  26
+Index:  148
+
+>> ACC! s => sync (0.69701 => 0.67476)
+>> ACC! p => j (0.67476 => 0.63171)
+max_iter: 15
+Example time cost:  1.39 min
+ALL examples time cost:  10.09 min
+Query times in this attack:  1014
+All Query times:  12436
+Success rate:  0.4444444444444444
+Successful items count:  12
+Total count:  27
+Index:  149
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.1 min
+Query times in this attack:  1
+All Query times:  12437
+Success rate:  0.4444444444444444
+Successful items count:  12
+Total count:  27
+Index:  150
+
+>> ACC! s => sg (0.79387 => 0.63403)
+>> ACC! p => type (0.63403 => 0.53452)
+>> SUC! n => no (0.53452 => 0.49358)
+Example time cost:  0.12 min
+ALL examples time cost:  10.22 min
+Query times in this attack:  299
+All Query times:  12736
+Success rate:  0.4642857142857143
+Successful items count:  13
+Total count:  28
+Index:  151
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.23 min
+Query times in this attack:  1
+All Query times:  12737
+Success rate:  0.4642857142857143
+Successful items count:  13
+Total count:  28
+Index:  152
+
+>> ACC! s => args (0.54421 => 0.50024)
+>> SUC! p => q (0.50024 => 0.48548)
+Example time cost:  0.11 min
+ALL examples time cost:  10.35 min
+Query times in this attack:  224
+All Query times:  12961
+Success rate:  0.4827586206896552
+Successful items count:  14
+Total count:  29
+Index:  153
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.36 min
+Query times in this attack:  1
+All Query times:  12962
+Success rate:  0.4827586206896552
+Successful items count:  14
+Total count:  29
+Index:  154
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.37 min
+Query times in this attack:  1
+All Query times:  12963
+Success rate:  0.4827586206896552
+Successful items count:  14
+Total count:  29
+Index:  155
+
+>> SUC! p => pi (0.62686 => 0.49350)
+Example time cost:  0.07 min
+ALL examples time cost:  10.44 min
+Query times in this attack:  101
+All Query times:  13064
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  156
+
+Example time cost:  0.02 min
+ALL examples time cost:  10.46 min
+Query times in this attack:  1
+All Query times:  13065
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  157
+
+Example time cost:  0.02 min
+ALL examples time cost:  10.48 min
+Query times in this attack:  1
+All Query times:  13066
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  158
+
+Example time cost:  0.02 min
+ALL examples time cost:  10.5 min
+Query times in this attack:  1
+All Query times:  13067
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  159
+
+Example time cost:  0.02 min
+ALL examples time cost:  10.51 min
+Query times in this attack:  1
+All Query times:  13068
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  160
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  10.53 min
+Query times in this attack:  1
+All Query times:  13069
+Success rate:  0.5
+Successful items count:  15
+Total count:  30
+Index:  161
+
+>> ACC! o => ime (0.58983 => 0.57835)
+>> ACC! s => fs (0.57835 => 0.51868)
+>> SUC! p => os (0.51868 => 0.49646)
+Example time cost:  0.28 min
+ALL examples time cost:  10.81 min
+Query times in this attack:  458
+All Query times:  13527
+Success rate:  0.5161290322580645
+Successful items count:  16
+Total count:  31
+Index:  162
+
+>> SUC! x => temp (0.57039 => 0.47684)
+Example time cost:  0.06 min
+ALL examples time cost:  10.87 min
+Query times in this attack:  110
+All Query times:  13637
+Success rate:  0.53125
+Successful items count:  17
+Total count:  32
+Index:  163
+
+Example time cost:  0.03 min
+ALL examples time cost:  10.9 min
+Query times in this attack:  1
+All Query times:  13638
+Success rate:  0.53125
+Successful items count:  17
+Total count:  32
+Index:  164
+
+>> ACC! i => pass (0.88389 => 0.73826)
+max_iter: 10
+Example time cost:  0.33 min
+ALL examples time cost:  11.23 min
+Query times in this attack:  536
+All Query times:  14174
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  165
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.25 min
+Query times in this attack:  1
+All Query times:  14175
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  166
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.27 min
+Query times in this attack:  1
+All Query times:  14176
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  167
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.29 min
+Query times in this attack:  1
+All Query times:  14177
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  168
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.31 min
+Query times in this attack:  1
+All Query times:  14178
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  169
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.33 min
+Query times in this attack:  1
+All Query times:  14179
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  170
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.34 min
+Query times in this attack:  1
+All Query times:  14180
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  171
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.36 min
+Query times in this attack:  1
+All Query times:  14181
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  172
+
+Example time cost:  0.03 min
+ALL examples time cost:  11.39 min
+Query times in this attack:  1
+All Query times:  14182
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  173
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.41 min
+Query times in this attack:  1
+All Query times:  14183
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  174
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.43 min
+Query times in this attack:  1
+All Query times:  14184
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  175
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.45 min
+Query times in this attack:  1
+All Query times:  14185
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  176
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.47 min
+Query times in this attack:  1
+All Query times:  14186
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  177
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.49 min
+Query times in this attack:  1
+All Query times:  14187
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  178
+
+Example time cost:  0.01 min
+ALL examples time cost:  11.5 min
+Query times in this attack:  1
+All Query times:  14188
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  179
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.52 min
+Query times in this attack:  1
+All Query times:  14189
+Success rate:  0.5151515151515151
+Successful items count:  17
+Total count:  33
+Index:  180
+
+>> SUC! p => php (0.53035 => 0.49493)
+Example time cost:  0.08 min
+ALL examples time cost:  11.59 min
+Query times in this attack:  115
+All Query times:  14304
+Success rate:  0.5294117647058824
+Successful items count:  18
+Total count:  34
+Index:  181
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.61 min
+Query times in this attack:  1
+All Query times:  14305
+Success rate:  0.5294117647058824
+Successful items count:  18
+Total count:  34
+Index:  182
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.63 min
+Query times in this attack:  1
+All Query times:  14306
+Success rate:  0.5294117647058824
+Successful items count:  18
+Total count:  34
+Index:  183
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.65 min
+Query times in this attack:  1
+All Query times:  14307
+Success rate:  0.5294117647058824
+Successful items count:  18
+Total count:  34
+Index:  184
+
+Example time cost:  0.02 min
+ALL examples time cost:  11.66 min
+Query times in this attack:  1
+All Query times:  14308
+Success rate:  0.5294117647058824
+Successful items count:  18
+Total count:  34
+Index:  185
+
+>> ACC! n => nr (0.86901 => 0.82109)
+max_iter: 10
+Example time cost:  0.32 min
+ALL examples time cost:  11.99 min
+Query times in this attack:  502
+All Query times:  14810
+Success rate:  0.5142857142857142
+Successful items count:  18
+Total count:  35
+Index:  186
+
+Example time cost:  0.02 min
+ALL examples time cost:  12.0 min
+Query times in this attack:  1
+All Query times:  14811
+Success rate:  0.5142857142857142
+Successful items count:  18
+Total count:  35
+Index:  187
+
+>> SUC! s => data (0.66172 => 0.48932)
+Example time cost:  0.06 min
+ALL examples time cost:  12.06 min
+Query times in this attack:  97
+All Query times:  14908
+Success rate:  0.5277777777777778
+Successful items count:  19
+Total count:  36
+Index:  188
+
+Example time cost:  0.02 min
+ALL examples time cost:  12.08 min
+Query times in this attack:  1
+All Query times:  14909
+Success rate:  0.5277777777777778
+Successful items count:  19
+Total count:  36
+Index:  189
+
+>> ACC! p => port (0.65795 => 0.62481)
+>> ACC! c => conn (0.62481 => 0.61069)
+>> ACC! n => no (0.61069 => 0.60550)
+max_iter: 20
+Example time cost:  1.88 min
+ALL examples time cost:  13.95 min
+Query times in this attack:  1532
+All Query times:  16441
+Success rate:  0.5135135135135135
+Successful items count:  19
+Total count:  37
+Index:  190
+
+Example time cost:  0.02 min
+ALL examples time cost:  13.97 min
+Query times in this attack:  1
+All Query times:  16442
+Success rate:  0.5135135135135135
+Successful items count:  19
+Total count:  37
+Index:  191
+
+Example time cost:  0.02 min
+ALL examples time cost:  13.99 min
+Query times in this attack:  1
+All Query times:  16443
+Success rate:  0.5135135135135135
+Successful items count:  19
+Total count:  37
+Index:  192
+
+Example time cost:  0.01 min
+ALL examples time cost:  14.0 min
+Query times in this attack:  1
+All Query times:  16444
+Success rate:  0.5135135135135135
+Successful items count:  19
+Total count:  37
+Index:  193
+
+>> SUC! H => His (0.51203 => 0.49417)
+Example time cost:  0.04 min
+ALL examples time cost:  14.04 min
+Query times in this attack:  85
+All Query times:  16529
+Success rate:  0.5263157894736842
+Successful items count:  20
+Total count:  38
+Index:  194
+
+Example time cost:  0.01 min
+ALL examples time cost:  14.05 min
+Query times in this attack:  1
+All Query times:  16530
+Success rate:  0.5263157894736842
+Successful items count:  20
+Total count:  38
+Index:  195
+
+Example time cost:  0.01 min
+ALL examples time cost:  14.06 min
+Query times in this attack:  1
+All Query times:  16531
+Success rate:  0.5263157894736842
+Successful items count:  20
+Total count:  38
+Index:  196
+
+>> SUC! H => X (0.52274 => 0.47084)
+Example time cost:  0.04 min
+ALL examples time cost:  14.11 min
+Query times in this attack:  90
+All Query times:  16621
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  197
+
+Example time cost:  0.01 min
+ALL examples time cost:  14.12 min
+Query times in this attack:  1
+All Query times:  16622
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  198
+
+Example time cost:  0.01 min
+ALL examples time cost:  14.13 min
+Query times in this attack:  1
+All Query times:  16623
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  199
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.15 min
+Query times in this attack:  1
+All Query times:  16624
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  200
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.17 min
+Query times in this attack:  1
+All Query times:  16625
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  201
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.19 min
+Query times in this attack:  1
+All Query times:  16626
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  202
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.21 min
+Query times in this attack:  1
+All Query times:  16627
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  203
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.22 min
+Query times in this attack:  1
+All Query times:  16628
+Success rate:  0.5384615384615384
+Successful items count:  21
+Total count:  39
+Index:  204
+
+>> SUC! i => init (0.51636 => 0.48456)
+Example time cost:  0.06 min
+ALL examples time cost:  14.29 min
+Query times in this attack:  120
+All Query times:  16748
+Success rate:  0.55
+Successful items count:  22
+Total count:  40
+Index:  205
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.31 min
+Query times in this attack:  1
+All Query times:  16749
+Success rate:  0.55
+Successful items count:  22
+Total count:  40
+Index:  206
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.32 min
+Query times in this attack:  1
+All Query times:  16750
+Success rate:  0.55
+Successful items count:  22
+Total count:  40
+Index:  207
+
+>> SUC! p => type (0.52012 => 0.49036)
+Example time cost:  0.14 min
+ALL examples time cost:  14.46 min
+Query times in this attack:  169
+All Query times:  16919
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  208
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.48 min
+Query times in this attack:  1
+All Query times:  16920
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  209
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.5 min
+Query times in this attack:  1
+All Query times:  16921
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  210
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.51 min
+Query times in this attack:  1
+All Query times:  16922
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  211
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.53 min
+Query times in this attack:  1
+All Query times:  16923
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  212
+
+Example time cost:  0.02 min
+ALL examples time cost:  14.55 min
+Query times in this attack:  1
+All Query times:  16924
+Success rate:  0.5609756097560976
+Successful items count:  23
+Total count:  41
+Index:  213
+
+>> SUC! s => buf (0.55123 => 0.44547)
+Example time cost:  0.07 min
+ALL examples time cost:  14.61 min
+Query times in this attack:  104
+All Query times:  17028
+Success rate:  0.5714285714285714
+Successful items count:  24
+Total count:  42
+Index:  214
+
+>> ACC! q => question (0.81623 => 0.76910)
+>> ACC! p => post (0.76910 => 0.69190)
+max_iter: 15
+Example time cost:  0.49 min
+ALL examples time cost:  15.11 min
+Query times in this attack:  935
+All Query times:  17963
+Success rate:  0.5581395348837209
+Successful items count:  24
+Total count:  43
+Index:  215
+
+Example time cost:  0.02 min
+ALL examples time cost:  15.12 min
+Query times in this attack:  1
+All Query times:  17964
+Success rate:  0.5581395348837209
+Successful items count:  24
+Total count:  43
+Index:  216
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.13 min
+Query times in this attack:  1
+All Query times:  17965
+Success rate:  0.5581395348837209
+Successful items count:  24
+Total count:  43
+Index:  217
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.14 min
+Query times in this attack:  1
+All Query times:  17966
+Success rate:  0.5581395348837209
+Successful items count:  24
+Total count:  43
+Index:  218
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.16 min
+Query times in this attack:  1
+All Query times:  17967
+Success rate:  0.5581395348837209
+Successful items count:  24
+Total count:  43
+Index:  219
+
+>> ACC! i => xi (0.81671 => 0.74531)
+max_iter: 10
+Example time cost:  0.32 min
+ALL examples time cost:  15.48 min
+Query times in this attack:  540
+All Query times:  18507
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  220
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.49 min
+Query times in this attack:  1
+All Query times:  18508
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  221
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.5 min
+Query times in this attack:  1
+All Query times:  18509
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  222
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.51 min
+Query times in this attack:  1
+All Query times:  18510
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  223
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.53 min
+Query times in this attack:  1
+All Query times:  18511
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  224
+
+Example time cost:  0.02 min
+ALL examples time cost:  15.55 min
+Query times in this attack:  1
+All Query times:  18512
+Success rate:  0.5454545454545454
+Successful items count:  24
+Total count:  44
+Index:  225
+
+>> SUC! i => uri (0.59649 => 0.43707)
+Example time cost:  0.04 min
+ALL examples time cost:  15.59 min
+Query times in this attack:  97
+All Query times:  18609
+Success rate:  0.5555555555555556
+Successful items count:  25
+Total count:  45
+Index:  226
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.6 min
+Query times in this attack:  1
+All Query times:  18610
+Success rate:  0.5555555555555556
+Successful items count:  25
+Total count:  45
+Index:  227
+
+>> ACC! p => op (0.64116 => 0.57763)
+max_iter: 10
+Example time cost:  0.35 min
+ALL examples time cost:  15.95 min
+Query times in this attack:  467
+All Query times:  19077
+Success rate:  0.5434782608695652
+Successful items count:  25
+Total count:  46
+Index:  228
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.96 min
+Query times in this attack:  1
+All Query times:  19078
+Success rate:  0.5434782608695652
+Successful items count:  25
+Total count:  46
+Index:  229
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.97 min
+Query times in this attack:  1
+All Query times:  19079
+Success rate:  0.5434782608695652
+Successful items count:  25
+Total count:  46
+Index:  230
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.98 min
+Query times in this attack:  1
+All Query times:  19080
+Success rate:  0.5434782608695652
+Successful items count:  25
+Total count:  46
+Index:  231
+
+>> ACC! i => row (0.59365 => 0.56175)
+max_iter: 10
+Example time cost:  0.31 min
+ALL examples time cost:  16.29 min
+Query times in this attack:  474
+All Query times:  19554
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  232
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.3 min
+Query times in this attack:  1
+All Query times:  19555
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  233
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.31 min
+Query times in this attack:  1
+All Query times:  19556
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  234
+
+Example time cost:  0.02 min
+ALL examples time cost:  16.33 min
+Query times in this attack:  1
+All Query times:  19557
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  235
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.34 min
+Query times in this attack:  1
+All Query times:  19558
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  236
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.35 min
+Query times in this attack:  1
+All Query times:  19559
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  237
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.36 min
+Query times in this attack:  1
+All Query times:  19560
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  238
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.37 min
+Query times in this attack:  1
+All Query times:  19561
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  239
+
+Example time cost:  0.01 min
+ALL examples time cost:  16.39 min
+Query times in this attack:  1
+All Query times:  19562
+Success rate:  0.5319148936170213
+Successful items count:  25
+Total count:  47
+Index:  240
+
+>> ACC! s => aws (0.77002 => 0.73492)
+>> ACC! z => f (0.73492 => 0.69877)
+max_iter: 15
+Example time cost:  0.51 min
+ALL examples time cost:  16.9 min
+Query times in this attack:  912
+All Query times:  20474
+Success rate:  0.5208333333333334
+Successful items count:  25
+Total count:  48
+Index:  241
+
+>> ACC! t => stop (0.64086 => 0.52844)
+max_iter: 10
+Example time cost:  0.3 min
+ALL examples time cost:  17.2 min
+Query times in this attack:  496
+All Query times:  20970
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  242
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.21 min
+Query times in this attack:  1
+All Query times:  20971
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  243
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.22 min
+Query times in this attack:  1
+All Query times:  20972
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  244
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.23 min
+Query times in this attack:  1
+All Query times:  20973
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  245
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.24 min
+Query times in this attack:  1
+All Query times:  20974
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  246
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.26 min
+Query times in this attack:  1
+All Query times:  20975
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  247
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.27 min
+Query times in this attack:  1
+All Query times:  20976
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  248
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.28 min
+Query times in this attack:  1
+All Query times:  20977
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  249
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.3 min
+Query times in this attack:  1
+All Query times:  20978
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  250
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.31 min
+Query times in this attack:  1
+All Query times:  20979
+Success rate:  0.5102040816326531
+Successful items count:  25
+Total count:  49
+Index:  251
+
+>> SUC! p => q (0.59263 => 0.49714)
+Example time cost:  0.06 min
+ALL examples time cost:  17.37 min
+Query times in this attack:  95
+All Query times:  21074
+Success rate:  0.52
+Successful items count:  26
+Total count:  50
+Index:  252
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.39 min
+Query times in this attack:  1
+All Query times:  21075
+Success rate:  0.52
+Successful items count:  26
+Total count:  50
+Index:  253
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.41 min
+Query times in this attack:  1
+All Query times:  21076
+Success rate:  0.52
+Successful items count:  26
+Total count:  50
+Index:  254
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.42 min
+Query times in this attack:  1
+All Query times:  21077
+Success rate:  0.52
+Successful items count:  26
+Total count:  50
+Index:  255
+
+>> SUC! p => options (0.91600 => 0.40205)
+Example time cost:  0.06 min
+ALL examples time cost:  17.48 min
+Query times in this attack:  104
+All Query times:  21181
+Success rate:  0.5294117647058824
+Successful items count:  27
+Total count:  51
+Index:  256
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.5 min
+Query times in this attack:  1
+All Query times:  21182
+Success rate:  0.5294117647058824
+Successful items count:  27
+Total count:  51
+Index:  257
+
+Example time cost:  0.02 min
+ALL examples time cost:  17.52 min
+Query times in this attack:  1
+All Query times:  21183
+Success rate:  0.5294117647058824
+Successful items count:  27
+Total count:  51
+Index:  258
+
+>> ACC! p => power (0.96230 => 0.95449)
+>> ACC! i => err (0.95449 => 0.93858)
+>> ACC! q => f (0.93858 => 0.91913)
+max_iter: 20
+Example time cost:  0.69 min
+ALL examples time cost:  18.21 min
+Query times in this attack:  1311
+All Query times:  22494
+Success rate:  0.5192307692307693
+Successful items count:  27
+Total count:  52
+Index:  259
+
+>> SUC! p => part (0.55900 => 0.49609)
+Example time cost:  0.07 min
+ALL examples time cost:  18.27 min
+Query times in this attack:  85
+All Query times:  22579
+Success rate:  0.5283018867924528
+Successful items count:  28
+Total count:  53
+Index:  260
+
+Example time cost:  0.01 min
+ALL examples time cost:  18.29 min
+Query times in this attack:  1
+All Query times:  22580
+Success rate:  0.5283018867924528
+Successful items count:  28
+Total count:  53
+Index:  261
+
+>> ACC! a => an (0.54993 => 0.54993)
+>> SUC! p => fp (0.54993 => 0.49826)
+Example time cost:  0.14 min
+ALL examples time cost:  18.42 min
+Query times in this attack:  106
+All Query times:  22686
+Success rate:  0.5370370370370371
+Successful items count:  29
+Total count:  54
+Index:  262
+
+>> ACC! s => g (0.57915 => 0.52448)
+>> SUC! i => like (0.52448 => 0.45833)
+Example time cost:  0.12 min
+ALL examples time cost:  18.54 min
+Query times in this attack:  165
+All Query times:  22851
+Success rate:  0.5454545454545454
+Successful items count:  30
+Total count:  55
+Index:  263
+
+Example time cost:  0.01 min
+ALL examples time cost:  18.56 min
+Query times in this attack:  1
+All Query times:  22852
+Success rate:  0.5454545454545454
+Successful items count:  30
+Total count:  55
+Index:  264
+
+Example time cost:  0.02 min
+ALL examples time cost:  18.58 min
+Query times in this attack:  1
+All Query times:  22853
+Success rate:  0.5454545454545454
+Successful items count:  30
+Total count:  55
+Index:  265
+
+Example time cost:  0.02 min
+ALL examples time cost:  18.59 min
+Query times in this attack:  1
+All Query times:  22854
+Success rate:  0.5454545454545454
+Successful items count:  30
+Total count:  55
+Index:  266
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.02 min
+ALL examples time cost:  18.61 min
+Query times in this attack:  1
+All Query times:  22855
+Success rate:  0.5454545454545454
+Successful items count:  30
+Total count:  55
+Index:  267
+
+>> SUC! p => q (0.52455 => 0.27493)
+Example time cost:  0.06 min
+ALL examples time cost:  18.67 min
+Query times in this attack:  89
+All Query times:  22944
+Success rate:  0.5535714285714286
+Successful items count:  31
+Total count:  56
+Index:  268
+
+Example time cost:  0.02 min
+ALL examples time cost:  18.69 min
+Query times in this attack:  1
+All Query times:  22945
+Success rate:  0.5535714285714286
+Successful items count:  31
+Total count:  56
+Index:  269
+
+>> ACC! i => end (0.87804 => 0.75561)
+max_iter: 10
+Example time cost:  0.31 min
+ALL examples time cost:  19.0 min
+Query times in this attack:  498
+All Query times:  23443
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  270
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.02 min
+Query times in this attack:  1
+All Query times:  23444
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  271
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.04 min
+Query times in this attack:  1
+All Query times:  23445
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  272
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.05 min
+Query times in this attack:  1
+All Query times:  23446
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  273
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.08 min
+Query times in this attack:  1
+All Query times:  23447
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  274
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.1 min
+Query times in this attack:  1
+All Query times:  23448
+Success rate:  0.543859649122807
+Successful items count:  31
+Total count:  57
+Index:  275
+
+>> ACC! c => abc (0.89181 => 0.86069)
+max_iter: 10
+Example time cost:  0.34 min
+ALL examples time cost:  19.43 min
+Query times in this attack:  488
+All Query times:  23936
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  276
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.45 min
+Query times in this attack:  1
+All Query times:  23937
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  277
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.47 min
+Query times in this attack:  1
+All Query times:  23938
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  278
+
+Example time cost:  0.01 min
+ALL examples time cost:  19.48 min
+Query times in this attack:  1
+All Query times:  23939
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  279
+
+Example time cost:  0.01 min
+ALL examples time cost:  19.49 min
+Query times in this attack:  1
+All Query times:  23940
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  280
+
+Example time cost:  0.01 min
+ALL examples time cost:  19.5 min
+Query times in this attack:  1
+All Query times:  23941
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  281
+
+Example time cost:  0.01 min
+ALL examples time cost:  19.51 min
+Query times in this attack:  1
+All Query times:  23942
+Success rate:  0.5344827586206896
+Successful items count:  31
+Total count:  58
+Index:  282
+
+>> ACC! p => in (0.79401 => 0.67016)
+max_iter: 10
+Example time cost:  0.29 min
+ALL examples time cost:  19.8 min
+Query times in this attack:  521
+All Query times:  24463
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  283
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.81 min
+Query times in this attack:  1
+All Query times:  24464
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  284
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.83 min
+Query times in this attack:  1
+All Query times:  24465
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  285
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.85 min
+Query times in this attack:  1
+All Query times:  24466
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  286
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.87 min
+Query times in this attack:  1
+All Query times:  24467
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  287
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.88 min
+Query times in this attack:  1
+All Query times:  24468
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  288
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.9 min
+Query times in this attack:  1
+All Query times:  24469
+Success rate:  0.5254237288135594
+Successful items count:  31
+Total count:  59
+Index:  289
+
+>> SUC! p => py (0.56356 => 0.49837)
+Example time cost:  0.07 min
+ALL examples time cost:  19.97 min
+Query times in this attack:  79
+All Query times:  24548
+Success rate:  0.5333333333333333
+Successful items count:  32
+Total count:  60
+Index:  290
+
+Example time cost:  0.02 min
+ALL examples time cost:  19.99 min
+Query times in this attack:  1
+All Query times:  24549
+Success rate:  0.5333333333333333
+Successful items count:  32
+Total count:  60
+Index:  291
+
+>> ACC! i => like (0.93501 => 0.86034)
+max_iter: 10
+Example time cost:  0.32 min
+ALL examples time cost:  20.3 min
+Query times in this attack:  519
+All Query times:  25068
+Success rate:  0.5245901639344263
+Successful items count:  32
+Total count:  61
+Index:  292
+
+Example time cost:  0.02 min
+ALL examples time cost:  20.32 min
+Query times in this attack:  1
+All Query times:  25069
+Success rate:  0.5245901639344263
+Successful items count:  32
+Total count:  61
+Index:  293
+
+Example time cost:  0.02 min
+ALL examples time cost:  20.34 min
+Query times in this attack:  1
+All Query times:  25070
+Success rate:  0.5245901639344263
+Successful items count:  32
+Total count:  61
+Index:  294
+
+Example time cost:  0.02 min
+ALL examples time cost:  20.35 min
+Query times in this attack:  1
+All Query times:  25071
+Success rate:  0.5245901639344263
+Successful items count:  32
+Total count:  61
+Index:  295
+
+>> ACC! e => element (0.58022 => 0.57492)
+max_iter: 10
+Example time cost:  0.73 min
+ALL examples time cost:  21.08 min
+Query times in this attack:  461
+All Query times:  25532
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  296
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.09 min
+Query times in this attack:  1
+All Query times:  25533
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  297
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.1 min
+Query times in this attack:  1
+All Query times:  25534
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  298
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.11 min
+Query times in this attack:  1
+All Query times:  25535
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  299
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.12 min
+Query times in this attack:  1
+All Query times:  25536
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  300
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.14 min
+Query times in this attack:  1
+All Query times:  25537
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  301
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.15 min
+Query times in this attack:  1
+All Query times:  25538
+Success rate:  0.5161290322580645
+Successful items count:  32
+Total count:  62
+Index:  302
+
+>> ACC! i => connection (0.62917 => 0.59692)
+>> ACC! q => u (0.59692 => 0.56714)
+>> SUC! p => port (0.56714 => 0.45240)
+Example time cost:  0.12 min
+ALL examples time cost:  21.26 min
+Query times in this attack:  278
+All Query times:  25816
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  303
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.29 min
+Query times in this attack:  1
+All Query times:  25817
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  304
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.3 min
+Query times in this attack:  1
+All Query times:  25818
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  305
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.32 min
+Query times in this attack:  1
+All Query times:  25819
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  306
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.33 min
+Query times in this attack:  1
+All Query times:  25820
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  307
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.34 min
+Query times in this attack:  1
+All Query times:  25821
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  308
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.35 min
+Query times in this attack:  1
+All Query times:  25822
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  309
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.36 min
+Query times in this attack:  1
+All Query times:  25823
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  310
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.37 min
+Query times in this attack:  1
+All Query times:  25824
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  311
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.39 min
+Query times in this attack:  1
+All Query times:  25825
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  312
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.4 min
+Query times in this attack:  1
+All Query times:  25826
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  313
+
+Example time cost:  0.01 min
+ALL examples time cost:  21.42 min
+Query times in this attack:  1
+All Query times:  25827
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  314
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.43 min
+Query times in this attack:  1
+All Query times:  25828
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  315
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.45 min
+Query times in this attack:  1
+All Query times:  25829
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  316
+
+Example time cost:  0.02 min
+ALL examples time cost:  21.47 min
+Query times in this attack:  1
+All Query times:  25830
+Success rate:  0.5238095238095238
+Successful items count:  33
+Total count:  63
+Index:  317
+
+>> ACC! i => clip (0.83674 => 0.82052)
+>> ACC! s => sync (0.82052 => 0.78535)
+max_iter: 15
+Example time cost:  0.54 min
+ALL examples time cost:  22.01 min
+Query times in this attack:  907
+All Query times:  26737
+Success rate:  0.515625
+Successful items count:  33
+Total count:  64
+Index:  318
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.02 min
+Query times in this attack:  1
+All Query times:  26738
+Success rate:  0.515625
+Successful items count:  33
+Total count:  64
+Index:  319
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.03 min
+Query times in this attack:  1
+All Query times:  26739
+Success rate:  0.515625
+Successful items count:  33
+Total count:  64
+Index:  320
+
+>> SUC! y => is (0.52940 => 0.49828)
+Example time cost:  0.08 min
+ALL examples time cost:  22.12 min
+Query times in this attack:  92
+All Query times:  26831
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  321
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.13 min
+Query times in this attack:  1
+All Query times:  26832
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  322
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.14 min
+Query times in this attack:  1
+All Query times:  26833
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  323
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.16 min
+Query times in this attack:  1
+All Query times:  26834
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  324
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.17 min
+Query times in this attack:  1
+All Query times:  26835
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  325
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.19 min
+Query times in this attack:  1
+All Query times:  26836
+Success rate:  0.5230769230769231
+Successful items count:  34
+Total count:  65
+Index:  326
+
+>> SUC! p => post (0.95850 => 0.41238)
+Example time cost:  0.06 min
+ALL examples time cost:  22.25 min
+Query times in this attack:  82
+All Query times:  26918
+Success rate:  0.5303030303030303
+Successful items count:  35
+Total count:  66
+Index:  327
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.26 min
+Query times in this attack:  1
+All Query times:  26919
+Success rate:  0.5303030303030303
+Successful items count:  35
+Total count:  66
+Index:  328
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.27 min
+Query times in this attack:  1
+All Query times:  26920
+Success rate:  0.5303030303030303
+Successful items count:  35
+Total count:  66
+Index:  329
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.29 min
+Query times in this attack:  1
+All Query times:  26921
+Success rate:  0.5303030303030303
+Successful items count:  35
+Total count:  66
+Index:  330
+
+>> ACC! i => it (0.75901 => 0.63409)
+max_iter: 10
+Example time cost:  0.27 min
+ALL examples time cost:  22.56 min
+Query times in this attack:  500
+All Query times:  27421
+Success rate:  0.5223880597014925
+Successful items count:  35
+Total count:  67
+Index:  331
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.57 min
+Query times in this attack:  1
+All Query times:  27422
+Success rate:  0.5223880597014925
+Successful items count:  35
+Total count:  67
+Index:  332
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.59 min
+Query times in this attack:  1
+All Query times:  27423
+Success rate:  0.5223880597014925
+Successful items count:  35
+Total count:  67
+Index:  333
+
+Example time cost:  0.02 min
+ALL examples time cost:  22.61 min
+Query times in this attack:  1
+All Query times:  27424
+Success rate:  0.5223880597014925
+Successful items count:  35
+Total count:  67
+Index:  334
+
+>> ACC! s => bes (0.75362 => 0.66248)
+max_iter: 10
+Example time cost:  0.34 min
+ALL examples time cost:  22.95 min
+Query times in this attack:  582
+All Query times:  28006
+Success rate:  0.5147058823529411
+Successful items count:  35
+Total count:  68
+Index:  335
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.96 min
+Query times in this attack:  1
+All Query times:  28007
+Success rate:  0.5147058823529411
+Successful items count:  35
+Total count:  68
+Index:  336
+
+>> SUC! i => ip (0.50167 => 0.49754)
+Example time cost:  0.15 min
+ALL examples time cost:  23.11 min
+Query times in this attack:  97
+All Query times:  28104
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  337
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.12 min
+Query times in this attack:  1
+All Query times:  28105
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  338
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.14 min
+Query times in this attack:  1
+All Query times:  28106
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  339
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.16 min
+Query times in this attack:  1
+All Query times:  28107
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  340
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.17 min
+Query times in this attack:  1
+All Query times:  28108
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  341
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.19 min
+Query times in this attack:  1
+All Query times:  28109
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  342
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.21 min
+Query times in this attack:  1
+All Query times:  28110
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  343
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.23 min
+Query times in this attack:  1
+All Query times:  28111
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  344
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.25 min
+Query times in this attack:  1
+All Query times:  28112
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  345
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.26 min
+Query times in this attack:  1
+All Query times:  28113
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  346
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.28 min
+Query times in this attack:  1
+All Query times:  28114
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  347
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.3 min
+Query times in this attack:  1
+All Query times:  28115
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  348
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.32 min
+Query times in this attack:  1
+All Query times:  28116
+Success rate:  0.5217391304347826
+Successful items count:  36
+Total count:  69
+Index:  349
+
+>> SUC! H => R (0.62767 => 0.49610)
+Example time cost:  0.06 min
+ALL examples time cost:  23.38 min
+Query times in this attack:  68
+All Query times:  28184
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  350
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.4 min
+Query times in this attack:  1
+All Query times:  28185
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  351
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.41 min
+Query times in this attack:  1
+All Query times:  28186
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  352
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.43 min
+Query times in this attack:  1
+All Query times:  28187
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  353
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.45 min
+Query times in this attack:  1
+All Query times:  28188
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  354
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.47 min
+Query times in this attack:  1
+All Query times:  28189
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  355
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.49 min
+Query times in this attack:  1
+All Query times:  28190
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  356
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.5 min
+Query times in this attack:  1
+All Query times:  28191
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  357
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.52 min
+Query times in this attack:  1
+All Query times:  28192
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  358
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.54 min
+Query times in this attack:  1
+All Query times:  28193
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  359
+
+Example time cost:  0.02 min
+ALL examples time cost:  23.56 min
+Query times in this attack:  1
+All Query times:  28194
+Success rate:  0.5285714285714286
+Successful items count:  37
+Total count:  70
+Index:  360
+

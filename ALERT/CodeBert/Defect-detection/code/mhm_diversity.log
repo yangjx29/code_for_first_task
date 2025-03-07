@@ -1,0 +1,2281 @@
+Some weights of the model checkpoint at microsoft/codebert-base-mlm were not used when initializing RobertaForMaskedLM: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+- This IS expected if you are initializing RobertaForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at microsoft/codebert-base and are newly initialized: ['classifier.dense.bias', 'classifier.dense.weight', 'classifier.out_proj.bias', 'classifier.out_proj.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+MODEL LOADED!
+
+ cached_features_file:  ../preprocess/dataset/cached_test_subs_gan_0_400
+  0%|          | 0/400 [00:00<?, ?it/s]100%|██████████| 400/400 [00:00<00:00, 10469.27it/s]
+ATTACKER BUILT!
+  >>  iter 1, ACC! ring_order => sps (1 => 1, 0.60181 => 0.60854) a=1.110
+  >>  iter 2, SUCC! s => celt_output_samples (1 => 0, 0.60854 => 0.44191) a=1.000
+EXAMPLE 1 SUCCEEDED!
+  time cost = 0.02 min
+  curr succ rate = 1.0
+Query times in this attack:  43
+All Query times:  43
+  >>  iter 1, ACC! s => gen_exts (0 => 0, 0.62094 => 0.68975) a=1.114
+  >>  iter 2, ACC! buf => EM_LATTICEMICO32 (0 => 0, 0.68975 => 0.72790) a=1.148
+  >>  iter 3, ACC! v => tcg_gen_shr_tl (0 => 0, 0.72790 => 0.73589) a=1.244
+  >>  iter 4, ACC! aspect => tcg_gen_qemu_ld16u (0 => 0, 0.73589 => 0.73499) a=1.097
+  >>  iter 5, SUCC! avctx => SVM_EXIT_WRITE_CR0 (0 => 1, 0.73499 => 0.44521) a=1.000
+EXAMPLE 4 SUCCEEDED!
+  time cost = 0.06 min
+  curr succ rate = 1.0
+Query times in this attack:  106
+All Query times:  149
+  >>  iter 1, ACC! drc => invalidate (0 => 0, 0.99403 => 0.99420) a=1.450
+  >>  iter 2, ACC! invalidate => txn (0 => 0, 0.99420 => 0.99423) a=1.324
+  >>  iter 3, ACC! txn => access_unit_size (0 => 0, 0.99423 => 0.99513) a=1.148
+  >>  iter 4, ACC! access_unit_size => num_insns (0 => 0, 0.99513 => 0.99164) a=1.937
+  >>  iter 5, REJ. num_insns => do_jcc (0 => 0, 0.99164 => 0.99349) a=0.785
+  >>  iter 6, REJ. num_insns => df (0 => 0, 0.99164 => 0.99351) a=0.776
+  >>  iter 7, REJ. num_insns => max_ra (0 => 0, 0.99164 => 0.99409) a=0.838
+  >>  iter 8, REJ. num_insns => stereo (0 => 0, 0.99164 => 0.99498) a=0.873
+  >>  iter 9, ACC! num_insns => RockerTlv (0 => 0, 0.99164 => 0.98874) a=1.971
+  >>  iter 10, REJ. RockerTlv => IS_KLV_KEY (0 => 0, 0.98874 => 0.99415) a=0.854
+  >>  iter 11, REJ. RockerTlv => ASSIGN_MMX_SCALE_FUNC (0 => 0, 0.98874 => 0.99413) a=0.661
+  >>  iter 12, REJ. RockerTlv => flat_start_offset (0 => 0, 0.98874 => 0.99508) a=0.676
+  >>  iter 13, REJ. RockerTlv => sparc32_dma_init (0 => 0, 0.98874 => 0.99346) a=0.727
+  >>  iter 14, REJ. RockerTlv => lbp (0 => 0, 0.98874 => 0.99450) a=0.669
+  >>  iter 15, REJ. RockerTlv => gen_op_st_v (0 => 0, 0.98874 => 0.99469) a=0.658
+  >>  iter 16, REJ. RockerTlv => qemu_mutex_lock (0 => 0, 0.98874 => 0.99576) a=0.863
+  >>  iter 17, REJ. RockerTlv => BitstreamContext (0 => 0, 0.98874 => 0.99358) a=0.895
+  >>  iter 18, REJ. RockerTlv => AVC_XOR_VSHF_B_AND_APPLY_6TAP_HORIZ_FILT_SH (0 => 0, 0.98874 => 0.99503) a=0.654
+  >>  iter 19, REJ. RockerTlv => extended_data (0 => 0, 0.98874 => 0.99305) a=0.643
+  >>  iter 20, REJ. RockerTlv => f32 (0 => 0, 0.98874 => 0.99491) a=0.655
+EXAMPLE 5 FAILED.
+  time cost = 0.21 min
+  curr succ rate = 0.6666666666666666
+Query times in this attack:  409
+All Query times:  558
+  >>  iter 1, SUCC! r => help (1 => 0, 0.50504 => 0.41855) a=1.000
+EXAMPLE 6 SUCCEEDED!
+  time cost = 0.01 min
+  curr succ rate = 0.75
+Query times in this attack:  22
+All Query times:  580
+  >>  iter 1, ACC! len => penv (0 => 0, 0.64507 => 0.63619) a=1.265
+  >>  iter 2, ACC! ctx => nb (0 => 0, 0.63619 => 0.65205) a=1.364
+  >>  iter 3, ACC! penv => features (0 => 0, 0.65205 => 0.61144) a=1.143
+  >>  iter 4, ACC! argv => AV_OPT_TYPE_CONST (0 => 0, 0.61144 => 0.52111) a=1.264
+  >>  iter 5, SUCC! c => dst0 (0 => 1, 0.52111 => 0.49505) a=1.000
+EXAMPLE 8 SUCCEEDED!
+  time cost = 0.06 min
+  curr succ rate = 0.8
+Query times in this attack:  105
+All Query times:  685
+  >>  iter 1, SUCC! linesize => r2_name (1 => 0, 0.82224 => 0.45014) a=1.000
+EXAMPLE 9 SUCCEEDED!
+  time cost = 0.02 min
+  curr succ rate = 0.8333333333333334
+Query times in this attack:  22
+All Query times:  707
+  >>  iter 1, ACC! x0 => segment_offset (1 => 1, 0.99404 => 0.99386) a=1.222
+  >>  iter 2, ACC! x1 => parallel_cpus (1 => 1, 0.99386 => 0.97683) a=3.771
+  >>  iter 3, REJ. segment_offset => av_buffer_alloc (1 => 1, 0.97683 => 0.98895) a=0.723
+  >>  iter 4, REJ. segment_offset => mr (1 => 1, 0.97683 => 0.98713) a=0.845
+  >>  iter 5, REJ. segment_offset => focus (1 => 1, 0.97683 => 0.98721) a=0.763
+  >>  iter 6, REJ. parallel_cpus => memory_region_get_ram_ptr (1 => 1, 0.97683 => 0.99365) a=0.343
+  >>  iter 7, REJ. parallel_cpus => last_pg_state (1 => 1, 0.97683 => 0.99310) a=0.416
+  >>  iter 8, REJ. parallel_cpus => descr (1 => 1, 0.97683 => 0.99336) a=0.318
+  >>  iter 9, ACC! segment_offset => level (1 => 1, 0.97683 => 0.98194) a=1.175
+  >>  iter 10, ACC! level => dirty_bitmap (1 => 1, 0.98194 => 0.98647) a=1.240
+  >>  iter 11, ACC! dirty_bitmap => gen_lea_modrm (1 => 1, 0.98647 => 0.98786) a=1.467
+  >>  iter 12, ACC! gen_lea_modrm => arg2 (1 => 1, 0.98786 => 0.98370) a=2.775
+  >>  iter 13, REJ. parallel_cpus => num_insns (1 => 1, 0.98370 => 0.99367) a=0.464
+  >>  iter 14, ACC! arg2 => cpu_npc (1 => 1, 0.98370 => 0.98991) a=1.328
+  >>  iter 15, ACC! cpu_npc => bandno (1 => 1, 0.98991 => 0.97710) a=2.271
+  >>  iter 16, REJ. bandno => sub_id (1 => 1, 0.97710 => 0.98365) a=0.828
+  >>  iter 17, REJ. bandno => m (1 => 1, 0.97710 => 0.98782) a=0.824
+  >>  iter 18, REJ. parallel_cpus => MPV_common_end (1 => 1, 0.97710 => 0.99178) a=0.678
+  >>  iter 19, REJ. bandno => FW_CFG_MACHINE_ID (1 => 1, 0.97710 => 0.99198) a=0.948
+  >>  iter 20, REJ. bandno => print_cvtnum_err (1 => 1, 0.97710 => 0.99022) a=0.706
+EXAMPLE 12 FAILED.
+  time cost = 0.22 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  406
+All Query times:  1113
+  >>  iter 1, ACC! env => CC_OP_BMILGQ (0 => 0, 0.98711 => 0.96201) a=5.514
+  >>  iter 2, REJ. CC_OP_BMILGQ => physical (0 => 0, 0.96201 => 0.97776) a=0.822
+  >>  iter 3, ACC! CC_OP_BMILGQ => SVM_EXIT_WRITE_CR0 (0 => 0, 0.96201 => 0.97609) a=1.792
+  >>  iter 4, SUCC! SVM_EXIT_WRITE_CR0 => vector_fmul_scalar (0 => 1, 0.97609 => 0.31046) a=1.000
+EXAMPLE 13 SUCCEEDED!
+  time cost = 0.05 min
+  curr succ rate = 0.75
+Query times in this attack:  82
+All Query times:  1195
+  >>  iter 1, SUCC! env => XEN_FLEX_RING_SIZE (0 => 1, 0.98042 => 0.37679) a=1.000
+EXAMPLE 14 SUCCEEDED!
+  time cost = 0.02 min
+  curr succ rate = 0.7777777777777778
+Query times in this attack:  21
+All Query times:  1216
+  >>  iter 1, ACC! s => chrConvertRange (0 => 0, 0.98224 => 0.96811) a=3.152
+  >>  iter 2, ACC! link_down => celt_delay (0 => 0, 0.96811 => 0.98033) a=5.083
+  >>  iter 3, ACC! celt_delay => qemu_mutex_unlock_iothread (0 => 0, 0.98033 => 0.95580) a=14.265
+  >>  iter 4, ACC! chrConvertRange => lpc_coeff_precision (0 => 0, 0.95580 => 0.96904) a=7.465
+  >>  iter 5, ACC! lpc_coeff_precision => TCG_TARGET_STACK_GROWSUP (0 => 0, 0.96904 => 0.65290) a=11.213
+  >>  iter 6, REJ. TCG_TARGET_STACK_GROWSUP => avpkt (0 => 0, 0.65290 => 0.77283) a=0.988
+  >>  iter 7, REJ. TCG_TARGET_STACK_GROWSUP => CPUID_EXT3_SKINIT (0 => 0, 0.65290 => 0.94116) a=0.820
+  >>  iter 8, REJ. qemu_mutex_unlock_iothread => fregnames (0 => 0, 0.65290 => 0.98563) a=0.478
+  >>  iter 9, ACC! TCG_TARGET_STACK_GROWSUP => start_address (0 => 0, 0.65290 => 0.89135) a=1.436
+  >>  iter 10, ACC! start_address => av_get_cpu_flags (0 => 0, 0.89135 => 0.84220) a=1.971
+  >>  iter 11, ACC! av_get_cpu_flags => ff_wav_codec_get_id (0 => 0, 0.84220 => 0.84136) a=2.033
+  >>  iter 12, ACC! ff_wav_codec_get_id => gen_opc_ptr (0 => 0, 0.84136 => 0.97158) a=2.883
+  >>  iter 13, ACC! gen_opc_ptr => nfds (0 => 0, 0.97158 => 0.75181) a=15.509
+  >>  iter 14, REJ. qemu_mutex_unlock_iothread => gen_helper_write_eflags (0 => 0, 0.75181 => 0.95475) a=0.383
+  >>  iter 15, REJ. qemu_mutex_unlock_iothread => aud (0 => 0, 0.75181 => 0.95719) a=0.555
+  >>  iter 16, ACC! nfds => gen_helper_sti (0 => 0, 0.75181 => 0.86416) a=1.085
+  >>  iter 17, ACC! qemu_mutex_unlock_iothread => mbap (0 => 0, 0.86416 => 0.94917) a=2.530
+  >>  iter 18, ACC! gen_helper_sti => mod (0 => 0, 0.94917 => 0.98007) a=1.924
+  >>  iter 19, ACC! mod => LMI_HELPER_1 (0 => 0, 0.98007 => 0.95686) a=3.706
+  >>  iter 20, REJ. LMI_HELPER_1 => meta (0 => 0, 0.95686 => 0.98052) a=0.929
+EXAMPLE 15 FAILED.
+  time cost = 0.22 min
+  curr succ rate = 0.7
+Query times in this attack:  409
+All Query times:  1625
+  >>  iter 1, ACC! qi => opt2 (0 => 0, 0.99395 => 0.99396) a=1.120
+  >>  iter 2, ACC! opt2 => x0 (0 => 0, 0.99396 => 0.99419) a=1.076
+  >>  iter 3, ACC! x0 => iov_buf (0 => 0, 0.99419 => 0.99458) a=1.157
+  >>  iter 4, ACC! iov_buf => code_gen_ptr (0 => 0, 0.99458 => 0.99459) a=1.363
+  >>  iter 5, ACC! code_gen_ptr => h264dsp (0 => 0, 0.99459 => 0.99496) a=1.219
+  >>  iter 6, ACC! h264dsp => gpio_in (0 => 0, 0.99496 => 0.99500) a=1.276
+  >>  iter 7, ACC! gpio_in => deflateEnd (0 => 0, 0.99500 => 0.99421) a=1.238
+  >>  iter 8, ACC! deflateEnd => kernel_size (0 => 0, 0.99421 => 0.99462) a=1.082
+  >>  iter 9, ACC! kernel_size => defined (0 => 0, 0.99462 => 0.99408) a=1.372
+  >>  iter 10, ACC! defined => tcg_gen_ori_tl (0 => 0, 0.99408 => 0.99500) a=1.223
+  >>  iter 11, ACC! tcg_gen_ori_tl => file_index (0 => 0, 0.99500 => 0.99521) a=1.316
+  >>  iter 12, ACC! file_index => cpu_to_be16 (0 => 0, 0.99521 => 0.99451) a=1.416
+  >>  iter 13, ACC! cpu_to_be16 => tile_width (0 => 0, 0.99451 => 0.99466) a=1.177
+  >>  iter 14, ACC! tile_width => jmpbuf (0 => 0, 0.99466 => 0.99490) a=1.247
+  >>  iter 15, ACC! jmpbuf => ref_flag (0 => 0, 0.99490 => 0.99442) a=1.680
+  >>  iter 16, ACC! ref_flag => chars (0 => 0, 0.99442 => 0.99323) a=1.214
+  >>  iter 17, ACC! chars => error_report (0 => 0, 0.99323 => 0.99406) a=1.016
+  >>  iter 18, ACC! error_report => src_start (0 => 0, 0.99406 => 0.99405) a=1.221
+  >>  iter 19, ACC! src_start => IF_MASK (0 => 0, 0.99405 => 0.99497) a=1.167
+  >>  iter 20, ACC! IF_MASK => last_pg_state (0 => 0, 0.99497 => 0.99493) a=1.470
+EXAMPLE 18 FAILED.
+  time cost = 0.22 min
+  curr succ rate = 0.6363636363636364
+Query times in this attack:  413
+All Query times:  2038
+  >>  iter 1, ACC! gb => qemu_free (1 => 1, 0.99430 => 0.99397) a=1.065
+  >>  iter 2, ACC! qemu_free => q0_or_p0_org (1 => 1, 0.99397 => 0.99458) a=1.040
+  >>  iter 3, ACC! j => label1 (1 => 1, 0.99458 => 0.99443) a=1.042
+  >>  iter 4, ACC! symbols => sigsetjmp (1 => 1, 0.99443 => 0.99454) a=1.027
+  >>  iter 5, ACC! q0_or_p0_org => D_FLAG (1 => 1, 0.99454 => 0.99400) a=1.149
+  >>  iter 6, ACC! num_codes_sum => ptel (1 => 1, 0.99400 => 0.99413) a=1.046
+  >>  iter 7, ACC! ctx => float_flag_invalid (1 => 1, 0.99413 => 0.99332) a=1.139
+  >>  iter 8, ACC! bits => delayed_samples (1 => 1, 0.99332 => 0.99414) a=1.001
+  >>  iter 9, ACC! vlc => PICT_FRAME (1 => 1, 0.99414 => 0.99439) a=1.079
+  >>  iter 10, ACC! count => num_slaves (1 => 1, 0.99439 => 0.99440) a=1.040
+  >>  iter 11, REJ. float_flag_invalid => gen_helper_fucomi_ST0_FT0 (1 => 1, 0.99440 => 0.99472) a=0.984
+  >>  iter 12, ACC! i => PR_SRS (1 => 1, 0.99440 => 0.99458) a=1.060
+  >>  iter 13, ACC! ptel => xen_pv_printf (1 => 1, 0.99458 => 0.99410) a=1.108
+  >>  iter 14, ACC! PICT_FRAME => coeffsA (1 => 1, 0.99410 => 0.99401) a=1.044
+  >>  iter 15, ACC! D_FLAG => pix (1 => 1, 0.99401 => 0.99364) a=1.062
+  >>  iter 16, ACC! label1 => opc (1 => 1, 0.99364 => 0.99373) a=1.014
+  >>  iter 17, REJ. pix => MSR_CORE_PERF_GLOBAL_STATUS (1 => 1, 0.99373 => 0.99406) a=0.989
+  >>  iter 18, ACC! opc => unmap (1 => 1, 0.99373 => 0.99378) a=1.020
+  >>  iter 19, ACC! num_slaves => qemu_input_queue_rel (1 => 1, 0.99378 => 0.99411) a=1.020
+  >>  iter 20, ACC! prefix => SIGP_STAT_INVALID_PARAMETER (1 => 1, 0.99411 => 0.99425) a=1.189
+EXAMPLE 19 FAILED.
+  time cost = 0.24 min
+  curr succ rate = 0.5833333333333334
+Query times in this attack:  407
+All Query times:  2445
+  >>  iter 1, ACC! data => gen_helper_lret_protected (1 => 1, 0.61842 => 0.65387) a=1.285
+  >>  iter 2, ACC! gen_helper_lret_protected => savevm_htab_handlers (1 => 1, 0.65387 => 0.60716) a=1.277
+  >>  iter 3, ACC! savevm_htab_handlers => av_pix_fmt_desc_get (1 => 1, 0.60716 => 0.58615) a=1.207
+  >>  iter 4, SUCC! id => CPUX86State (1 => 0, 0.58615 => 0.48303) a=1.000
+EXAMPLE 22 SUCCEEDED!
+  time cost = 0.07 min
+  curr succ rate = 0.6153846153846154
+Query times in this attack:  86
+All Query times:  2531
+  >>  iter 1, ACC! i => FF_THREAD_FRAME (1 => 1, 0.97252 => 0.97038) a=2.693
+  >>  iter 2, ACC! g => gen_push_v (1 => 1, 0.97038 => 0.97424) a=1.421
+  >>  iter 3, ACC! s => farg2 (1 => 1, 0.97424 => 0.95261) a=4.526
+  >>  iter 4, ACC! farg2 => bandwidth (1 => 1, 0.95261 => 0.96723) a=1.814
+  >>  iter 5, ACC! n => ecw (1 => 1, 0.96723 => 0.95439) a=2.049
+  >>  iter 6, ACC! ecw => ivlen (1 => 1, 0.95439 => 0.95816) a=3.568
+  >>  iter 7, ACC! length => alphabet_size (1 => 1, 0.95816 => 0.94682) a=3.626
+  >>  iter 8, ACC! bandwidth => spapr_rtas_register (1 => 1, 0.94682 => 0.93436) a=9.228
+  >>  iter 9, ACC! b => START_TEST (1 => 1, 0.93436 => 0.95386) a=2.171
+  >>  iter 10, ACC! ivlen => QEMUBH (1 => 1, 0.95386 => 0.93119) a=3.009
+  >>  iter 11, ACC! alphabet_size => qemu_clock_get_ns (1 => 1, 0.93119 => 0.93939) a=1.420
+  >>  iter 12, ACC! QEMUBH => MB_TYPE_16x8 (1 => 1, 0.93939 => 0.94269) a=2.103
+  >>  iter 13, ACC! avctx => gen_io_start (1 => 1, 0.94269 => 0.91155) a=1.543
+  >>  iter 14, ACC! START_TEST => TCG_TARGET_STACK_ALIGN (1 => 1, 0.91155 => 0.93146) a=1.689
+  >>  iter 15, ACC! FF_THREAD_FRAME => FFTContext (1 => 1, 0.93146 => 0.81640) a=2.679
+  >>  iter 16, ACC! spapr_rtas_register => CPUID_EXT3_LAHF_LM (1 => 1, 0.81640 => 0.89644) a=2.008
+  >>  iter 17, ACC! gen_push_v => chr_can_read (1 => 1, 0.89644 => 0.87334) a=1.902
+  >>  iter 18, ACC! FFTContext => MSR_IA32_MISC_ENABLE (1 => 1, 0.87334 => 0.90642) a=1.462
+  >>  iter 19, ACC! CPUID_EXT3_LAHF_LM => RV34_MB_P_8x16 (1 => 1, 0.90642 => 0.89688) a=2.571
+  >>  iter 20, ACC! r => ch (1 => 1, 0.89688 => 0.87488) a=2.160
+EXAMPLE 24 FAILED.
+  time cost = 0.25 min
+  curr succ rate = 0.5714285714285714
+Query times in this attack:  410
+All Query times:  2941
+  >>  iter 1, ACC! dev => hotplugged (0 => 0, 0.73185 => 0.73091) a=1.510
+  >>  iter 2, REJ. s => client_height (0 => 0, 0.73091 => 0.77957) a=0.954
+  >>  iter 3, ACC! cylinders => rv34_mc_2mv_skip (0 => 0, 0.73091 => 0.74785) a=1.103
+  >>  iter 4, ACC! heads => NvmeSQueue (0 => 0, 0.74785 => 0.74419) a=1.301
+  >>  iter 5, ACC! hotplugged => ff_yuyvToY_sse2 (0 => 0, 0.74419 => 0.68397) a=1.301
+  >>  iter 6, ACC! rv34_mc_2mv_skip => cbSize (0 => 0, 0.68397 => 0.72288) a=1.048
+  >>  iter 7, ACC! NvmeSQueue => irqn (0 => 0, 0.72288 => 0.70993) a=1.311
+  >>  iter 8, ACC! s => floatx80_eq (0 => 0, 0.70993 => 0.81374) a=1.080
+  >>  iter 9, ACC! conf => error_code (0 => 0, 0.81374 => 0.76892) a=1.370
+  >>  iter 10, ACC! serial => dmv (0 => 0, 0.76892 => 0.77656) a=1.299
+  >>  iter 11, ACC! secs => lower_proto (0 => 0, 0.77656 => 0.80752) a=1.078
+  >>  iter 12, ACC! dinfo => sun4u_NVRAM_set_params (0 => 0, 0.80752 => 0.75572) a=1.485
+  >>  iter 13, ACC! sun4u_NVRAM_set_params => new_area (0 => 0, 0.75572 => 0.71636) a=1.161
+  >>  iter 14, ACC! lower_proto => session (0 => 0, 0.71636 => 0.76469) a=1.026
+  >>  iter 15, ACC! dmv => gen_movs (0 => 0, 0.76469 => 0.76067) a=1.161
+  >>  iter 16, ACC! floatx80_eq => av_frame_free (0 => 0, 0.76067 => 0.79398) a=1.181
+  >>  iter 17, ACC! gen_movs => info_str (0 => 0, 0.79398 => 0.75817) a=1.376
+  >>  iter 18, REJ. ff_yuyvToY_sse2 => sv (0 => 0, 0.75817 => 0.81302) a=0.955
+  >>  iter 19, ACC! cbSize => ff_celt_window2 (0 => 0, 0.75817 => 0.81280) a=1.231
+  >>  iter 20, ACC! info_str => smp_threads (0 => 0, 0.81280 => 0.82150) a=1.353
+EXAMPLE 27 FAILED.
+  time cost = 0.28 min
+  curr succ rate = 0.5333333333333333
+Query times in this attack:  414
+All Query times:  3355
+  >>  iter 1, SUCC! d => MSR_KVM_PV_EOI_EN (0 => 1, 0.96672 => 0.27146) a=1.000
+EXAMPLE 30 SUCCEEDED!
+  time cost = 0.07 min
+  curr succ rate = 0.5625
+Query times in this attack:  24
+All Query times:  3379
+  >>  iter 1, ACC! bpp => data_bit_start (0 => 0, 0.98135 => 0.98074) a=2.171
+  >>  iter 2, ACC! buf => data_buf (0 => 0, 0.98074 => 0.97758) a=4.685
+  >>  iter 3, ACC! data_bit_start => LIMIT_TO_PERIODS (0 => 0, 0.97758 => 0.96028) a=4.159
+  >>  iter 4, REJ. LIMIT_TO_PERIODS => predictionA (0 => 0, 0.96028 => 0.96505) a=0.988
+  >>  iter 5, ACC! data_buf => scaledDuration (0 => 0, 0.96028 => 0.94964) a=4.312
+  >>  iter 6, ACC! LIMIT_TO_PERIODS => MigrationState (0 => 0, 0.94964 => 0.90256) a=1.935
+  >>  iter 7, ACC! scaledDuration => proxy (0 => 0, 0.90256 => 0.97807) a=2.262
+  >>  iter 8, ACC! proxy => subframe_count_exact (0 => 0, 0.97807 => 0.97032) a=9.950
+  >>  iter 9, ACC! subframe_count_exact => rtc_base (0 => 0, 0.97032 => 0.90927) a=15.070
+  >>  iter 10, ACC! MigrationState => tone_level_idx_hi2 (0 => 0, 0.90927 => 0.98358) a=1.301
+  >>  iter 11, ACC! tone_level_idx_hi2 => rule (0 => 0, 0.98358 => 0.95273) a=7.255
+  >>  iter 12, ACC! rtc_base => ELF_MACHINE (0 => 0, 0.95273 => 0.98973) a=2.208
+  >>  iter 13, ACC! rule => from (0 => 0, 0.98973 => 0.98997) a=12.681
+  >>  iter 14, ACC! ELF_MACHINE => all_pix_fmts (0 => 0, 0.98997 => 0.98846) a=6.694
+  >>  iter 15, ACC! from => stick_irq (0 => 0, 0.98846 => 0.99159) a=1.224
+  >>  iter 16, ACC! all_pix_fmts => filename_bytes (0 => 0, 0.99159 => 0.98369) a=3.644
+  >>  iter 17, ACC! filename_bytes => iov_size (0 => 0, 0.98369 => 0.96724) a=2.008
+  >>  iter 18, ACC! stick_irq => showed_multi_packet_warning (0 => 0, 0.96724 => 0.99422) a=5.284
+  >>  iter 19, ACC! showed_multi_packet_warning => hstick (0 => 0, 0.99422 => 0.97816) a=58.826
+  >>  iter 20, ACC! hstick => htab_mask (0 => 0, 0.97816 => 0.94312) a=3.430
+EXAMPLE 31 FAILED.
+  time cost = 0.32 min
+  curr succ rate = 0.5294117647058824
+Query times in this attack:  413
+All Query times:  3792
+  >>  iter 1, ACC! backing_file_str => MSR_IA32_XSS (1 => 1, 0.91901 => 0.74640) a=3.476
+  >>  iter 2, ACC! job_id => bflag (1 => 1, 0.74640 => 0.80146) a=1.556
+  >>  iter 3, ACC! speed => imsg (1 => 1, 0.80146 => 0.72355) a=1.955
+  >>  iter 4, ACC! errp => EXCP03_INT3 (1 => 1, 0.72355 => 0.77441) a=1.362
+  >>  iter 5, SUCC! cb => opt_xfer_len (1 => 0, 0.77441 => 0.25293) a=1.000
+EXAMPLE 33 SUCCEEDED!
+  time cost = 0.13 min
+  curr succ rate = 0.5555555555555556
+Query times in this attack:  106
+All Query times:  3898
+  >>  iter 1, ACC! frame_number => nonrma_base (1 => 1, 0.73236 => 0.75786) a=1.135
+  >>  iter 2, ACC! got_picture_ptr => stream_index (1 => 1, 0.75786 => 0.69306) a=1.430
+  >>  iter 3, ACC! stream_index => l2_flood (1 => 1, 0.69306 => 0.76001) a=1.006
+  >>  iter 4, ACC! l2_flood => AV_CODEC_ID_AAC_LATM (1 => 1, 0.76001 => 0.82882) a=1.400
+  >>  iter 5, ACC! nonrma_base => height (1 => 1, 0.82882 => 0.80266) a=1.734
+  >>  iter 6, ACC! ret => TYPE_LM32_CPU (1 => 1, 0.80266 => 0.70547) a=1.736
+  >>  iter 7, ACC! picture => has_fds (1 => 1, 0.70547 => 0.62910) a=1.573
+  >>  iter 8, ACC! AV_CODEC_ID_AAC_LATM => comps (1 => 1, 0.62910 => 0.75923) a=1.076
+  >>  iter 9, ACC! TYPE_LM32_CPU => SLICE_END (1 => 1, 0.75923 => 0.72214) a=1.523
+  >>  iter 10, ACC! SLICE_END => num_children (1 => 1, 0.72214 => 0.73982) a=1.550
+  >>  iter 11, ACC! num_children => fraction (1 => 1, 0.73982 => 0.64819) a=1.352
+  >>  iter 12, SUCC! avctx => XEN_FLEX_RING_SIZE (1 => 0, 0.64819 => 0.48885) a=1.000
+EXAMPLE 34 SUCCEEDED!
+  time cost = 0.22 min
+  curr succ rate = 0.5789473684210527
+Query times in this attack:  241
+All Query times:  4139
+  >>  iter 1, ACC! s => qpa_audio_fini (1 => 1, 0.85689 => 0.92717) a=2.439
+  >>  iter 2, ACC! qpa_audio_fini => interlacing_leftweight (1 => 1, 0.92717 => 0.71166) a=6.725
+  >>  iter 3, ACC! interlacing_leftweight => mirror_start_job (1 => 1, 0.71166 => 0.78250) a=1.663
+  >>  iter 4, ACC! sbd => MSIMessage (1 => 1, 0.78250 => 0.80411) a=1.944
+  >>  iter 5, ACC! MSIMessage => cluster_size (1 => 1, 0.80411 => 0.78210) a=1.672
+  >>  iter 6, SUCC! mirror_start_job => RENAME (1 => 0, 0.78210 => 0.41137) a=1.000
+EXAMPLE 35 SUCCEEDED!
+  time cost = 0.14 min
+  curr succ rate = 0.6
+Query times in this attack:  121
+All Query times:  4260
+  >>  iter 1, SUCC! s => tcg_gen_trunc_i64_i32 (1 => 0, 0.87357 => 0.38263) a=1.000
+EXAMPLE 36 SUCCEEDED!
+  time cost = 0.09 min
+  curr succ rate = 0.6190476190476191
+Query times in this attack:  22
+All Query times:  4282
+  >>  iter 1, ACC! a => gen_helper_fisttl_ST0 (0 => 0, 0.99493 => 0.99478) a=1.343
+  >>  iter 2, ACC! gen_helper_fisttl_ST0 => temp (0 => 0, 0.99478 => 0.99448) a=1.902
+  >>  iter 3, ACC! temp => mxf_header_partition_pack_key (0 => 0, 0.99448 => 0.99404) a=1.498
+  >>  iter 4, ACC! status => memaddr (0 => 0, 0.99404 => 0.99466) a=3.440
+  >>  iter 5, ACC! mxf_header_partition_pack_key => AV_CH_LAYOUT_STEREO (0 => 0, 0.99466 => 0.99458) a=1.509
+  >>  iter 6, ACC! memaddr => bundle (0 => 0, 0.99458 => 0.99317) a=3.956
+  >>  iter 7, ACC! b => l (0 => 0, 0.99317 => 0.99407) a=1.423
+  >>  iter 8, ACC! bundle => uport (0 => 0, 0.99407 => 0.99607) a=1.790
+  >>  iter 9, ACC! l => job (0 => 0, 0.99607 => 0.99576) a=1.158
+  >>  iter 10, ACC! job => value (0 => 0, 0.99576 => 0.99583) a=1.143
+  >>  iter 11, ACC! AV_CH_LAYOUT_STEREO => SIGP_STAT_INVALID_PARAMETER (0 => 0, 0.99583 => 0.99495) a=1.353
+  >>  iter 12, ACC! value => MANGLE (0 => 0, 0.99495 => 0.99505) a=1.478
+  >>  iter 13, ACC! uport => CPUID_EXT3_ABM (0 => 0, 0.99505 => 0.99023) a=3.398
+  >>  iter 14, REJ. SIGP_STAT_INVALID_PARAMETER => has_error_code (0 => 0, 0.99023 => 0.99493) a=0.570
+  >>  iter 15, REJ. SIGP_STAT_INVALID_PARAMETER => step_index (0 => 0, 0.99023 => 0.99427) a=0.587
+  >>  iter 16, REJ. SIGP_STAT_INVALID_PARAMETER => nb_codeblocks_height (0 => 0, 0.99023 => 0.99551) a=0.576
+  >>  iter 17, ACC! CPUID_EXT3_ABM => extent (0 => 0, 0.99023 => 0.99165) a=14.733
+  >>  iter 18, ACC! extent => host_port (0 => 0, 0.99165 => 0.99384) a=1.254
+  >>  iter 19, ACC! MANGLE => bdrv_open_child (0 => 0, 0.99384 => 0.99278) a=1.539
+  >>  iter 20, ACC! host_port => rl_inter (0 => 0, 0.99278 => 0.99236) a=13.389
+EXAMPLE 37 FAILED.
+  time cost = 0.35 min
+  curr succ rate = 0.5909090909090909
+Query times in this attack:  411
+All Query times:  4693
+  >>  iter 1, ACC! lexer => mapped_len (0 => 0, 0.97332 => 0.97860) a=1.350
+  >>  iter 2, ACC! func => tag_tree_decode (0 => 0, 0.97860 => 0.97688) a=2.135
+  >>  iter 3, ACC! tag_tree_decode => xen_9pdev (0 => 0, 0.97688 => 0.98524) a=3.908
+  >>  iter 4, ACC! xen_9pdev => src_size (0 => 0, 0.98524 => 0.97731) a=3.957
+  >>  iter 5, ACC! src_size => tone_level_idx_mid (0 => 0, 0.97731 => 0.97483) a=2.399
+  >>  iter 6, ACC! tone_level_idx_mid => helper (0 => 0, 0.97483 => 0.97812) a=1.367
+  >>  iter 7, ACC! helper => HEVCContext (0 => 0, 0.97812 => 0.97804) a=1.577
+  >>  iter 8, ACC! mapped_len => sysmem (0 => 0, 0.97804 => 0.97535) a=1.859
+  >>  iter 9, ACC! HEVCContext => vhostfdname (0 => 0, 0.97535 => 0.98092) a=9.176
+  >>  iter 10, ACC! sysmem => SCSIDevice (0 => 0, 0.98092 => 0.97925) a=1.446
+  >>  iter 11, ACC! SCSIDevice => ff_yuyvToY_mmx (0 => 0, 0.97925 => 0.98231) a=1.327
+  >>  iter 12, ACC! ff_yuyvToY_mmx => IMDCT_buf (0 => 0, 0.98231 => 0.97728) a=1.672
+  >>  iter 13, ACC! IMDCT_buf => tight_palette_buf2rgb (0 => 0, 0.97728 => 0.98547) a=5.515
+  >>  iter 14, ACC! vhostfdname => st_mode (0 => 0, 0.98547 => 0.98091) a=2.493
+  >>  iter 15, ACC! tight_palette_buf2rgb => PCI_BASE_ADDRESS_SPACE_MEMORY (0 => 0, 0.98091 => 0.96430) a=1.870
+  >>  iter 16, ACC! st_mode => CPUID_EXT3_SKINIT (0 => 0, 0.96430 => 0.96336) a=1.492
+  >>  iter 17, ACC! CPUID_EXT3_SKINIT => l1mv (0 => 0, 0.96336 => 0.97406) a=12.365
+  >>  iter 18, REJ. PCI_BASE_ADDRESS_SPACE_MEMORY => copy_chapters (0 => 0, 0.97406 => 0.98464) a=0.972
+  >>  iter 19, ACC! l1mv => is_64 (0 => 0, 0.97406 => 0.97535) a=1.549
+  >>  iter 20, ACC! is_64 => gen_exception_cause (0 => 0, 0.97535 => 0.95649) a=7.520
+EXAMPLE 38 FAILED.
+  time cost = 0.35 min
+  curr succ rate = 0.5652173913043478
+Query times in this attack:  414
+All Query times:  5107
+  >>  iter 1, ACC! qiov => CC_OP_MULQ (0 => 0, 0.99223 => 0.98254) a=2.246
+  >>  iter 2, ACC! nb_sectors => data_len (0 => 0, 0.98254 => 0.98953) a=1.486
+  >>  iter 3, ACC! acb => unmap (0 => 0, 0.98953 => 0.99066) a=5.073
+  >>  iter 4, ACC! bs => cpu_x86_update_cr0 (0 => 0, 0.99066 => 0.99320) a=1.741
+  >>  iter 5, ACC! cb => gen_helper_cpuid (0 => 0, 0.99320 => 0.99015) a=2.203
+  >>  iter 6, ACC! unmap => TARGET_X86_64 (0 => 0, 0.99015 => 0.97729) a=6.268
+  >>  iter 7, ACC! TARGET_X86_64 => qdev_get_prop_ptr (0 => 0, 0.97729 => 0.96817) a=1.537
+  >>  iter 8, ACC! sector_num => LM32_CPU (0 => 0, 0.96817 => 0.95697) a=1.517
+  >>  iter 9, ACC! LM32_CPU => qemu_irq_invert (0 => 0, 0.95697 => 0.96535) a=1.053
+  >>  iter 10, ACC! qdev_get_prop_ptr => my (0 => 0, 0.96535 => 0.98677) a=1.759
+  >>  iter 11, ACC! type => bdrv_lookup_bs (0 => 0, 0.98677 => 0.95465) a=8.306
+  >>  iter 12, REJ. CC_OP_MULQ => color_cache_put (0 => 0, 0.95465 => 0.97336) a=0.829
+  >>  iter 13, REJ. opaque => out_nofid (0 => 0, 0.95465 => 0.97514) a=0.902
+  >>  iter 14, ACC! qemu_irq_invert => prefixes (0 => 0, 0.95465 => 0.97305) a=2.264
+  >>  iter 15, ACC! opaque => gen_helper_rdpmc (0 => 0, 0.97305 => 0.96941) a=1.612
+  >>  iter 16, ACC! fd => func_addr (0 => 0, 0.96941 => 0.95977) a=1.836
+  >>  iter 17, SUCC! func_addr => MSR_CORE_PERF_GLOBAL_STATUS (0 => 1, 0.95977 => 0.22673) a=1.000
+EXAMPLE 39 SUCCEEDED!
+  time cost = 0.30 min
+  curr succ rate = 0.5833333333333334
+Query times in this attack:  345
+All Query times:  5452
+  >>  iter 1, ACC! fw_cfg => orig_base_flags (0 => 0, 0.76915 => 0.77417) a=1.519
+  >>  iter 2, ACC! cpu_model => lrintf (0 => 0, 0.77417 => 0.76666) a=1.255
+  >>  iter 3, ACC! env => spapr_drc_index (0 => 0, 0.76666 => 0.80677) a=1.037
+  >>  iter 4, ACC! orig_base_flags => samples (0 => 0, 0.80677 => 0.82627) a=1.178
+  >>  iter 5, ACC! prom_offset => bsfc (0 => 0, 0.82627 => 0.83281) a=1.337
+  >>  iter 6, ACC! ret => tone_level_idx_hi1 (0 => 0, 0.83281 => 0.86386) a=1.428
+  >>  iter 7, ACC! lrintf => gnttabdev (0 => 0, 0.86386 => 0.86338) a=2.136
+  >>  iter 8, ACC! drive_index => CC_A (0 => 0, 0.86338 => 0.84880) a=1.272
+  >>  iter 9, ACC! samples => codingMode (0 => 0, 0.84880 => 0.81110) a=2.411
+  >>  iter 10, ACC! codingMode => max_ra (0 => 0, 0.81110 => 0.85412) a=1.621
+  >>  iter 11, ACC! nvram => G_IO_ERR (0 => 0, 0.85412 => 0.81773) a=1.249
+  >>  iter 12, ACC! gnttabdev => log_ctx (0 => 0, 0.81773 => 0.77910) a=1.729
+  >>  iter 13, ACC! boot_devices => sysmem (0 => 0, 0.77910 => 0.74627) a=1.396
+  >>  iter 14, ACC! i => model (0 => 0, 0.74627 => 0.71653) a=1.215
+  >>  iter 15, ACC! irq => g2h (0 => 0, 0.71653 => 0.73433) a=1.119
+  >>  iter 16, ACC! pci_bus2 => ist_index (0 => 0, 0.73433 => 0.73821) a=1.095
+  >>  iter 17, ACC! bsfc => opc_info (0 => 0, 0.73821 => 0.67138) a=1.543
+  >>  iter 18, SUCC! max_ra => do_shiftd (0 => 1, 0.67138 => 0.49482) a=1.000
+EXAMPLE 43 SUCCEEDED!
+  time cost = 0.51 min
+  curr succ rate = 0.6
+Query times in this attack:  369
+All Query times:  5821
+  >>  iter 1, ACC! def => gen_helper_fsave (0 => 0, 0.96688 => 0.89356) a=8.264
+  >>  iter 2, ACC! i => mem_buf (0 => 0, 0.89356 => 0.94586) a=1.703
+  >>  iter 3, ACC! mem_buf => nb_terminationsinc (0 => 0, 0.94586 => 0.96221) a=2.670
+  >>  iter 4, ACC! gen_helper_fsave => pci_bus3 (0 => 0, 0.96221 => 0.98603) a=12.343
+  >>  iter 5, ACC! pci_bus3 => gen_helper_idivw_AX (0 => 0, 0.98603 => 0.97214) a=5.088
+  >>  iter 6, ACC! gen_helper_idivw_AX => img_width (0 => 0, 0.97214 => 0.96848) a=13.472
+  >>  iter 7, ACC! nb_terminationsinc => slice_num (0 => 0, 0.96848 => 0.94875) a=4.052
+  >>  iter 8, ACC! img_width => block_type (0 => 0, 0.94875 => 0.97757) a=5.432
+  >>  iter 9, ACC! block_type => mpeg_enc_ctx (0 => 0, 0.97757 => 0.95277) a=14.056
+  >>  iter 10, ACC! mpeg_enc_ctx => uart0_base (0 => 0, 0.95277 => 0.96334) a=1.588
+  >>  iter 11, ACC! env => area (0 => 0, 0.96334 => 0.96751) a=1.463
+  >>  iter 12, ACC! area => adc (0 => 0, 0.96751 => 0.98111) a=2.018
+  >>  iter 13, ACC! uart0_base => vsub (0 => 0, 0.98111 => 0.94650) a=10.133
+  >>  iter 14, ACC! adc => OPUS_MODE_CELT (0 => 0, 0.94650 => 0.94282) a=3.004
+  >>  iter 15, ACC! vsub => USBSTS_HCH (0 => 0, 0.94282 => 0.96258) a=1.907
+  >>  iter 16, ACC! USBSTS_HCH => CPUFLAG_SSE (0 => 0, 0.96258 => 0.93774) a=5.553
+  >>  iter 17, ACC! OPUS_MODE_CELT => model (0 => 0, 0.93774 => 0.87485) a=2.907
+  >>  iter 18, ACC! CPUFLAG_SSE => GENERAL (0 => 0, 0.87485 => 0.97568) a=1.419
+  >>  iter 19, ACC! model => extractFloatx80Exp (0 => 0, 0.97568 => 0.96827) a=2.574
+  >>  iter 20, ACC! GENERAL => rematrixing_flags (0 => 0, 0.96827 => 0.89487) a=5.718
+EXAMPLE 44 FAILED.
+  time cost = 0.49 min
+  curr succ rate = 0.5769230769230769
+Query times in this attack:  406
+All Query times:  6227
+  >>  iter 1, ACC! data => virtio_cleanup (1 => 1, 0.89096 => 0.71574) a=2.738
+  >>  iter 2, ACC! i => nb_meta_data_maps (1 => 1, 0.71574 => 0.64133) a=1.388
+  >>  iter 3, ACC! frame_end => port_io (1 => 1, 0.64133 => 0.62675) a=1.132
+  >>  iter 4, ACC! lentab => v16i8 (1 => 1, 0.62675 => 0.62675) a=1.000
+  >>  iter 5, ACC! src => IVSHMEM_DPRINTF (1 => 1, 0.62675 => 0.65479) a=1.180
+  >>  iter 6, ACC! height => eject (1 => 1, 0.65479 => 0.69028) a=1.247
+  >>  iter 7, ACC! data_size => channel_arrangement (1 => 1, 0.69028 => 0.60603) a=1.468
+  >>  iter 8, REJ. virtio_cleanup => LMI_DIRECT (1 => 1, 0.60603 => 0.66175) a=0.925
+  >>  iter 9, ACC! dst => me (1 => 1, 0.60603 => 0.55174) a=1.188
+  >>  iter 10, SUCC! bfi => priv (1 => 0, 0.55174 => 0.42793) a=1.000
+EXAMPLE 45 SUCCEEDED!
+  time cost = 0.45 min
+  curr succ rate = 0.5925925925925926
+Query times in this attack:  204
+All Query times:  6431
+  >>  iter 1, SUCC! bus => hcall_dprintf (1 => 0, 0.52016 => 0.48476) a=1.000
+EXAMPLE 46 SUCCEEDED!
+  time cost = 0.35 min
+  curr succ rate = 0.6071428571428571
+Query times in this attack:  21
+All Query times:  6452
+  >>  iter 1, ACC! arg => matrix_ch (0 => 0, 0.99426 => 0.99065) a=1.839
+  >>  iter 2, ACC! matrix_ch => do_streamcopy (0 => 0, 0.99065 => 0.99445) a=2.901
+  >>  iter 3, ACC! do_streamcopy => intptr_t (0 => 0, 0.99445 => 0.99477) a=3.961
+  >>  iter 4, ACC! func => drive_get_index (0 => 0, 0.99477 => 0.99506) a=89.020
+  >>  iter 5, ACC! intptr_t => zero (0 => 0, 0.99506 => 0.99501) a=1.525
+  >>  iter 6, ACC! zero => R_LQSPI_STS (0 => 0, 0.99501 => 0.99472) a=2.865
+  >>  iter 7, ACC! R_LQSPI_STS => cpu_to_le32 (0 => 0, 0.99472 => 0.99461) a=2.235
+  >>  iter 8, ACC! cpu_to_le32 => omap_mcbsp_i2s_swallow (0 => 0, 0.99461 => 0.99535) a=1.577
+  >>  iter 9, ACC! drive_get_index => count (0 => 0, 0.99535 => 0.99506) a=1.717
+  >>  iter 10, ACC! count => output_channels (0 => 0, 0.99506 => 0.99516) a=1.334
+  >>  iter 11, SUCC! omap_mcbsp_i2s_swallow => MSR_CORE_PERF_GLOBAL_STATUS (0 => 1, 0.99516 => 0.42992) a=1.000
+EXAMPLE 47 SUCCEEDED!
+  time cost = 0.45 min
+  curr succ rate = 0.6206896551724138
+Query times in this attack:  224
+All Query times:  6676
+  >>  iter 1, SUCC! cc => float64_is_signaling_nan (1 => 0, 0.61001 => 0.47591) a=1.000
+EXAMPLE 49 SUCCEEDED!
+  time cost = 0.35 min
+  curr succ rate = 0.6333333333333333
+Query times in this attack:  21
+All Query times:  6697
+  >>  iter 1, ACC! src => PXA2XX_INTERNAL_SIZE (0 => 0, 0.95941 => 0.86400) a=3.661
+  >>  iter 2, ACC! dest => VNC_SHARE_MODE_SHARED (0 => 0, 0.86400 => 0.90051) a=1.290
+  >>  iter 3, ACC! pmcw => d_ot (0 => 0, 0.90051 => 0.89296) a=1.947
+  >>  iter 4, ACC! d_ot => CPUID_VENDOR_INTEL_1 (0 => 0, 0.89296 => 0.90695) a=1.737
+  >>  iter 5, ACC! PXA2XX_INTERNAL_SIZE => mxf_header_partition_pack_key (0 => 0, 0.90695 => 0.92038) a=5.196
+  >>  iter 6, ACC! CPUID_VENDOR_INTEL_1 => lentab (0 => 0, 0.92038 => 0.89439) a=3.289
+  >>  iter 7, ACC! VNC_SHARE_MODE_SHARED => HAVE_YASM (0 => 0, 0.89439 => 0.90626) a=1.647
+  >>  iter 8, ACC! i => av_dlog (0 => 0, 0.90626 => 0.93081) a=1.903
+  >>  iter 9, ACC! lentab => qemu_free (0 => 0, 0.93081 => 0.92789) a=1.661
+  >>  iter 10, ACC! qemu_free => MO_UB (0 => 0, 0.92789 => 0.93528) a=2.803
+  >>  iter 11, ACC! HAVE_YASM => qemu_coroutine_create (0 => 0, 0.93528 => 0.91431) a=2.199
+  >>  iter 12, ACC! MO_UB => wctx (0 => 0, 0.91431 => 0.87117) a=2.599
+  >>  iter 13, ACC! wctx => parent (0 => 0, 0.87117 => 0.87507) a=1.945
+  >>  iter 14, ACC! parent => MPV_common_end (0 => 0, 0.87507 => 0.86443) a=1.240
+  >>  iter 15, ACC! MPV_common_end => R_DMASR (0 => 0, 0.86443 => 0.88025) a=1.908
+  >>  iter 16, ACC! av_dlog => _FDT (0 => 0, 0.88025 => 0.92849) a=1.437
+  >>  iter 17, ACC! R_DMASR => open_flags (0 => 0, 0.92849 => 0.92401) a=1.518
+  >>  iter 18, ACC! open_flags => nb_nics (0 => 0, 0.92401 => 0.91998) a=2.772
+  >>  iter 19, ACC! qemu_coroutine_create => ByteIOContext (0 => 0, 0.91998 => 0.92965) a=1.978
+  >>  iter 20, ACC! ByteIOContext => CC_C (0 => 0, 0.92965 => 0.93066) a=1.642
+EXAMPLE 50 FAILED.
+  time cost = 0.61 min
+  curr succ rate = 0.6129032258064516
+Query times in this attack:  412
+All Query times:  7109
+  >>  iter 1, ACC! pkt => MSR_P6_PERFCTR0 (0 => 0, 0.59122 => 0.52987) a=1.170
+  >>  iter 2, ACC! ost => qemu_free (0 => 0, 0.52987 => 0.52987) a=1.000
+  >>  iter 3, SUCC! got_output => IS_16X8 (0 => 1, 0.52987 => 0.48365) a=1.000
+EXAMPLE 51 SUCCEEDED!
+  time cost = 0.44 min
+  curr succ rate = 0.625
+Query times in this attack:  63
+All Query times:  7172
+  >>  iter 1, ACC! pkt_data => SwsContext (1 => 1, 0.93880 => 0.94733) a=1.431
+  >>  iter 2, ACC! SwsContext => ic (1 => 1, 0.94733 => 0.95387) a=3.353
+  >>  iter 3, ACC! isudp => gen_helper_hlt (1 => 1, 0.95387 => 0.94753) a=1.949
+  >>  iter 4, ACC! pkt_len => FFALIGN (1 => 1, 0.94753 => 0.96904) a=4.123
+  >>  iter 5, ACC! FFALIGN => target_phys_addr_t (1 => 1, 0.96904 => 0.87880) a=5.102
+  >>  iter 6, ACC! isip6 => mix_2_1_func_type (1 => 1, 0.87880 => 0.90285) a=1.242
+  >>  iter 7, ACC! mix_2_1_func_type => target (1 => 1, 0.90285 => 0.91742) a=1.400
+  >>  iter 8, ACC! vhdr => dpl (1 => 1, 0.91742 => 0.92213) a=4.598
+  >>  iter 9, ACC! data => frame_dec (1 => 1, 0.92213 => 0.94168) a=2.477
+  >>  iter 10, ACC! isip4 => tile_height (1 => 1, 0.94168 => 0.93086) a=4.720
+  >>  iter 11, ACC! frame_dec => TCGReg (1 => 1, 0.93086 => 0.93642) a=3.189
+  >>  iter 12, ACC! len => CPU_GET_CLASS (1 => 1, 0.93642 => 0.79237) a=5.694
+  >>  iter 13, ACC! istcp => cpu_handle_halt (1 => 1, 0.79237 => 0.89254) a=1.669
+  >>  iter 14, ACC! dpl => md (1 => 1, 0.89254 => 0.79944) a=3.246
+  >>  iter 15, ACC! md => tcg_gen_sub_tl (1 => 1, 0.79944 => 0.73180) a=2.111
+  >>  iter 16, ACC! target => metadata_map (1 => 1, 0.73180 => 0.82503) a=1.060
+  >>  iter 17, ACC! metadata_map => rv34_decode_mv (1 => 1, 0.82503 => 0.81942) a=1.596
+  >>  iter 18, ACC! TCGReg => S390CPU (1 => 1, 0.81942 => 0.80669) a=1.071
+  >>  iter 19, ACC! gen_helper_hlt => tcg_gen_trunc_tl_i32 (1 => 1, 0.80669 => 0.73101) a=1.499
+  >>  iter 20, ACC! rv34_decode_mv => is_streamed (1 => 1, 0.73101 => 0.80234) a=1.172
+EXAMPLE 54 FAILED.
+  time cost = 0.68 min
+  curr succ rate = 0.6060606060606061
+Query times in this attack:  414
+All Query times:  7586
+  >>  iter 1, ACC! s => gen_helper_fisttll_ST0 (1 => 1, 0.78004 => 0.78004) a=1.000
+  >>  iter 2, SUCC! div_blocks => VNC_SHARE_MODE_SHARED (1 => 0, 0.78004 => 0.37865) a=1.000
+EXAMPLE 56 SUCCEEDED!
+  time cost = 0.48 min
+  curr succ rate = 0.6176470588235294
+Query times in this attack:  43
+All Query times:  7629
+  >>  iter 1, ACC! avctx => inst (1 => 1, 0.90206 => 0.90004) a=1.778
+  >>  iter 2, ACC! y => gen_jr (1 => 1, 0.90004 => 0.90752) a=1.143
+  >>  iter 3, ACC! inst => CPUFLAG_MMX2 (1 => 1, 0.90752 => 0.89521) a=1.346
+  >>  iter 4, ACC! frame_ptr => Xen9pfsDev (1 => 1, 0.89521 => 0.78610) a=3.189
+  >>  iter 5, ACC! gen_jr => BLOCKc (1 => 1, 0.78610 => 0.71640) a=1.528
+  >>  iter 6, SUCC! frame => bdrv_round_to_clusters (1 => 0, 0.71640 => 0.49648) a=1.000
+EXAMPLE 58 SUCCEEDED!
+  time cost = 0.55 min
+  curr succ rate = 0.6285714285714286
+Query times in this attack:  126
+All Query times:  7755
+  >>  iter 1, SUCC! dst => max_xfer_len (1 => 0, 0.98190 => 0.04767) a=1.000
+EXAMPLE 61 SUCCEEDED!
+  time cost = 0.50 min
+  curr succ rate = 0.6388888888888888
+Query times in this attack:  24
+All Query times:  7779
+  >>  iter 1, ACC! blockcnt_one => refcount_block (0 => 0, 0.69162 => 0.76769) a=1.158
+  >>  iter 2, SUCC! is_arith => CC_OP_MULW (0 => 1, 0.76769 => 0.24416) a=1.000
+EXAMPLE 62 SUCCEEDED!
+  time cost = 0.51 min
+  curr succ rate = 0.6486486486486487
+Query times in this attack:  42
+All Query times:  7821
+  >>  iter 1, ACC! ret => next_line (1 => 1, 0.99119 => 0.99115) a=2.822
+  >>  iter 2, ACC! next_line => frame_rate_index (1 => 1, 0.99115 => 0.98967) a=1.167
+  >>  iter 3, ACC! frame_rate_index => src_vt6 (1 => 1, 0.98967 => 0.99084) a=7.580
+  >>  iter 4, ACC! src_vt6 => net_tap_init (1 => 1, 0.99084 => 0.99112) a=1.266
+  >>  iter 5, ACC! net_tap_init => packets_sent (1 => 1, 0.99112 => 0.99110) a=1.742
+  >>  iter 6, ACC! packets_sent => INT64_MAX (1 => 1, 0.99110 => 0.99007) a=4.036
+  >>  iter 7, ACC! INT64_MAX => MAX_IDE_DEVS (1 => 1, 0.99007 => 0.99104) a=11.892
+  >>  iter 8, ACC! MAX_IDE_DEVS => iTask (1 => 1, 0.99104 => 0.98473) a=2.611
+  >>  iter 9, ACC! iTask => iov_buf (1 => 1, 0.98473 => 0.99073) a=1.171
+  >>  iter 10, ACC! iov_buf => mirror_start_job (1 => 1, 0.99073 => 0.99170) a=4.210
+  >>  iter 11, ACC! mirror_start_job => omap_mcbsp_i2s_swallow (1 => 1, 0.99170 => 0.99257) a=2.179
+  >>  iter 12, ACC! omap_mcbsp_i2s_swallow => taba (1 => 1, 0.99257 => 0.99102) a=2.219
+  >>  iter 13, ACC! taba => l1mv (1 => 1, 0.99102 => 0.99187) a=4.510
+  >>  iter 14, ACC! l1mv => eof (1 => 1, 0.99187 => 0.99223) a=2.611
+  >>  iter 15, ACC! eof => disabled_mask (1 => 1, 0.99223 => 0.98977) a=1.592
+  >>  iter 16, ACC! disabled_mask => MATROSKA_ID_WRITINGAPP (1 => 1, 0.98977 => 0.99159) a=1.827
+  >>  iter 17, ACC! MATROSKA_ID_WRITINGAPP => TYPE_INTEGRATOR_PIC (1 => 1, 0.99159 => 0.99044) a=3.499
+  >>  iter 18, ACC! TYPE_INTEGRATOR_PIC => int_samples (1 => 1, 0.99044 => 0.97110) a=3.023
+  >>  iter 19, REJ. int_samples => inquiry_data (1 => 1, 0.97110 => 0.99208) a=0.361
+  >>  iter 20, REJ. int_samples => pvr (1 => 1, 0.97110 => 0.99138) a=0.626
+EXAMPLE 64 FAILED.
+  time cost = 0.71 min
+  curr succ rate = 0.631578947368421
+Query times in this attack:  414
+All Query times:  8235
+  >>  iter 1, ACC! s => PATH_MAX (1 => 1, 0.72652 => 0.57629) a=1.549
+  >>  iter 2, SUCC! ret => motion_val8 (1 => 0, 0.57629 => 0.45132) a=1.000
+EXAMPLE 65 SUCCEEDED!
+  time cost = 0.53 min
+  curr succ rate = 0.6410256410256411
+Query times in this attack:  43
+All Query times:  8278
+  >>  iter 1, SUCC! total_size => duration_gcd (1 => 0, 0.50644 => 0.47401) a=1.000
+EXAMPLE 66 SUCCEEDED!
+  time cost = 0.53 min
+  curr succ rate = 0.65
+Query times in this attack:  21
+All Query times:  8299
+  >>  iter 1, ACC! substr => clear (1 => 1, 0.99345 => 0.99335) a=1.304
+  >>  iter 2, ACC! m => bios_name (1 => 1, 0.99335 => 0.99311) a=1.035
+  >>  iter 3, ACC! mh => gen_helper_fldlg2_ST0 (1 => 1, 0.99311 => 0.99356) a=1.082
+  >>  iter 4, ACC! ret => tcg_gen_qemu_st8 (1 => 1, 0.99356 => 0.99406) a=1.065
+  >>  iter 5, ACC! tcg_gen_qemu_st8 => dest_cb (1 => 1, 0.99406 => 0.99361) a=1.193
+  >>  iter 6, ACC! dest_cb => av_new_packet (1 => 1, 0.99361 => 0.99349) a=1.138
+  >>  iter 7, ACC! clear => net_bridge_run_helper (1 => 1, 0.99349 => 0.99383) a=1.071
+  >>  iter 8, ACC! gb => backward_reference (1 => 1, 0.99383 => 0.99300) a=1.193
+  >>  iter 9, ACC! bios_name => cpu_tmp1_i64 (1 => 1, 0.99300 => 0.99318) a=1.019
+  >>  iter 10, ACC! av_new_packet => rv40_dither_l (1 => 1, 0.99318 => 0.99400) a=1.237
+  >>  iter 11, ACC! gen_helper_fldlg2_ST0 => sub_packet_cnt (1 => 1, 0.99400 => 0.99278) a=1.203
+  >>  iter 12, REJ. sub_packet_cnt => tcg_gen_addi_tl (1 => 1, 0.99278 => 0.99393) a=0.905
+  >>  iter 13, ACC! net_bridge_run_helper => int_cb (1 => 1, 0.99278 => 0.99275) a=1.072
+  >>  iter 14, REJ. sub_packet_cnt => var (1 => 1, 0.99275 => 0.99359) a=0.910
+  >>  iter 15, ACC! int_cb => MB_TYPE_P1L1 (1 => 1, 0.99275 => 0.99170) a=1.339
+  >>  iter 16, REJ. rv40_dither_l => LWBRX (1 => 1, 0.99170 => 0.99230) a=0.928
+  >>  iter 17, ACC! cpu_tmp1_i64 => CPUID_7_0_EBX_BMI1 (1 => 1, 0.99170 => 0.99130) a=1.099
+  >>  iter 18, REJ. rv40_dither_l => blocks_used (1 => 1, 0.99130 => 0.99257) a=0.983
+  >>  iter 19, REJ. MB_TYPE_P1L1 => ref_y (1 => 1, 0.99130 => 0.99337) a=0.968
+  >>  iter 20, ACC! backward_reference => src_vt0 (1 => 1, 0.99130 => 0.99111) a=1.219
+EXAMPLE 69 FAILED.
+  time cost = 0.96 min
+  curr succ rate = 0.6341463414634146
+Query times in this attack:  409
+All Query times:  8708
+  >>  iter 1, SUCC! s => virtio_blk_init (1 => 0, 0.61764 => 0.31183) a=1.000
+EXAMPLE 70 SUCCEEDED!
+  time cost = 0.73 min
+  curr succ rate = 0.6428571428571429
+Query times in this attack:  21
+All Query times:  8729
+  >>  iter 1, ACC! state => tcg_gen_concat_tl_i64 (0 => 0, 0.89906 => 0.92731) a=2.472
+  >>  iter 2, ACC! prev_state => inverse (0 => 0, 0.92731 => 0.86741) a=3.035
+  >>  iter 3, ACC! dx => external_htab (0 => 0, 0.86741 => 0.77177) a=2.777
+  >>  iter 4, ACC! inverse => ffurl_open (0 => 0, 0.77177 => 0.78149) a=1.291
+  >>  iter 5, ACC! tcg_gen_concat_tl_i64 => SWR_CH_MAX (0 => 0, 0.78149 => 0.57019) a=1.979
+  >>  iter 6, SUCC! dy => gen_helper_divw_AX (0 => 1, 0.57019 => 0.46966) a=1.000
+EXAMPLE 72 SUCCEEDED!
+  time cost = 0.80 min
+  curr succ rate = 0.6511627906976745
+Query times in this attack:  127
+All Query times:  8856
+  >>  iter 1, ACC! phigh => ff_vdpau_get_surface_id (1 => 1, 0.99082 => 0.99031) a=1.378
+  >>  iter 2, ACC! ff_vdpau_get_surface_id => qemu_opts_create (1 => 1, 0.99031 => 0.99076) a=3.747
+  >>  iter 3, ACC! plow => ptimer_set_limit (1 => 1, 0.99076 => 0.98550) a=10.659
+  >>  iter 4, ACC! ptimer_set_limit => beta (1 => 1, 0.98550 => 0.98203) a=2.256
+  >>  iter 5, ACC! sb => HEVClcList (1 => 1, 0.98203 => 0.97074) a=4.851
+  >>  iter 6, ACC! HEVClcList => parallel_io (1 => 1, 0.97074 => 0.97133) a=1.298
+  >>  iter 7, ACC! parallel_io => gen_helper_fincstp (1 => 1, 0.97133 => 0.97534) a=1.482
+  >>  iter 8, ACC! gen_helper_fincstp => AV_CODEC_ID_H264 (1 => 1, 0.97534 => 0.93752) a=10.619
+  >>  iter 9, SUCC! b => put_cabac_terminate (1 => 0, 0.93752 => 0.43530) a=1.000
+EXAMPLE 75 SUCCEEDED!
+  time cost = 0.85 min
+  curr succ rate = 0.6590909090909091
+Query times in this attack:  185
+All Query times:  9041
+  >>  iter 1, ACC! iscsilun => nb_output_streams (1 => 1, 0.52660 => 0.54425) a=1.037
+  >>  iter 2, ACC! bs => bppcount (1 => 1, 0.54425 => 0.58487) a=1.082
+  >>  iter 3, SUCC! nb_output_streams => qobject_to_json (1 => 0, 0.58487 => 0.45393) a=1.000
+EXAMPLE 77 SUCCEEDED!
+  time cost = 0.81 min
+  curr succ rate = 0.6666666666666666
+Query times in this attack:  63
+All Query times:  9104
+  >>  iter 1, ACC! ret => RV34_MB_P_16x16 (0 => 0, 0.99104 => 0.98827) a=1.325
+  >>  iter 2, ACC! opaque => last (0 => 0, 0.98827 => 0.98645) a=2.694
+  >>  iter 3, ACC! size => cpu_exec_exit (0 => 0, 0.98645 => 0.98020) a=8.647
+  >>  iter 4, ACC! last => in_file_index (0 => 0, 0.98020 => 0.96212) a=15.631
+  >>  iter 5, ACC! s => bios_name (0 => 0, 0.96212 => 0.98810) a=4.904
+  >>  iter 6, ACC! buf => EAGAIN (0 => 0, 0.98810 => 0.98206) a=7.020
+  >>  iter 7, ACC! RV34_MB_P_16x16 => gen_helper_daa (0 => 0, 0.98206 => 0.97711) a=3.783
+  >>  iter 8, ACC! bios_name => ctz32 (0 => 0, 0.97711 => 0.95891) a=18.766
+  >>  iter 9, ACC! cpu_exec_exit => rgb_pix_fmts (0 => 0, 0.95891 => 0.98695) a=3.125
+  >>  iter 10, ACC! ctz32 => HEVC_NAL_PPS (0 => 0, 0.98695 => 0.98267) a=14.674
+  >>  iter 11, ACC! gen_helper_daa => mutex (0 => 0, 0.98267 => 0.95043) a=3.760
+  >>  iter 12, ACC! EAGAIN => w (0 => 0, 0.95043 => 0.95655) a=6.754
+  >>  iter 13, ACC! in_file_index => max_cpus (0 => 0, 0.95655 => 0.98702) a=3.592
+  >>  iter 14, SUCC! rgb_pix_fmts => MSR_MTRRfix4K_D0000 (0 => 1, 0.98702 => 0.11835) a=1.000
+EXAMPLE 78 SUCCEEDED!
+  time cost = 0.93 min
+  curr succ rate = 0.6739130434782609
+Query times in this attack:  294
+All Query times:  9398
+  >>  iter 1, ACC! local_err => p2 (0 => 0, 0.97168 => 0.95786) a=8.934
+  >>  iter 2, ACC! dinfo => cpu_tmp4 (0 => 0, 0.95786 => 0.92722) a=2.914
+  >>  iter 3, ACC! errp => filename_bytes (0 => 0, 0.92722 => 0.95134) a=5.836
+  >>  iter 4, ACC! cpu_tmp4 => invalidate (0 => 0, 0.95134 => 0.95863) a=1.719
+  >>  iter 5, ACC! dev => ll (0 => 0, 0.95863 => 0.95299) a=4.462
+  >>  iter 6, ACC! filename_bytes => rps (0 => 0, 0.95299 => 0.96454) a=7.743
+  >>  iter 7, ACC! ll => vector_height (0 => 0, 0.96454 => 0.93676) a=3.361
+  >>  iter 8, ACC! p2 => logical_block_size (0 => 0, 0.93676 => 0.92728) a=5.821
+  >>  iter 9, ACC! rps => hfile (0 => 0, 0.92728 => 0.79447) a=6.448
+  >>  iter 10, ACC! invalidate => dc2 (0 => 0, 0.79447 => 0.76423) a=1.627
+  >>  iter 11, SUCC! dc2 => lab (0 => 1, 0.76423 => 0.44141) a=1.000
+EXAMPLE 79 SUCCEEDED!
+  time cost = 0.90 min
+  curr succ rate = 0.6808510638297872
+Query times in this attack:  228
+All Query times:  9626
+  >>  iter 1, ACC! inode => tcg_gen_ext32u_i64 (0 => 0, 0.62200 => 0.54659) a=1.215
+  >>  iter 2, ACC! tcg_gen_ext32u_i64 => FF_LAMBDA_SHIFT (0 => 0, 0.54659 => 0.57773) a=1.010
+  >>  iter 3, SUCC! s => sprite_trajectory_tab (0 => 1, 0.57773 => 0.43747) a=1.000
+EXAMPLE 80 SUCCEEDED!
+  time cost = 0.84 min
+  curr succ rate = 0.6875
+Query times in this attack:  63
+All Query times:  9689
+  >>  iter 1, ACC! wsaddr => numSubbands (0 => 0, 0.99264 => 0.99195) a=2.625
+  >>  iter 2, ACC! nwsaddr => R_EBX (0 => 0, 0.99195 => 0.99152) a=2.006
+  >>  iter 3, ACC! i => has_graphics (0 => 0, 0.99152 => 0.98587) a=3.574
+  >>  iter 4, ACC! has_graphics => CC_Z (0 => 0, 0.98587 => 0.98986) a=1.462
+  >>  iter 5, SUCC! errp => HV_X64_MSR_STIMER0_COUNT (0 => 1, 0.98986 => 0.49837) a=1.000
+EXAMPLE 81 SUCCEEDED!
+  time cost = 0.88 min
+  curr succ rate = 0.6938775510204082
+Query times in this attack:  102
+All Query times:  9791
+  >>  iter 1, ACC! cpus => TCG_COND_NE (0 => 0, 0.98423 => 0.97541) a=8.494
+  >>  iter 2, ACC! s => hd_qiov (0 => 0, 0.97541 => 0.98128) a=1.179
+  >>  iter 3, ACC! cpu => MSR_IA32_SYSENTER_ESP (0 => 0, 0.98128 => 0.98066) a=1.776
+  >>  iter 4, ACC! TCG_COND_NE => qtest_memread (0 => 0, 0.98066 => 0.97952) a=2.115
+  >>  iter 5, ACC! max_cpus => BDRVQcowState (0 => 0, 0.97952 => 0.98039) a=7.935
+  >>  iter 6, ACC! MSR_IA32_SYSENTER_ESP => tcg_gen_ld32u_tl (0 => 0, 0.98039 => 0.97693) a=1.833
+  >>  iter 7, ACC! qtest_memread => search_pc (0 => 0, 0.97693 => 0.99049) a=1.668
+  >>  iter 8, ACC! tcg_gen_ld32u_tl => gen_helper_fmov_STN_ST0 (0 => 0, 0.99049 => 0.98574) a=3.319
+  >>  iter 9, ACC! BDRVQcowState => ai_flags (0 => 0, 0.98574 => 0.99036) a=4.608
+  >>  iter 10, ACC! gen_helper_fmov_STN_ST0 => nr_iov (0 => 0, 0.99036 => 0.99222) a=1.031
+  >>  iter 11, ACC! search_pc => regs_ro (0 => 0, 0.99222 => 0.99133) a=2.318
+  >>  iter 12, ACC! hd_qiov => picture_structure (0 => 0, 0.99133 => 0.98284) a=2.189
+  >>  iter 13, ACC! regs_ro => MSR_MTRRphysMask (0 => 0, 0.98284 => 0.98337) a=7.402
+  >>  iter 14, ACC! MSR_MTRRphysMask => MO_64 (0 => 0, 0.98337 => 0.98466) a=3.099
+  >>  iter 15, ACC! MO_64 => ov (0 => 0, 0.98466 => 0.97351) a=3.439
+  >>  iter 16, REJ. picture_structure => dev (0 => 0, 0.97351 => 0.97905) a=0.791
+  >>  iter 17, ACC! ai_flags => allocated_regs (0 => 0, 0.97351 => 0.95836) a=7.084
+  >>  iter 18, ACC! ov => gen_repz_movs (0 => 0, 0.95836 => 0.95791) a=1.482
+  >>  iter 19, ACC! gen_repz_movs => res1 (0 => 0, 0.95791 => 0.97207) a=1.762
+  >>  iter 20, ACC! picture_structure => qdev_get_prop_ptr (0 => 0, 0.97207 => 0.99202) a=1.040
+EXAMPLE 82 FAILED.
+  time cost = 1.07 min
+  curr succ rate = 0.68
+Query times in this attack:  417
+All Query times:  10208
+  >>  iter 1, ACC! spapr => istcp (1 => 1, 0.88252 => 0.90203) a=1.585
+  >>  iter 2, ACC! istcp => main_seekhead (1 => 1, 0.90203 => 0.90418) a=1.701
+  >>  iter 3, ACC! main_seekhead => BLK_PERM_CONSISTENT_READ (1 => 1, 0.90418 => 0.84599) a=3.217
+  >>  iter 4, ACC! opcode => OR_ECX (1 => 1, 0.84599 => 0.83403) a=1.935
+  >>  iter 5, ACC! OR_ECX => tcg_gen_mov_tl (1 => 1, 0.83403 => 0.83472) a=2.405
+  >>  iter 6, ACC! dev => main_seekhead (1 => 1, 0.83472 => 0.75391) a=2.191
+  >>  iter 7, SUCC! tcg_gen_mov_tl => tmpfs (1 => 0, 0.75391 => 0.48413) a=1.000
+EXAMPLE 85 SUCCEEDED!
+  time cost = 0.95 min
+  curr succ rate = 0.6862745098039216
+Query times in this attack:  146
+All Query times:  10354
+  >>  iter 1, SUCC! parent => Mpeg1Context (1 => 0, 0.84831 => 0.29987) a=1.000
+EXAMPLE 88 SUCCEEDED!
+  time cost = 0.87 min
+  curr succ rate = 0.6923076923076923
+Query times in this attack:  24
+All Query times:  10378
+  >>  iter 1, SUCC! timer => console_serial_base (1 => 0, 0.78808 => 0.03001) a=1.000
+EXAMPLE 90 SUCCEEDED!
+  time cost = 0.89 min
+  curr succ rate = 0.6981132075471698
+Query times in this attack:  23
+All Query times:  10401
+  >>  iter 1, ACC! backing_file_str => cpu_env (1 => 1, 0.99475 => 0.99467) a=1.096
+  >>  iter 2, ACC! top => rgb24 (1 => 1, 0.99467 => 0.99468) a=1.022
+  >>  iter 3, ACC! cpu_env => rp (1 => 1, 0.99468 => 0.99493) a=1.107
+  >>  iter 4, ACC! rp => avio_rl16 (1 => 1, 0.99493 => 0.99441) a=1.143
+  >>  iter 5, ACC! on_error => pb (1 => 1, 0.99441 => 0.99473) a=1.131
+  >>  iter 6, ACC! rgb24 => page_shift (1 => 1, 0.99473 => 0.99476) a=1.074
+  >>  iter 7, ACC! base => nal_size (1 => 1, 0.99476 => 0.99461) a=1.060
+  >>  iter 8, ACC! avio_rl16 => has_graphics (1 => 1, 0.99461 => 0.99479) a=1.027
+  >>  iter 9, ACC! orig_overlay_flags => xenstore_read_be_str (1 => 1, 0.99479 => 0.99472) a=1.021
+  >>  iter 10, ACC! bs => S390CPU (1 => 1, 0.99472 => 0.99465) a=1.038
+  >>  iter 11, ACC! nal_size => dstStride (1 => 1, 0.99465 => 0.99466) a=1.042
+  >>  iter 12, ACC! S390CPU => gb (1 => 1, 0.99466 => 0.99478) a=1.011
+  >>  iter 13, ACC! has_graphics => tc0_table (1 => 1, 0.99478 => 0.99431) a=1.165
+  >>  iter 14, ACC! xenstore_read_be_str => qemu_input_queue_abs (1 => 1, 0.99431 => 0.99441) a=1.034
+  >>  iter 15, ACC! page_shift => start_address (1 => 1, 0.99441 => 0.99424) a=1.108
+  >>  iter 16, ACC! commit_top_bs => TCGArg (1 => 1, 0.99424 => 0.99435) a=1.034
+  >>  iter 17, ACC! orig_base_flags => SD_INODE_SIZE (1 => 1, 0.99435 => 0.99462) a=1.009
+  >>  iter 18, ACC! dstStride => r0 (1 => 1, 0.99462 => 0.99458) a=1.030
+  >>  iter 19, ACC! speed => nb_codeblocks_height (1 => 1, 0.99458 => 0.99467) a=1.003
+  >>  iter 20, ACC! overlay_bs => VIRTIO_DEVICE (1 => 1, 0.99467 => 0.99451) a=1.035
+EXAMPLE 91 FAILED.
+  time cost = 1.37 min
+  curr succ rate = 0.6851851851851852
+Query times in this attack:  407
+All Query times:  10808
+  >>  iter 1, ACC! bs => JSONLexerEmitter (0 => 0, 0.99312 => 0.99372) a=1.304
+  >>  iter 2, ACC! JSONLexerEmitter => used_count (0 => 0, 0.99372 => 0.99246) a=1.788
+  >>  iter 3, ACC! used_count => mh (0 => 0, 0.99246 => 0.99435) a=1.235
+  >>  iter 4, ACC! mh => OptionsContext (0 => 0, 0.99435 => 0.99453) a=20.521
+  >>  iter 5, ACC! OptionsContext => ref_picture (0 => 0, 0.99453 => 0.99230) a=1.777
+  >>  iter 6, ACC! ref_picture => gai_strerror (0 => 0, 0.99230 => 0.99192) a=2.833
+  >>  iter 7, ACC! gai_strerror => file_oformat (0 => 0, 0.99192 => 0.99508) a=1.073
+  >>  iter 8, ACC! file_oformat => streams (0 => 0, 0.99508 => 0.99385) a=1.614
+  >>  iter 9, ACC! streams => PIX_FMT_YUYV422 (0 => 0, 0.99385 => 0.99465) a=1.143
+  >>  iter 10, ACC! PIX_FMT_YUYV422 => compute_rematrixing_strategy (0 => 0, 0.99465 => 0.99438) a=1.288
+  >>  iter 11, ACC! compute_rematrixing_strategy => oldv (0 => 0, 0.99438 => 0.99422) a=1.396
+  >>  iter 12, ACC! oldv => ff_uyvyToY_mmx (0 => 0, 0.99422 => 0.99502) a=4.927
+  >>  iter 13, ACC! ff_uyvyToY_mmx => alternate_scan (0 => 0, 0.99502 => 0.99324) a=5.494
+  >>  iter 14, ACC! alternate_scan => CPUID_EXT3_ABM (0 => 0, 0.99324 => 0.99520) a=2.161
+  >>  iter 15, ACC! CPUID_EXT3_ABM => ref_plane (0 => 0, 0.99520 => 0.99395) a=1.873
+  >>  iter 16, ACC! ref_plane => verbose (0 => 0, 0.99395 => 0.99252) a=1.688
+  >>  iter 17, ACC! verbose => cmos_data (0 => 0, 0.99252 => 0.99432) a=1.331
+  >>  iter 18, ACC! cmos_data => BDRVCURLState (0 => 0, 0.99432 => 0.99338) a=4.812
+  >>  iter 19, ACC! BDRVCURLState => tlb_t (0 => 0, 0.99338 => 0.99323) a=1.698
+  >>  iter 20, ACC! tlb_t => NO_SENSE (0 => 0, 0.99323 => 0.99495) a=3.746
+EXAMPLE 92 FAILED.
+  time cost = 1.34 min
+  curr succ rate = 0.6727272727272727
+Query times in this attack:  410
+All Query times:  11218
+  >>  iter 1, REJ. buf => j (1 => 1, 0.78656 => 0.79379) a=0.966
+  >>  iter 2, REJ. buf => formatConvBuffer (1 => 1, 0.78656 => 0.90628) a=0.887
+  >>  iter 3, SUCC! len => OPC_DSLL_CP2 (1 => 0, 0.78656 => 0.48654) a=1.000
+EXAMPLE 97 SUCCEEDED!
+  time cost = 1.16 min
+  curr succ rate = 0.6785714285714286
+Query times in this attack:  67
+All Query times:  11285
+  >>  iter 1, SUCC! model => gen_helper_idivw_AX (0 => 1, 0.61941 => 0.44344) a=1.000
+EXAMPLE 99 SUCCEEDED!
+  time cost = 1.15 min
+  curr succ rate = 0.6842105263157895
+Query times in this attack:  23
+All Query times:  11308
+  >>  iter 1, ACC! len => qemu_clock_get_ns (1 => 1, 0.91222 => 0.80150) a=4.029
+  >>  iter 2, SUCC! imsg => waiting_buffers_tail (1 => 0, 0.80150 => 0.32630) a=1.000
+EXAMPLE 100 SUCCEEDED!
+  time cost = 1.17 min
+  curr succ rate = 0.6896551724137931
+Query times in this attack:  42
+All Query times:  11350
+  >>  iter 1, ACC! offset => ff_zigzag_direct (0 => 0, 0.99215 => 0.99383) a=1.096
+  >>  iter 2, ACC! val => msr (0 => 0, 0.99383 => 0.99368) a=1.535
+  >>  iter 3, ACC! ff_zigzag_direct => CC_OP_LOGICQ (0 => 0, 0.99368 => 0.99345) a=1.177
+  >>  iter 4, ACC! opaque => DEVICE (0 => 0, 0.99345 => 0.89034) a=16.738
+  >>  iter 5, REJ. DEVICE => bandwidth_limit (0 => 0, 0.89034 => 0.98296) a=0.897
+  >>  iter 6, ACC! DEVICE => ROCKER_TLV_OF_DPA_GROUP_IDS (0 => 0, 0.89034 => 0.98786) a=1.300
+  >>  iter 7, ACC! ROCKER_TLV_OF_DPA_GROUP_IDS => treesize (0 => 0, 0.98786 => 0.99024) a=2.846
+  >>  iter 8, ACC! msr => meta_clusters (0 => 0, 0.99024 => 0.98834) a=4.548
+  >>  iter 9, ACC! meta_clusters => allow_hotplug (0 => 0, 0.98834 => 0.98942) a=1.644
+  >>  iter 10, ACC! treesize => HAVE_YASM (0 => 0, 0.98942 => 0.98632) a=6.048
+  >>  iter 11, ACC! allow_hotplug => cluster_bits (0 => 0, 0.98632 => 0.98919) a=1.807
+  >>  iter 12, ACC! HAVE_YASM => MFI_STAT_FLASH_ALLOC_FAIL (0 => 0, 0.98919 => 0.99038) a=3.324
+  >>  iter 13, ACC! cluster_bits => sub_packet_list_A (0 => 0, 0.99038 => 0.99248) a=16.108
+  >>  iter 14, ACC! CC_OP_LOGICQ => vhost_fds (0 => 0, 0.99248 => 0.97665) a=4.379
+  >>  iter 15, REJ. MFI_STAT_FLASH_ALLOC_FAIL => SyncClocks (0 => 0, 0.97665 => 0.99064) a=0.587
+  >>  iter 16, REJ. vhost_fds => HASH_PTE_SIZE_64 (0 => 0, 0.97665 => 0.99429) a=0.778
+  >>  iter 17, REJ. vhost_fds => listen_addr (0 => 0, 0.97665 => 0.98866) a=0.878
+  >>  iter 18, SUCC! sub_packet_list_A => VIRTIO_NET_HDR_F_NEEDS_CSUM (0 => 1, 0.97665 => 0.16937) a=1.000
+EXAMPLE 101 SUCCEEDED!
+  time cost = 1.35 min
+  curr succ rate = 0.6949152542372882
+Query times in this attack:  370
+All Query times:  11720
+  >>  iter 1, ACC! err => distance (0 => 0, 0.93480 => 0.84964) a=3.970
+  >>  iter 2, SUCC! endptr => QLIT_QLIST (0 => 1, 0.84964 => 0.36344) a=1.000
+EXAMPLE 102 SUCCEEDED!
+  time cost = 1.19 min
+  curr succ rate = 0.7
+Query times in this attack:  43
+All Query times:  11763
+  >>  iter 1, SUCC! i => gen_helper_wrmsr (0 => 1, 0.53253 => 0.35424) a=1.000
+EXAMPLE 103 SUCCEEDED!
+  time cost = 1.19 min
+  curr succ rate = 0.7049180327868853
+Query times in this attack:  22
+All Query times:  11785
+  >>  iter 1, ACC! addr => keycode (0 => 0, 0.99461 => 0.99493) a=1.026
+  >>  iter 2, ACC! bus => rex_x (0 => 0, 0.99493 => 0.99482) a=1.122
+  >>  iter 3, ACC! dev => xenevtchn_fd (0 => 0, 0.99482 => 0.99460) a=1.083
+  >>  iter 4, ACC! rex_x => f (0 => 0, 0.99460 => 0.99473) a=1.075
+  >>  iter 5, ACC! keycode => got_pkt_ptr (0 => 0, 0.99473 => 0.99472) a=1.081
+  >>  iter 6, ACC! port => TAB (0 => 0, 0.99472 => 0.99469) a=1.013
+  >>  iter 7, ACC! got_pkt_ptr => MAX_IDE_BUS (0 => 0, 0.99469 => 0.99475) a=1.114
+  >>  iter 8, ACC! nfree => cur_addr (0 => 0, 0.99475 => 0.99461) a=1.242
+  >>  iter 9, ACC! f => coded_samples (0 => 0, 0.99461 => 0.99437) a=1.108
+  >>  iter 10, ACC! nused => gen_helper_raise_exception (0 => 0, 0.99437 => 0.99408) a=1.123
+  >>  iter 11, ACC! MAX_IDE_BUS => m48t59_init (0 => 0, 0.99408 => 0.99380) a=1.097
+  >>  iter 12, ACC! busnr => CF_LAST_IO (0 => 0, 0.99380 => 0.99489) a=1.006
+  >>  iter 13, ACC! cur_addr => nr_copies (0 => 0, 0.99489 => 0.99498) a=1.008
+  >>  iter 14, ACC! nr_copies => label_ptr (0 => 0, 0.99498 => 0.99486) a=1.024
+  >>  iter 15, ACC! xenevtchn_fd => tlb_t (0 => 0, 0.99486 => 0.99500) a=1.009
+  >>  iter 16, REJ. coded_samples => gen_cmps (0 => 0, 0.99500 => 0.99534) a=0.989
+  >>  iter 17, ACC! TAB => rl_intra (0 => 0, 0.99500 => 0.99481) a=1.079
+  >>  iter 18, ACC! m48t59_init => htab_size (0 => 0, 0.99481 => 0.99494) a=1.037
+  >>  iter 19, ACC! tlb_t => save_cpu_state (0 => 0, 0.99494 => 0.99520) a=1.037
+  >>  iter 20, ACC! rl_intra => free_exit (0 => 0, 0.99520 => 0.99513) a=1.069
+EXAMPLE 104 FAILED.
+  time cost = 1.44 min
+  curr succ rate = 0.6935483870967742
+Query times in this attack:  413
+All Query times:  12198
+  >>  iter 1, ACC! errp => get_bits_count (0 => 0, 0.99417 => 0.99430) a=1.152
+  >>  iter 2, ACC! get_bits_count => l3_proto (0 => 0, 0.99430 => 0.99447) a=1.134
+  >>  iter 3, ACC! qov => vrma_adjust (0 => 0, 0.99447 => 0.99446) a=1.201
+  >>  iter 4, ACC! vrma_adjust => var (0 => 0, 0.99446 => 0.99442) a=1.067
+  >>  iter 5, ACC! l3_proto => CC_OP_ADCQ (0 => 0, 0.99442 => 0.99485) a=1.243
+  >>  iter 6, ACC! CC_OP_ADCQ => pic_ctx (0 => 0, 0.99485 => 0.99398) a=1.429
+  >>  iter 7, ACC! pic_ctx => do_lcall (0 => 0, 0.99398 => 0.99392) a=1.362
+  >>  iter 8, ACC! name => newpasses (0 => 0, 0.99392 => 0.99394) a=1.119
+  >>  iter 9, ACC! do_lcall => mirror_start_job (0 => 0, 0.99394 => 0.99351) a=1.176
+  >>  iter 10, ACC! v => case_rgb (0 => 0, 0.99351 => 0.99421) a=1.032
+  >>  iter 11, ACC! var => MemTxResult (0 => 0, 0.99421 => 0.99459) a=1.570
+  >>  iter 12, ACC! newpasses => gen_op_testl_T0_T1_cc (0 => 0, 0.99459 => 0.99454) a=1.318
+  >>  iter 13, ACC! mirror_start_job => outputsamples (0 => 0, 0.99454 => 0.99496) a=1.137
+  >>  iter 14, ACC! case_rgb => avx (0 => 0, 0.99496 => 0.99506) a=2.048
+  >>  iter 15, ACC! avx => gen_helper_fldl2e_ST0 (0 => 0, 0.99506 => 0.99539) a=1.432
+  >>  iter 16, ACC! gen_helper_fldl2e_ST0 => gen_helper_fptan (0 => 0, 0.99539 => 0.99514) a=1.674
+  >>  iter 17, ACC! gen_op_testl_T0_T1_cc => klv (0 => 0, 0.99514 => 0.99447) a=1.276
+  >>  iter 18, ACC! klv => handle_eof (0 => 0, 0.99447 => 0.99459) a=1.097
+  >>  iter 19, ACC! gen_helper_fptan => MATROSKA_ID_MUXINGAPP (0 => 0, 0.99459 => 0.99474) a=1.212
+  >>  iter 20, ACC! MATROSKA_ID_MUXINGAPP => VLC (0 => 0, 0.99474 => 0.99430) a=1.241
+EXAMPLE 105 FAILED.
+  time cost = 1.45 min
+  curr succ rate = 0.6825396825396826
+Query times in this attack:  410
+All Query times:  12608
+  >>  iter 1, ACC! refcount_block => NUM_SHORT_DISTANCES (1 => 1, 0.68422 => 0.70448) a=1.463
+  >>  iter 2, SUCC! bs => xen_pv_printf (1 => 0, 0.70448 => 0.47589) a=1.000
+EXAMPLE 107 SUCCEEDED!
+  time cost = 1.33 min
+  curr succ rate = 0.6875
+Query times in this attack:  44
+All Query times:  12652
+  >>  iter 1, ACC! argv => u5 (0 => 0, 0.76727 => 0.76707) a=1.387
+  >>  iter 2, ACC! sp => mv_cache (0 => 0, 0.76707 => 0.71251) a=1.581
+  >>  iter 3, ACC! c => ssddev (0 => 0, 0.71251 => 0.66702) a=1.462
+  >>  iter 4, SUCC! opts => chapter_id_offset (0 => 1, 0.66702 => 0.39295) a=1.000
+EXAMPLE 109 SUCCEEDED!
+  time cost = 1.36 min
+  curr succ rate = 0.6923076923076923
+Query times in this attack:  85
+All Query times:  12737
+  >>  iter 1, SUCC! saddr => vmstate_register_ram (0 => 1, 0.87848 => 0.34230) a=1.000
+EXAMPLE 110 SUCCEEDED!
+  time cost = 1.34 min
+  curr succ rate = 0.696969696969697
+Query times in this attack:  21
+All Query times:  12758
+  >>  iter 1, SUCC! s => srp_login_rsp (0 => 1, 0.67435 => 0.14588) a=1.000
+EXAMPLE 112 SUCCEEDED!
+  time cost = 1.34 min
+  curr succ rate = 0.7014925373134329
+Query times in this attack:  23
+All Query times:  12781
+  >>  iter 1, ACC! local_err => reset_info (0 => 0, 0.71719 => 0.69793) a=1.676
+  >>  iter 2, SUCC! reset_info => qemu_loglevel_mask (0 => 1, 0.69793 => 0.45087) a=1.000
+EXAMPLE 113 SUCCEEDED!
+  time cost = 1.36 min
+  curr succ rate = 0.7058823529411765
+Query times in this attack:  41
+All Query times:  12822
+  >>  iter 1, ACC! s => qemu_clock_get_ns (0 => 0, 0.97661 => 0.98676) a=1.231
+  >>  iter 2, ACC! qemu_clock_get_ns => AVFMT_NEEDNUMBER (0 => 0, 0.98676 => 0.98280) a=3.001
+  >>  iter 3, ACC! AVFMT_NEEDNUMBER => stream (0 => 0, 0.98280 => 0.98556) a=9.432
+  >>  iter 4, ACC! stream => date_utc_buf (0 => 0, 0.98556 => 0.97977) a=2.441
+  >>  iter 5, ACC! date_utc_buf => chr_can_read (0 => 0, 0.97977 => 0.96778) a=20.673
+  >>  iter 6, ACC! chr_can_read => SCSIRequest (0 => 0, 0.96778 => 0.98418) a=1.003
+  >>  iter 7, ACC! SCSIRequest => HV_X64_MSR_STIMER0_COUNT (0 => 0, 0.98418 => 0.96065) a=3.142
+  >>  iter 8, ACC! HV_X64_MSR_STIMER0_COUNT => ticks (0 => 0, 0.96065 => 0.98790) a=1.034
+  >>  iter 9, ACC! ticks => RV34_MB_TYPE_INTRA16x16 (0 => 0, 0.98790 => 0.98559) a=5.190
+  >>  iter 10, ACC! RV34_MB_TYPE_INTRA16x16 => codec_names (0 => 0, 0.98559 => 0.98551) a=2.170
+  >>  iter 11, ACC! codec_names => QERR_NO_BUS_FOR_DEVICE (0 => 0, 0.98551 => 0.94045) a=6.173
+  >>  iter 12, ACC! QERR_NO_BUS_FOR_DEVICE => qdev_init_nofail (0 => 0, 0.94045 => 0.98503) a=1.889
+  >>  iter 13, ACC! qdev_init_nofail => explicit_ref_marking (0 => 0, 0.98503 => 0.99093) a=2.523
+  >>  iter 14, ACC! explicit_ref_marking => av_strdup (0 => 0, 0.99093 => 0.98746) a=7.009
+  >>  iter 15, ACC! av_strdup => SDESC_STATUS_COMPLETE (0 => 0, 0.98746 => 0.98665) a=18.562
+  >>  iter 16, ACC! SDESC_STATUS_COMPLETE => lambda (0 => 0, 0.98665 => 0.97595) a=3.587
+  >>  iter 17, ACC! lambda => grp2 (0 => 0, 0.97595 => 0.98151) a=3.268
+  >>  iter 18, ACC! grp2 => off (0 => 0, 0.98151 => 0.98061) a=3.363
+  >>  iter 19, ACC! off => CPU_LOG_TB_IN_ASM (0 => 0, 0.98061 => 0.97838) a=2.337
+  >>  iter 20, ACC! CPU_LOG_TB_IN_ASM => aud (0 => 0, 0.97838 => 0.98594) a=1.392
+EXAMPLE 115 FAILED.
+  time cost = 1.60 min
+  curr succ rate = 0.6956521739130435
+Query times in this attack:  415
+All Query times:  13237
+  >>  iter 1, ACC! var => ost_table (1 => 1, 0.99168 => 0.99225) a=1.873
+  >>  iter 2, ACC! ost_table => possible_fmts_nb (1 => 1, 0.99225 => 0.99212) a=1.882
+  >>  iter 3, ACC! possible_fmts_nb => megasas_setup_inquiry (1 => 1, 0.99212 => 0.99235) a=1.700
+  >>  iter 4, ACC! megasas_setup_inquiry => step (1 => 1, 0.99235 => 0.99150) a=2.224
+  >>  iter 5, ACC! step => gen_helper_fxtract (1 => 1, 0.99150 => 0.99104) a=2.421
+  >>  iter 6, ACC! gen_helper_fxtract => ERROR (1 => 1, 0.99104 => 0.99194) a=3.966
+  >>  iter 7, ACC! ERROR => log2_blocksize (1 => 1, 0.99194 => 0.99336) a=11.530
+  >>  iter 8, ACC! log2_blocksize => boot_order (1 => 1, 0.99336 => 0.99100) a=1.915
+  >>  iter 9, ACC! boot_order => CPUPPCState (1 => 1, 0.99100 => 0.99258) a=2.845
+  >>  iter 10, ACC! CPUPPCState => MB_TYPE_P1L0 (1 => 1, 0.99258 => 0.99276) a=2.378
+  >>  iter 11, ACC! MB_TYPE_P1L0 => v9fs_string_init (1 => 1, 0.99276 => 0.87483) a=17.294
+  >>  iter 12, REJ. v9fs_string_init => band (1 => 1, 0.87483 => 0.99106) a=0.074
+  >>  iter 13, REJ. v9fs_string_init => LO (1 => 1, 0.87483 => 0.99182) a=0.138
+  >>  iter 14, REJ. v9fs_string_init => tx_start (1 => 1, 0.87483 => 0.99246) a=0.272
+  >>  iter 15, REJ. v9fs_string_init => EXCP0D_GPF (1 => 1, 0.87483 => 0.99144) a=0.100
+  >>  iter 16, REJ. v9fs_string_init => tcg_insn_unit (1 => 1, 0.87483 => 0.98529) a=0.118
+  >>  iter 17, REJ. v9fs_string_init => mtime_fail (1 => 1, 0.87483 => 0.99251) a=0.081
+  >>  iter 18, REJ. v9fs_string_init => bytestream2_skip (1 => 1, 0.87483 => 0.99179) a=0.084
+  >>  iter 19, REJ. v9fs_string_init => coefs (1 => 1, 0.87483 => 0.99200) a=0.541
+  >>  iter 20, ACC! v9fs_string_init => has_fds (1 => 1, 0.87483 => 0.99169) a=1.041
+EXAMPLE 117 FAILED.
+  time cost = 1.63 min
+  curr succ rate = 0.6857142857142857
+Query times in this attack:  413
+All Query times:  13650
+  >>  iter 1, ACC! s => bl (1 => 1, 0.99401 => 0.99393) a=1.474
+  >>  iter 2, ACC! bl => qdict_put_obj (1 => 1, 0.99393 => 0.99362) a=1.354
+  >>  iter 3, ACC! qdict_put_obj => override (1 => 1, 0.99362 => 0.99403) a=1.384
+  >>  iter 4, ACC! tile => qdev_hotplug (1 => 1, 0.99403 => 0.99403) a=1.000
+  >>  iter 5, ACC! i => inject_offset (1 => 1, 0.99403 => 0.99430) a=1.388
+  >>  iter 6, ACC! inject_offset => next_out (1 => 1, 0.99430 => 0.99412) a=1.173
+  >>  iter 7, ACC! next_out => allocated_size (1 => 1, 0.99412 => 0.99419) a=1.050
+  >>  iter 8, ACC! allocated_size => gen_helper_fxchg_ST0_STN (1 => 1, 0.99419 => 0.99458) a=1.046
+  >>  iter 9, ACC! override => alloc_align (1 => 1, 0.99458 => 0.99468) a=1.670
+  >>  iter 10, ACC! ncomponents => device_id (1 => 1, 0.99468 => 0.99455) a=1.170
+  >>  iter 11, ACC! device_id => max_mem (1 => 1, 0.99455 => 0.99476) a=1.056
+  >>  iter 12, ACC! qdev_hotplug => int64_t (1 => 1, 0.99476 => 0.99476) a=1.000
+  >>  iter 13, ACC! int64_t => pm_base (1 => 1, 0.99476 => 0.99476) a=1.000
+  >>  iter 14, ACC! possible_fmts => bdrv_create_dirty_bitmap (1 => 1, 0.99476 => 0.99436) a=1.103
+  >>  iter 15, ACC! max_mem => area (1 => 1, 0.99436 => 0.99451) a=1.089
+  >>  iter 16, ACC! area => r1_name (1 => 1, 0.99451 => 0.99424) a=1.129
+  >>  iter 17, ACC! gen_helper_fxchg_ST0_STN => gen_ins (1 => 1, 0.99424 => 0.99359) a=1.266
+  >>  iter 18, ACC! r1_name => nal_type (1 => 1, 0.99359 => 0.99339) a=1.067
+  >>  iter 19, ACC! bdrv_create_dirty_bitmap => defined (1 => 1, 0.99339 => 0.99397) a=1.099
+  >>  iter 20, ACC! pm_base => CC_OP_SUBB (1 => 1, 0.99397 => 0.99397) a=1.000
+EXAMPLE 118 FAILED.
+  time cost = 2.20 min
+  curr succ rate = 0.676056338028169
+Query times in this attack:  409
+All Query times:  14059
+  >>  iter 1, SUCC! p => extradata_size (1 => 0, 0.98266 => 0.02516) a=1.000
+EXAMPLE 120 SUCCEEDED!
+  time cost = 1.85 min
+  curr succ rate = 0.6805555555555556
+Query times in this attack:  23
+All Query times:  14082
+  >>  iter 1, SUCC! dst => jmp_env (1 => 0, 0.98560 => 0.07310) a=1.000
+EXAMPLE 121 SUCCEEDED!
+  time cost = 1.87 min
+  curr succ rate = 0.684931506849315
+Query times in this attack:  21
+All Query times:  14103
+  >>  iter 1, ACC! fid => server_chr (0 => 0, 0.91939 => 0.95748) a=1.706
+  >>  iter 2, SUCC! errp => read_decode_block (0 => 1, 0.95748 => 0.41811) a=1.000
+EXAMPLE 122 SUCCEEDED!
+  time cost = 1.87 min
+  curr succ rate = 0.6891891891891891
+Query times in this attack:  42
+All Query times:  14145
+  >>  iter 1, ACC! errp => ms (0 => 0, 0.99245 => 0.99289) a=17.689
+  >>  iter 2, ACC! s => object_property_add_str (0 => 0, 0.99289 => 0.98642) a=2.898
+  >>  iter 3, ACC! dev => av_clip (0 => 0, 0.98642 => 0.98082) a=1.412
+  >>  iter 4, ACC! vdev => cpu_tmp1_i64 (0 => 0, 0.98082 => 0.98853) a=3.075
+  >>  iter 5, ACC! v => RV34DecContext (0 => 0, 0.98853 => 0.98632) a=6.873
+  >>  iter 6, ACC! RV34DecContext => parse_inputs (0 => 0, 0.98632 => 0.98754) a=3.565
+  >>  iter 7, ACC! av_clip => object_unref (0 => 0, 0.98754 => 0.98989) a=3.258
+  >>  iter 8, ACC! object_property_add_str => FRAME_RATE_BASE (0 => 0, 0.98989 => 0.97379) a=2.591
+  >>  iter 9, ACC! object_unref => bfi (0 => 0, 0.97379 => 0.97892) a=9.688
+  >>  iter 10, SUCC! parse_inputs => CC_OP_MULQ (0 => 1, 0.97892 => 0.03614) a=1.000
+EXAMPLE 123 SUCCEEDED!
+  time cost = 1.98 min
+  curr succ rate = 0.6933333333333334
+Query times in this attack:  203
+All Query times:  14348
+  >>  iter 1, ACC! pkt => cpu_bndu (1 => 1, 0.91405 => 0.95484) a=1.580
+  >>  iter 2, ACC! cpu_bndu => duration (1 => 1, 0.95484 => 0.96094) a=2.520
+  >>  iter 3, SUCC! pb => async_context_id (1 => 0, 0.96094 => 0.12163) a=1.000
+EXAMPLE 124 SUCCEEDED!
+  time cost = 1.92 min
+  curr succ rate = 0.6973684210526315
+Query times in this attack:  62
+All Query times:  14410
+  >>  iter 1, SUCC! queue => bdrv (1 => 0, 0.56669 => 0.05761) a=1.000
+EXAMPLE 126 SUCCEEDED!
+  time cost = 1.89 min
+  curr succ rate = 0.7012987012987013
+Query times in this attack:  22
+All Query times:  14432
+  >>  iter 1, SUCC! val => bdrv_get_node_name (1 => 0, 0.97038 => 0.13007) a=1.000
+EXAMPLE 128 SUCCEEDED!
+  time cost = 1.88 min
+  curr succ rate = 0.7051282051282052
+Query times in this attack:  23
+All Query times:  14455
+  >>  iter 1, ACC! obj => RENAME (1 => 1, 0.99445 => 0.99435) a=1.048
+  >>  iter 2, ACC! v => NICInfo (1 => 1, 0.99435 => 0.99427) a=1.355
+  >>  iter 3, ACC! local_err => npc (1 => 1, 0.99427 => 0.99424) a=1.038
+  >>  iter 4, ACC! name => sub_ctx (1 => 1, 0.99424 => 0.99410) a=1.135
+  >>  iter 5, ACC! RENAME => pthread_cond_init (1 => 1, 0.99410 => 0.99443) a=1.019
+  >>  iter 6, ACC! prop => codec_info_duration (1 => 1, 0.99443 => 0.99442) a=1.003
+  >>  iter 7, ACC! npc => res (1 => 1, 0.99442 => 0.99453) a=1.019
+  >>  iter 8, ACC! errp => PCI_BRIDGE_CONTROL (1 => 1, 0.99453 => 0.99473) a=1.046
+  >>  iter 9, ACC! codec_info_duration => QEMU_KEY_CONSOLE0 (1 => 1, 0.99473 => 0.99490) a=1.007
+  >>  iter 10, ACC! QEMU_KEY_CONSOLE0 => kvmppc_smt_threads (1 => 1, 0.99490 => 0.99478) a=1.066
+  >>  iter 11, ACC! hubport => cwsno (1 => 1, 0.99478 => 0.99480) a=1.043
+  >>  iter 12, ACC! id => gen_helper_fldl2t_ST0 (1 => 1, 0.99480 => 0.99446) a=1.068
+  >>  iter 13, ACC! sub_ctx => log2_chroma_wh (1 => 1, 0.99446 => 0.99442) a=1.046
+  >>  iter 14, ACC! PCI_BRIDGE_CONTROL => gen_repz_cmps (1 => 1, 0.99442 => 0.99429) a=1.045
+  >>  iter 15, ACC! pthread_cond_init => usb_redir_bulk_packet_header (1 => 1, 0.99429 => 0.99440) a=1.082
+  >>  iter 16, ACC! usb_redir_bulk_packet_header => add_boot_device_path (1 => 1, 0.99440 => 0.99396) a=1.119
+  >>  iter 17, ACC! opaque => lz77_distance_offsets (1 => 1, 0.99396 => 0.99420) a=1.025
+  >>  iter 18, ACC! gen_repz_cmps => residual (1 => 1, 0.99420 => 0.99436) a=1.053
+  >>  iter 19, ACC! NICInfo => mtrr_fixed (1 => 1, 0.99436 => 0.99410) a=1.263
+  >>  iter 20, ACC! log2_chroma_wh => top (1 => 1, 0.99410 => 0.99408) a=1.050
+EXAMPLE 131 FAILED.
+  time cost = 2.22 min
+  curr succ rate = 0.6962025316455697
+Query times in this attack:  412
+All Query times:  14867
+  >>  iter 1, ACC! avctx => cc_op (1 => 1, 0.85829 => 0.79766) a=3.101
+  >>  iter 2, ACC! cc_op => rtc_td_hack (1 => 1, 0.79766 => 0.78054) a=2.251
+  >>  iter 3, ACC! s => lumFilterSize (1 => 1, 0.78054 => 0.87130) a=2.000
+  >>  iter 4, ACC! lumFilterSize => av_new_packet (1 => 1, 0.87130 => 0.61834) a=2.965
+  >>  iter 5, REJ. av_new_packet => lexer (1 => 1, 0.61834 => 0.66409) a=0.880
+  >>  iter 6, REJ. av_new_packet => JCC_BE (1 => 1, 0.61834 => 0.88442) a=0.743
+  >>  iter 7, SUCC! rtc_td_hack => extradata_size (1 => 0, 0.61834 => 0.41749) a=1.000
+EXAMPLE 132 SUCCEEDED!
+  time cost = 2.06 min
+  curr succ rate = 0.7
+Query times in this attack:  146
+All Query times:  15013
+  >>  iter 1, ACC! y => sysbus_register_dev (1 => 1, 0.75067 => 0.79714) a=1.254
+  >>  iter 2, ACC! sysbus_register_dev => qov (1 => 1, 0.79714 => 0.75984) a=1.488
+  >>  iter 3, ACC! src_stride => vid (1 => 1, 0.75984 => 0.72449) a=1.563
+  >>  iter 4, SUCC! qp_store => samplerate (1 => 0, 0.72449 => 0.47308) a=1.000
+EXAMPLE 136 SUCCEEDED!
+  time cost = 2.09 min
+  curr succ rate = 0.7037037037037037
+Query times in this attack:  86
+All Query times:  15099
+  >>  iter 1, ACC! sr => usbredir_bulk_packet (0 => 0, 0.91258 => 0.84998) a=4.171
+  >>  iter 2, SUCC! s => chroma_inter_matrix (0 => 1, 0.84998 => 0.32092) a=1.000
+EXAMPLE 137 SUCCEEDED!
+  time cost = 2.06 min
+  curr succ rate = 0.7073170731707317
+Query times in this attack:  41
+All Query times:  15140
+  >>  iter 1, ACC! tcet => sample_fmt (0 => 0, 0.95516 => 0.88806) a=4.753
+  >>  iter 2, ACC! entry => cpu_init (0 => 0, 0.88806 => 0.83024) a=3.102
+  >>  iter 3, ACC! sample_fmt => AV_ZERO32 (0 => 0, 0.83024 => 0.87229) a=2.442
+  >>  iter 4, ACC! cpu_init => gen_shift (0 => 0, 0.87229 => 0.91612) a=3.588
+  >>  iter 5, ACC! gen_shift => HF_TS_MASK (0 => 0, 0.91612 => 0.66826) a=4.375
+  >>  iter 6, SUCC! tce => set_sigp_status (0 => 1, 0.66826 => 0.39315) a=1.000
+EXAMPLE 138 SUCCEEDED!
+  time cost = 2.10 min
+  curr succ rate = 0.7108433734939759
+Query times in this attack:  125
+All Query times:  15265
+  >>  iter 1, ACC! t1 => color_space (1 => 1, 0.97937 => 0.97524) a=6.268
+  >>  iter 2, SUCC! arg1 => OPC_DADD_CP2 (1 => 0, 0.97524 => 0.27809) a=1.000
+EXAMPLE 140 SUCCEEDED!
+  time cost = 2.08 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  43
+All Query times:  15308
+  >>  iter 1, SUCC! src => pstrcpy_targphys (1 => 0, 0.96864 => 0.45393) a=1.000
+EXAMPLE 141 SUCCEEDED!
+  time cost = 2.09 min
+  curr succ rate = 0.7176470588235294
+Query times in this attack:  20
+All Query times:  15328
+  >>  iter 1, ACC! res => tile_height (0 => 0, 0.99573 => 0.99587) a=1.011
+  >>  iter 2, ACC! command => free_inout (0 => 0, 0.99587 => 0.99575) a=1.047
+  >>  iter 3, ACC! s => mr (0 => 0, 0.99575 => 0.99572) a=1.212
+  >>  iter 4, ACC! free_inout => AV_PICTURE_TYPE_B (0 => 0, 0.99572 => 0.99564) a=1.018
+  >>  iter 5, ACC! mr => BLK_PERM_CONSISTENT_READ (0 => 0, 0.99564 => 0.99518) a=1.107
+  >>  iter 6, ACC! size_codes => sgnd (0 => 0, 0.99518 => 0.99501) a=1.231
+  >>  iter 7, ACC! sgnd => gen_helper_fwait (0 => 0, 0.99501 => 0.99529) a=1.156
+  >>  iter 8, ACC! tile_height => dest_byte_a (0 => 0, 0.99529 => 0.99470) a=1.145
+  >>  iter 9, ACC! gen_helper_fwait => allocated_regs (0 => 0, 0.99470 => 0.99474) a=1.343
+  >>  iter 10, ACC! allocated_regs => kvm_vm_ioctl (0 => 0, 0.99474 => 0.99427) a=1.279
+  >>  iter 11, ACC! AV_PICTURE_TYPE_B => formatConvBuffer (0 => 0, 0.99427 => 0.99510) a=1.076
+  >>  iter 12, ACC! kvm_vm_ioctl => cpu_seg_base (0 => 0, 0.99510 => 0.99555) a=1.183
+  >>  iter 13, ACC! formatConvBuffer => av_uninit (0 => 0, 0.99555 => 0.99562) a=1.245
+  >>  iter 14, ACC! dest_byte_a => aud (0 => 0, 0.99562 => 0.99574) a=1.188
+  >>  iter 15, ACC! cpu_seg_base => zigzag_direct (0 => 0, 0.99574 => 0.99578) a=1.032
+  >>  iter 16, ACC! BLK_PERM_CONSISTENT_READ => iov_size (0 => 0, 0.99578 => 0.99581) a=1.032
+  >>  iter 17, ACC! zigzag_direct => encoded_buf (0 => 0, 0.99581 => 0.99570) a=1.082
+  >>  iter 18, ACC! av_uninit => gpio_addr (0 => 0, 0.99570 => 0.99575) a=1.131
+  >>  iter 19, ACC! encoded_buf => use_ltp (0 => 0, 0.99575 => 0.99582) a=1.034
+  >>  iter 20, ACC! use_ltp => sysbus_create_varargs (0 => 0, 0.99582 => 0.99572) a=1.174
+EXAMPLE 143 FAILED.
+  time cost = 2.38 min
+  curr succ rate = 0.7093023255813954
+Query times in this attack:  409
+All Query times:  15737
+  >>  iter 1, SUCC! s => send_packets (0 => 1, 0.76122 => 0.47045) a=1.000
+EXAMPLE 146 SUCCEEDED!
+  time cost = 2.14 min
+  curr succ rate = 0.7126436781609196
+Query times in this attack:  24
+All Query times:  15761
+  >>  iter 1, ACC! sum => SCSW_STCTL_SECONDARY (0 => 0, 0.98705 => 0.99356) a=1.525
+  >>  iter 2, ACC! SCSW_STCTL_SECONDARY => ncomponents (0 => 0, 0.99356 => 0.99074) a=3.564
+  >>  iter 3, ACC! ncomponents => dc0 (0 => 0, 0.99074 => 0.99236) a=5.208
+  >>  iter 4, SUCC! dc0 => qemu_opt_foreach (0 => 1, 0.99236 => 0.38539) a=1.000
+EXAMPLE 147 SUCCEEDED!
+  time cost = 2.18 min
+  curr succ rate = 0.7159090909090909
+Query times in this attack:  82
+All Query times:  15843
+  >>  iter 1, ACC! d => audio_par (0 => 0, 0.96651 => 0.96633) a=2.225
+  >>  iter 2, ACC! audio_par => AV_LOG_FATAL (0 => 0, 0.96633 => 0.95432) a=1.651
+  >>  iter 3, REJ. AV_LOG_FATAL => inverse (0 => 0, 0.95432 => 0.96143) a=0.979
+  >>  iter 4, ACC! AV_LOG_FATAL => ident (0 => 0, 0.95432 => 0.96500) a=1.224
+  >>  iter 5, ACC! ident => scsi_write_complete (0 => 0, 0.96500 => 0.97802) a=4.192
+  >>  iter 6, ACC! scsi_write_complete => vd (0 => 0, 0.97802 => 0.96647) a=1.908
+  >>  iter 7, ACC! vd => fname (0 => 0, 0.96647 => 0.97725) a=3.097
+  >>  iter 8, ACC! fname => nb_nics (0 => 0, 0.97725 => 0.97823) a=1.961
+  >>  iter 9, ACC! nb_nics => sub_packet_list_B (0 => 0, 0.97823 => 0.97315) a=2.437
+  >>  iter 10, ACC! sub_packet_list_B => cblkno (0 => 0, 0.97315 => 0.98302) a=1.626
+  >>  iter 11, ACC! cblkno => out_buf (0 => 0, 0.98302 => 0.97591) a=3.669
+  >>  iter 12, ACC! out_buf => setup_len (0 => 0, 0.97591 => 0.97906) a=4.067
+  >>  iter 13, ACC! setup_len => buffer (0 => 0, 0.97906 => 0.96032) a=3.418
+  >>  iter 14, ACC! buffer => netclient_type (0 => 0, 0.96032 => 0.97006) a=1.877
+  >>  iter 15, ACC! netclient_type => gen_lea_v_seg (0 => 0, 0.97006 => 0.97852) a=2.042
+  >>  iter 16, ACC! gen_lea_v_seg => vhostfds (0 => 0, 0.97852 => 0.97178) a=2.589
+  >>  iter 17, ACC! vhostfds => Xen9pfsRing (0 => 0, 0.97178 => 0.97815) a=3.472
+  >>  iter 18, ACC! Xen9pfsRing => l3 (0 => 0, 0.97815 => 0.97347) a=4.223
+  >>  iter 19, ACC! l3 => uvlinesize (0 => 0, 0.97347 => 0.98173) a=1.816
+  >>  iter 20, ACC! uvlinesize => tb_unreliable (0 => 0, 0.98173 => 0.96883) a=2.866
+EXAMPLE 148 FAILED.
+  time cost = 2.66 min
+  curr succ rate = 0.7078651685393258
+Query times in this attack:  417
+All Query times:  16260
+  >>  iter 1, ACC! fd => nb_snapshots (0 => 0, 0.98962 => 0.98578) a=2.104
+  >>  iter 2, ACC! nb_snapshots => ff_h263_encode_motion (0 => 0, 0.98578 => 0.98779) a=1.143
+  >>  iter 3, ACC! ff_h263_encode_motion => opt2 (0 => 0, 0.98779 => 0.98860) a=1.320
+  >>  iter 4, ACC! opt2 => s_bits (0 => 0, 0.98860 => 0.99021) a=1.241
+  >>  iter 5, ACC! s_bits => FlacEncodeContext (0 => 0, 0.99021 => 0.99147) a=1.498
+  >>  iter 6, ACC! FlacEncodeContext => tcg_gen_qemu_ld32u (0 => 0, 0.99147 => 0.99468) a=2.393
+  >>  iter 7, ACC! tcg_gen_qemu_ld32u => gen_helper_fptan (0 => 0, 0.99468 => 0.98909) a=3.224
+  >>  iter 8, ACC! gen_helper_fptan => HF_TS_MASK (0 => 0, 0.98909 => 0.98247) a=2.541
+  >>  iter 9, ACC! HF_TS_MASK => g_free (0 => 0, 0.98247 => 0.98978) a=1.183
+  >>  iter 10, ACC! g_free => new_data_stream (0 => 0, 0.98978 => 0.98114) a=1.955
+  >>  iter 11, ACC! new_data_stream => __msa_bmnz_v (0 => 0, 0.98114 => 0.99057) a=1.277
+  >>  iter 12, ACC! __msa_bmnz_v => new_stack (0 => 0, 0.99057 => 0.98827) a=3.080
+  >>  iter 13, ACC! new_stack => tap_quant (0 => 0, 0.98827 => 0.99108) a=2.714
+  >>  iter 14, ACC! tap_quant => dstW (0 => 0, 0.99108 => 0.99113) a=4.083
+  >>  iter 15, ACC! dstW => fregnames (0 => 0, 0.99113 => 0.98914) a=1.938
+  >>  iter 16, ACC! fregnames => pvr_mask (0 => 0, 0.98914 => 0.98935) a=2.047
+  >>  iter 17, ACC! pvr_mask => avio_skip (0 => 0, 0.98935 => 0.99035) a=1.404
+  >>  iter 18, ACC! avio_skip => QEMU_FILE_TYPE_BIOS (0 => 0, 0.99035 => 0.98506) a=2.341
+  >>  iter 19, ACC! QEMU_FILE_TYPE_BIOS => iv (0 => 0, 0.98506 => 0.99151) a=1.873
+  >>  iter 20, ACC! iv => vram_size (0 => 0, 0.99151 => 0.98706) a=2.018
+EXAMPLE 150 FAILED.
+  time cost = 2.69 min
+  curr succ rate = 0.7
+Query times in this attack:  408
+All Query times:  16668
+  >>  iter 1, SUCC! plane => FW_CFG_KERNEL_ADDR (0 => 1, 0.50736 => 0.43814) a=1.000
+EXAMPLE 151 SUCCEEDED!
+  time cost = 2.46 min
+  curr succ rate = 0.7032967032967034
+Query times in this attack:  22
+All Query times:  16690
+  >>  iter 1, SUCC! info => floatx80_eq (1 => 0, 0.63829 => 0.34906) a=1.000
+EXAMPLE 153 SUCCEEDED!
+  time cost = 2.47 min
+  curr succ rate = 0.7065217391304348
+Query times in this attack:  23
+All Query times:  16713
+  >>  iter 1, ACC! ctx => cpu (0 => 0, 0.99324 => 0.99423) a=1.454
+  >>  iter 2, ACC! l1 => qtest_quit (0 => 0, 0.99423 => 0.99401) a=1.637
+  >>  iter 3, ACC! l2 => curses_calc_pad (0 => 0, 0.99401 => 0.98472) a=3.378
+  >>  iter 4, ACC! cpu => allocation_state (0 => 0, 0.98472 => 0.98341) a=10.266
+  >>  iter 5, ACC! qtest_quit => uart_irq (0 => 0, 0.98341 => 0.99308) a=1.168
+  >>  iter 6, ACC! mask => matrix (0 => 0, 0.99308 => 0.99076) a=1.537
+  >>  iter 7, ACC! curses_calc_pad => mask15r (0 => 0, 0.99076 => 0.99371) a=16.847
+  >>  iter 8, ACC! t0 => env_ptr (0 => 0, 0.99371 => 0.99300) a=1.812
+  >>  iter 9, ACC! allocation_state => avcodec_decode_video2 (0 => 0, 0.99300 => 0.99421) a=2.044
+  >>  iter 10, ACC! mask15r => getaddrinfo (0 => 0, 0.99421 => 0.99405) a=11.925
+  >>  iter 11, ACC! matrix => st_flush_trace_buffer (0 => 0, 0.99405 => 0.99399) a=1.564
+  >>  iter 12, ACC! env_ptr => code_ptr (0 => 0, 0.99399 => 0.99356) a=9.131
+  >>  iter 13, ACC! avcodec_decode_video2 => memidx (0 => 0, 0.99356 => 0.99384) a=13.941
+  >>  iter 14, ACC! code_ptr => gen_helper_fistl_ST0 (0 => 0, 0.99384 => 0.99274) a=4.237
+  >>  iter 15, ACC! getaddrinfo => new_rematrixing_strategy (0 => 0, 0.99274 => 0.98543) a=3.314
+  >>  iter 16, ACC! st_flush_trace_buffer => VhostUserState (0 => 0, 0.98543 => 0.98805) a=1.872
+  >>  iter 17, ACC! uart_irq => VGA_BASE (0 => 0, 0.98805 => 0.96776) a=29.452
+  >>  iter 18, ACC! gen_helper_fistl_ST0 => rv34_decode_mv (0 => 0, 0.96776 => 0.98969) a=1.184
+  >>  iter 19, ACC! VGA_BASE => tcg_temp_free_i32 (0 => 0, 0.98969 => 0.99108) a=3.346
+  >>  iter 20, ACC! memidx => SHIFT (0 => 0, 0.99108 => 0.98344) a=1.982
+EXAMPLE 154 FAILED.
+  time cost = 2.78 min
+  curr succ rate = 0.6989247311827957
+Query times in this attack:  412
+All Query times:  17125
+  >>  iter 1, ACC! app => gen_eob_inhibit_irq (0 => 0, 0.92315 => 0.92823) a=2.195
+  >>  iter 2, ACC! prev_d => gen_inc (0 => 0, 0.92823 => 0.93174) a=1.573
+  >>  iter 3, ACC! gen_eob_inhibit_irq => EM_LATTICEMICO32 (0 => 0, 0.93174 => 0.90073) a=1.454
+  >>  iter 4, ACC! s => MAX_FIXED_COUNTERS (0 => 0, 0.90073 => 0.92619) a=1.254
+  >>  iter 5, ACC! EM_LATTICEMICO32 => db (0 => 0, 0.92619 => 0.90174) a=1.967
+  >>  iter 6, ACC! gen_inc => vscalefn (0 => 0, 0.90174 => 0.93301) a=2.191
+  >>  iter 7, ACC! txlen => gop_size (0 => 0, 0.93301 => 0.94262) a=1.558
+  >>  iter 8, ACC! gop_size => UTLB_SIZE (0 => 0, 0.94262 => 0.93687) a=1.662
+  >>  iter 9, ACC! txbuf => nb_refs (0 => 0, 0.93687 => 0.94250) a=2.725
+  >>  iter 10, ACC! vscalefn => ACPI_PCIHP_OFFSET_EJ0 (0 => 0, 0.94250 => 0.95478) a=2.594
+  >>  iter 11, ACC! db => shmobj (0 => 0, 0.95478 => 0.90324) a=3.667
+  >>  iter 12, ACC! UTLB_SIZE => start (0 => 0, 0.90324 => 0.89954) a=1.447
+  >>  iter 13, ACC! nb_refs => gop_size (0 => 0, 0.89954 => 0.92700) a=1.564
+  >>  iter 14, ACC! gop_size => PCI_BRIDGE_CTL_SEC_DISCARD (0 => 0, 0.92700 => 0.84846) a=3.112
+  >>  iter 15, ACC! PCI_BRIDGE_CTL_SEC_DISCARD => generate_exception (0 => 0, 0.84846 => 0.88778) a=1.314
+  >>  iter 16, ACC! generate_exception => alpToYV12 (0 => 0, 0.88778 => 0.91669) a=1.752
+  >>  iter 17, SUCC! tx_dev => AV_OPT_FLAG_ENCODING_PARAM (0 => 1, 0.91669 => 0.42366) a=1.000
+EXAMPLE 155 SUCCEEDED!
+  time cost = 2.93 min
+  curr succ rate = 0.7021276595744681
+Query times in this attack:  347
+All Query times:  17472
+  >>  iter 1, ACC! endptr => MAX_BOUNCE_BUFFER (1 => 1, 0.63444 => 0.86885) a=1.201
+  >>  iter 2, ACC! err => MSR_P6_EVNTSEL0 (1 => 1, 0.86885 => 0.92394) a=2.132
+  >>  iter 3, SUCC! str => x86_ldsw_code (1 => 0, 0.92394 => 0.33295) a=1.000
+EXAMPLE 159 SUCCEEDED!
+  time cost = 2.74 min
+  curr succ rate = 0.7052631578947368
+Query times in this attack:  63
+All Query times:  17535
+  >>  iter 1, ACC! tso_enable => npc (0 => 0, 0.98040 => 0.97353) a=3.663
+  >>  iter 2, ACC! npc => scsi_write_complete (0 => 0, 0.97353 => 0.96562) a=4.286
+  >>  iter 3, ACC! l3_proto => MO_LEQ (0 => 0, 0.96562 => 0.98032) a=3.279
+  >>  iter 4, ACC! MO_LEQ => gen_helper_fldl_ST0 (0 => 0, 0.98032 => 0.97279) a=3.248
+  >>  iter 5, ACC! scsi_write_complete => address_space_memory (0 => 0, 0.97279 => 0.98701) a=2.017
+  >>  iter 6, ACC! address_space_memory => omap_mcbsp_i2s_start (0 => 0, 0.98701 => 0.97484) a=8.103
+  >>  iter 7, ACC! pkt => stl_phys (0 => 0, 0.97484 => 0.96091) a=3.166
+  >>  iter 8, ACC! gen_helper_fldl_ST0 => link_status_changed (0 => 0, 0.96091 => 0.92611) a=1.890
+  >>  iter 9, ACC! omap_mcbsp_i2s_start => rlow (0 => 0, 0.92611 => 0.93833) a=4.404
+  >>  iter 10, ACC! link_status_changed => P_EXT38 (0 => 0, 0.93833 => 0.94215) a=4.506
+  >>  iter 11, ACC! P_EXT38 => HV_X64_MSR_SINT15 (0 => 0, 0.94215 => 0.97700) a=3.929
+  >>  iter 12, ACC! HV_X64_MSR_SINT15 => nb_iargs (0 => 0, 0.97700 => 0.85188) a=10.850
+  >>  iter 13, ACC! nb_iargs => frame_number (0 => 0, 0.85188 => 0.94023) a=1.901
+  >>  iter 14, ACC! stl_phys => FW_CFG_ID (0 => 0, 0.94023 => 0.97042) a=1.325
+  >>  iter 15, ACC! FW_CFG_ID => compare_litqobj_to_qobj (0 => 0, 0.97042 => 0.98980) a=1.509
+  >>  iter 16, ACC! rlow => parameters (0 => 0, 0.98980 => 0.98308) a=2.848
+  >>  iter 17, ACC! frame_number => d_ot (0 => 0, 0.98308 => 0.98148) a=2.265
+  >>  iter 18, ACC! compare_litqobj_to_qobj => tight_palette_buf2rgb (0 => 0, 0.98148 => 0.95939) a=10.505
+  >>  iter 19, ACC! parameters => gen_op_update2_cc (0 => 0, 0.95939 => 0.98445) a=6.211
+  >>  iter 20, ACC! gen_op_update2_cc => image_filename (0 => 0, 0.98445 => 0.97633) a=3.081
+EXAMPLE 161 FAILED.
+  time cost = 3.02 min
+  curr succ rate = 0.6979166666666666
+Query times in this attack:  415
+All Query times:  17950
+  >>  iter 1, SUCC! size => bdrv_set_buffer_alignment (1 => 0, 0.93291 => 0.42568) a=1.000
+EXAMPLE 163 SUCCEEDED!
+  time cost = 2.76 min
+  curr succ rate = 0.7010309278350515
+Query times in this attack:  23
+All Query times:  17973
+  >>  iter 1, SUCC! p => likely (1 => 0, 0.65114 => 0.49321) a=1.000
+EXAMPLE 165 SUCCEEDED!
+  time cost = 2.76 min
+  curr succ rate = 0.7040816326530612
+Query times in this attack:  22
+All Query times:  17995
+  >>  iter 1, ACC! bs => real_count (1 => 1, 0.94644 => 0.81937) a=6.531
+  >>  iter 2, SUCC! real_count => resync_mb_y (1 => 0, 0.81937 => 0.24784) a=1.000
+EXAMPLE 166 SUCCEEDED!
+  time cost = 2.79 min
+  curr succ rate = 0.7070707070707071
+Query times in this attack:  39
+All Query times:  18034
+  >>  iter 1, ACC! klv => tcg_temp_new_i32 (1 => 1, 0.66828 => 0.50873) a=1.481
+  >>  iter 2, SUCC! metadata => nbands (1 => 0, 0.50873 => 0.46583) a=1.000
+EXAMPLE 168 SUCCEEDED!
+  time cost = 2.83 min
+  curr succ rate = 0.71
+Query times in this attack:  41
+All Query times:  18075
+  >>  iter 1, ACC! i => endbyte_bits (1 => 1, 0.71085 => 0.72962) a=1.669
+  >>  iter 2, ACC! sub_dx => discard (1 => 1, 0.72962 => 0.78295) a=1.528
+  >>  iter 3, ACC! numcomps => interlacing_leftweight (1 => 1, 0.78295 => 0.75442) a=1.975
+  >>  iter 4, ACC! cmptparm => envs (1 => 1, 0.75442 => 0.83377) a=1.289
+  >>  iter 5, ACC! interlacing_leftweight => arg8 (1 => 1, 0.83377 => 0.83253) a=1.208
+  >>  iter 6, ACC! desc => kvm_vm_ioctl (1 => 1, 0.83253 => 0.74886) a=1.853
+  >>  iter 7, ACC! kvm_vm_ioctl => redundancy_output (1 => 1, 0.74886 => 0.78200) a=1.905
+  >>  iter 8, SUCC! discard => xen_9pfs_evtchn_event (1 => 0, 0.78200 => 0.41308) a=1.000
+EXAMPLE 169 SUCCEEDED!
+  time cost = 3.00 min
+  curr succ rate = 0.7128712871287128
+Query times in this attack:  163
+All Query times:  18238
+  >>  iter 1, ACC! pci_conf => rvlc_rl_intra (0 => 0, 0.97995 => 0.98941) a=1.766
+  >>  iter 2, ACC! rvlc_rl_intra => e1 (0 => 0, 0.98941 => 0.98381) a=2.672
+  >>  iter 3, ACC! d => guest_x (0 => 0, 0.98381 => 0.97120) a=6.311
+  >>  iter 4, ACC! guest_x => MAX_TRACKS (0 => 0, 0.97120 => 0.93843) a=2.138
+  >>  iter 5, REJ. MAX_TRACKS => p0_org_r (0 => 0, 0.93843 => 0.98235) a=0.511
+  >>  iter 6, ACC! MAX_TRACKS => tcg_target_long (0 => 0, 0.93843 => 0.98221) a=1.948
+  >>  iter 7, ACC! e1 => MSR_MC0_CTL (0 => 0, 0.98221 => 0.98948) a=2.678
+  >>  iter 8, ACC! dev => MO_32 (0 => 0, 0.98948 => 0.99218) a=1.719
+  >>  iter 9, ACC! tcg_target_long => ic (0 => 0, 0.99218 => 0.98980) a=1.740
+  >>  iter 10, ACC! MO_32 => FALSE (0 => 0, 0.98980 => 0.98349) a=1.619
+  >>  iter 11, ACC! FALSE => intra_vlc_format (0 => 0, 0.98349 => 0.98538) a=1.762
+  >>  iter 12, ACC! intra_vlc_format => sub (0 => 0, 0.98538 => 0.98367) a=1.467
+  >>  iter 13, ACC! MSR_MC0_CTL => alpha (0 => 0, 0.98367 => 0.97617) a=4.983
+  >>  iter 14, ACC! alpha => HEVC_NAL_TSA_R (0 => 0, 0.97617 => 0.98700) a=1.626
+  >>  iter 15, ACC! HEVC_NAL_TSA_R => save_cpu_state (0 => 0, 0.98700 => 0.96854) a=3.814
+  >>  iter 16, ACC! sub => tcg_gen_ctzi_tl (0 => 0, 0.96854 => 0.97573) a=1.418
+  >>  iter 17, ACC! save_cpu_state => out (0 => 0, 0.97573 => 0.94077) a=2.506
+  >>  iter 18, ACC! ic => compressed_size (0 => 0, 0.94077 => 0.89270) a=4.874
+  >>  iter 19, ACC! tcg_gen_ctzi_tl => regs (0 => 0, 0.89270 => 0.97186) a=2.525
+  >>  iter 20, ACC! compressed_size => col_fieldoff (0 => 0, 0.97186 => 0.95716) a=2.648
+EXAMPLE 170 FAILED.
+  time cost = 3.23 min
+  curr succ rate = 0.7058823529411765
+Query times in this attack:  407
+All Query times:  18645
+  >>  iter 1, ACC! fullname => sdev (0 => 0, 0.99593 => 0.99573) a=1.133
+  >>  iter 2, ACC! oldpath => host_memory_backend_get_memory (0 => 0, 0.99573 => 0.99522) a=1.331
+  >>  iter 3, ACC! retval => arg8 (0 => 0, 0.99522 => 0.99491) a=1.574
+  >>  iter 4, ACC! target => temp_buf (0 => 0, 0.99491 => 0.99516) a=1.130
+  >>  iter 5, ACC! dir_path => CC_OP_ADDB (0 => 0, 0.99516 => 0.99366) a=2.988
+  >>  iter 6, ACC! host_memory_backend_get_memory => gen_op_jz_ecx (0 => 0, 0.99366 => 0.99461) a=1.818
+  >>  iter 7, ACC! arg8 => suspend_requested (0 => 0, 0.99461 => 0.99471) a=1.322
+  >>  iter 8, ACC! CC_OP_ADDB => depth (0 => 0, 0.99471 => 0.99359) a=1.425
+  >>  iter 9, ACC! credp => obits (0 => 0, 0.99359 => 0.99424) a=1.201
+  >>  iter 10, ACC! sdev => tmpblit (0 => 0, 0.99424 => 0.99447) a=3.406
+  >>  iter 11, ACC! tmpblit => kind (0 => 0, 0.99447 => 0.99522) a=1.392
+  >>  iter 12, ACC! suspend_requested => blk_get_stats (0 => 0, 0.99522 => 0.99530) a=1.135
+  >>  iter 13, ACC! name => extent_file (0 => 0, 0.99530 => 0.99549) a=2.162
+  >>  iter 14, ACC! kind => arg5 (0 => 0, 0.99549 => 0.99496) a=1.324
+  >>  iter 15, ACC! temp_buf => csum_start (0 => 0, 0.99496 => 0.99569) a=1.508
+  >>  iter 16, ACC! gen_op_jz_ecx => ModPred (0 => 0, 0.99569 => 0.99499) a=1.612
+  >>  iter 17, ACC! ModPred => IO_MEM_RAM (0 => 0, 0.99499 => 0.99541) a=1.557
+  >>  iter 18, ACC! blk_get_stats => mpeg2 (0 => 0, 0.99541 => 0.99539) a=1.429
+  >>  iter 19, ACC! csum_start => TYPE_INTEGRATOR_PIC (0 => 0, 0.99539 => 0.99545) a=3.026
+  >>  iter 20, ACC! TYPE_INTEGRATOR_PIC => yi (0 => 0, 0.99545 => 0.99547) a=1.361
+EXAMPLE 171 FAILED.
+  time cost = 3.32 min
+  curr succ rate = 0.6990291262135923
+Query times in this attack:  410
+All Query times:  19055
+  >>  iter 1, ACC! vdev => cpu_tmp1_i64 (0 => 0, 0.64901 => 0.58289) a=1.236
+  >>  iter 2, SUCC! ret => kvm_msr_entry_add (0 => 1, 0.58289 => 0.46880) a=1.000
+EXAMPLE 172 SUCCEEDED!
+  time cost = 3.10 min
+  curr succ rate = 0.7019230769230769
+Query times in this attack:  43
+All Query times:  19098
+  >>  iter 1, ACC! dest => cpu_ppc_hypercall (0 => 0, 0.98077 => 0.98681) a=1.864
+  >>  iter 2, ACC! cpu_ppc_hypercall => cur_pos (0 => 0, 0.98681 => 0.96394) a=5.704
+  >>  iter 3, ACC! l => error_setg (0 => 0, 0.96394 => 0.97434) a=1.456
+  >>  iter 4, ACC! i => command_usage (0 => 0, 0.97434 => 0.98109) a=3.151
+  >>  iter 5, ACC! src => vrma_adjust (0 => 0, 0.98109 => 0.84208) a=14.536
+  >>  iter 6, ACC! command_usage => tcg_ctx (0 => 0, 0.84208 => 0.89535) a=1.444
+  >>  iter 7, ACC! error_setg => qdev_device_add (0 => 0, 0.89535 => 0.82430) a=2.427
+  >>  iter 8, ACC! cur_pos => addrlo (0 => 0, 0.82430 => 0.90401) a=1.242
+  >>  iter 9, ACC! vrma_adjust => mix_any_func_type (0 => 0, 0.90401 => 0.89174) a=1.776
+  >>  iter 10, ACC! tcg_ctx => vmstate_register_ram (0 => 0, 0.89174 => 0.86026) a=2.598
+  >>  iter 11, ACC! qdev_device_add => ff_atrac_iqmf (0 => 0, 0.86026 => 0.79133) a=3.045
+  >>  iter 12, ACC! env => nonrma_base (0 => 0, 0.79133 => 0.83272) a=1.394
+  >>  iter 13, ACC! addrlo => zero_block (0 => 0, 0.83272 => 0.88628) a=2.717
+  >>  iter 14, SUCC! nonrma_base => HV_X64_MSR_STIMER3_COUNT (0 => 1, 0.88628 => 0.42048) a=1.000
+EXAMPLE 173 SUCCEEDED!
+  time cost = 3.38 min
+  curr succ rate = 0.7047619047619048
+Query times in this attack:  285
+All Query times:  19383
+  >>  iter 1, ACC! val => rhs (0 => 0, 0.72523 => 0.67475) a=1.184
+  >>  iter 2, REJ. rhs => SLICE_ERROR (0 => 0, 0.67475 => 0.99368) a=0.918
+  >>  iter 3, REJ. rhs => CPUID_VENDOR_INTEL_1 (0 => 0, 0.67475 => 0.97044) a=0.532
+  >>  iter 4, REJ. rhs => gen_helper_fyl2x (0 => 0, 0.67475 => 0.90395) a=0.719
+  >>  iter 5, REJ. rhs => showed_multi_packet_warning (0 => 0, 0.67475 => 0.99228) a=0.645
+  >>  iter 6, REJ. rhs => avx (0 => 0, 0.67475 => 0.88490) a=0.799
+  >>  iter 7, SUCC! rhs => av_mallocz_array (0 => 1, 0.67475 => 0.44707) a=1.000
+EXAMPLE 174 SUCCEEDED!
+  time cost = 3.31 min
+  curr succ rate = 0.7075471698113207
+Query times in this attack:  141
+All Query times:  19524
+  >>  iter 1, SUCC! tcet => CC_OP_MULW (0 => 1, 0.99020 => 0.21636) a=1.000
+EXAMPLE 175 SUCCEEDED!
+  time cost = 3.23 min
+  curr succ rate = 0.7102803738317757
+Query times in this attack:  22
+All Query times:  19546
+  >>  iter 1, ACC! reason => unmap (0 => 0, 0.88573 => 0.95423) a=1.368
+  >>  iter 2, ACC! unmap => ch_in (0 => 0, 0.95423 => 0.89403) a=4.731
+  >>  iter 3, ACC! ch_in => vmstate_register_ram_global (0 => 0, 0.89403 => 0.90222) a=2.960
+  >>  iter 4, SUCC! vmstate_register_ram_global => MSR_MTRRfix4K_F0000 (0 => 1, 0.90222 => 0.09392) a=1.000
+EXAMPLE 176 SUCCEEDED!
+  time cost = 3.29 min
+  curr succ rate = 0.7129629629629629
+Query times in this attack:  84
+All Query times:  19630
+  >>  iter 1, ACC! ptr => meta_clusters (1 => 1, 0.70014 => 0.70698) a=1.181
+  >>  iter 2, ACC! coef_nb_bits => x86_64_hregs (1 => 1, 0.70698 => 0.57192) a=1.557
+  >>  iter 3, SUCC! run_table => has_ifname (1 => 0, 0.57192 => 0.48650) a=1.000
+EXAMPLE 178 SUCCEEDED!
+  time cost = 3.29 min
+  curr succ rate = 0.7155963302752294
+Query times in this attack:  64
+All Query times:  19694
+  >>  iter 1, ACC! open_inputs => dt (0 => 0, 0.74779 => 0.76701) a=1.077
+  >>  iter 2, ACC! open_outputs => CP0_BadVAddr (0 => 0, 0.76701 => 0.73817) a=1.549
+  >>  iter 3, ACC! log_ctx => bppcount (0 => 0, 0.73817 => 0.69515) a=1.677
+  >>  iter 4, ACC! curr_inputs => stdscr (0 => 0, 0.69515 => 0.76993) a=1.143
+  >>  iter 5, ACC! ret => juart_state (0 => 0, 0.76993 => 0.71353) a=1.544
+  >>  iter 6, ACC! filter => FW_CFG_ID (0 => 0, 0.71353 => 0.81838) a=1.451
+  >>  iter 7, ACC! graph => TCGContext (0 => 0, 0.81838 => 0.82307) a=1.119
+  >>  iter 8, ACC! tmp => iscsi_get_error (0 => 0, 0.82307 => 0.82098) a=1.292
+  >>  iter 9, ACC! juart_state => close (0 => 0, 0.82098 => 0.73943) a=1.662
+  >>  iter 10, REJ. filters => tbs_size (0 => 0, 0.73943 => 0.80070) a=0.956
+  >>  iter 11, ACC! bppcount => codec_name (0 => 0, 0.73943 => 0.82908) a=1.065
+  >>  iter 12, ACC! TCGContext => BUS_MCEERR_AO (0 => 0, 0.82908 => 0.87318) a=1.306
+  >>  iter 13, ACC! close => blocks (0 => 0, 0.87318 => 0.83798) a=2.027
+  >>  iter 14, ACC! FW_CFG_ID => mode (0 => 0, 0.83798 => 0.80805) a=1.341
+  >>  iter 15, ACC! BUS_MCEERR_AO => kvm_state (0 => 0, 0.80805 => 0.72084) a=1.616
+  >>  iter 16, ACC! mode => entries_count (0 => 0, 0.72084 => 0.74186) a=1.130
+  >>  iter 17, ACC! codec_name => tcg_gen_atomic_fetch_or_tl (0 => 0, 0.74186 => 0.76517) a=1.339
+  >>  iter 18, ACC! dt => op1 (0 => 0, 0.76517 => 0.80496) a=1.333
+  >>  iter 19, ACC! iscsi_get_error => picture_number (0 => 0, 0.80496 => 0.76492) a=1.246
+  >>  iter 20, REJ. picture_number => board (0 => 0, 0.76492 => 0.80396) a=0.937
+EXAMPLE 179 FAILED.
+  time cost = 3.70 min
+  curr succ rate = 0.7090909090909091
+Query times in this attack:  410
+All Query times:  20104
+  >>  iter 1, SUCC! s => ebml_header (0 => 1, 0.50312 => 0.43620) a=1.000
+EXAMPLE 182 SUCCEEDED!
+  time cost = 3.52 min
+  curr succ rate = 0.7117117117117117
+Query times in this attack:  22
+All Query times:  20126
+  >>  iter 1, ACC! prop => ptimer_set_limit (1 => 1, 0.96577 => 0.75819) a=7.063
+  >>  iter 2, SUCC! ptr => bit_depth_luma (1 => 0, 0.75819 => 0.26768) a=1.000
+EXAMPLE 183 SUCCEEDED!
+  time cost = 3.50 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  43
+All Query times:  20169
+  >>  iter 1, SUCC! i => ref_list (1 => 0, 0.55277 => 0.42310) a=1.000
+EXAMPLE 184 SUCCEEDED!
+  time cost = 3.50 min
+  curr succ rate = 0.7168141592920354
+Query times in this attack:  22
+All Query times:  20191
+  >>  iter 1, ACC! j => fsconf (0 => 0, 0.72850 => 0.72850) a=1.000
+  >>  iter 2, ACC! env => path_info (0 => 0, 0.72850 => 0.92760) a=1.365
+  >>  iter 3, ACC! cpu => HEVC_NAL_TRAIL_N (0 => 0, 0.92760 => 0.93772) a=1.701
+  >>  iter 4, ACC! mtrr_top_bits => qcr (0 => 0, 0.93772 => 0.96385) a=1.138
+  >>  iter 5, SUCC! msrs => gen_set_hflag (0 => 1, 0.96385 => 0.33259) a=1.000
+EXAMPLE 190 SUCCEEDED!
+  time cost = 3.94 min
+  curr succ rate = 0.7192982456140351
+Query times in this attack:  106
+All Query times:  20297
+  >>  iter 1, SUCC! mr => QLIST_INIT (0 => 1, 0.53740 => 0.44316) a=1.000
+EXAMPLE 191 SUCCEEDED!
+  time cost = 3.87 min
+  curr succ rate = 0.7217391304347827
+Query times in this attack:  21
+All Query times:  20318
+  >>  iter 1, ACC! opaque => qid (0 => 0, 0.99590 => 0.99569) a=1.240
+  >>  iter 2, ACC! size => spr (0 => 0, 0.99569 => 0.99538) a=1.083
+  >>  iter 3, ACC! value => PCI_PREF_RANGE_TYPE_64 (0 => 0, 0.99538 => 0.99267) a=2.415
+  >>  iter 4, ACC! qid => fload_invalid_op_excp (0 => 0, 0.99267 => 0.99562) a=1.910
+  >>  iter 5, ACC! s => gen_repz_ins (0 => 0, 0.99562 => 0.99555) a=1.170
+  >>  iter 6, ACC! PCI_PREF_RANGE_TYPE_64 => ref_index (0 => 0, 0.99555 => 0.99511) a=1.366
+  >>  iter 7, ACC! ref_index => MSR_IA32_BNDCFGS (0 => 0, 0.99511 => 0.99570) a=1.106
+  >>  iter 8, ACC! spr => sun4u_NVRAM_set_params (0 => 0, 0.99570 => 0.99496) a=1.199
+  >>  iter 9, ACC! gen_repz_ins => block_h (0 => 0, 0.99496 => 0.99538) a=1.150
+  >>  iter 10, ACC! fload_invalid_op_excp => nb_input_streams (0 => 0, 0.99538 => 0.99302) a=2.045
+  >>  iter 11, ACC! block_h => tcg_out32 (0 => 0, 0.99302 => 0.99328) a=1.517
+  >>  iter 12, ACC! nb_input_streams => hwaddr (0 => 0, 0.99328 => 0.99325) a=1.277
+  >>  iter 13, ACC! MSR_IA32_BNDCFGS => running (0 => 0, 0.99325 => 0.99046) a=1.723
+  >>  iter 14, ACC! running => AV_OPT_SEARCH_CHILDREN (0 => 0, 0.99046 => 0.98993) a=1.124
+  >>  iter 15, ACC! tcg_out32 => last (0 => 0, 0.98993 => 0.99285) a=1.181
+  >>  iter 16, ACC! addr => sysbus_create_varargs (0 => 0, 0.99285 => 0.99203) a=2.441
+  >>  iter 17, ACC! last => fsdev_id (0 => 0, 0.99203 => 0.99219) a=3.166
+  >>  iter 18, ACC! sun4u_NVRAM_set_params => R_DS (0 => 0, 0.99219 => 0.99240) a=1.326
+  >>  iter 19, ACC! AV_OPT_SEARCH_CHILDREN => meta_offset (0 => 0, 0.99240 => 0.99261) a=1.482
+  >>  iter 20, ACC! sysbus_create_varargs => fpr (0 => 0, 0.99261 => 0.99102) a=3.141
+EXAMPLE 193 FAILED.
+  time cost = 4.29 min
+  curr succ rate = 0.7155172413793104
+Query times in this attack:  413
+All Query times:  20731
+  >>  iter 1, ACC! p => SDL_BUTTON (0 => 0, 0.78782 => 0.95748) a=1.370
+  >>  iter 2, ACC! buf => context_initialized (0 => 0, 0.95748 => 0.96377) a=2.508
+  >>  iter 3, ACC! count => virtio_blk_dma_restart_cb (0 => 0, 0.96377 => 0.96760) a=4.613
+  >>  iter 4, ACC! SDL_BUTTON => node (0 => 0, 0.96760 => 0.75446) a=7.578
+  >>  iter 5, ACC! sign => coef_nb_bits (0 => 0, 0.75446 => 0.87054) a=1.815
+  >>  iter 6, ACC! context_initialized => prev_d (0 => 0, 0.87054 => 0.90248) a=3.093
+  >>  iter 7, ACC! prev_d => CODE64 (0 => 0, 0.90248 => 0.91359) a=4.453
+  >>  iter 8, SUCC! decoded0 => gen_op_update2_cc (0 => 1, 0.91359 => 0.31842) a=1.000
+EXAMPLE 194 SUCCEEDED!
+  time cost = 4.24 min
+  curr succ rate = 0.717948717948718
+Query times in this attack:  165
+All Query times:  20896
+  >>  iter 1, ACC! bitrate => beta_table (0 => 0, 0.69801 => 0.68749) a=1.267
+  >>  iter 2, ACC! cur_time => i0 (0 => 0, 0.68749 => 0.69173) a=1.073
+  >>  iter 3, ACC! ost => R_EAX (0 => 0, 0.69173 => 0.68416) a=1.172
+  >>  iter 4, ACC! oc => tcg_gen_ext8u_tl (0 => 0, 0.68416 => 0.66691) a=1.101
+  >>  iter 5, ACC! vid => version (0 => 0, 0.66691 => 0.67476) a=1.059
+  >>  iter 6, ACC! version => get_config (0 => 0, 0.67476 => 0.67356) a=1.052
+  >>  iter 7, ACC! j => lastA (0 => 0, 0.67356 => 0.67356) a=1.000
+  >>  iter 8, ACC! nb_ostreams => xenstore_read_fe_str (0 => 0, 0.67356 => 0.67322) a=1.252
+  >>  iter 9, ACC! qp => bc (0 => 0, 0.67322 => 0.67322) a=1.000
+  >>  iter 10, ACC! scale => prop (0 => 0, 0.67322 => 0.67322) a=1.000
+  >>  iter 11, ACC! lastA => ff_tget (0 => 0, 0.67322 => 0.67322) a=1.000
+  >>  iter 12, ACC! error => p1 (0 => 0, 0.67322 => 0.67322) a=1.000
+  >>  iter 13, ACC! R_EAX => insn_get (0 => 0, 0.67322 => 0.65891) a=1.135
+  >>  iter 14, ACC! p1 => MSR_IA32_SYSENTER_ESP (0 => 0, 0.65891 => 0.65891) a=1.000
+  >>  iter 15, ACC! i => err_after_open (0 => 0, 0.65891 => 0.67895) a=1.079
+  >>  iter 16, ACC! ost_table => HF_TS_MASK (0 => 0, 0.67895 => 0.68571) a=1.171
+  >>  iter 17, ACC! insn_get => SCSIDevice (0 => 0, 0.68571 => 0.69806) a=1.173
+  >>  iter 18, ACC! output_files => SCSW_FLAGS_MASK_ESWF (0 => 0, 0.69806 => 0.69599) a=1.098
+  >>  iter 19, ACC! i0 => MB_TYPE_16x16 (0 => 0, 0.69599 => 0.64683) a=1.225
+  >>  iter 20, ACC! SCSW_FLAGS_MASK_ESWF => fdparam (0 => 0, 0.64683 => 0.73488) a=1.094
+EXAMPLE 195 FAILED.
+  time cost = 4.87 min
+  curr succ rate = 0.711864406779661
+Query times in this attack:  400
+All Query times:  21296
+  >>  iter 1, SUCC! lims => mfi_pd_info (1 => 0, 0.55426 => 0.45609) a=1.000
+EXAMPLE 196 SUCCEEDED!
+  time cost = 4.63 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  21
+All Query times:  21317
+  >>  iter 1, ACC! driver => iomem (1 => 1, 0.69884 => 0.63686) a=1.547
+  >>  iter 2, ACC! dc => tcg_gen_qemu_ld16u (1 => 1, 0.63686 => 0.54682) a=1.274
+  >>  iter 3, ACC! err => curses2keycode (1 => 1, 0.54682 => 0.71605) a=1.070
+  >>  iter 4, ACC! iomem => slice_beta_offset (1 => 1, 0.71605 => 0.73185) a=1.235
+  >>  iter 5, ACC! opts => gen_lea_modrm_0 (1 => 1, 0.73185 => 0.68951) a=1.224
+  >>  iter 6, ACC! tcg_gen_qemu_ld16u => allow_hotplug (1 => 1, 0.68951 => 0.69576) a=1.162
+  >>  iter 7, SUCC! dev => AVC_CALC_DPADD_B_6PIX_2COEFF_R_SH (1 => 0, 0.69576 => 0.16661) a=1.000
+EXAMPLE 197 SUCCEEDED!
+  time cost = 4.80 min
+  curr succ rate = 0.7166666666666667
+Query times in this attack:  142
+All Query times:  21459
+  >>  iter 1, ACC! mb_count => pOut (1 => 1, 0.62408 => 0.60464) a=1.300
+  >>  iter 2, ACC! buf_size => tone_level_idx_hi2 (1 => 1, 0.60464 => 0.60089) a=1.040
+  >>  iter 3, SUCC! tone_level_idx_hi2 => V9fsState (1 => 0, 0.60089 => 0.49059) a=1.000
+EXAMPLE 198 SUCCEEDED!
+  time cost = 4.87 min
+  curr succ rate = 0.71900826446281
+Query times in this attack:  63
+All Query times:  21522
+  >>  iter 1, SUCC! cpu => motion_val8 (1 => 0, 0.58346 => 0.38920) a=1.000
+EXAMPLE 199 SUCCEEDED!
+  time cost = 4.80 min
+  curr succ rate = 0.7213114754098361
+Query times in this attack:  22
+All Query times:  21544
+  >>  iter 1, SUCC! sign => OPC_DSRA_CP2 (1 => 0, 0.84930 => 0.48258) a=1.000
+EXAMPLE 200 SUCCEEDED!
+  time cost = 4.81 min
+  curr succ rate = 0.7235772357723578
+Query times in this attack:  22
+All Query times:  21566
+  >>  iter 1, SUCC! nb_iargs => CC_OP_LOGICQ (0 => 1, 0.62796 => 0.44930) a=1.000
+EXAMPLE 203 SUCCEEDED!
+  time cost = 4.83 min
+  curr succ rate = 0.7258064516129032
+Query times in this attack:  22
+All Query times:  21588
+  >>  iter 1, ACC! running => flush_put_bits (0 => 0, 0.99209 => 0.98230) a=6.033
+  >>  iter 2, ACC! arg => machine_id (0 => 0, 0.98230 => 0.98538) a=4.980
+  >>  iter 3, ACC! s => mb_type_col (0 => 0, 0.98538 => 0.98996) a=22.099
+  >>  iter 4, ACC! mb_type_col => attr (0 => 0, 0.98996 => 0.98839) a=13.025
+  >>  iter 5, ACC! flush_put_bits => csr_name (0 => 0, 0.98839 => 0.97848) a=5.283
+  >>  iter 6, ACC! machine_id => samplerate (0 => 0, 0.97848 => 0.98835) a=2.702
+  >>  iter 7, ACC! r => has_script (0 => 0, 0.98835 => 0.99312) a=1.730
+  >>  iter 8, ACC! has_script => cpu_x86_load_seg_cache (0 => 0, 0.99312 => 0.99420) a=1.986
+  >>  iter 9, ACC! samplerate => shift_lsbs (0 => 0, 0.99420 => 0.99411) a=5.175
+  >>  iter 10, ACC! csr_name => g_file_get_contents (0 => 0, 0.99411 => 0.99441) a=1.226
+  >>  iter 11, ACC! g_file_get_contents => SCSIDiskState (0 => 0, 0.99441 => 0.99437) a=1.411
+  >>  iter 12, ACC! SCSIDiskState => initrd_base (0 => 0, 0.99437 => 0.99427) a=1.236
+  >>  iter 13, ACC! shift_lsbs => CryptoContext (0 => 0, 0.99427 => 0.99454) a=3.581
+  >>  iter 14, ACC! cpu_x86_load_seg_cache => fw_state (0 => 0, 0.99454 => 0.99404) a=1.181
+  >>  iter 15, ACC! initrd_base => av_log_ask_for_sample (0 => 0, 0.99404 => 0.98229) a=2.974
+  >>  iter 16, ACC! attr => max_ra (0 => 0, 0.98229 => 0.97816) a=1.345
+  >>  iter 17, ACC! max_ra => nextchr (0 => 0, 0.97816 => 0.98299) a=1.572
+  >>  iter 18, ACC! CryptoContext => emms_c (0 => 0, 0.98299 => 0.98033) a=3.024
+  >>  iter 19, ACC! nextchr => ltp_lag (0 => 0, 0.98033 => 0.98875) a=2.649
+  >>  iter 20, ACC! av_log_ask_for_sample => HAVE_INLINE_ASM (0 => 0, 0.98875 => 0.99158) a=2.413
+EXAMPLE 204 FAILED.
+  time cost = 5.15 min
+  curr succ rate = 0.72
+Query times in this attack:  408
+All Query times:  21996
+  >>  iter 1, ACC! r => get_std_framerate (0 => 0, 0.95282 => 0.92838) a=1.960
+  >>  iter 2, ACC! rm => HV_X64_MSR_SIEFP (0 => 0, 0.92838 => 0.91122) a=1.628
+  >>  iter 3, ACC! x => atom (0 => 0, 0.91122 => 0.92886) a=1.243
+  >>  iter 4, ACC! get_std_framerate => AV_EF_EXPLODE (0 => 0, 0.92886 => 0.91386) a=1.211
+  >>  iter 5, ACC! atom => aspect_ratio (0 => 0, 0.91386 => 0.93853) a=1.387
+  >>  iter 6, ACC! s => log_cpu_state (0 => 0, 0.93853 => 0.86483) a=3.388
+  >>  iter 7, ACC! AV_EF_EXPLODE => bulk_packet (0 => 0, 0.86483 => 0.92088) a=2.074
+  >>  iter 8, ACC! rex => scsi_command_complete (0 => 0, 0.92088 => 0.89652) a=1.632
+  >>  iter 9, ACC! log_cpu_state => x86_env_get_cpu (0 => 0, 0.89652 => 0.92785) a=4.050
+  >>  iter 10, ACC! bulk_packet => BS_BRANCH (0 => 0, 0.92785 => 0.90532) a=1.484
+  >>  iter 11, ACC! BS_BRANCH => qemu_fsdev_add (0 => 0, 0.90532 => 0.97330) a=1.204
+  >>  iter 12, ACC! scsi_command_complete => channel_layout_thd_stream2 (0 => 0, 0.97330 => 0.98310) a=1.932
+  >>  iter 13, ACC! channel_layout_thd_stream2 => pix_fmt (0 => 0, 0.98310 => 0.97585) a=2.587
+  >>  iter 14, ACC! HV_X64_MSR_SIEFP => tcg_gen_addi_i32 (0 => 0, 0.97585 => 0.98238) a=1.356
+  >>  iter 15, ACC! aspect_ratio => qdev_get_prop_ptr (0 => 0, 0.98238 => 0.97870) a=2.517
+  >>  iter 16, ACC! qemu_fsdev_add => s16 (0 => 0, 0.97870 => 0.97523) a=7.895
+  >>  iter 17, ACC! tcg_gen_addi_i32 => OPC_SUB_CP2 (0 => 0, 0.97523 => 0.96806) a=3.114
+  >>  iter 18, ACC! qdev_get_prop_ptr => QERR_MISSING_PARAMETER (0 => 0, 0.96806 => 0.84748) a=4.775
+  >>  iter 19, ACC! OPC_SUB_CP2 => blk_by_legacy_dinfo (0 => 0, 0.84748 => 0.78570) a=2.291
+  >>  iter 20, SUCC! pix_fmt => VTD_DPRINTF (0 => 1, 0.78570 => 0.47513) a=1.000
+EXAMPLE 207 SUCCEEDED!
+  time cost = 5.34 min
+  curr succ rate = 0.7222222222222222
+Query times in this attack:  410
+All Query times:  22406
+  >>  iter 1, ACC! ctx => gen_helper_cmpxchg8b (1 => 1, 0.99434 => 0.99402) a=1.226
+  >>  iter 2, ACC! gen_helper_cmpxchg8b => parse_waveformatex (1 => 1, 0.99402 => 0.99427) a=1.099
+  >>  iter 3, ACC! parse_waveformatex => bdrv_lookup_bs (1 => 1, 0.99427 => 0.99427) a=1.073
+  >>  iter 4, ACC! bdrv_lookup_bs => dest_byte_a (1 => 1, 0.99427 => 0.99423) a=1.097
+  >>  iter 5, ACC! dest_byte_a => cbs_h265_replace_vps (1 => 1, 0.99423 => 0.99376) a=1.103
+  >>  iter 6, ACC! cbs_h265_replace_vps => ff_thread_decode_frame (1 => 1, 0.99376 => 0.99434) a=1.275
+  >>  iter 7, ACC! ff_thread_decode_frame => gen_repz_stos (1 => 1, 0.99434 => 0.99427) a=1.117
+  >>  iter 8, ACC! gen_repz_stos => nr_copies (1 => 1, 0.99427 => 0.99458) a=1.271
+  >>  iter 9, ACC! nr_copies => sprite_trajectory_tab (1 => 1, 0.99458 => 0.99428) a=1.163
+  >>  iter 10, ACC! sprite_trajectory_tab => RV34_MB_B_FORWARD (1 => 1, 0.99428 => 0.99305) a=1.216
+  >>  iter 11, REJ. RV34_MB_B_FORWARD => qint_from_int (1 => 1, 0.99305 => 0.99346) a=0.967
+  >>  iter 12, REJ. RV34_MB_B_FORWARD => file_index (1 => 1, 0.99305 => 0.99458) a=0.889
+  >>  iter 13, REJ. RV34_MB_B_FORWARD => MSR_FMASK (1 => 1, 0.99305 => 0.99429) a=0.983
+  >>  iter 14, REJ. RV34_MB_B_FORWARD => ff_jpeg2000_ceildivpow2 (1 => 1, 0.99305 => 0.99430) a=0.864
+  >>  iter 15, REJ. RV34_MB_B_FORWARD => r1_name (1 => 1, 0.99305 => 0.99393) a=0.951
+  >>  iter 16, REJ. RV34_MB_B_FORWARD => rbuf (1 => 1, 0.99305 => 0.99449) a=0.909
+  >>  iter 17, REJ. RV34_MB_B_FORWARD => anon_count (1 => 1, 0.99305 => 0.99426) a=0.863
+  >>  iter 18, REJ. RV34_MB_B_FORWARD => ram_addr (1 => 1, 0.99305 => 0.99448) a=0.958
+  >>  iter 19, REJ. RV34_MB_B_FORWARD => prediction_quantitization (1 => 1, 0.99305 => 0.99421) a=0.907
+  >>  iter 20, REJ. RV34_MB_B_FORWARD => read_code_table (1 => 1, 0.99305 => 0.99407) a=0.896
+EXAMPLE 209 FAILED.
+  time cost = 5.52 min
+  curr succ rate = 0.7165354330708661
+Query times in this attack:  413
+All Query times:  22819
+  >>  iter 1, SUCC! vsrc => error_is_set (0 => 1, 0.94626 => 0.21457) a=1.000
+EXAMPLE 210 SUCCEEDED!
+  time cost = 5.22 min
+  curr succ rate = 0.71875
+Query times in this attack:  20
+All Query times:  22839
+  >>  iter 1, ACC! block => HAVE_ALIGNED_STACK (0 => 0, 0.79238 => 0.64122) a=1.728
+  >>  iter 2, ACC! f => cpu_PR (0 => 0, 0.64122 => 0.65456) a=1.068
+  >>  iter 3, ACC! HAVE_ALIGNED_STACK => indexes (0 => 0, 0.65456 => 0.84795) a=1.049
+  >>  iter 4, ACC! indexes => last_block (0 => 0, 0.84795 => 0.62393) a=2.473
+  >>  iter 5, ACC! p => out_len (0 => 0, 0.62393 => 0.66546) a=1.048
+  >>  iter 6, ACC! out_len => client (0 => 0, 0.66546 => 0.76556) a=1.110
+  >>  iter 7, ACC! cpu_PR => main_seekhead (0 => 0, 0.76556 => 0.71225) a=1.425
+  >>  iter 8, ACC! last_block => conf (0 => 0, 0.71225 => 0.75809) a=1.143
+  >>  iter 9, ACC! main_seekhead => MSR_CORE_PERF_FIXED_CTR_CTRL (0 => 0, 0.75809 => 0.75008) a=1.211
+  >>  iter 10, ACC! conf => ff_get_wav_header (0 => 0, 0.75008 => 0.84179) a=1.220
+  >>  iter 11, ACC! ff_get_wav_header => g_new (0 => 0, 0.84179 => 0.68002) a=2.030
+  >>  iter 12, SUCC! client => bitstream_init (0 => 1, 0.68002 => 0.49351) a=1.000
+EXAMPLE 212 SUCCEEDED!
+  time cost = 5.53 min
+  curr succ rate = 0.7209302325581395
+Query times in this attack:  244
+All Query times:  23083
+  >>  iter 1, SUCC! pa => is_b8x8 (0 => 1, 0.63443 => 0.48672) a=1.000
+EXAMPLE 213 SUCCEEDED!
+  time cost = 5.32 min
+  curr succ rate = 0.7230769230769231
+Query times in this attack:  22
+All Query times:  23105
+  >>  iter 1, ACC! i => tmp_args (0 => 0, 0.96617 => 0.97287) a=1.006
+  >>  iter 2, ACC! tmp_args => PIX_FMT_NV21 (0 => 0, 0.97287 => 0.97896) a=1.612
+  >>  iter 3, ACC! PIX_FMT_NV21 => H_PARAMETER (0 => 0, 0.97896 => 0.97815) a=1.626
+  >>  iter 4, ACC! H_PARAMETER => compatible_features (0 => 0, 0.97815 => 0.96478) a=1.618
+  >>  iter 5, ACC! compatible_features => memory_region_allocate_system_memory (0 => 0, 0.96478 => 0.98201) a=1.138
+  >>  iter 6, ACC! memory_region_allocate_system_memory => le (0 => 0, 0.98201 => 0.97048) a=1.771
+  >>  iter 7, ACC! le => nwsaddr (0 => 0, 0.97048 => 0.97203) a=1.503
+  >>  iter 8, ACC! nwsaddr => qemu_iovec_add (0 => 0, 0.97203 => 0.97002) a=1.220
+  >>  iter 9, ACC! qemu_iovec_add => bdrv_unref (0 => 0, 0.97002 => 0.98290) a=1.113
+  >>  iter 10, ACC! bdrv_unref => cmpv (0 => 0, 0.98290 => 0.96951) a=2.032
+  >>  iter 11, ACC! cmpv => start (0 => 0, 0.96951 => 0.96509) a=1.228
+  >>  iter 12, REJ. start => deflateEnd (0 => 0, 0.96509 => 0.97331) a=0.934
+  >>  iter 13, ACC! start => stream_run (0 => 0, 0.96509 => 0.97201) a=1.148
+  >>  iter 14, ACC! stream_run => delay_samples (0 => 0, 0.97201 => 0.98047) a=1.929
+  >>  iter 15, ACC! delay_samples => AV_OPT_SEARCH_CHILDREN (0 => 0, 0.98047 => 0.97673) a=1.859
+  >>  iter 16, ACC! AV_OPT_SEARCH_CHILDREN => tcg_gen_shli_tl (0 => 0, 0.97673 => 0.97808) a=1.507
+  >>  iter 17, ACC! tcg_gen_shli_tl => num_coeff (0 => 0, 0.97808 => 0.97577) a=1.526
+  >>  iter 18, ACC! num_coeff => tb_lock_reset (0 => 0, 0.97577 => 0.97904) a=1.892
+  >>  iter 19, ACC! tb_lock_reset => tcg_gen_mul_tl (0 => 0, 0.97904 => 0.96450) a=1.808
+  >>  iter 20, ACC! tcg_gen_mul_tl => aspect_ratio_info (0 => 0, 0.96450 => 0.97048) a=1.097
+EXAMPLE 214 FAILED.
+  time cost = 5.64 min
+  curr succ rate = 0.7175572519083969
+Query times in this attack:  411
+All Query times:  23516
+  >>  iter 1, ACC! blocks => sregs (1 => 1, 0.88688 => 0.87459) a=2.885
+  >>  iter 2, ACC! sregs => gen_cmovcc1 (1 => 1, 0.87459 => 0.70878) a=2.500
+  >>  iter 3, SUCC! i => tc (1 => 0, 0.70878 => 0.35136) a=1.000
+EXAMPLE 216 SUCCEEDED!
+  time cost = 5.73 min
+  curr succ rate = 0.7196969696969697
+Query times in this attack:  65
+All Query times:  23581
+  >>  iter 1, ACC! avctx => nb_frames_drop (1 => 1, 0.99261 => 0.99344) a=1.003
+  >>  iter 2, ACC! vqa_header => qdev_get_peripheral_anon (1 => 1, 0.99344 => 0.99403) a=1.030
+  >>  iter 3, ACC! nb_frames_drop => object_new (1 => 1, 0.99403 => 0.99409) a=1.229
+  >>  iter 4, ACC! codebook_index => gen_helper_fldz_FT0 (1 => 1, 0.99409 => 0.99384) a=1.086
+  >>  iter 5, ACC! object_new => cluster_time_limit (1 => 1, 0.99384 => 0.99382) a=1.104
+  >>  iter 6, ACC! s => lossless (1 => 1, 0.99382 => 0.99378) a=1.176
+  >>  iter 7, ACC! qdev_get_peripheral_anon => bounce_buffer (1 => 1, 0.99378 => 0.99358) a=1.056
+  >>  iter 8, ACC! cluster_time_limit => likely (1 => 1, 0.99358 => 0.99259) a=1.154
+  >>  iter 9, ACC! gen_helper_fldz_FT0 => H265RawPPS (1 => 1, 0.99259 => 0.99146) a=1.223
+  >>  iter 10, ACC! likely => XenDevice (1 => 1, 0.99146 => 0.99400) a=1.013
+  >>  iter 11, ACC! lossless => qemu_chr_add_handlers (1 => 1, 0.99400 => 0.99357) a=1.199
+  >>  iter 12, ACC! bounce_buffer => gen_helper_fisttl_ST0 (1 => 1, 0.99357 => 0.99343) a=1.098
+  >>  iter 13, ACC! qemu_chr_add_handlers => single_col (1 => 1, 0.99343 => 0.99226) a=1.231
+  >>  iter 14, REJ. i => inverse (1 => 1, 0.99226 => 0.99251) a=0.989
+  >>  iter 15, ACC! i => refcount_table_clusters (1 => 1, 0.99226 => 0.99294) a=1.040
+  >>  iter 16, REJ. H265RawPPS => gen_op_movl_seg_T0_vm (1 => 1, 0.99294 => 0.99331) a=0.973
+  >>  iter 17, REJ. H265RawPPS => tx_burst (1 => 1, 0.99294 => 0.99317) a=0.968
+  >>  iter 18, ACC! gen_helper_fisttl_ST0 => MSR_KVM_SYSTEM_TIME (1 => 1, 0.99294 => 0.99278) a=1.064
+  >>  iter 19, REJ. H265RawPPS => iov_size (1 => 1, 0.99278 => 0.99352) a=0.935
+  >>  iter 20, ACC! XenDevice => inet_print_addrinfo (1 => 1, 0.99278 => 0.99339) a=1.365
+EXAMPLE 222 FAILED.
+  time cost = 6.03 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  411
+All Query times:  23992
+  >>  iter 1, REJ. m => ldt (0 => 0, 0.55788 => 0.57883) a=0.953
+  >>  iter 2, SUCC! i => SVM_EXIT_TR_READ (0 => 1, 0.55788 => 0.38646) a=1.000
+EXAMPLE 223 SUCCEEDED!
+  time cost = 5.96 min
+  curr succ rate = 0.7164179104477612
+Query times in this attack:  40
+All Query times:  24032
+  >>  iter 1, SUCC! len => raw_samples (1 => 0, 0.71719 => 0.31091) a=1.000
+EXAMPLE 224 SUCCEEDED!
+  time cost = 5.94 min
+  curr succ rate = 0.7185185185185186
+Query times in this attack:  20
+All Query times:  24052
+  >>  iter 1, ACC! src => pred_y (0 => 0, 0.99605 => 0.99603) a=1.196
+  >>  iter 2, ACC! pred_y => TCG_COND_LTU (0 => 0, 0.99603 => 0.99600) a=1.079
+  >>  iter 3, ACC! TCG_COND_LTU => SHIFT_CODE (0 => 0, 0.99600 => 0.99600) a=1.007
+  >>  iter 4, ACC! stride => section_id (0 => 0, 0.99600 => 0.99609) a=1.101
+  >>  iter 5, ACC! section_id => div_blocks (0 => 0, 0.99609 => 0.99610) a=1.013
+  >>  iter 6, ACC! SHIFT_CODE => AVMEDIA_TYPE_VIDEO (0 => 0, 0.99610 => 0.99584) a=1.067
+  >>  iter 7, ACC! dst => duration_count (0 => 0, 0.99584 => 0.99565) a=1.102
+  >>  iter 8, ACC! duration_count => qemu_name (0 => 0, 0.99565 => 0.99559) a=1.129
+  >>  iter 9, ACC! qemu_name => AVIO_FLAG_WRITE (0 => 0, 0.99559 => 0.99564) a=1.120
+  >>  iter 10, ACC! AVIO_FLAG_WRITE => src_hz2 (0 => 0, 0.99564 => 0.99576) a=1.091
+  >>  iter 11, ACC! src_hz2 => cpu_handle_exception (0 => 0, 0.99576 => 0.99506) a=1.164
+  >>  iter 12, ACC! div_blocks => RAM_size (0 => 0, 0.99506 => 0.99525) a=1.042
+  >>  iter 13, REJ. AVMEDIA_TYPE_VIDEO => bdrv_open_child (0 => 0, 0.99525 => 0.99547) a=0.954
+  >>  iter 14, ACC! RAM_size => components (0 => 0, 0.99525 => 0.99555) a=1.067
+  >>  iter 15, ACC! cpu_handle_exception => VqaContext (0 => 0, 0.99555 => 0.99549) a=1.065
+  >>  iter 16, ACC! components => fraction (0 => 0, 0.99549 => 0.99542) a=1.116
+  >>  iter 17, REJ. AVMEDIA_TYPE_VIDEO => set_cc_op (0 => 0, 0.99542 => 0.99609) a=0.925
+  >>  iter 18, REJ. AVMEDIA_TYPE_VIDEO => group (0 => 0, 0.99542 => 0.99610) a=0.935
+  >>  iter 19, ACC! fraction => on (0 => 0, 0.99542 => 0.99546) a=1.070
+  >>  iter 20, REJ. AVMEDIA_TYPE_VIDEO => rsp (0 => 0, 0.99546 => 0.99608) a=0.957
+EXAMPLE 228 FAILED.
+  time cost = 6.20 min
+  curr succ rate = 0.7132352941176471
+Query times in this attack:  414
+All Query times:  24466
+  >>  iter 1, ACC! p => wrid_requested (0 => 0, 0.99443 => 0.99386) a=1.557
+  >>  iter 2, ACC! wrid_requested => HV_X64_MSR_SIEFP (0 => 0, 0.99386 => 0.98800) a=1.956
+  >>  iter 3, ACC! d => is_chroma (0 => 0, 0.98800 => 0.98927) a=2.174
+  >>  iter 4, REJ. HV_X64_MSR_SIEFP => nb_out (0 => 0, 0.98927 => 0.99481) a=0.985
+  >>  iter 5, REJ. HV_X64_MSR_SIEFP => mdct (0 => 0, 0.98927 => 0.99503) a=0.636
+  >>  iter 6, ACC! is_chroma => MO_UW (0 => 0, 0.98927 => 0.98721) a=2.823
+  >>  iter 7, REJ. HV_X64_MSR_SIEFP => gen_helper_write_eflags (0 => 0, 0.98721 => 0.99147) a=0.757
+  >>  iter 8, ACC! MO_UW => g_assert (0 => 0, 0.98721 => 0.98941) a=1.786
+  >>  iter 9, ACC! g_assert => pps (0 => 0, 0.98941 => 0.98485) a=2.174
+  >>  iter 10, REJ. HV_X64_MSR_SIEFP => EIO (0 => 0, 0.98485 => 0.99452) a=0.493
+  >>  iter 11, ACC! pps => table (0 => 0, 0.98485 => 0.99192) a=2.285
+  >>  iter 12, ACC! table => area (0 => 0, 0.99192 => 0.99046) a=2.734
+  >>  iter 13, ACC! HV_X64_MSR_SIEFP => QEMUBH (0 => 0, 0.99046 => 0.99468) a=1.062
+  >>  iter 14, ACC! area => ARITH_ADD (0 => 0, 0.99468 => 0.99523) a=5.244
+  >>  iter 15, ACC! ARITH_ADD => __asm__ (0 => 0, 0.99523 => 0.99555) a=1.430
+  >>  iter 16, ACC! __asm__ => iounits (0 => 0, 0.99555 => 0.99484) a=2.121
+  >>  iter 17, ACC! iounits => HEVC_NAL_BLA_W_LP (0 => 0, 0.99484 => 0.99220) a=1.513
+  >>  iter 18, REJ. HEVC_NAL_BLA_W_LP => srcPos (0 => 0, 0.99220 => 0.99451) a=0.824
+  >>  iter 19, ACC! QEMUBH => cbs_h265_read_vps (0 => 0, 0.99220 => 0.99203) a=1.824
+  >>  iter 20, ACC! HEVC_NAL_BLA_W_LP => progress_mutex (0 => 0, 0.99203 => 0.99293) a=1.710
+EXAMPLE 230 FAILED.
+  time cost = 6.25 min
+  curr succ rate = 0.708029197080292
+Query times in this attack:  416
+All Query times:  24882
+  >>  iter 1, ACC! map => devname (0 => 0, 0.64686 => 0.64034) a=1.018
+  >>  iter 2, REJ. optctx => ResetData (0 => 0, 0.64034 => 0.68338) a=0.983
+  >>  iter 3, ACC! oc => UTLB_SIZE (0 => 0, 0.64034 => 0.66446) a=1.187
+  >>  iter 4, ACC! ost => isudp (0 => 0, 0.66446 => 0.67301) a=1.041
+  >>  iter 5, ACC! i => nb_samples (0 => 0, 0.67301 => 0.74627) a=1.256
+  >>  iter 6, ACC! files => PCI_PREF_RANGE_TYPE_64 (0 => 0, 0.74627 => 0.74627) a=1.000
+  >>  iter 7, ACC! file_oformat => frm_flags (0 => 0, 0.74627 => 0.72566) a=1.157
+  >>  iter 8, REJ. err => htab_shift (0 => 0, 0.72566 => 0.79323) a=0.985
+  >>  iter 9, ACC! ist => eos_sent (0 => 0, 0.72566 => 0.73998) a=1.042
+  >>  iter 10, ACC! o => ptel (0 => 0, 0.73998 => 0.70660) a=1.157
+  >>  iter 11, ACC! UTLB_SIZE => xy4 (0 => 0, 0.70660 => 0.72825) a=1.401
+  >>  iter 12, ACC! filename => src_vt6 (0 => 0, 0.72825 => 0.73577) a=1.311
+  >>  iter 13, ACC! eos_sent => fdparam (0 => 0, 0.73577 => 0.76215) a=1.352
+  >>  iter 14, ACC! isudp => getnameinfo (0 => 0, 0.76215 => 0.76765) a=1.280
+  >>  iter 15, ACC! devname => tp_index (0 => 0, 0.76765 => 0.76765) a=1.000
+  >>  iter 16, ACC! tp_index => sysbus_create_simple (0 => 0, 0.76765 => 0.76765) a=1.000
+  >>  iter 17, ACC! ptel => OR_EAX (0 => 0, 0.76765 => 0.73333) a=1.153
+  >>  iter 18, ACC! getnameinfo => RV34_MB_P_8x8 (0 => 0, 0.73333 => 0.72495) a=1.306
+  >>  iter 19, SUCC! nb_samples => SVM_EXIT_PUSHF (0 => 1, 0.72495 => 0.37537) a=1.000
+EXAMPLE 232 SUCCEEDED!
+  time cost = 7.70 min
+  curr succ rate = 0.7101449275362319
+Query times in this attack:  385
+All Query times:  25267
+  >>  iter 1, SUCC! machine => MSR_KVM_SYSTEM_TIME (0 => 1, 0.95655 => 0.45041) a=1.000
+EXAMPLE 235 SUCCEEDED!
+  time cost = 7.38 min
+  curr succ rate = 0.7122302158273381
+Query times in this attack:  22
+All Query times:  25289
+  >>  iter 1, SUCC! ret => hostmem (0 => 1, 0.73465 => 0.10510) a=1.000
+EXAMPLE 237 SUCCEEDED!
+  time cost = 7.38 min
+  curr succ rate = 0.7142857142857143
+Query times in this attack:  21
+All Query times:  25310
+  >>  iter 1, ACC! f32 => gen_helper_pause (0 => 0, 0.99591 => 0.99571) a=1.049
+  >>  iter 2, ACC! farg => BLK_PERM_WRITE_UNCHANGED (0 => 0, 0.99571 => 0.99589) a=1.217
+  >>  iter 3, ACC! BLK_PERM_WRITE_UNCHANGED => sList (0 => 0, 0.99589 => 0.99585) a=1.100
+  >>  iter 4, ACC! sList => MATROSKA_ID_WRITINGAPP (0 => 0, 0.99585 => 0.99581) a=1.036
+  >>  iter 5, ACC! env => has_vnet_hdr (0 => 0, 0.99581 => 0.99595) a=1.060
+  >>  iter 6, ACC! has_vnet_hdr => blocker (0 => 0, 0.99595 => 0.99588) a=1.135
+  >>  iter 7, ACC! MATROSKA_ID_WRITINGAPP => bits (0 => 0, 0.99588 => 0.99586) a=1.102
+  >>  iter 8, ACC! arg => rD (0 => 0, 0.99586 => 0.99585) a=1.090
+  >>  iter 9, ACC! gen_helper_pause => g_strdup_printf (0 => 0, 0.99585 => 0.99590) a=1.018
+  >>  iter 10, ACC! blocker => pcmcia (0 => 0, 0.99590 => 0.99569) a=1.081
+  >>  iter 11, ACC! g_strdup_printf => imms (0 => 0, 0.99569 => 0.99587) a=1.026
+  >>  iter 12, ACC! rD => mclr_size (0 => 0, 0.99587 => 0.99560) a=1.414
+  >>  iter 13, ACC! imms => audio_size (0 => 0, 0.99560 => 0.99580) a=1.133
+  >>  iter 14, ACC! mclr_size => CPUID_EXT_XSAVE (0 => 0, 0.99580 => 0.99559) a=1.129
+  >>  iter 15, ACC! CPUID_EXT_XSAVE => netclient_name (0 => 0, 0.99559 => 0.99532) a=2.496
+  >>  iter 16, ACC! bits => mo_64_32 (0 => 0, 0.99532 => 0.99589) a=1.078
+  >>  iter 17, ACC! audio_size => AV_EF_EXPLODE (0 => 0, 0.99589 => 0.99587) a=1.027
+  >>  iter 18, ACC! netclient_name => xpos (0 => 0, 0.99587 => 0.99559) a=1.105
+  >>  iter 19, ACC! xpos => qemu_cpu_self (0 => 0, 0.99559 => 0.99588) a=1.038
+  >>  iter 20, ACC! mo_64_32 => output_zeros (0 => 0, 0.99588 => 0.99562) a=1.088
+EXAMPLE 239 FAILED.
+  time cost = 7.74 min
+  curr succ rate = 0.7092198581560284
+Query times in this attack:  410
+All Query times:  25720
+  >>  iter 1, SUCC! l => nb_labels (0 => 1, 0.69350 => 0.21079) a=1.000
+EXAMPLE 240 SUCCEEDED!
+  time cost = 7.47 min
+  curr succ rate = 0.7112676056338029
+Query times in this attack:  22
+All Query times:  25742
+  >>  iter 1, ACC! s => PCIBus (1 => 1, 0.99349 => 0.99397) a=1.017
+  >>  iter 2, ACC! rule => complete (1 => 1, 0.99397 => 0.99392) a=1.283
+  >>  iter 3, ACC! complete => ARITH_ADD (1 => 1, 0.99392 => 0.99337) a=1.230
+  >>  iter 4, ACC! PCIBus => rbase (1 => 1, 0.99337 => 0.99318) a=1.193
+  >>  iter 5, ACC! rbase => av_dict_get (1 => 1, 0.99318 => 0.99383) a=1.133
+  >>  iter 6, ACC! ARITH_ADD => p_new (1 => 1, 0.99383 => 0.99358) a=1.196
+  >>  iter 7, ACC! p_new => block_h (1 => 1, 0.99358 => 0.99376) a=1.209
+  >>  iter 8, ACC! block_h => MB_TYPE_P1L1 (1 => 1, 0.99376 => 0.99247) a=1.207
+  >>  iter 9, ACC! av_dict_get => qemu_find_file (1 => 1, 0.99247 => 0.99361) a=1.113
+  >>  iter 10, ACC! qemu_find_file => num (1 => 1, 0.99361 => 0.99208) a=1.473
+  >>  iter 11, ACC! num => r (1 => 1, 0.99208 => 0.99211) a=1.038
+  >>  iter 12, REJ. MB_TYPE_P1L1 => TARGET_LONG_BITS (1 => 1, 0.99211 => 0.99276) a=0.918
+  >>  iter 13, ACC! r => l1 (1 => 1, 0.99211 => 0.99187) a=1.031
+  >>  iter 14, ACC! l1 => blockcnt_one (1 => 1, 0.99187 => 0.99220) a=1.433
+  >>  iter 15, ACC! blockcnt_one => quant_cof (1 => 1, 0.99220 => 0.99278) a=1.020
+  >>  iter 16, ACC! MB_TYPE_P1L1 => QEMUFile (1 => 1, 0.99278 => 0.99387) a=1.007
+  >>  iter 17, ACC! QEMUFile => RV34_MB_B_BIDIR (1 => 1, 0.99387 => 0.99334) a=1.206
+  >>  iter 18, ACC! RV34_MB_B_BIDIR => rem (1 => 1, 0.99334 => 0.99411) a=1.174
+  >>  iter 19, ACC! rem => lumFilterSize (1 => 1, 0.99411 => 0.99369) a=1.286
+  >>  iter 20, ACC! quant_cof => ATRAC3Context (1 => 1, 0.99369 => 0.99379) a=1.565
+EXAMPLE 243 FAILED.
+  time cost = 7.79 min
+  curr succ rate = 0.7062937062937062
+Query times in this attack:  411
+All Query times:  26153
+  >>  iter 1, ACC! dev => object_property_set_description (1 => 1, 0.96712 => 0.97041) a=2.833
+  >>  iter 2, ACC! s => PREFIX_REPNZ (1 => 1, 0.97041 => 0.96183) a=8.188
+  >>  iter 3, ACC! PREFIX_REPNZ => ff_get_wav_header (1 => 1, 0.96183 => 0.93923) a=5.658
+  >>  iter 4, ACC! object_property_set_description => frame_size (1 => 1, 0.93923 => 0.84164) a=3.831
+  >>  iter 5, SUCC! ff_get_wav_header => AV_EF_EXPLODE (1 => 0, 0.84164 => 0.49185) a=1.000
+EXAMPLE 244 SUCCEEDED!
+  time cost = 7.64 min
+  curr succ rate = 0.7083333333333334
+Query times in this attack:  105
+All Query times:  26258
+  >>  iter 1, ACC! ret => cpu_ppc_hypercall (0 => 0, 0.98258 => 0.99016) a=4.044
+  >>  iter 2, ACC! cpu_ppc_hypercall => SHIFT (0 => 0, 0.99016 => 0.97559) a=4.042
+  >>  iter 3, ACC! arg => adsr (0 => 0, 0.97559 => 0.95552) a=3.692
+  >>  iter 4, ACC! s => forward_reference (0 => 0, 0.95552 => 0.99037) a=2.269
+  >>  iter 5, ACC! forward_reference => net_vhost_link_down (0 => 0, 0.99037 => 0.98618) a=4.242
+  >>  iter 6, ACC! SHIFT => stream_job_driver (0 => 0, 0.98618 => 0.98627) a=3.371
+  >>  iter 7, ACC! stream_job_driver => buflen (0 => 0, 0.98627 => 0.98715) a=5.906
+  >>  iter 8, ACC! adsr => start_x (0 => 0, 0.98715 => 0.97025) a=2.954
+  >>  iter 9, ACC! start_x => client (0 => 0, 0.97025 => 0.99160) a=5.737
+  >>  iter 10, ACC! buflen => listener (0 => 0, 0.99160 => 0.99126) a=3.143
+  >>  iter 11, ACC! listener => ref_stride (0 => 0, 0.99126 => 0.99265) a=33.225
+  >>  iter 12, ACC! net_vhost_link_down => TCGReg (0 => 0, 0.99265 => 0.99407) a=4.130
+  >>  iter 13, ACC! ref_stride => PCIBus (0 => 0, 0.99407 => 0.99301) a=24.472
+  >>  iter 14, ACC! client => LE_16 (0 => 0, 0.99301 => 0.99357) a=5.407
+  >>  iter 15, ACC! TCGReg => it (0 => 0, 0.99357 => 0.98186) a=5.963
+  >>  iter 16, ACC! it => xengnttab_map_domain_grant_refs (0 => 0, 0.98186 => 0.96008) a=2.201
+  >>  iter 17, REJ. xengnttab_map_domain_grant_refs => aio_niov (0 => 0, 0.96008 => 0.98476) a=0.559
+  >>  iter 18, REJ. xengnttab_map_domain_grant_refs => block_width (0 => 0, 0.96008 => 0.99354) a=0.709
+  >>  iter 19, ACC! LE_16 => read_code_table (0 => 0, 0.96008 => 0.97314) a=4.278
+  >>  iter 20, ACC! PCIBus => store_prev_samples (0 => 0, 0.97314 => 0.97981) a=7.133
+EXAMPLE 245 FAILED.
+  time cost = 7.93 min
+  curr succ rate = 0.7034482758620689
+Query times in this attack:  402
+All Query times:  26660
+  >>  iter 1, ACC! disk => zero (0 => 0, 0.88683 => 0.87496) a=2.378
+  >>  iter 2, ACC! mode => pxa255_ssp (0 => 0, 0.87496 => 0.89574) a=1.324
+  >>  iter 3, ACC! devtype => write_cmd (0 => 0, 0.89574 => 0.92237) a=1.224
+  >>  iter 4, ACC! zero => level_table (0 => 0, 0.92237 => 0.90185) a=2.517
+  >>  iter 5, ACC! be => gen_stos (0 => 0, 0.90185 => 0.87233) a=1.806
+  >>  iter 6, ACC! fe => rbase (0 => 0, 0.87233 => 0.88579) a=1.987
+  >>  iter 7, ACC! level_table => tb_flush (0 => 0, 0.88579 => 0.84098) a=1.956
+  >>  iter 8, ACC! write_cmd => fidp (0 => 0, 0.84098 => 0.84358) a=1.732
+  >>  iter 9, ACC! gen_stos => filt (0 => 0, 0.84358 => 0.81813) a=2.233
+  >>  iter 10, ACC! fidp => FlacSubframe (0 => 0, 0.81813 => 0.87954) a=1.185
+  >>  iter 11, ACC! filt => chr_can_read (0 => 0, 0.87954 => 0.83970) a=1.803
+  >>  iter 12, ACC! tb_flush => ERR (0 => 0, 0.83970 => 0.84225) a=1.405
+  >>  iter 13, ACC! FlacSubframe => sector_mask (0 => 0, 0.84225 => 0.78783) a=1.405
+  >>  iter 14, ACC! ERR => gpad_irq (0 => 0, 0.78783 => 0.81716) a=1.177
+  >>  iter 15, ACC! pxa255_ssp => gen_shift (0 => 0, 0.81716 => 0.71454) a=1.752
+  >>  iter 16, ACC! gen_shift => ai (0 => 0, 0.71454 => 0.79540) a=1.038
+  >>  iter 17, ACC! ai => opcode (0 => 0, 0.79540 => 0.75995) a=1.687
+  >>  iter 18, ACC! chr_can_read => tracks (0 => 0, 0.75995 => 0.83912) a=1.454
+  >>  iter 19, ACC! opcode => ecw (0 => 0, 0.83912 => 0.83041) a=1.302
+  >>  iter 20, ACC! tracks => CF_LAST_IO (0 => 0, 0.83041 => 0.76567) a=2.004
+EXAMPLE 246 FAILED.
+  time cost = 8.09 min
+  curr succ rate = 0.6986301369863014
+Query times in this attack:  408
+All Query times:  27068
+  >>  iter 1, ACC! dev => VirtIOPCIProxy (1 => 1, 0.67597 => 0.74764) a=1.451
+  >>  iter 2, ACC! end => arg5 (1 => 1, 0.74764 => 0.68853) a=1.234
+  >>  iter 3, ACC! arg5 => PCI_BASE_ADDRESS_SPACE_IO (1 => 1, 0.68853 => 0.77265) a=1.080
+  >>  iter 4, ACC! VirtIOPCIProxy => step (1 => 1, 0.77265 => 0.75677) a=1.147
+  >>  iter 5, ACC! errp => qemu_register_reset (1 => 1, 0.75677 => 0.73157) a=1.956
+  >>  iter 6, ACC! qemu_register_reset => x86_ldub_code (1 => 1, 0.73157 => 0.70838) a=1.274
+  >>  iter 7, ACC! mr => tcg_temp_local_new_i64 (1 => 1, 0.70838 => 0.64421) a=1.239
+  >>  iter 8, ACC! s => fdsp (1 => 1, 0.64421 => 0.55309) a=1.256
+  >>  iter 9, ACC! fd => duration (1 => 1, 0.55309 => 0.55309) a=1.000
+  >>  iter 10, REJ. tcg_temp_local_new_i64 => bl1 (1 => 1, 0.55309 => 0.71223) a=0.922
+  >>  iter 11, ACC! tcg_temp_local_new_i64 => has_vnet_hdr (1 => 1, 0.55309 => 0.60546) a=1.022
+  >>  iter 12, ACC! fdsp => frame_rate_index (1 => 1, 0.60546 => 0.62298) a=1.159
+  >>  iter 13, ACC! pci_conf => tcg_gen_st_tl (1 => 1, 0.62298 => 0.68168) a=1.263
+  >>  iter 14, SUCC! err => fu_header (1 => 0, 0.68168 => 0.44529) a=1.000
+EXAMPLE 248 SUCCEEDED!
+  time cost = 8.62 min
+  curr succ rate = 0.7006802721088435
+Query times in this attack:  286
+All Query times:  27354
+  >>  iter 1, ACC! xInc => term_history (1 => 1, 0.92810 => 0.74623) a=4.418
+  >>  iter 2, SUCC! i => ticks_per_frame (1 => 0, 0.74623 => 0.47924) a=1.000
+EXAMPLE 252 SUCCEEDED!
+  time cost = 8.48 min
+  curr succ rate = 0.7027027027027027
+Query times in this attack:  44
+All Query times:  27398
+  >>  iter 1, ACC! f => SCSIDiskReq (1 => 1, 0.97676 => 0.98031) a=6.007
+  >>  iter 2, ACC! pv => dbl_rand (1 => 1, 0.98031 => 0.98400) a=12.065
+  >>  iter 3, SUCC! dbl_rand => syscall_num (1 => 0, 0.98400 => 0.22787) a=1.000
+EXAMPLE 253 SUCCEEDED!
+  time cost = 8.49 min
+  curr succ rate = 0.7046979865771812
+Query times in this attack:  61
+All Query times:  27459
+  >>  iter 1, ACC! reconstructed_nal => pteh (1 => 1, 0.69222 => 0.66686) a=1.082
+  >>  iter 2, ACC! flags => gen_helper_fmov_STN_ST0 (1 => 1, 0.66686 => 0.75619) a=1.305
+  >>  iter 3, ACC! src => on_target_error (1 => 1, 0.75619 => 0.71760) a=1.443
+  >>  iter 4, ACC! ctx => HV_X64_MSR_VP_RUNTIME (1 => 1, 0.71760 => 0.80330) a=1.051
+  >>  iter 5, ACC! HV_X64_MSR_VP_RUNTIME => IDE_CD (1 => 1, 0.80330 => 0.77730) a=1.558
+  >>  iter 6, ACC! pass => rtsp_st (1 => 1, 0.77730 => 0.77817) a=1.301
+  >>  iter 7, ACC! nal => cbpy_tab (1 => 1, 0.77817 => 0.76896) a=1.625
+  >>  iter 8, ACC! on_target_error => gen_helper_fabs_ST0 (1 => 1, 0.76896 => 0.65095) a=1.713
+  >>  iter 9, ACC! pteh => iptr (1 => 1, 0.65095 => 0.65095) a=1.000
+  >>  iter 10, ACC! iptr => CODEC_CAP_DELAY (1 => 1, 0.65095 => 0.65095) a=1.000
+  >>  iter 11, ACC! buf => indexes (1 => 1, 0.65095 => 0.64540) a=1.120
+  >>  iter 12, ACC! seq => AV_OPT_FLAG_ENCODING_PARAM (1 => 1, 0.64540 => 0.62283) a=1.213
+  >>  iter 13, ACC! CODEC_CAP_DELAY => defined (1 => 1, 0.62283 => 0.62283) a=1.000
+  >>  iter 14, ACC! len => CF_USE_ICOUNT (1 => 1, 0.62283 => 0.70383) a=1.130
+  >>  iter 15, ACC! dst => spectrum (1 => 1, 0.70383 => 0.65648) a=1.166
+  >>  iter 16, REJ. gen_helper_fabs_ST0 => CC_OP_SUBQ (1 => 1, 0.65648 => 0.73404) a=0.966
+  >>  iter 17, ACC! defined => do_shiftd (1 => 1, 0.65648 => 0.65648) a=1.000
+  >>  iter 18, ACC! pkt => SVM_EXIT_POPF (1 => 1, 0.65648 => 0.63473) a=1.315
+  >>  iter 19, SUCC! timestamp => motion_val8 (1 => 0, 0.63473 => 0.39311) a=1.000
+EXAMPLE 254 SUCCEEDED!
+  time cost = 9.55 min
+  curr succ rate = 0.7066666666666667
+Query times in this attack:  388
+All Query times:  27847
+  >>  iter 1, ACC! json => cpu_cc_src (0 => 0, 0.66269 => 0.66269) a=1.000
+  >>  iter 2, ACC! cpu_cc_src => EXCP0D_GPF (0 => 0, 0.66269 => 0.66269) a=1.000
+  >>  iter 3, SUCC! has_open_options => O_CREAT (0 => 1, 0.66269 => 0.49215) a=1.000
+EXAMPLE 255 SUCCEEDED!
+  time cost = 9.41 min
+  curr succ rate = 0.7086092715231788
+Query times in this attack:  64
+All Query times:  27911
+  >>  iter 1, ACC! ctx => xen_9pfs_free (0 => 0, 0.99381 => 0.99492) a=1.148
+  >>  iter 2, ACC! xen_9pfs_free => lumToYV12 (0 => 0, 0.99492 => 0.99431) a=1.529
+  >>  iter 3, ACC! lumToYV12 => ret (0 => 0, 0.99431 => 0.99388) a=1.171
+  >>  iter 4, ACC! ret => gen_helper_cmpxchg16b_unlocked (0 => 0, 0.99388 => 0.99296) a=1.666
+  >>  iter 5, ACC! gen_helper_cmpxchg16b_unlocked => GENERAL (0 => 0, 0.99296 => 0.99443) a=1.101
+  >>  iter 6, ACC! GENERAL => nf (0 => 0, 0.99443 => 0.99318) a=1.411
+  >>  iter 7, ACC! nf => fg (0 => 0, 0.99318 => 0.99321) a=1.440
+  >>  iter 8, ACC! fg => mb_y (0 => 0, 0.99321 => 0.99454) a=1.161
+  >>  iter 9, ACC! mb_y => gBlock (0 => 0, 0.99454 => 0.99393) a=1.294
+  >>  iter 10, ACC! gBlock => PCI_BASE_ADDRESS_MEM_TYPE_32 (0 => 0, 0.99393 => 0.98919) a=1.782
+  >>  iter 11, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => key_frame (0 => 0, 0.98919 => 0.99350) a=0.874
+  >>  iter 12, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => colour_default (0 => 0, 0.98919 => 0.99302) a=0.754
+  >>  iter 13, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => ff_vorbis_vwin (0 => 0, 0.98919 => 0.99055) a=0.875
+  >>  iter 14, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => block_w (0 => 0, 0.98919 => 0.99352) a=0.937
+  >>  iter 15, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => spr_register (0 => 0, 0.98919 => 0.99176) a=0.762
+  >>  iter 16, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => main_cpu_reset (0 => 0, 0.98919 => 0.99443) a=0.802
+  >>  iter 17, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => sq (0 => 0, 0.98919 => 0.99342) a=0.772
+  >>  iter 18, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => level (0 => 0, 0.98919 => 0.99448) a=0.691
+  >>  iter 19, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => xen_9pfs_connect (0 => 0, 0.98919 => 0.99352) a=0.789
+  >>  iter 20, REJ. PCI_BASE_ADDRESS_MEM_TYPE_32 => ModPred (0 => 0, 0.98919 => 0.99324) a=0.805
+EXAMPLE 257 FAILED.
+  time cost = 9.71 min
+  curr succ rate = 0.7039473684210527
+Query times in this attack:  414
+All Query times:  28325
+  >>  iter 1, ACC! env => progress_mutex (0 => 0, 0.99506 => 0.99418) a=1.408
+  >>  iter 2, ACC! progress_mutex => chromStride (0 => 0, 0.99418 => 0.99464) a=1.028
+  >>  iter 3, ACC! chromStride => AC3_MAX_BLOCKS (0 => 0, 0.99464 => 0.99507) a=1.071
+  >>  iter 4, ACC! farg2 => CPUID_EXT_CX16 (0 => 0, 0.99507 => 0.99520) a=1.115
+  >>  iter 5, ACC! CPUID_EXT_CX16 => sub_packet_size (0 => 0, 0.99520 => 0.99587) a=1.549
+  >>  iter 6, ACC! AC3_MAX_BLOCKS => cur_prd_last (0 => 0, 0.99587 => 0.99541) a=1.183
+  >>  iter 7, ACC! arg2 => matrix_ch (0 => 0, 0.99541 => 0.99405) a=1.297
+  >>  iter 8, REJ. arg1 => qemu_clock_get_ns (0 => 0, 0.99405 => 0.99575) a=0.929
+  >>  iter 9, ACC! sub_packet_size => tcg_gen_ld_tl (0 => 0, 0.99405 => 0.99416) a=1.820
+  >>  iter 10, ACC! cur_prd_last => src_vt7 (0 => 0, 0.99416 => 0.99502) a=1.217
+  >>  iter 11, ACC! arg1 => DEFAULT_BRIDGE_INTERFACE (0 => 0, 0.99502 => 0.99557) a=1.259
+  >>  iter 12, ACC! DEFAULT_BRIDGE_INTERFACE => CPUFLAG_FMA4 (0 => 0, 0.99557 => 0.99521) a=1.710
+  >>  iter 13, ACC! tcg_gen_ld_tl => MIPS_FPU_MAX (0 => 0, 0.99521 => 0.99514) a=1.480
+  >>  iter 14, ACC! farg1 => QLIT_QSTR (0 => 0, 0.99514 => 0.99550) a=1.407
+  >>  iter 15, ACC! CPUFLAG_FMA4 => sun4uv_init (0 => 0, 0.99550 => 0.99562) a=1.105
+  >>  iter 16, ACC! QLIT_QSTR => new_vid (0 => 0, 0.99562 => 0.99570) a=1.424
+  >>  iter 17, ACC! new_vid => qemu_coroutine_create (0 => 0, 0.99570 => 0.99370) a=1.524
+  >>  iter 18, ACC! qemu_coroutine_create => LOG_DIS (0 => 0, 0.99370 => 0.99570) a=1.248
+  >>  iter 19, ACC! src_vt7 => head (0 => 0, 0.99570 => 0.99471) a=1.421
+  >>  iter 20, ACC! head => h (0 => 0, 0.99471 => 0.99443) a=1.852
+EXAMPLE 258 FAILED.
+  time cost = 9.87 min
+  curr succ rate = 0.6993464052287581
+Query times in this attack:  410
+All Query times:  28735
+  >>  iter 1, ACC! async => access_text (0 => 0, 0.99546 => 0.99504) a=1.157
+  >>  iter 2, ACC! access_text => AVMEDIA_TYPE_SUBTITLE (0 => 0, 0.99504 => 0.99389) a=1.230
+  >>  iter 3, ACC! listen_addr => fsconf (0 => 0, 0.99389 => 0.99400) a=1.201
+  >>  iter 4, ACC! connect_addr => HF_OSFXSR_MASK (0 => 0, 0.99400 => 0.99350) a=1.438
+  >>  iter 5, ACC! HF_OSFXSR_MASK => out_cons (0 => 0, 0.99350 => 0.99364) a=1.155
+  >>  iter 6, ACC! fsconf => case_rgb (0 => 0, 0.99364 => 0.99194) a=1.660
+  >>  iter 7, REJ. AVMEDIA_TYPE_SUBTITLE => p_data (0 => 0, 0.99194 => 0.99528) a=0.603
+  >>  iter 8, REJ. AVMEDIA_TYPE_SUBTITLE => end_sample (0 => 0, 0.99194 => 0.99494) a=0.628
+  >>  iter 9, ACC! out_cons => MSR_KVM_SYSTEM_TIME (0 => 0, 0.99194 => 0.99313) a=1.094
+  >>  iter 10, REJ. AVMEDIA_TYPE_SUBTITLE => VirtIOPCIProxy (0 => 0, 0.99313 => 0.99502) a=0.819
+  >>  iter 11, ACC! MSR_KVM_SYSTEM_TIME => send_coef_bits (0 => 0, 0.99313 => 0.99395) a=1.143
+  >>  iter 12, ACC! send_coef_bits => filterSize (0 => 0, 0.99395 => 0.99418) a=1.322
+  >>  iter 13, ACC! case_rgb => rom (0 => 0, 0.99418 => 0.99427) a=1.364
+  >>  iter 14, ACC! filterSize => cur_offset (0 => 0, 0.99427 => 0.99414) a=3.067
+  >>  iter 15, REJ. AVMEDIA_TYPE_SUBTITLE => USB_DIR_IN (0 => 0, 0.99414 => 0.99575) a=0.817
+  >>  iter 16, ACC! rom => gen_op_jmp_v (0 => 0, 0.99414 => 0.99450) a=1.297
+  >>  iter 17, ACC! cur_offset => fdt (0 => 0, 0.99450 => 0.99419) a=1.252
+  >>  iter 18, REJ. AVMEDIA_TYPE_SUBTITLE => FFABS (0 => 0, 0.99419 => 0.99553) a=0.828
+  >>  iter 19, REJ. AVMEDIA_TYPE_SUBTITLE => ASSIGN_VSCALEX_FUNC (0 => 0, 0.99419 => 0.99556) a=0.836
+  >>  iter 20, ACC! fdt => AV_CODEC_ID_RV10 (0 => 0, 0.99419 => 0.99332) a=1.216
+EXAMPLE 259 FAILED.
+  time cost = 10.01 min
+  curr succ rate = 0.6948051948051948
+Query times in this attack:  411
+All Query times:  29146
+  >>  iter 1, ACC! rd => parallel_hds (0 => 0, 0.89692 => 0.95819) a=2.663
+  >>  iter 2, ACC! t1 => gen_helper_rdpmc (0 => 0, 0.95819 => 0.95856) a=2.690
+  >>  iter 3, ACC! rs => matrix_coeff_index_next (0 => 0, 0.95856 => 0.97871) a=4.437
+  >>  iter 4, ACC! matrix_coeff_index_next => out_tmp (0 => 0, 0.97871 => 0.93363) a=4.856
+  >>  iter 5, ACC! opn => prom_offset (0 => 0, 0.93363 => 0.91078) a=1.749
+  >>  iter 6, ACC! out_tmp => max_insns (0 => 0, 0.91078 => 0.94894) a=1.234
+  >>  iter 7, ACC! t0 => vnc_display_listen_addr (0 => 0, 0.94894 => 0.87961) a=2.691
+  >>  iter 8, ACC! shift_max => HPTE_V_HVLOCK (0 => 0, 0.87961 => 0.91741) a=1.661
+  >>  iter 9, ACC! gen_helper_rdpmc => tile_height (0 => 0, 0.91741 => 0.91490) a=2.048
+  >>  iter 10, ACC! rt => filterSize (0 => 0, 0.91490 => 0.92993) a=1.608
+  >>  iter 11, ACC! prom_offset => OPC_DSRA_CP2 (0 => 0, 0.92993 => 0.88310) a=2.919
+  >>  iter 12, ACC! filterSize => sconf (0 => 0, 0.88310 => 0.88256) a=3.043
+  >>  iter 13, SUCC! parallel_hds => tcg_abort (0 => 1, 0.88256 => 0.48730) a=1.000
+EXAMPLE 260 SUCCEEDED!
+  time cost = 10.90 min
+  curr succ rate = 0.6967741935483871
+Query times in this attack:  270
+All Query times:  29416
+  >>  iter 1, ACC! op1 => env_ptr (1 => 1, 0.99429 => 0.99102) a=81.788
+  >>  iter 2, SUCC! env_ptr => xen_9pfs_bh (1 => 0, 0.99102 => 0.33953) a=1.000
+EXAMPLE 262 SUCCEEDED!
+  time cost = 10.73 min
+  curr succ rate = 0.6987179487179487
+Query times in this attack:  44
+All Query times:  29460
+  >>  iter 1, ACC! group => new_subtitle_stream (1 => 1, 0.80405 => 0.87939) a=1.166
+  >>  iter 2, ACC! err => MSR_STAR (1 => 1, 0.87939 => 0.90294) a=4.083
+  >>  iter 3, ACC! new_subtitle_stream => pci_register_bar (1 => 1, 0.90294 => 0.87679) a=2.523
+  >>  iter 4, ACC! tlvs => src_y (1 => 1, 0.87679 => 0.88954) a=1.864
+  >>  iter 5, ACC! src_y => av_le2ne32 (1 => 1, 0.88954 => 0.88334) a=1.743
+  >>  iter 6, ACC! av_le2ne32 => is_last_report (1 => 1, 0.88334 => 0.90864) a=2.678
+  >>  iter 7, ACC! l2_group => SOCK_DGRAM (1 => 1, 0.90864 => 0.93462) a=3.548
+  >>  iter 8, ACC! MSR_STAR => TYPE_INTEGRATOR_PIC (1 => 1, 0.93462 => 0.89670) a=1.988
+  >>  iter 9, ACC! of_dpa => backing_file_len (1 => 1, 0.89670 => 0.87513) a=3.827
+  >>  iter 10, ACC! TYPE_INTEGRATOR_PIC => transport_priv (1 => 1, 0.87513 => 0.90713) a=1.532
+  >>  iter 11, ACC! backing_file_len => bdrv_unref (1 => 1, 0.90713 => 0.52589) a=5.105
+  >>  iter 12, SUCC! is_last_report => detach (1 => 0, 0.52589 => 0.41658) a=1.000
+EXAMPLE 263 SUCCEEDED!
+  time cost = 11.08 min
+  curr succ rate = 0.7006369426751592
+Query times in this attack:  244
+All Query times:  29704
+  >>  iter 1, ACC! it => immn (1 => 1, 0.70213 => 0.71269) a=1.025
+  >>  iter 2, ACC! got_frame => ROCKER_GROUP_VLAN_GET (1 => 1, 0.71269 => 0.77392) a=1.067
+  >>  iter 3, ACC! data => insn (1 => 1, 0.77392 => 0.73036) a=1.318
+  >>  iter 4, ACC! buffer => HEVC_NAL_VPS (1 => 1, 0.73036 => 0.80631) a=1.254
+  >>  iter 5, ACC! end => xalpha (1 => 1, 0.80631 => 0.82226) a=1.247
+  >>  iter 6, ACC! insn => c_cc (1 => 1, 0.82226 => 0.80584) a=1.553
+  >>  iter 7, ACC! size => command (1 => 1, 0.80584 => 0.76925) a=1.586
+  >>  iter 8, ACC! HEVC_NAL_VPS => src_len (1 => 1, 0.76925 => 0.74009) a=1.292
+  >>  iter 9, ACC! last => tcg_gen_atomic_xor_fetch_tl (1 => 1, 0.74009 => 0.69542) a=1.172
+  >>  iter 10, ACC! xalpha => SHIFT (1 => 1, 0.69542 => 0.70991) a=1.061
+  >>  iter 11, ACC! ROCKER_GROUP_VLAN_GET => qcrs (1 => 1, 0.70991 => 0.71390) a=1.272
+  >>  iter 12, ACC! command => rcu_read_unlock (1 => 1, 0.71390 => 0.78605) a=1.302
+  >>  iter 13, ACC! avpkt => URLContext (1 => 1, 0.78605 => 0.74945) a=1.298
+  >>  iter 14, ACC! immn => FP_STATUS (1 => 1, 0.74945 => 0.77502) a=1.153
+  >>  iter 15, ACC! SHIFT => has_helper (1 => 1, 0.77502 => 0.76438) a=1.815
+  >>  iter 16, ACC! c_cc => aflags (1 => 1, 0.76438 => 0.75843) a=1.414
+  >>  iter 17, ACC! qcrs => EXCP_HW_EXCP (1 => 1, 0.75843 => 0.77036) a=1.133
+  >>  iter 18, ACC! has_helper => NICInfo (1 => 1, 0.77036 => 0.73635) a=1.512
+  >>  iter 19, ACC! FP_STATUS => geotags (1 => 1, 0.73635 => 0.73501) a=1.151
+  >>  iter 20, ACC! EXCP_HW_EXCP => update_speed (1 => 1, 0.73501 => 0.73813) a=1.108
+EXAMPLE 264 FAILED.
+  time cost = 11.54 min
+  curr succ rate = 0.6962025316455697
+Query times in this attack:  410
+All Query times:  30114
+  >>  iter 1, ACC! s => deint_id (0 => 0, 0.98582 => 0.98565) a=4.144
+  >>  iter 2, ACC! insn => chroma_intra_matrix (0 => 0, 0.98565 => 0.97934) a=2.143
+  >>  iter 3, ACC! env => frame_end (0 => 0, 0.97934 => 0.96976) a=3.144
+  >>  iter 4, ACC! deint_id => reference (0 => 0, 0.96976 => 0.95074) a=3.507
+  >>  iter 5, ACC! chroma_intra_matrix => jobs (0 => 0, 0.95074 => 0.97211) a=1.030
+  >>  iter 6, ACC! frame_end => decoded (0 => 0, 0.97211 => 0.98298) a=1.475
+  >>  iter 7, ACC! jobs => ticks_per_frame (0 => 0, 0.98298 => 0.97966) a=1.531
+  >>  iter 8, ACC! ticks_per_frame => arm_feature (0 => 0, 0.97966 => 0.98691) a=1.643
+  >>  iter 9, ACC! decoded => do_xchg_reg (0 => 0, 0.98691 => 0.99220) a=2.045
+  >>  iter 10, ACC! do_xchg_reg => MemoryListener (0 => 0, 0.99220 => 0.98399) a=2.944
+  >>  iter 11, ACC! arm_feature => out3 (0 => 0, 0.98399 => 0.97904) a=3.184
+  >>  iter 12, ACC! out3 => chs_trans (0 => 0, 0.97904 => 0.98230) a=1.732
+  >>  iter 13, ACC! chs_trans => mb_stride (0 => 0, 0.98230 => 0.97887) a=2.664
+  >>  iter 14, ACC! reference => floatx80_eq (0 => 0, 0.97887 => 0.98597) a=5.752
+  >>  iter 15, ACC! floatx80_eq => ppc (0 => 0, 0.98597 => 0.98180) a=3.051
+  >>  iter 16, ACC! ppc => rvlc_rl_intra (0 => 0, 0.98180 => 0.95984) a=3.804
+  >>  iter 17, ACC! MemoryListener => coded_height (0 => 0, 0.95984 => 0.96969) a=1.494
+  >>  iter 18, ACC! mb_stride => non_intra_matrix (0 => 0, 0.96969 => 0.96599) a=1.507
+  >>  iter 19, ACC! rvlc_rl_intra => ssize (0 => 0, 0.96599 => 0.99224) a=1.809
+  >>  iter 20, ACC! non_intra_matrix => gen_op_update1_cc (0 => 0, 0.99224 => 0.99371) a=3.028

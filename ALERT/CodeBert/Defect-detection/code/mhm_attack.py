@@ -22,7 +22,8 @@ from transformers import RobertaForMaskedLM
 from transformers import (RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer)
 from attacker import MHM_Attacker
 from attacker import convert_code_to_features
-
+import fasttext
+import fasttext.util
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 warnings.simplefilter(action='ignore', category=FutureWarning) # Only report warning\
 
@@ -46,7 +47,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     ## Required parameters
-    parser.add_argument("--train_data_file", default=None, type=str, required=True,
+    parser.add_argument("--train_data_file", default=None, type=str, required=False,
                         help="The input training data file (a text file).")
     parser.add_argument("--output_dir", default=None, type=str, required=True,
                         help="The output directory where the model predictions and checkpoints will be written.")
@@ -172,9 +173,9 @@ def main():
         code_tokens.append(get_identifiers(code, "c")[1])
 
     id2token, token2id = build_vocab(code_tokens, 5000)
-
+    fasttext_model = fasttext.load_model('/data/yjx/code_for_first_task/PSOWithcoda/VulnerabilityPrediction/code/saved_models/fasttext_model.bin')
     recoder = Recorder(args.csv_store_path)
-    attacker = MHM_Attacker(args, model, codebert_mlm, tokenizer_mlm, token2id, id2token)
+    attacker = MHM_Attacker(args, model, codebert_mlm, tokenizer_mlm, token2id, id2token,fasttext_model)
     
     # token2id: dict,key是变量名, value是id
     # id2token: list,每个元素是变量名
@@ -187,6 +188,9 @@ def main():
     total_cnt = 0
     query_times = 0
     all_start_time = time.time()
+    derta_C = 0 # logit下降
+    diversity_total = 0
+    # 这里开始循环攻击整个代码集
     for index, example in enumerate(eval_dataset):
         code = source_codes[index]
         substituions = generated_substitutions[index]
@@ -198,7 +202,7 @@ def main():
         new_dataset = CodeDataset([new_feature])
 
         orig_prob, orig_label = model.get_results([example], args.eval_batch_size)
-        orig_prob = orig_prob[0]
+        orig_prob = orig_prob[0] # 原logit
         orig_label = orig_label[0]
         ground_truth = example[1].item()
         if orig_label != ground_truth:
@@ -208,14 +212,15 @@ def main():
         
         # 这里需要进行修改.
         if args.original:
-            _res = attacker.mcmc_random(tokenizer,substituions, code,
-                             _label=ground_truth, _n_candi=30,
-                             _max_iter=100, _prob_threshold=1)
+            _res, diversity = attacker.mcmc_random(tokenizer,substituions, code, index,
+                             _label=ground_truth, _n_candi=20,
+                             _max_iter=20, _prob_threshold=1)
         else:
             _res = attacker.mcmc(tokenizer, substituions, code,
-                             _label=ground_truth, _n_candi=30,
-                             _max_iter=100, _prob_threshold=1)
+                             _label=ground_truth, _n_candi=20,
+                             _max_iter=20, _prob_threshold=1)
 
+        diversity_total += diversity
         if _res['succ'] is None:
             continue
         if _res['succ'] == True:
@@ -228,12 +233,24 @@ def main():
         total_cnt += 1
         print ("  time cost = %.2f min" % ((time.time()-start_time)/60))
         time_cost = (time.time()-start_time)/60
-        print ("  ALL EXAMPLE time cost = %.2f min" % ((time.time()-all_start_time)/60))
+        # print ("  ALL EXAMPLE time cost = %.2f min" % ((time.time()-all_start_time)/60))
+        derta_C += max(_res['score_info'], 0)
         print ("  curr succ rate = "+str(n_succ/total_cnt))
         print("Query times in this attack: ", model.query - query_times)
         print("All Query times: ", model.query)
         recoder.writemhm(index, code, _res["prog_length"], _res['tokens'], ground_truth, orig_label, _res["new_pred"], _res["is_success"], _res["old_uid"], _res["score_info"], _res["nb_changed_var"], _res["nb_changed_pos"], _res["replace_info"], _res["attack_type"], model.query - query_times, time_cost)
         query_times = model.query
+    print("Average Query times max: ", round(model.query / n_succ,2))
+    print("Average Query times min: ", round(model.query / len(eval_dataset),2))
+    print("Average drop max: ", round(derta_C / n_succ,2))
+    print("Average drop min: ", round(derta_C / len(eval_dataset),2))
+    print("Average diversity max: ",round(diversity_total / n_succ,2))
+    print("Average diversity min: ",round(diversity_total / len(eval_dataset),2))
+    print ("ALL EXAMPLE time cost = %.2f min" % ((time.time()-all_start_time)/60))
 
 if __name__ == "__main__":
     main()
+    """
+    CUDA_VISIBLE_DEVICES=0 python mhm_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --csv_store_path ./mhm_diversity_new.csv --base_model=microsoft/codebert-base-mlm  --eval_data_file=../preprocess/dataset/test_subs_gan_0_400.jsonl --original --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee mhm_20_20.log
+
+    """

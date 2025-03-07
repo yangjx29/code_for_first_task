@@ -92,8 +92,8 @@ def convert_examples_to_features(js,tokenizer,args):
     source_ids =  tokenizer.convert_tokens_to_ids(source_tokens)
     padding_length = args.block_size - len(source_ids)
     source_ids+=[tokenizer.pad_token_id]*padding_length
-    return InputFeatures(source_tokens,source_ids,js['idx'],int(js['target']))
-
+    # return InputFeatures(source_tokens,source_ids,js['idx'],int(js['target']))
+    return InputFeatures(source_tokens,source_ids,0,int(js['target']))
 class TextDataset(Dataset):
     def __init__(self, tokenizer, args, file_path=None):
         self.examples = []
@@ -586,6 +586,7 @@ if __name__ == "__main__":
     """
     CUDA_VISIBLE_DEVICES=2,3 python run.py --output_dir=./adv_saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_train --train_data_file=../preprocess/dataset/train.jsonl --eval_data_file=../preprocess/dataset/valid.jsonl --test_data_file=../preprocess/dataset/test.jsonl --epoch 5 --block_size 512 --train_batch_size 24 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee train.log
 
+    CUDA_VISIBLE_DEVICES=1 python run.py --output_dir=./saved_models_diversevul --model_type=roberta --tokenizer_name=microsoft/codebert-base --model_name_or_path=microsoft/codebert-base --do_train --train_data_file=/data/yjx/code_for_first_task/PSOWithcoda/VulnerabilityPrediction/dataset/diversevul/train.jsonl --eval_data_file=../preprocess/dataset/java/valid.jsonl --test_data_file=../preprocess/dataset/java/test.jsonl --epoch 5 --block_size 512 --train_batch_size 24 --eval_batch_size 64 --learning_rate 2e-5 --max_grad_norm 1.0 --evaluate_during_training --seed 123456 2>&1 | tee train_diversevul.log
     """
 
 

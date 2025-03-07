@@ -21,6 +21,9 @@ from utils import CodeDataset
 from utils import getUID, isUID, getTensor, build_vocab
 from run_parser import get_identifiers, get_example
 from transformers import (RobertaForMaskedLM, RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer)
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+import Levenshtein
 
 def compute_fitness(chromesome, codebert_tgt, tokenizer_tgt, orig_prob, orig_label, true_label, code, names_positions_dict, args):
     # 计算fitness function.
@@ -83,7 +86,7 @@ def get_importance_score(args, example, code, words_list: list, sub_words: list,
     return importance_score, replace_token_positions, positions
 
 class Attacker():
-    def __init__(self, args, model_tgt, tokenizer_tgt, model_mlm, tokenizer_mlm, use_bpe, threshold_pred_score) -> None:
+    def __init__(self, args, model_tgt, tokenizer_tgt, model_mlm, tokenizer_mlm, use_bpe, threshold_pred_score,fasttext_model) -> None:
         self.args = args
         self.model_tgt = model_tgt
         self.tokenizer_tgt = tokenizer_tgt
@@ -91,9 +94,45 @@ class Attacker():
         self.tokenizer_mlm = tokenizer_mlm
         self.use_bpe = use_bpe
         self.threshold_pred_score = threshold_pred_score
+        self.fasttext_model = fasttext_model
+        self.particle_positions = []  # 用于记录每次迭代中粒子的位置
+        self.diversity_indices = []  # 用于记录每次迭代的多样性指数
 
+    def visualize_particle_trajectory(self, i):
+            # 将粒子位置展平为二维数组
+            flattened_positions = [pos for iteration in self.particle_positions for pos in iteration]
+            vectorized_positions = [self.fasttext_model[pos] for pos in flattened_positions if pos in self.fasttext_model]
 
-    def ga_attack(self, example, code, substituions, initial_replace=None):
+            if not vectorized_positions:
+                print("No valid vectorized positions found.")
+                return
+            # print("go on!!!")
+            vectorized_positions = np.array(vectorized_positions)
+            tsne = TSNE(n_components=2)
+            reduced_positions = tsne.fit_transform(vectorized_positions)
+
+            plt.figure(figsize=(10, 8))
+            plt.scatter(reduced_positions[:, 0], reduced_positions[:, 1], c='red', alpha=0.5)
+            plt.title('Particle Trajectory in Code Space')
+            plt.xlabel('Dimension 1')
+            plt.ylabel('Dimension 2')
+            plt.show()
+            print(f"save picture{i}")
+            plt.savefig(f'./picture/greedy_{i}.png')
+
+    def calculate_diversity(self, diversity_indices):
+        # print(f"test particles:{particles}")
+        # 计算种群中每对粒子之间的距离
+        distances = []
+        for i in range(len(diversity_indices)):
+            for j in range(i + 1, len(diversity_indices)):
+                # Calculate Levenshtein distance between two particles
+                distance = Levenshtein.distance(diversity_indices[i], diversity_indices[j])
+                distances.append(distance)
+        # 返回平均距离作为多样性指数
+        return np.mean(distances) if len(distances) > 0 else 0
+    
+    def ga_attack(self, example, code, substituions, idx, initial_replace=None):
         '''
         return
             original program: code
@@ -110,12 +149,12 @@ class Attacker():
             substitues for variables: replaced_words
         '''
             # 先得到tgt_model针对原始Example的预测信息.
-
+        self.particle_positions = []
+        self.diversity_indices = []
         logits, preds = self.model_tgt.get_results([example], self.args.eval_batch_size)
         orig_prob = logits[0]
         orig_label = preds[0]
         current_prob = max(orig_prob)
-
         true_label = example[1].item()
         adv_code = ''
         temp_label = None
@@ -137,12 +176,12 @@ class Attacker():
         if not orig_label == true_label:
             # 说明原来就是错的
             is_success = -4
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None, 0, 0
             
         if len(variable_names) == 0:
             # 没有提取到identifier，直接退出
             is_success = -3
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None, 0, 0
 
         names_positions_dict = get_identifier_posistions_from_code(words, variable_names)
 
@@ -160,12 +199,13 @@ class Attacker():
 
         if len(variable_substitue_dict) == 0:
             is_success = -3
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None, 0, 0
 
         fitness_values = []
         base_chromesome = {word: word for word in variable_substitue_dict.keys()}
         population = [base_chromesome]
         # 关于chromesome的定义: {tgt_word: candidate, tgt_word_2: candidate_2, ...}
+        return_gap = 0.0
         for tgt_word in variable_substitue_dict.keys():
             # 这里进行初始化
             if initial_replace is None:
@@ -202,6 +242,7 @@ class Attacker():
                     # 并选择那个最大的gap.
                     if gap > most_gap:
                         most_gap = gap
+                        return_gap = gap
                         _the_best_candidate = index
                 if _the_best_candidate == -1:
                     initial_candidate = tgt_word
@@ -220,8 +261,10 @@ class Attacker():
 
         max_iter = max(5 * len(population), 10)
         # 这里的超参数还是的调试一下.
-
-        for i in range(max_iter):
+        print("max_iter:", max_iter)
+        for i in range(min(max_iter,20)):
+            # self.particle_positions.append(adv_code)
+            # self.diversity_indices.append(adv_code)
             _temp_mutants = []
             for j in range(self.args.eval_batch_size):
                 p = random.random()
@@ -255,8 +298,10 @@ class Attacker():
                         if old_word == _temp_mutants[index][old_word]:
                             nb_changed_var += 1
                             nb_changed_pos += len(names_positions_dict[old_word])
-
-                    return code, prog_length, adv_code, true_label, orig_label, mutate_preds[index], 1, variable_names, None, nb_changed_var, nb_changed_pos, _temp_mutants[index]
+                    self.particle_positions.append(adv_code)
+                    self.diversity_indices.append(adv_code)
+                    # self.visualize_particle_trajectory(idx)
+                    return code, prog_length, adv_code, true_label, orig_label, mutate_preds[index], 1, variable_names, None, nb_changed_var, nb_changed_pos, _temp_mutants[index], return_gap, self.calculate_diversity(self.diversity_indices)
                 _tmp_fitness = max(orig_prob) - logits[orig_label]
                 mutate_fitness_values.append(_tmp_fitness)
             
@@ -268,13 +313,15 @@ class Attacker():
                     min_index = fitness_values.index(min_value)
                     population[min_index] = _temp_mutants[index]
                     fitness_values[min_index] = fitness_value
-
-        return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, nb_changed_var, nb_changed_pos, None
+            self.particle_positions.append(adv_code)
+            self.diversity_indices.append(adv_code)
+        # self.visualize_particle_trajectory(idx)
+        return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, nb_changed_var, nb_changed_pos, None, return_gap,self.calculate_diversity(self.diversity_indices)
         
 
 
 
-    def greedy_attack(self, example, code, substituions):
+    def greedy_attack(self, example, code, substituions,idx):
         '''
         return
             original program: code
@@ -291,12 +338,13 @@ class Attacker():
             substitues for variables: replaced_words
         '''
             # 先得到tgt_model针对原始Example的预测信息.
-
+        self.particle_positions = []
+        self.diversity_indices = []
         logits, preds = self.model_tgt.get_results([example], self.args.eval_batch_size)
         orig_prob = logits[0]
         orig_label = preds[0]
         current_prob = max(orig_prob)
-
+        orig_prob = current_prob
         true_label = example[1].item()
         adv_code = ''
         temp_label = None
@@ -318,12 +366,12 @@ class Attacker():
         if not orig_label == true_label:
             # 说明原来就是错的
             is_success = -4
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None, orig_prob - current_prob, 0
             
         if len(variable_names) == 0:
             # 没有提取到identifier，直接退出
             is_success = -3
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, None, None, None, None, orig_prob - current_prob, 0
 
         sub_words = [self.tokenizer_tgt.cls_token] + sub_words[:self.args.block_size - 2] + [self.tokenizer_tgt.sep_token]
         # 如果长度超了，就截断；这里的block_size是CodeBERT能接受的输入长度
@@ -342,7 +390,7 @@ class Attacker():
                                                 model_type='classification')
 
         if importance_score is None:
-            return code, prog_length, adv_code, true_label, orig_label, temp_label, -3, variable_names, None, None, None, None
+            return code, prog_length, adv_code, true_label, orig_label, temp_label, -3, variable_names, None, None, None, None, orig_prob - current_prob, 0
 
 
         token_pos_to_score_pos = {}
@@ -367,6 +415,8 @@ class Attacker():
 
         final_words = copy.deepcopy(words)
         final_code = copy.deepcopy(code)
+        self.diversity_indices.append(code)
+        self.particle_positions.append(code)
         nb_changed_var = 0 # 表示被修改的variable数量
         nb_changed_pos = 0
         is_success = -1
@@ -388,6 +438,7 @@ class Attacker():
             substitute_list = []
             # 依次记录了被加进来的substitue
             # 即，每个temp_replace对应的substitue.
+            now_term_code = code
             for substitute in all_substitues:
                 
                 # temp_replace = copy.deepcopy(final_words)
@@ -409,7 +460,7 @@ class Attacker():
                 # 3. 将他们转化成features
             logits, preds = self.model_tgt.get_results(new_dataset, self.args.eval_batch_size)
             assert(len(logits) == len(substitute_list))
-
+            
 
             for index, temp_prob in enumerate(logits):
                 temp_label = preds[index]
@@ -425,7 +476,10 @@ class Attacker():
                         ('>>', tgt_word, candidate,
                         current_prob,
                         temp_prob[orig_label]), flush=True)
-                    return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words
+                    self.diversity_indices.append(adv_code)
+                    self.particle_positions.append(adv_code)
+                    # self.visualize_particle_trajectory(idx)
+                    return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words, most_gap,self.calculate_diversity(self.diversity_indices)
                 else:
                     # 如果没有攻击成功，我们看probability的修改
                     gap = current_prob - temp_prob[temp_label]
@@ -449,20 +503,62 @@ class Attacker():
                 replaced_words[tgt_word] = tgt_word
             
             adv_code = final_code
+            self.diversity_indices.append(adv_code)
+            self.particle_positions.append(adv_code)
 
-        return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words
+        # self.visualize_particle_trajectory(idx)
+        return code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words,most_gap, self.calculate_diversity(self.diversity_indices)
 
 
 
 class MHM_Attacker():
-    def __init__(self, args, model_tgt, model_mlm, tokenizer_mlm, _token2idx, _idx2token) -> None:
+    def __init__(self, args, model_tgt, model_mlm, tokenizer_mlm, _token2idx, _idx2token,fasttext_model) -> None:
         self.classifier = model_tgt
         self.model_mlm = model_mlm
         self.token2idx = _token2idx
         self.idx2token = _idx2token
         self.args = args
         self.tokenizer_mlm = tokenizer_mlm
+        self.fasttext_model = fasttext_model
+
+        self.particle_positions = []  # 用于记录每次迭代中粒子的位置
+        self.diversity_indices = []  # 用于记录每次迭代的多样性指数
+
+    from utils import build_vocab
     
+    def visualize_particle_trajectory(self, i):
+            # 将粒子位置展平为二维数组
+            flattened_positions = [pos for iteration in self.particle_positions for pos in iteration]
+            vectorized_positions = [self.fasttext_model[pos] for pos in flattened_positions if pos in self.fasttext_model]
+
+            if not vectorized_positions:
+                print("No valid vectorized positions found.")
+                return
+            # print("go on!!!")
+            vectorized_positions = np.array(vectorized_positions)
+            tsne = TSNE(n_components=2)
+            reduced_positions = tsne.fit_transform(vectorized_positions)
+
+            plt.figure(figsize=(10, 8))
+            plt.scatter(reduced_positions[:, 0], reduced_positions[:, 1], c='blue', alpha=0.5)
+            plt.title('Particle Trajectory in Code Space')
+            plt.xlabel('Dimension 1')
+            plt.ylabel('Dimension 2')
+            plt.show()
+            print(f"save picture{i}")
+            plt.savefig(f'./picture/mhm_random_{i}.png')
+    
+    def calculate_diversity(self, diversity_indices):
+        # 计算种群中每对粒子之间的距离
+        distances = []
+        for i in range(len(diversity_indices)):
+            for j in range(i + 1, len(diversity_indices)):
+                # Calculate Levenshtein distance between two particles
+                distance = Levenshtein.distance(diversity_indices[i], diversity_indices[j])
+                distances.append(distance)
+        # 返回平均距离作为多样性指数
+        return np.mean(distances) if len(distances) > 0 else 0
+
     def mcmc(self, tokenizer, substituions, code=None, _label=None, _n_candi=30,
              _max_iter=100, _prob_threshold=0.95):
         identifiers, code_tokens = get_identifiers(code, 'c')
@@ -536,8 +632,10 @@ class MHM_Attacker():
             nb_changed_pos += len(uid[old_uids[uid_][-1]])
         return {'succ': False, 'tokens': res['tokens'], 'raw_tokens': None, "prog_length": prog_length, "new_pred": res["new_pred"], "is_success": -1, "old_uid": old_uid, "score_info": res["old_prob"][0]-res["new_prob"][0], "nb_changed_var": len(old_uids), "nb_changed_pos": nb_changed_pos, "replace_info": replace_info, "attack_type": "MHM"}
 
-    def mcmc_random(self, tokenizer, substituions, code=None, _label=None, _n_candi=30,
+    def mcmc_random(self, tokenizer, substituions, code=None, pi=0, _label=None, _n_candi=30,
              _max_iter=100, _prob_threshold=0.95):
+        self.particle_positions = []
+        self.diversity_indices = []
         identifiers, code_tokens = get_identifiers(code, 'c')
         processed_code = " ".join(code_tokens)
         prog_length = len(code_tokens)
@@ -548,7 +646,7 @@ class MHM_Attacker():
         uid = get_identifier_posistions_from_code(words, variable_names)
 
         if len(uid) <= 0: # 是有可能存在找不到变量名的情况的.
-            return {'succ': None, 'tokens': None, 'raw_tokens': None}
+            return {'succ': None, 'tokens': None, 'raw_tokens': None}, 0
 
         variable_substitue_dict = {}
         for tgt_word in uid.keys():
@@ -557,6 +655,9 @@ class MHM_Attacker():
         old_uids = {}
         old_uid = ""
         for iteration in range(1, 1+_max_iter):
+            # 记录当前粒子的位置
+            self.particle_positions.append(code)
+            self.diversity_indices.append(code)
             # 这个函数需要tokens
             res = self.__replaceUID_random(_tokens=code, _label=_label, _uid=uid,
                                     substitute_dict=variable_substitue_dict,
@@ -596,16 +697,17 @@ class MHM_Attacker():
                     for uid_ in old_uids.keys():
                         replace_info[uid_] = old_uids[uid_][-1]
                         nb_changed_pos += len(uid[old_uids[uid_][-1]])
+                    # self.visualize_particle_trajectory(pi)
                     return {'succ': True, 'tokens': code,
-                            'raw_tokens': raw_tokens, "prog_length": prog_length, "new_pred": res["new_pred"], "is_success": 1, "old_uid": old_uid, "score_info": res["old_prob"][0]-res["new_prob"][0], "nb_changed_var": len(old_uids), "nb_changed_pos": nb_changed_pos, "replace_info": replace_info, "attack_type": "MHM-Origin"}
+                            'raw_tokens': raw_tokens, "prog_length": prog_length, "new_pred": res["new_pred"], "is_success": 1, "old_uid": old_uid, "score_info": res["old_prob"][0]-res["new_prob"][0], "nb_changed_var": len(old_uids), "nb_changed_pos": nb_changed_pos, "replace_info": replace_info, "attack_type": "MHM-Origin"},self.calculate_diversity(self.diversity_indices)
         replace_info = {}
         nb_changed_pos = 0
 
         for uid_ in old_uids.keys():
             replace_info[uid_] = old_uids[uid_][-1]
             nb_changed_pos += len(uid[old_uids[uid_][-1]])
-        
-        return {'succ': False, 'tokens': res['tokens'], 'raw_tokens': None, "prog_length": prog_length, "new_pred": res["new_pred"], "is_success": -1, "old_uid": old_uid, "score_info": res["old_prob"][0]-res["new_prob"][0], "nb_changed_var": len(old_uids), "nb_changed_pos": nb_changed_pos, "replace_info": replace_info, "attack_type": "MHM-Origin"}
+        # self.visualize_particle_trajectory(pi)
+        return {'succ': False, 'tokens': res['tokens'], 'raw_tokens': None, "prog_length": prog_length, "new_pred": res["new_pred"], "is_success": -1, "old_uid": old_uid, "score_info": res["old_prob"][0]-res["new_prob"][0], "nb_changed_var": len(old_uids), "nb_changed_pos": nb_changed_pos, "replace_info": replace_info, "attack_type": "MHM-Origin"},self.calculate_diversity(self.diversity_indices)
     
     def __replaceUID(self, _tokens, _label=None, _uid={}, substitute_dict={},
                      _n_candi=30, _prob_threshold=0.95, _candi_mode="random"):

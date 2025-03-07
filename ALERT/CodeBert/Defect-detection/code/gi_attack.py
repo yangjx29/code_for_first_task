@@ -23,7 +23,9 @@ from python_parser.parser_folder import remove_comments_and_docstrings
 from utils import Recorder
 from attacker import Attacker
 from transformers import (RobertaForMaskedLM, RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer)
-
+from codebleu import calc_codebleu
+import fasttext
+import fasttext.util
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 warnings.simplefilter(action='ignore', category=FutureWarning) # Only report warning
 
@@ -170,21 +172,28 @@ def main():
     total_cnt = 0
 
     recoder = Recorder(args.csv_store_path)
-    
-    attacker = Attacker(args, model, tokenizer, codebert_mlm, tokenizer_mlm, use_bpe=1, threshold_pred_score=0)
+    fasttext_model = fasttext.load_model('/data/yjx/code_for_first_task/PSOWithcoda/VulnerabilityPrediction/code/saved_models/fasttext_model.bin')
+    attacker = Attacker(args, model, tokenizer, codebert_mlm, tokenizer_mlm, use_bpe=1, threshold_pred_score=0, fasttext_model=fasttext_model)
     start_time = time.time()
     query_times = 0
+    derta_C = 0
+    codeblue_total = 0
+    diversity_total = 0
     for index, example in enumerate(eval_dataset):
         example_start_time = time.time()
         code = source_codes[index]
         substituions = generated_substitutions[index]
-        code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words = attacker.greedy_attack(example, code, substituions)
+        code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words, drop_prob,diversity = attacker.greedy_attack(example, code, substituions,index)
         attack_type = "Greedy"
         if is_success == -1 and args.use_ga:
-            # 如果不成功，则使用gi_attack
-            code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words = attacker.ga_attack(example, code, substituions, initial_replace=replaced_words)
+        # 如果不成功，则使用gi_attack
+            code, prog_length, adv_code, true_label, orig_label, temp_label, is_success, variable_names, names_to_importance_score, nb_changed_var, nb_changed_pos, replaced_words, drop_prob,diversity= attacker.ga_attack(example, code, substituions,index, initial_replace=replaced_words)
             attack_type = "GA"
 
+        codeblue = calc_codebleu([code], [adv_code], lang="c", weights=(0.25, 0.25, 0.25, 0.25), tokenizer=None)
+        codeblue_total += codeblue['codebleu']
+        derta_C += drop_prob
+        diversity_total += diversity
         example_end_time = (time.time()-example_start_time)/60
         
         print("Example time cost: ", round(example_end_time, 2), "min")
@@ -216,12 +225,24 @@ def main():
         print("Total count: ", total_cnt)
         print("Index: ", index)
         print()
-    
+        
+    print("Average Query times: ", round(model.query /  len(eval_dataset),2))
+    print("Average drop max: ", round(derta_C /  success_attack,2))
+    print("Average drop min: ", round(derta_C /  len(eval_dataset),2))
+    print("Average codeblue max: ", round(codeblue_total / success_attack,2))
+    print("Average codeblue min: ", round(codeblue_total / len(eval_dataset),2))
+    print("Average diversity max: ", round(diversity_total / success_attack,2))
+    print("Average diversity min: ", round(diversity_total / len(eval_dataset),2))
+    print ("ALL EXAMPLE time cost = %.2f min" % ((time.time()-start_time)/60))
         
 if __name__ == '__main__':
     main()
     """
-    CUDA_VISIBLE_DEVICES=2 python gi_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path ./attack_no_gitest_subs_400_800_.csv --base_model=microsoft/codebert-base-mlm --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=../preprocess/dataset/test_subs_400_800.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee attack_no_gitest_subs_400_800_.log
+    CUDA_VISIBLE_DEVICES=3 python gi_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path .greedy_20_20.csv --base_model=microsoft/codebert-base-mlm --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=../preprocess/dataset/test_subs_gan_0_400.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee greedy_20_20.log
     
-    CUDA_VISIBLE_DEVICES=2 python gi_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path ./attack_with_gitest_subs_400_800_.csv --base_model=microsoft/codebert-base-mlm --use_ga --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=../preprocess/dataset/test_subs_400_800.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee attack_with_gitest_subs_400_800_.log
+    CUDA_VISIBLE_DEVICES=1 python gi_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path ./ga_20_20.csv --base_model=microsoft/codebert-base-mlm --use_ga --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=../preprocess/dataset/test_subs_gan_0_400.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee ga_20_20.log
+
+    CUDA_VISIBLE_DEVICES=1 python gi_attack.py --output_dir=./saved_models --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path ./Alert_20_20.csv --base_model=microsoft/codebert-base-mlm --use_ga --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=../preprocess/dataset/test_subs_gan_0_400.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee Alert_20_20.log  
+
+    CUDA_VISIBLE_DEVICES=1 python gi_attack.py --output_dir=./saved_models_diversevul --model_type=roberta --tokenizer_name=microsoft/codebert-base-mlm --model_name_or_path=microsoft/codebert-base-mlm --csv_store_path ./Alert_diversevul.csv --base_model=microsoft/codebert-base-mlm --use_ga --train_data_file=../preprocess/dataset/train_subs.jsonl --eval_data_file=/data/yjx/code_for_first_task/PSOWithcoda/VulnerabilityPrediction/dataset/diversevul/diversevul_subs_0_400.jsonl --test_data_file=../preprocess/dataset/test_subs.jsonl --block_size 512 --eval_batch_size 64 --seed 123456 2>&1 | tee Alert_diversevul.log  
     """
