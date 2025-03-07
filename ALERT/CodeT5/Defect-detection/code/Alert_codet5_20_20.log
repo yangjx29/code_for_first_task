@@ -1,0 +1,4087 @@
+
+ cached_features_file:  ../preprocess/dataset/cached_test_subs_gan_0_400
+Passing a tuple of `past_key_values` is deprecated and will be removed in Transformers v4.48.0. You should pass an instance of `EncoderDecoderCache` instead, e.g. `past_key_values=EncoderDecoderCache.from_legacy_cache(past_key_values)`.
+Example time cost:  0.01 min
+ALL examples time cost:  0.01 min
+Query times in this attack:  1
+All Query times:  1
+Example time cost:  0.01 min
+ALL examples time cost:  0.02 min
+Query times in this attack:  1
+All Query times:  2
+Example time cost:  0.01 min
+ALL examples time cost:  0.03 min
+Query times in this attack:  1
+All Query times:  3
+Example time cost:  0.01 min
+ALL examples time cost:  0.04 min
+Query times in this attack:  1
+All Query times:  4
+Example time cost:  0.01 min
+ALL examples time cost:  0.05 min
+Query times in this attack:  1
+All Query times:  5
+>> ACC! drc => diPctorng_leftwb_tabsters (0.86053 => 0.64913)
+max_iter: 10
+Example time cost:  0.41 min
+ALL examples time cost:  0.45 min
+Query times in this attack:  479
+All Query times:  484
+Success rate:  0.0
+Successful items count:  0
+Total count:  1
+Index:  5
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.46 min
+Query times in this attack:  1
+All Query times:  485
+Success rate:  0.0
+Successful items count:  0
+Total count:  1
+Index:  6
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.47 min
+Query times in this attack:  1
+All Query times:  486
+Success rate:  0.0
+Successful items count:  0
+Total count:  1
+Index:  7
+
+>> SUC! ctx => Ep_cbustersisnsinclandwf (0.58810 => 0.47450)
+Example time cost:  0.11 min
+ALL examples time cost:  0.57 min
+Query times in this attack:  126
+All Query times:  612
+Success rate:  0.5
+Successful items count:  1
+Total count:  2
+Index:  8
+
+>> SUC! linesize => bGizeiputmehpxghabiredicto (0.56243 => 0.42487)
+Example time cost:  0.08 min
+ALL examples time cost:  0.66 min
+Query times in this attack:  98
+All Query times:  710
+Success rate:  0.6666666666666666
+Successful items count:  2
+Total count:  3
+Index:  9
+
+Example time cost:  0.01 min
+ALL examples time cost:  0.67 min
+Query times in this attack:  1
+All Query times:  711
+Success rate:  0.6666666666666666
+Successful items count:  2
+Total count:  3
+Index:  10
+
+>> SUC! bnd => ftwpoightLsb_yekst_devi (0.55283 => 0.47257)
+Example time cost:  0.1 min
+ALL examples time cost:  0.77 min
+Query times in this attack:  119
+All Query times:  830
+Success rate:  0.75
+Successful items count:  3
+Total count:  4
+Index:  11
+
+>> ACC! x0 => terSminn_codec_eaors (0.99986 => 0.99799)
+>> ACC! x1 => tenm_hist_entitizationi9i (0.99799 => 0.94182)
+max_iter: 15
+Example time cost:  0.47 min
+ALL examples time cost:  1.24 min
+Query times in this attack:  484
+All Query times:  1314
+Success rate:  0.6
+Successful items count:  3
+Total count:  5
+Index:  12
+
+>> ACC! env => clumtersusntersaisterlgh_ (0.98940 => 0.95310)
+max_iter: 10
+Example time cost:  0.4 min
+ALL examples time cost:  1.64 min
+Query times in this attack:  468
+All Query times:  1782
+Success rate:  0.5
+Successful items count:  3
+Total count:  6
+Index:  13
+
+>> SUC! env => or_coeessalphaedictoru_coe (0.88519 => 0.46025)
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.06 min
+ALL examples time cost:  1.7 min
+Query times in this attack:  63
+All Query times:  1845
+Success rate:  0.5714285714285714
+Successful items count:  4
+Total count:  7
+Index:  14
+
+>> ACC! s => call_Pshack_tizftweigtt (0.94631 => 0.67222)
+>> ACC! link_down => clusterscodebookni_dhanb (0.67222 => 0.51362)
+max_iter: 15
+Example time cost:  0.7 min
+ALL examples time cost:  2.4 min
+Query times in this attack:  851
+All Query times:  2696
+Success rate:  0.5
+Successful items count:  4
+Total count:  8
+Index:  15
+
+>> SUC! s => pagen_quantitizaezionntXt_p (0.60439 => 0.49971)
+Example time cost:  0.18 min
+ALL examples time cost:  2.58 min
+Query times in this attack:  214
+All Query times:  2910
+Success rate:  0.5555555555555556
+Successful items count:  5
+Total count:  9
+Index:  16
+
+Example time cost:  0.01 min
+ALL examples time cost:  2.58 min
+Query times in this attack:  1
+All Query times:  2911
+Success rate:  0.5555555555555556
+Successful items count:  5
+Total count:  9
+Index:  17
+
+>> ACC! qi => tweighMhigh_SclusterjhC (1.00000 => 0.99906)
+max_iter: 10
+Example time cost:  0.4 min
+ALL examples time cost:  2.98 min
+Query times in this attack:  461
+All Query times:  3372
+Success rate:  0.5
+Successful items count:  5
+Total count:  10
+Index:  18
+
+>> ACC! num_codes_sum => FUNY_Yoc_naeron_msourc (0.99874 => 0.99867)
+>> ACC! prefix => t_rage_st_hst_rig_base_ (0.99867 => 0.99807)
+>> ACC! count => trd_le_prdgh_bit_drOfcoi (0.99807 => 0.99564)
+>> ACC! ctx => tlaBbUe_ind0exrefcountht (0.99564 => 0.97355)
+>> ACC! num_codes => annbeonsiicir_issc_Dhan_a (0.97355 => 0.95327)
+>> ACC! i => orgetae_lrftKwei_ht8peed (0.95327 => 0.88643)
+>> ACC! j => ightctDor_coefb_se_nato (0.88643 => 0.88010)
+max_iter: 70
+Example time cost:  1.08 min
+ALL examples time cost:  4.07 min
+Query times in this attack:  1250
+All Query times:  4622
+Success rate:  0.5454545454545454
+Successful items count:  6
+Total count:  11
+Index:  19
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.07 min
+Query times in this attack:  1
+All Query times:  4623
+Success rate:  0.5454545454545454
+Successful items count:  6
+Total count:  11
+Index:  20
+
+>> SUC! opaque => tin7rlterSintelnraterhsreti (0.54282 => 0.40213)
+Example time cost:  0.06 min
+ALL examples time cost:  4.14 min
+Query times in this attack:  64
+All Query times:  4687
+Success rate:  0.5833333333333334
+Successful items count:  7
+Total count:  12
+Index:  21
+
+>> SUC! bulk_packet => ftcQount_eaFlr_clusterswg (0.65137 => 0.49162)
+Example time cost:  0.09 min
+ALL examples time cost:  4.23 min
+Query times in this attack:  108
+All Query times:  4795
+Success rate:  0.6153846153846154
+Successful items count:  8
+Total count:  13
+Index:  22
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.24 min
+Query times in this attack:  1
+All Query times:  4796
+Success rate:  0.6153846153846154
+Successful items count:  8
+Total count:  13
+Index:  23
+
+>> ACC! i => es__haauantiKtizationtizut (0.82629 => 0.67462)
+>> ACC! length => ss_sable_clusquantitization (0.67462 => 0.55469)
+>> SUC! n => en_targr_bl_gettwe0iato (0.55469 => 0.48174)
+Example time cost:  0.17 min
+ALL examples time cost:  4.41 min
+Query times in this attack:  215
+All Query times:  5011
+Success rate:  0.6428571428571429
+Successful items count:  9
+Total count:  14
+Index:  24
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.42 min
+Query times in this attack:  1
+All Query times:  5012
+Success rate:  0.6428571428571429
+Successful items count:  9
+Total count:  14
+Index:  25
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.42 min
+Query times in this attack:  1
+All Query times:  5013
+Success rate:  0.6428571428571429
+Successful items count:  9
+Total count:  14
+Index:  26
+
+>> ACC! dinfo => ililnecing_lQftfeightwil (0.74279 => 0.64612)
+>> ACC! virtio_blk_id => ameisampcykCble_clustrs (0.64612 => 0.53110)
+>> SUC! dev => lss_than_aCephaactiztioQ (0.53110 => 0.43184)
+Example time cost:  0.34 min
+ALL examples time cost:  4.76 min
+Query times in this attack:  417
+All Query times:  5430
+Success rate:  0.6666666666666666
+Successful items count:  10
+Total count:  15
+Index:  27
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.77 min
+Query times in this attack:  1
+All Query times:  5431
+Success rate:  0.6666666666666666
+Successful items count:  10
+Total count:  15
+Index:  28
+
+>> SUC! st => scluterefcountnbs_ector (0.53502 => 0.47294)
+Example time cost:  0.07 min
+ALL examples time cost:  4.85 min
+Query times in this attack:  82
+All Query times:  5513
+Success rate:  0.6875
+Successful items count:  11
+Total count:  16
+Index:  29
+
+>> ACC! d => gchtrsvice_osenselewridZ (0.77244 => 0.55619)
+>> SUC! listener => tizaionntiuianionpredicto (0.55619 => 0.42624)
+Example time cost:  0.11 min
+ALL examples time cost:  4.95 min
+Query times in this attack:  127
+All Query times:  5640
+Success rate:  0.7058823529411765
+Successful items count:  12
+Total count:  17
+Index:  30
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.96 min
+Query times in this attack:  1
+All Query times:  5641
+Success rate:  0.7058823529411765
+Successful items count:  12
+Total count:  17
+Index:  31
+
+Example time cost:  0.01 min
+ALL examples time cost:  4.97 min
+Query times in this attack:  1
+All Query times:  5642
+Success rate:  0.7058823529411765
+Successful items count:  12
+Total count:  17
+Index:  32
+
+>> SUC! s => lacing_lTfiwenaEmt_byer_na (0.53286 => 0.45490)
+Example time cost:  0.08 min
+ALL examples time cost:  5.05 min
+Query times in this attack:  97
+All Query times:  5739
+Success rate:  0.7222222222222222
+Successful items count:  13
+Total count:  18
+Index:  33
+
+>> SUC! frame_number => stersble_ciusterspredict (0.52231 => 0.49811)
+Example time cost:  0.09 min
+ALL examples time cost:  5.14 min
+Query times in this attack:  109
+All Query times:  5848
+Success rate:  0.7368421052631579
+Successful items count:  14
+Total count:  19
+Index:  34
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.15 min
+Query times in this attack:  1
+All Query times:  5849
+Success rate:  0.7368421052631579
+Successful items count:  14
+Total count:  19
+Index:  35
+
+Example time cost:  0.01 min
+ALL examples time cost:  5.16 min
+Query times in this attack:  1
+All Query times:  5850
+Success rate:  0.7368421052631579
+Successful items count:  14
+Total count:  19
+Index:  36
+
+>> ACC! status => usb_hooBtQing_lieftwleght (1.00000 => 0.99911)
+>> ACC! a => onvice_o9nontizationorOig_ (0.99911 => 0.95248)
+>> ACC! b => os_keswbtitlec_odmc_cal (0.95248 => 0.64845)
+max_iter: 20
+Example time cost:  0.91 min
+ALL examples time cost:  6.07 min
+Query times in this attack:  1104
+All Query times:  6954
+Success rate:  0.7
+Successful items count:  14
+Total count:  20
+Index:  37
+
+>> ACC! lexer => radd3widhth_le_clusters (0.99205 => 0.93479)
+max_iter: 15
+Example time cost:  0.43 min
+ALL examples time cost:  6.5 min
+Query times in this attack:  435
+All Query times:  7389
+Success rate:  0.6666666666666666
+Successful items count:  14
+Total count:  21
+Index:  38
+
+>> ACC! cb => da7nceeice_clustersthan_ (0.87137 => 0.83873)
+>> ACC! bs => trcshtM_shiflustersctur (0.83873 => 0.79301)
+>> SUC! sector_num => xghtl0eJsstthafcoYfcoueus (0.79301 => 0.45019)
+Example time cost:  0.18 min
+ALL examples time cost:  6.68 min
+Query times in this attack:  220
+All Query times:  7609
+Success rate:  0.6818181818181818
+Successful items count:  15
+Total count:  22
+Index:  39
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.69 min
+Query times in this attack:  1
+All Query times:  7610
+Success rate:  0.6818181818181818
+Successful items count:  15
+Total count:  22
+Index:  40
+
+>> ACC! p => alll8usters_sectsubq_lftw (0.86061 => 0.64446)
+>> SUC! i => send_Imcrnb_sZectHoreigTht (0.64446 => 0.43347)
+Example time cost:  0.12 min
+ALL examples time cost:  6.81 min
+Query times in this attack:  147
+All Query times:  7757
+Success rate:  0.6956521739130435
+Successful items count:  16
+Total count:  23
+Index:  41
+
+Example time cost:  0.01 min
+ALL examples time cost:  6.82 min
+Query times in this attack:  1
+All Query times:  7758
+Success rate:  0.6956521739130435
+Successful items count:  16
+Total count:  23
+Index:  42
+
+>> ACC! env => ustr7clustr_bb_se5poedif (0.70178 => 0.51495)
+>> SUC! reset_info => lusteesovacinh_leftweigh (0.51495 => 0.47467)
+Example time cost:  0.33 min
+ALL examples time cost:  7.15 min
+Query times in this attack:  377
+All Query times:  8135
+Success rate:  0.7083333333333334
+Successful items count:  17
+Total count:  24
+Index:  43
+
+>> ACC! env => host_device_openorig (0.99835 => 0.93457)
+>> ACC! i => ghtb_termhas_reustteseH (0.93457 => 0.92269)
+max_iter: 20
+Example time cost:  0.84 min
+ALL examples time cost:  7.99 min
+Query times in this attack:  989
+All Query times:  9124
+Success rate:  0.68
+Successful items count:  17
+Total count:  25
+Index:  44
+
+>> SUC! avpkt => recJostrwucted_nal (0.59276 => 0.46337)
+Example time cost:  0.16 min
+ALL examples time cost:  8.15 min
+Query times in this attack:  198
+All Query times:  9322
+Success rate:  0.6923076923076923
+Successful items count:  18
+Total count:  26
+Index:  45
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.15 min
+Query times in this attack:  1
+All Query times:  9323
+Success rate:  0.6923076923076923
+Successful items count:  18
+Total count:  26
+Index:  46
+
+>> ACC! func => starsftBUeiWhtbtitlfe_ (0.99431 => 0.95678)
+>> ACC! arg => able_clusterspred7ichtioo (0.95678 => 0.62330)
+max_iter: 15
+Example time cost:  0.68 min
+ALL examples time cost:  8.83 min
+Query times in this attack:  846
+All Query times:  10169
+Success rate:  0.6666666666666666
+Successful items count:  18
+Total count:  27
+Index:  47
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.84 min
+Query times in this attack:  1
+All Query times:  10170
+Success rate:  0.6666666666666666
+Successful items count:  18
+Total count:  27
+Index:  48
+
+Example time cost:  0.01 min
+ALL examples time cost:  8.85 min
+Query times in this attack:  1
+All Query times:  10171
+Success rate:  0.6666666666666666
+Successful items count:  18
+Total count:  27
+Index:  49
+
+>> ACC! pmcw => Iicturftwyightinn3tiator (0.68659 => 0.51411)
+>> SUC! src => count_table_te6B_r_sectlterS (0.51411 => 0.48134)
+Example time cost:  0.14 min
+ALL examples time cost:  8.98 min
+Query times in this attack:  157
+All Query times:  10328
+Success rate:  0.6785714285714286
+Successful items count:  19
+Total count:  28
+Index:  50
+
+>> SUC! avpkt => rmefcount_tableqntitrinzaffon (0.65314 => 0.37199)
+Example time cost:  0.13 min
+ALL examples time cost:  9.11 min
+Query times in this attack:  147
+All Query times:  10475
+Success rate:  0.6896551724137931
+Successful items count:  20
+Total count:  29
+Index:  51
+
+Example time cost:  0.03 min
+ALL examples time cost:  9.14 min
+Query times in this attack:  1
+All Query times:  10476
+Success rate:  0.6896551724137931
+Successful items count:  20
+Total count:  29
+Index:  52
+
+>> SUC! ret => ing_lefZtitizati1ng__tabl (0.57004 => 0.37390)
+Example time cost:  0.12 min
+ALL examples time cost:  9.25 min
+Query times in this attack:  141
+All Query times:  10617
+Success rate:  0.7
+Successful items count:  21
+Total count:  30
+Index:  53
+
+>> SUC! vhdr => ts_IlOusion_juandtization (0.65074 => 0.49157)
+Example time cost:  0.09 min
+ALL examples time cost:  9.35 min
+Query times in this attack:  104
+All Query times:  10721
+Success rate:  0.7096774193548387
+Successful items count:  22
+Total count:  31
+Index:  54
+
+>> SUC! errp => ameredundantait3izatiAonpt_s (0.64902 => 0.44782)
+Example time cost:  0.06 min
+ALL examples time cost:  9.41 min
+Query times in this attack:  66
+All Query times:  10787
+Success rate:  0.71875
+Successful items count:  23
+Total count:  32
+Index:  55
+
+>> SUC! div_blocks => ing_leftFweghtbandwid (0.64184 => 0.43859)
+Example time cost:  0.15 min
+ALL examples time cost:  9.56 min
+Query times in this attack:  198
+All Query times:  10985
+Success rate:  0.7272727272727273
+Successful items count:  24
+Total count:  33
+Index:  56
+
+>> SUC! count => titizatetweighttwclusteai (0.59872 => 0.38896)
+Example time cost:  0.1 min
+ALL examples time cost:  9.67 min
+Query times in this attack:  122
+All Query times:  11107
+Success rate:  0.7352941176470589
+Successful items count:  25
+Total count:  34
+Index:  57
+
+>> SUC! image => weig_ZBtthcief_numbeud_cng (0.85226 => 0.33098)
+Example time cost:  0.11 min
+ALL examples time cost:  9.78 min
+Query times in this attack:  136
+All Query times:  11243
+Success rate:  0.7428571428571429
+Successful items count:  26
+Total count:  35
+Index:  58
+
+Example time cost:  0.01 min
+ALL examples time cost:  9.79 min
+Query times in this attack:  1
+All Query times:  11244
+Success rate:  0.7428571428571429
+Successful items count:  26
+Total count:  35
+Index:  59
+
+Example time cost:  0.01 min
+ALL examples time cost:  9.79 min
+Query times in this attack:  1
+All Query times:  11245
+Success rate:  0.7428571428571429
+Successful items count:  26
+Total count:  35
+Index:  60
+
+>> SUC! dst => nt6itgizationvprlrnorder_bn_q (0.97856 => 0.11767)
+Example time cost:  0.07 min
+ALL examples time cost:  9.87 min
+Query times in this attack:  84
+All Query times:  11329
+Success rate:  0.75
+Successful items count:  27
+Total count:  36
+Index:  61
+
+>> ACC! qfactor => leD_clustershCohrFicrrRor_ (0.71470 => 0.62236)
+>> ACC! bottom => ndwidth_limsctFilteenisno (0.62236 => 0.59215)
+>> SUC! top => fks_less_thaaopencuoei_n (0.59215 => 0.49894)
+Example time cost:  0.19 min
+ALL examples time cost:  10.06 min
+Query times in this attack:  248
+All Query times:  11577
+Success rate:  0.7567567567567568
+Successful items count:  28
+Total count:  37
+Index:  62
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.07 min
+Query times in this attack:  1
+All Query times:  11578
+Success rate:  0.7567567567567568
+Successful items count:  28
+Total count:  37
+Index:  63
+
+>> ACC! ret => ks_clng_ftablu_index (0.99762 => 0.94709)
+max_iter: 10
+Example time cost:  0.4 min
+ALL examples time cost:  10.47 min
+Query times in this attack:  476
+All Query times:  12054
+Success rate:  0.7368421052631579
+Successful items count:  28
+Total count:  38
+Index:  64
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.48 min
+Query times in this attack:  1
+All Query times:  12055
+Success rate:  0.7368421052631579
+Successful items count:  28
+Total count:  38
+Index:  65
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.49 min
+Query times in this attack:  1
+All Query times:  12056
+Success rate:  0.7368421052631579
+Successful items count:  28
+Total count:  38
+Index:  66
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.49 min
+Query times in this attack:  1
+All Query times:  12057
+Success rate:  0.7368421052631579
+Successful items count:  28
+Total count:  38
+Index:  67
+
+Example time cost:  0.01 min
+ALL examples time cost:  10.5 min
+Query times in this attack:  1
+All Query times:  12058
+Success rate:  0.7368421052631579
+Successful items count:  28
+Total count:  38
+Index:  68
+
+>> ACC! substr => enFUNNY_Y_C_codec_FUNN (0.99532 => 0.97764)
+>> ACC! ret => eightneBxt__deod8ec_nam (0.97764 => 0.95842)
+>> ACC! m => oeftrtainJg_leftwd_secto (0.95842 => 0.95400)
+>> ACC! mh => _stmatCulected_Lstreamdsam (0.95400 => 0.89019)
+max_iter: 30
+Example time cost:  1.19 min
+ALL examples time cost:  11.69 min
+Query times in this attack:  1281
+All Query times:  13339
+Success rate:  0.717948717948718
+Successful items count:  28
+Total count:  39
+Index:  69
+
+Example time cost:  0.01 min
+ALL examples time cost:  11.7 min
+Query times in this attack:  1
+All Query times:  13340
+Success rate:  0.717948717948718
+Successful items count:  28
+Total count:  39
+Index:  70
+
+Example time cost:  0.01 min
+ALL examples time cost:  11.7 min
+Query times in this attack:  1
+All Query times:  13341
+Success rate:  0.717948717948718
+Successful items count:  28
+Total count:  39
+Index:  71
+
+>> ACC! dx => refcountet0bble_nlusbtersw (0.84895 => 0.75617)
+>> ACC! bmap => tVtable_clusterTsotle_co (0.75617 => 0.70854)
+>> SUC! y => fhaning_leftreighltis_L (0.70854 => 0.49688)
+Example time cost:  0.17 min
+ALL examples time cost:  11.88 min
+Query times in this attack:  208
+All Query times:  13549
+Success rate:  0.725
+Successful items count:  29
+Total count:  40
+Index:  72
+
+>> ACC! prop => am_e_clusthe_susb_host_de (0.91792 => 0.59816)
+>> SUC! dev => r_sn_tuantiqzaoitn_targe (0.59816 => 0.47902)
+Example time cost:  0.12 min
+ALL examples time cost:  11.99 min
+Query times in this attack:  141
+All Query times:  13690
+Success rate:  0.7317073170731707
+Successful items count:  30
+Total count:  41
+Index:  73
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.0 min
+Query times in this attack:  1
+All Query times:  13691
+Success rate:  0.7317073170731707
+Successful items count:  30
+Total count:  41
+Index:  74
+
+>> SUC! b => mr_sectoF_inteteg_peftwe (0.99956 => 0.37255)
+Example time cost:  0.07 min
+ALL examples time cost:  12.07 min
+Query times in this attack:  87
+All Query times:  13778
+Success rate:  0.7380952380952381
+Successful items count:  31
+Total count:  42
+Index:  75
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.08 min
+Query times in this attack:  1
+All Query times:  13779
+Success rate:  0.7380952380952381
+Successful items count:  31
+Total count:  42
+Index:  76
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.09 min
+Query times in this attack:  1
+All Query times:  13780
+Success rate:  0.7380952380952381
+Successful items count:  31
+Total count:  42
+Index:  77
+
+>> ACC! ret => bleYiniYghtis_titlebcode (0.88917 => 0.69105)
+>> ACC! s => mht_buffer_s_camdWnodec_i_ (0.69105 => 0.68485)
+>> SUC! buf => name_byruantitizaruantatiza (0.68485 => 0.48868)
+Example time cost:  0.16 min
+ALL examples time cost:  12.24 min
+Query times in this attack:  193
+All Query times:  13973
+Success rate:  0.7441860465116279
+Successful items count:  32
+Total count:  43
+Index:  78
+
+>> ACC! dinfo => e_epenseftweiihtssend_c (0.94948 => 0.84124)
+>> SUC! local_err => sterbs_lust3ert_dvictwei (0.84124 => 0.49024)
+Example time cost:  0.11 min
+ALL examples time cost:  12.36 min
+Query times in this attack:  139
+All Query times:  14112
+Success rate:  0.75
+Successful items count:  33
+Total count:  44
+Index:  79
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.37 min
+Query times in this attack:  1
+All Query times:  14113
+Success rate:  0.75
+Successful items count:  33
+Total count:  44
+Index:  80
+
+>> ACC! i => terj_tbnse_orsinihan_a (0.86088 => 0.57914)
+>> SUC! vd => bckitabl9e_inoersixtedMA (0.57914 => 0.47766)
+Example time cost:  0.12 min
+ALL examples time cost:  12.49 min
+Query times in this attack:  151
+All Query times:  14264
+Success rate:  0.7555555555555555
+Successful items count:  34
+Total count:  45
+Index:  81
+
+>> ACC! cpu => naliniion_qu6antitiza0ionu (0.80571 => 0.63308)
+>> ACC! s => active_ibts_uantitzaVtion (0.63308 => 0.57634)
+>> SUC! cpus => nzatvizoncredipnUot_quantit (0.57634 => 0.27858)
+Example time cost:  0.16 min
+ALL examples time cost:  12.65 min
+Query times in this attack:  198
+All Query times:  14462
+Success rate:  0.7608695652173914
+Successful items count:  35
+Total count:  46
+Index:  82
+
+>> SUC! s => gis_less_than_alvussvtecrs (0.50773 => 0.41551)
+Example time cost:  0.09 min
+ALL examples time cost:  12.74 min
+Query times in this attack:  96
+All Query times:  14558
+Success rate:  0.7659574468085106
+Successful items count:  36
+Total count:  47
+Index:  83
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.75 min
+Query times in this attack:  1
+All Query times:  14559
+Success rate:  0.7659574468085106
+Successful items count:  36
+Total count:  47
+Index:  84
+
+>> SUC! args => Zef_tablees_p_nb_sectoar (0.71398 => 0.49300)
+Example time cost:  0.07 min
+ALL examples time cost:  12.82 min
+Query times in this attack:  78
+All Query times:  14637
+Success rate:  0.7708333333333334
+Successful items count:  37
+Total count:  48
+Index:  85
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.83 min
+Query times in this attack:  1
+All Query times:  14638
+Success rate:  0.7708333333333334
+Successful items count:  37
+Total count:  48
+Index:  86
+
+>> SUC! sub_packet_cnt => vpce_Johenrefce_opken (0.54772 => 0.49975)
+Example time cost:  0.11 min
+ALL examples time cost:  12.93 min
+Query times in this attack:  125
+All Query times:  14763
+Success rate:  0.7755102040816326
+Successful items count:  38
+Total count:  49
+Index:  87
+
+Example time cost:  0.01 min
+ALL examples time cost:  12.94 min
+Query times in this attack:  1
+All Query times:  14764
+Success rate:  0.7755102040816326
+Successful items count:  38
+Total count:  49
+Index:  88
+
+>> SUC! req => codeinitig_page___codeIin (0.54260 => 0.46090)
+Example time cost:  0.07 min
+ALL examples time cost:  13.01 min
+Query times in this attack:  81
+All Query times:  14845
+Success rate:  0.78
+Successful items count:  39
+Total count:  50
+Index:  89
+
+Example time cost:  0.01 min
+ALL examples time cost:  13.02 min
+Query times in this attack:  1
+All Query times:  14846
+Success rate:  0.78
+Successful items count:  39
+Total count:  50
+Index:  90
+
+>> ACC! reopen_queue => tConoc_or_nuumcaggscjoef_ (0.99748 => 0.98043)
+max_iter: 95
+Example time cost:  2.21 min
+ALL examples time cost:  15.23 min
+Query times in this attack:  2390
+All Query times:  17236
+Success rate:  0.7647058823529411
+Successful items count:  39
+Total count:  51
+Index:  91
+
+>> ACC! bs => bleNumerskeNnsterskeNnge (0.99380 => 0.93375)
+max_iter: 10
+Example time cost:  0.4 min
+ALL examples time cost:  15.63 min
+Query times in this attack:  483
+All Query times:  17719
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  92
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  15.63 min
+Query times in this attack:  1
+All Query times:  17720
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  93
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.64 min
+Query times in this attack:  1
+All Query times:  17721
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  94
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.65 min
+Query times in this attack:  1
+All Query times:  17722
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  95
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.66 min
+Query times in this attack:  1
+All Query times:  17723
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  96
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.66 min
+Query times in this attack:  1
+All Query times:  17724
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  97
+
+Example time cost:  0.01 min
+ALL examples time cost:  15.67 min
+Query times in this attack:  1
+All Query times:  17725
+Success rate:  0.75
+Successful items count:  39
+Total count:  52
+Index:  98
+
+>> ACC! cylinders => tweodeleftweightla_tPt (0.78992 => 0.54551)
+>> ACC! nb_sectors => tssReb_pacbacfinB_k_rYab5 (0.54551 => 0.52476)
+>> ACC! chs_trans => electunt_table_rlusecs (0.52476 => 0.51738)
+>> SUC! wwn => MAX_Bermlgcinailef0tweight (0.51738 => 0.47729)
+Example time cost:  0.25 min
+ALL examples time cost:  15.92 min
+Query times in this attack:  318
+All Query times:  18043
+Success rate:  0.7547169811320755
+Successful items count:  40
+Total count:  53
+Index:  99
+
+>> ACC! dev => n_quaititezatiFnodicRnen_ (0.99812 => 0.95233)
+>> ACC! imsg => ntitizautiononoun_tablzati (0.95233 => 0.82305)
+>> SUC! len => s__ehsslthan_aweghstT6rsu (0.82305 => 0.46587)
+Example time cost:  0.16 min
+ALL examples time cost:  16.08 min
+Query times in this attack:  195
+All Query times:  18238
+Success rate:  0.7592592592592593
+Successful items count:  41
+Total count:  54
+Index:  100
+
+>> ACC! offset => ost_dqsb_hUusb_host_de (0.99997 => 0.97092)
+>> SUC! opaque => on_quanzoitizationtpan_bet (0.97092 => 0.41984)
+Example time cost:  0.11 min
+ALL examples time cost:  16.19 min
+Query times in this attack:  132
+All Query times:  18370
+Success rate:  0.7636363636363637
+Successful items count:  42
+Total count:  55
+Index:  101
+
+>> ACC! err => n_qquntiizationJall_stZa (0.88977 => 0.83925)
+>> SUC! str => actiUictioY_quantpitizatiXoS (0.83925 => 0.49488)
+Example time cost:  0.11 min
+ALL examples time cost:  16.3 min
+Query times in this attack:  132
+All Query times:  18502
+Success rate:  0.7678571428571429
+Successful items count:  43
+Total count:  56
+Index:  102
+
+>> SUC! s => seneboWesizpixustesrhigh (0.69770 => 0.43559)
+Example time cost:  0.14 min
+ALL examples time cost:  16.45 min
+Query times in this attack:  168
+All Query times:  18670
+Success rate:  0.7719298245614035
+Successful items count:  44
+Total count:  57
+Index:  103
+
+>> ACC! port => swr6id_reqs_bmile_cluster (0.88941 => 0.61424)
+>> SUC! bus => ig_0Wipatjtable_indCtyfe (0.61424 => 0.47716)
+Example time cost:  0.13 min
+ALL examples time cost:  16.57 min
+Query times in this attack:  151
+All Query times:  18821
+Success rate:  0.7758620689655172
+Successful items count:  45
+Total count:  58
+Index:  104
+
+>> ACC! name => ig_r_strstweightwriid_r (0.99063 => 0.95465)
+>> ACC! qov => Xostazterswoedictrr_coef_ (0.95465 => 0.89603)
+>> ACC! obj => igctinnatlnbdUiccte_ind (0.89603 => 0.85413)
+max_iter: 30
+Example time cost:  1.14 min
+ALL examples time cost:  17.71 min
+Query times in this attack:  1459
+All Query times:  20280
+Success rate:  0.7627118644067796
+Successful items count:  45
+Total count:  59
+Index:  105
+
+Example time cost:  0.01 min
+ALL examples time cost:  17.72 min
+Query times in this attack:  1
+All Query times:  20281
+Success rate:  0.7627118644067796
+Successful items count:  45
+Total count:  59
+Index:  106
+
+>> SUC! s => lteoqOauntis_sedeberrlay_f (0.53498 => 0.39847)
+Example time cost:  0.21 min
+ALL examples time cost:  17.92 min
+Query times in this attack:  245
+All Query times:  20526
+Success rate:  0.7666666666666667
+Successful items count:  46
+Total count:  60
+Index:  107
+
+>> SUC! isnotcompressed => g_lefweiglgxustersweighstor (0.58575 => 0.45106)
+Example time cost:  0.2 min
+ALL examples time cost:  18.12 min
+Query times in this attack:  256
+All Query times:  20782
+Success rate:  0.7704918032786885
+Successful items count:  47
+Total count:  61
+Index:  108
+
+>> ACC! sp => send_cLosterst_ameisi_di (0.81077 => 0.66001)
+>> SUC! optind => apredictckntitizationc_name (0.66001 => 0.49782)
+Example time cost:  0.14 min
+ALL examples time cost:  18.26 min
+Query times in this attack:  172
+All Query times:  20954
+Success rate:  0.7741935483870968
+Successful items count:  48
+Total count:  62
+Index:  109
+
+>> ACC! saddr => Yount_table_clustersusb_ (0.91165 => 0.65048)
+>> ACC! opaque => turustermftwhigetredunla (0.65048 => 0.63040)
+>> SUC! addr => g_base_7ftUkrsrJWetrxori (0.63040 => 0.47210)
+Example time cost:  0.26 min
+ALL examples time cost:  18.52 min
+Query times in this attack:  319
+All Query times:  21273
+Success rate:  0.7777777777777778
+Successful items count:  49
+Total count:  63
+Index:  110
+
+>> SUC! env => ntsotitizajioniiteracinb (0.74800 => 0.44095)
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.06 min
+ALL examples time cost:  18.58 min
+Query times in this attack:  63
+All Query times:  21336
+Success rate:  0.78125
+Successful items count:  50
+Total count:  64
+Index:  111
+
+>> SUC! ts => bandwidth_xJwmiitrd_fil (0.80156 => 0.15216)
+Example time cost:  0.07 min
+ALL examples time cost:  18.65 min
+Query times in this attack:  78
+All Query times:  21414
+Success rate:  0.7846153846153846
+Successful items count:  51
+Total count:  65
+Index:  112
+
+>> SUC! bs => exitizateonsantitizateonla (0.64074 => 0.48191)
+Example time cost:  0.08 min
+ALL examples time cost:  18.73 min
+Query times in this attack:  92
+All Query times:  21506
+Success rate:  0.7878787878787878
+Successful items count:  52
+Total count:  66
+Index:  113
+
+>> SUC! s => oeMAy_DWT_LOglt_cFluseers (0.54108 => 0.42481)
+Example time cost:  0.09 min
+ALL examples time cost:  18.82 min
+Query times in this attack:  106
+All Query times:  21612
+Success rate:  0.7910447761194029
+Successful items count:  53
+Total count:  67
+Index:  114
+
+>> SUC! s => terb_hiilevamntiznabioInnt (0.59462 => 0.37647)
+Example time cost:  0.06 min
+ALL examples time cost:  18.89 min
+Query times in this attack:  66
+All Query times:  21678
+Success rate:  0.7941176470588235
+Successful items count:  54
+Total count:  68
+Index:  115
+
+Example time cost:  0.01 min
+ALL examples time cost:  18.89 min
+Query times in this attack:  1
+All Query times:  21679
+Success rate:  0.7941176470588235
+Successful items count:  54
+Total count:  68
+Index:  116
+
+>> ACC! var => vBuoef_tarereusb___sthde (1.00000 => 0.99998)
+max_iter: 10
+Example time cost:  0.39 min
+ALL examples time cost:  19.28 min
+Query times in this attack:  469
+All Query times:  22148
+Success rate:  0.782608695652174
+Successful items count:  54
+Total count:  69
+Index:  117
+
+>> ACC! s => _quanitizationkernel_fil (0.98915 => 0.85310)
+>> ACC! ncomponents => Fiiction_buoncallnstacky_ (0.85310 => 0.83566)
+max_iter: 30
+Example time cost:  0.99 min
+ALL examples time cost:  20.28 min
+Query times in this attack:  929
+All Query times:  23077
+Success rate:  0.7714285714285715
+Successful items count:  54
+Total count:  70
+Index:  118
+
+>> SUC! s => telecUk_sizumberbnadwiYdi (0.65807 => 0.35848)
+Example time cost:  0.07 min
+ALL examples time cost:  20.35 min
+Query times in this attack:  72
+All Query times:  23149
+Success rate:  0.7746478873239436
+Successful items count:  55
+Total count:  71
+Index:  119
+
+>> SUC! i => sn_oseerefcoent_ablbe_o (0.75324 => 0.41349)
+Example time cost:  0.1 min
+ALL examples time cost:  20.45 min
+Query times in this attack:  122
+All Query times:  23271
+Success rate:  0.7777777777777778
+Successful items count:  56
+Total count:  72
+Index:  120
+
+>> ACC! i => pkotitlre__leos_nt_gh_bid (0.98124 => 0.63883)
+>> SUC! src => ryfilenantitizationinterl3 (0.63883 => 0.49113)
+Example time cost:  0.12 min
+ALL examples time cost:  20.57 min
+Query times in this attack:  136
+All Query times:  23407
+Success rate:  0.7808219178082192
+Successful items count:  57
+Total count:  73
+Index:  121
+
+Example time cost:  0.01 min
+ALL examples time cost:  20.57 min
+Query times in this attack:  1
+All Query times:  23408
+Success rate:  0.7808219178082192
+Successful items count:  57
+Total count:  73
+Index:  122
+
+>> ACC! v => predictirsffernpredict (0.94662 => 0.85890)
+>> ACC! s => eaiaicti8n_qurntitizgyiCon (0.85890 => 0.82216)
+>> ACC! vdev => puebuspae_clusCtersciprm (0.82216 => 0.67400)
+>> SUC! errp => minaHiNNY_YkernetleMf_ope (0.67400 => 0.44771)
+Example time cost:  0.2 min
+ALL examples time cost:  20.77 min
+Query times in this attack:  253
+All Query times:  23661
+Success rate:  0.7837837837837838
+Successful items count:  58
+Total count:  74
+Index:  123
+
+Example time cost:  0.01 min
+ALL examples time cost:  20.78 min
+Query times in this attack:  1
+All Query times:  23662
+Success rate:  0.7837837837837838
+Successful items count:  58
+Total count:  74
+Index:  124
+
+>> SUC! redundancy_pos => lsX_DtYeightdandancgy_p (0.51381 => 0.24931)
+Example time cost:  0.2 min
+ALL examples time cost:  20.98 min
+Query times in this attack:  240
+All Query times:  23902
+Success rate:  0.7866666666666666
+Successful items count:  59
+Total count:  75
+Index:  125
+
+Example time cost:  0.01 min
+ALL examples time cost:  20.98 min
+Query times in this attack:  1
+All Query times:  23903
+Success rate:  0.7866666666666666
+Successful items count:  59
+Total count:  75
+Index:  126
+
+>> SUC! pOut => itizationblesizationformat (0.51795 => 0.45036)
+Example time cost:  0.1 min
+ALL examples time cost:  21.09 min
+Query times in this attack:  122
+All Query times:  24025
+Success rate:  0.7894736842105263
+Successful items count:  60
+Total count:  76
+Index:  127
+
+>> ACC! val => ftweightals_tignterhan_ (0.99991 => 0.90214)
+>> SUC! env => ing_ctioin_qiuantifization (0.90214 => 0.28928)
+Example time cost:  0.11 min
+ALL examples time cost:  21.19 min
+Query times in this attack:  128
+All Query times:  24153
+Success rate:  0.7922077922077922
+Successful items count:  61
+Total count:  77
+Index:  128
+
+>> SUC! dst => ionguesNfileoaaddrwidissl_ (0.78528 => 0.39196)
+Example time cost:  0.07 min
+ALL examples time cost:  21.27 min
+Query times in this attack:  81
+All Query times:  24234
+Success rate:  0.7948717948717948
+Successful items count:  62
+Total count:  78
+Index:  129
+
+>> SUC! cpu_model => acing_lffwweightbytini (0.78501 => 0.21320)
+Example time cost:  0.11 min
+ALL examples time cost:  21.38 min
+Query times in this attack:  130
+All Query times:  24364
+Success rate:  0.7974683544303798
+Successful items count:  63
+Total count:  79
+Index:  130
+
+>> ACC! hubport => _hount_t6eblatwedghttab (0.99944 => 0.99928)
+>> ACC! id => usb_hosj_device_oen (0.99928 => 0.99841)
+>> ACC! local_err => wrvd_ame_NdeveightfChr8F (0.99841 => 0.99693)
+>> ACC! dev => tptable_clusterqKmrIielh (0.99693 => 0.99557)
+>> ACC! peers_ptr => tera_eNnb_see_codec_n6m (0.99557 => 0.99522)
+>> ACC! obj => pNredier_nb_sectoDaM_bgs (0.99522 => 0.99379)
+>> ACC! opaque => Tnput_buffer_size (0.99379 => 0.99157)
+>> ACC! v => sQs_than__nhifvtnexnel_r (0.99157 => 0.98953)
+>> ACC! errp => n_quaEtitnzatZoninitirlaci (0.98953 => 0.85204)
+>> ACC! name => mY_YT_oall_stack_sir_clEc (0.85204 => 0.75116)
+max_iter: 65
+Example time cost:  1.34 min
+ALL examples time cost:  22.72 min
+Query times in this attack:  1676
+All Query times:  26040
+Success rate:  0.8
+Successful items count:  64
+Total count:  80
+Index:  131
+
+>> SUC! s => Yefcount_tableh_cOuster6s9 (0.58213 => 0.29200)
+Example time cost:  0.05 min
+ALL examples time cost:  22.76 min
+Query times in this attack:  82
+All Query times:  26122
+Success rate:  0.8024691358024691
+Successful items count:  65
+Total count:  81
+Index:  132
+
+>> SUC! s => ulsterrrezconstcuctteref (0.93083 => 0.49785)
+Example time cost:  0.04 min
+ALL examples time cost:  22.81 min
+Query times in this attack:  72
+All Query times:  26194
+Success rate:  0.8048780487804879
+Successful items count:  66
+Total count:  82
+Index:  133
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.81 min
+Query times in this attack:  1
+All Query times:  26195
+Success rate:  0.8048780487804879
+Successful items count:  66
+Total count:  82
+Index:  134
+
+Example time cost:  0.01 min
+ALL examples time cost:  22.82 min
+Query times in this attack:  1
+All Query times:  26196
+Success rate:  0.8048780487804879
+Successful items count:  66
+Total count:  82
+Index:  135
+
+>> SUC! src_stride => MAXZRWTh_LE_3qtuantitization (0.54937 => 0.42612)
+Example time cost:  0.13 min
+ALL examples time cost:  22.95 min
+Query times in this attack:  273
+All Query times:  26469
+Success rate:  0.8072289156626506
+Successful items count:  67
+Total count:  83
+Index:  136
+
+>> SUC! nf => lustersnb_wtast_tabsle_sD (0.70299 => 0.47426)
+Example time cost:  0.04 min
+ALL examples time cost:  22.99 min
+Query times in this attack:  73
+All Query times:  26542
+Success rate:  0.8095238095238095
+Successful items count:  68
+Total count:  84
+Index:  137
+
+>> SUC! tcet => en_g_lefhweigttIweigUto (0.68277 => 0.49833)
+Example time cost:  0.05 min
+ALL examples time cost:  23.04 min
+Query times in this attack:  84
+All Query times:  26626
+Success rate:  0.8117647058823529
+Successful items count:  69
+Total count:  85
+Index:  138
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.05 min
+Query times in this attack:  1
+All Query times:  26627
+Success rate:  0.8117647058823529
+Successful items count:  69
+Total count:  85
+Index:  139
+
+>> SUC! t0 => ess_than_alphr_ean_alop (0.60886 => 0.40389)
+Example time cost:  0.06 min
+ALL examples time cost:  23.11 min
+Query times in this attack:  114
+All Query times:  26741
+Success rate:  0.813953488372093
+Successful items count:  70
+Total count:  86
+Index:  140
+
+>> SUC! d => oQpnevaice_oprnustee_nb (0.78761 => 0.42328)
+Example time cost:  0.09 min
+ALL examples time cost:  23.2 min
+Query times in this attack:  156
+All Query times:  26897
+Success rate:  0.8160919540229885
+Successful items count:  71
+Total count:  87
+Index:  141
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.21 min
+Query times in this attack:  1
+All Query times:  26898
+Success rate:  0.8160919540229885
+Successful items count:  71
+Total count:  87
+Index:  142
+
+>> ACC! s => r__sizekamc_id_iace_natnt (0.97401 => 0.96823)
+>> ACC! res => netembjaclustersfilena_2 (0.96823 => 0.93567)
+>> ACC! command => origbted_rid_requbinum (0.93567 => 0.86994)
+>> ACC! size_codes => icend_niquantitiIzPtioni__ (0.86994 => 0.85605)
+max_iter: 25
+Example time cost:  0.65 min
+ALL examples time cost:  23.86 min
+Query times in this attack:  1347
+All Query times:  28245
+Success rate:  0.8068181818181818
+Successful items count:  71
+Total count:  88
+Index:  143
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.87 min
+Query times in this attack:  1
+All Query times:  28246
+Success rate:  0.8068181818181818
+Successful items count:  71
+Total count:  88
+Index:  144
+
+>> SUC! i => rQtwegiqhtsuersnitiaiator (0.55959 => 0.49766)
+Example time cost:  0.06 min
+ALL examples time cost:  23.93 min
+Query times in this attack:  104
+All Query times:  28350
+Success rate:  0.8089887640449438
+Successful items count:  72
+Total count:  89
+Index:  145
+
+Example time cost:  0.01 min
+ALL examples time cost:  23.93 min
+Query times in this attack:  1
+All Query times:  28351
+Success rate:  0.8089887640449438
+Successful items count:  72
+Total count:  89
+Index:  146
+
+>> SUC! sum => rlay_fnb_te0mintJble_c (0.97166 => 0.48117)
+Example time cost:  0.04 min
+ALL examples time cost:  23.98 min
+Query times in this attack:  68
+All Query times:  28419
+Success rate:  0.8111111111111111
+Successful items count:  73
+Total count:  90
+Index:  147
+
+>> SUC! d => ble__lustermp_redtweigte (0.78928 => 0.37845)
+Example time cost:  0.05 min
+ALL examples time cost:  24.03 min
+Query times in this attack:  81
+All Query times:  28500
+Success rate:  0.8131868131868132
+Successful items count:  74
+Total count:  91
+Index:  148
+
+>> SUC! ctx => redictor_coef_n_leftwemi (0.66843 => 0.35327)
+Example time cost:  0.05 min
+ALL examples time cost:  24.08 min
+Query times in this attack:  83
+All Query times:  28583
+Success rate:  0.8152173913043478
+Successful items count:  75
+Total count:  92
+Index:  149
+
+>> ACC! fd => hTChrFilteremehigersohTChr (0.94347 => 0.84562)
+max_iter: 10
+Example time cost:  0.27 min
+ALL examples time cost:  24.34 min
+Query times in this attack:  479
+All Query times:  29062
+Success rate:  0.8064516129032258
+Successful items count:  75
+Total count:  93
+Index:  150
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.35 min
+Query times in this attack:  1
+All Query times:  29063
+Success rate:  0.8064516129032258
+Successful items count:  75
+Total count:  93
+Index:  151
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.36 min
+Query times in this attack:  1
+All Query times:  29064
+Success rate:  0.8064516129032258
+Successful items count:  75
+Total count:  93
+Index:  152
+
+>> SUC! cmd => aiatorjnauantitizationenan (0.60729 => 0.46126)
+Example time cost:  0.08 min
+ALL examples time cost:  24.44 min
+Query times in this attack:  154
+All Query times:  29218
+Success rate:  0.8085106382978723
+Successful items count:  76
+Total count:  94
+Index:  153
+
+>> ACC! l1 => refcount_tybl_clusters (0.99879 => 0.98601)
+>> ACC! t0 => i_usboftweifcou_tltablec (0.98601 => 0.90541)
+>> ACC! l2 => r2_clusterqijg_base_Tlag (0.90541 => 0.81715)
+>> ACC! mask => _cYeustlzrIung_lefantitiza (0.81715 => 0.80771)
+>> SUC! ctx => leXtweinDAewrxt_tablle_kcl (0.80771 => 0.35937)
+Example time cost:  0.16 min
+ALL examples time cost:  24.6 min
+Query times in this attack:  326
+All Query times:  29544
+Success rate:  0.8105263157894737
+Successful items count:  77
+Total count:  95
+Index:  154
+
+>> ACC! tx_dev => se_flagetaiuessage_mgna (0.79718 => 0.72274)
+>> ACC! txbuf => unterlacii2usb__clusters (0.72274 => 0.63453)
+>> ACC! app => fcouhtopenusbightopenacin (0.63453 => 0.50149)
+>> SUC! txlen => e_conidtizgvtiCncallY_stack_ (0.50149 => 0.43170)
+Example time cost:  0.14 min
+ALL examples time cost:  24.74 min
+Query times in this attack:  291
+All Query times:  29835
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  155
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.75 min
+Query times in this attack:  1
+All Query times:  29836
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  156
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.76 min
+Query times in this attack:  1
+All Query times:  29837
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  157
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.76 min
+Query times in this attack:  1
+All Query times:  29838
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  158
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.77 min
+Query times in this attack:  1
+All Query times:  29839
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  159
+
+Example time cost:  0.01 min
+ALL examples time cost:  24.78 min
+Query times in this attack:  1
+All Query times:  29840
+Success rate:  0.8125
+Successful items count:  78
+Total count:  96
+Index:  160
+
+>> ACC! l3_proto => aor_coeSh_ghtreadsamltiza (0.94813 => 0.85960)
+>> ACC! pkt => titittationoddictin_qanzi (0.85960 => 0.65820)
+>> SUC! tso_enable => initiatzsizmpredibaoacons (0.65820 => 0.47805)
+Example time cost:  0.1 min
+ALL examples time cost:  24.87 min
+Query times in this attack:  192
+All Query times:  30032
+Success rate:  0.8144329896907216
+Successful items count:  79
+Total count:  97
+Index:  161
+
+>> SUC! cmd => _filenaTb_cEiageacodFc_n (0.55810 => 0.37383)
+Example time cost:  0.07 min
+ALL examples time cost:  24.94 min
+Query times in this attack:  130
+All Query times:  30162
+Success rate:  0.8163265306122449
+Successful items count:  80
+Total count:  98
+Index:  162
+
+>> SUC! queue => eame_atcarmaroZraizatboncf (0.64725 => 0.47248)
+Example time cost:  0.05 min
+ALL examples time cost:  24.99 min
+Query times in this attack:  77
+All Query times:  30239
+Success rate:  0.8181818181818182
+Successful items count:  81
+Total count:  99
+Index:  163
+
+Example time cost:  0.01 min
+ALL examples time cost:  25.0 min
+Query times in this attack:  1
+All Query times:  30240
+Success rate:  0.8181818181818182
+Successful items count:  81
+Total count:  99
+Index:  164
+
+>> SUC! buf => oef_tbal_dable_lclustersbl (0.55936 => 0.48173)
+Example time cost:  0.08 min
+ALL examples time cost:  25.07 min
+Query times in this attack:  161
+All Query times:  30401
+Success rate:  0.82
+Successful items count:  82
+Total count:  100
+Index:  165
+
+>> ACC! s => Jl_ck_clutable8clus_ers (0.94398 => 0.65118)
+>> SUC! bs => ms_me_leqhaneviceaopjen (0.65118 => 0.41771)
+Example time cost:  0.07 min
+ALL examples time cost:  25.14 min
+Query times in this attack:  129
+All Query times:  30530
+Success rate:  0.8217821782178217
+Successful items count:  83
+Total count:  101
+Index:  166
+
+Example time cost:  0.01 min
+ALL examples time cost:  25.15 min
+Query times in this attack:  1
+All Query times:  30531
+Success rate:  0.8217821782178217
+Successful items count:  83
+Total count:  101
+Index:  167
+
+>> ACC! s => nt_table_clustersclec_nam (0.67763 => 0.51864)
+>> SUC! metadata => seod_coeopenrefsedevic_c (0.51864 => 0.49169)
+Example time cost:  0.1 min
+ALL examples time cost:  25.25 min
+Query times in this attack:  194
+All Query times:  30725
+Success rate:  0.8235294117647058
+Successful items count:  84
+Total count:  102
+Index:  168
+
+Example time cost:  0.01 min
+ALL examples time cost:  25.25 min
+Query times in this attack:  1
+All Query times:  30726
+Success rate:  0.8235294117647058
+Successful items count:  84
+Total count:  102
+Index:  169
+
+>> ACC! pci_conf => owridicle_tdec_nwidle (0.95153 => 0.89192)
+>> ACC! d => _opneionitiction_quattiti (0.89192 => 0.71791)
+>> ACC! dev => meterpetacme_strcasinsu (0.71791 => 0.55251)
+max_iter: 20
+Example time cost:  0.61 min
+ALL examples time cost:  25.87 min
+Query times in this attack:  1259
+All Query times:  31985
+Success rate:  0.8155339805825242
+Successful items count:  84
+Total count:  103
+Index:  170
+
+>> ACC! retval => nationsnam_qutntitiziaao (0.99743 => 0.92678)
+>> ACC! fs_ctx => _quanitizatioltiMtizxtion (0.92678 => 0.80538)
+>> ACC! oldpath => activi_bets_size (0.80538 => 0.79365)
+max_iter: 45
+Example time cost:  0.58 min
+ALL examples time cost:  26.44 min
+Query times in this attack:  1117
+All Query times:  33102
+Success rate:  0.8173076923076923
+Successful items count:  85
+Total count:  104
+Index:  171
+
+>> SUC! ret => orig_base_flaxgiivetVr_cb (0.76941 => 0.49071)
+Example time cost:  0.05 min
+ALL examples time cost:  26.5 min
+Query times in this attack:  81
+All Query times:  33183
+Success rate:  0.819047619047619
+Successful items count:  86
+Total count:  105
+Index:  172
+
+>> SUC! i => ey_Dlan_alphJaisnoto (0.92330 => 0.48100)
+Example time cost:  0.07 min
+ALL examples time cost:  26.56 min
+Query times in this attack:  129
+All Query times:  33312
+Success rate:  0.8207547169811321
+Successful items count:  87
+Total count:  106
+Index:  173
+
+>> ACC! val => tbleicepeopenpredictor (0.91977 => 0.57022)
+max_iter: 10
+Example time cost:  0.26 min
+ALL examples time cost:  26.82 min
+Query times in this attack:  481
+All Query times:  33793
+Success rate:  0.8130841121495327
+Successful items count:  87
+Total count:  107
+Index:  174
+
+>> ACC! tcet => te_d_cefnstbweiqhtnibrd_ (0.99599 => 0.96799)
+>> ACC! bypass => izuatMonformatitiuizattonfo (0.96799 => 0.69983)
+max_iter: 15
+Example time cost:  0.42 min
+ALL examples time cost:  27.24 min
+Query times in this attack:  863
+All Query times:  34656
+Success rate:  0.8055555555555556
+Successful items count:  87
+Total count:  108
+Index:  175
+
+>> SUC! reason => ehihosnnb_se_ersinitr_d (0.62838 => 0.47688)
+Example time cost:  0.04 min
+ALL examples time cost:  27.28 min
+Query times in this attack:  65
+All Query times:  34721
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  176
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.29 min
+Query times in this attack:  1
+All Query times:  34722
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  177
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.29 min
+Query times in this attack:  1
+All Query times:  34723
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  178
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.3 min
+Query times in this attack:  1
+All Query times:  34724
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  179
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.31 min
+Query times in this attack:  1
+All Query times:  34725
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  180
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.31 min
+Query times in this attack:  1
+All Query times:  34726
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  181
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.32 min
+Query times in this attack:  1
+All Query times:  34727
+Success rate:  0.8073394495412844
+Successful items count:  88
+Total count:  109
+Index:  182
+
+>> ACC! str => oefD_unentirlacing_left (0.94782 => 0.50549)
+>> SUC! fmt => lgterizg_leftweightnshas (0.50549 => 0.43261)
+Example time cost:  0.07 min
+ALL examples time cost:  27.39 min
+Query times in this attack:  134
+All Query times:  34861
+Success rate:  0.8090909090909091
+Successful items count:  89
+Total count:  110
+Index:  183
+
+>> SUC! j => rediction_quVantdiytizationb (0.60734 => 0.49687)
+Example time cost:  0.09 min
+ALL examples time cost:  27.48 min
+Query times in this attack:  168
+All Query times:  35029
+Success rate:  0.8108108108108109
+Successful items count:  90
+Total count:  111
+Index:  184
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.48 min
+Query times in this attack:  1
+All Query times:  35030
+Success rate:  0.8108108108108109
+Successful items count:  90
+Total count:  111
+Index:  185
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.49 min
+Query times in this attack:  1
+All Query times:  35031
+Success rate:  0.8108108108108109
+Successful items count:  90
+Total count:  111
+Index:  186
+
+>> ACC! rtsp_st => usbehosFUNNY_Y_CtOD_ (0.70066 => 0.56787)
+>> SUC! rtpctx => ioun_tablle_c5lstersng_l (0.56787 => 0.38069)
+Example time cost:  0.08 min
+ALL examples time cost:  27.57 min
+Query times in this attack:  159
+All Query times:  35190
+Success rate:  0.8125
+Successful items count:  91
+Total count:  112
+Index:  187
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.58 min
+Query times in this attack:  1
+All Query times:  35191
+Success rate:  0.8125
+Successful items count:  91
+Total count:  112
+Index:  188
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.59 min
+Query times in this attack:  1
+All Query times:  35192
+Success rate:  0.8125
+Successful items count:  91
+Total count:  112
+Index:  189
+
+>> ACC! msrs => ooedebct4or_cntiti4ation (0.68973 => 0.56581)
+>> SUC! mtrr_top_bits => irteTtlacinXg3_lefrweiinam (0.56581 => 0.34527)
+Example time cost:  0.36 min
+ALL examples time cost:  27.94 min
+Query times in this attack:  564
+All Query times:  35756
+Success rate:  0.8141592920353983
+Successful items count:  92
+Total count:  113
+Index:  190
+
+>> SUC! mr => redundancevine_opetzaiioc (0.55014 => 0.44025)
+Example time cost:  0.04 min
+ALL examples time cost:  27.98 min
+Query times in this attack:  65
+All Query times:  35821
+Success rate:  0.8157894736842105
+Successful items count:  93
+Total count:  114
+Index:  191
+
+Example time cost:  0.01 min
+ALL examples time cost:  27.99 min
+Query times in this attack:  1
+All Query times:  35822
+Success rate:  0.8157894736842105
+Successful items count:  93
+Total count:  114
+Index:  192
+
+>> ACC! addr => _host_delustresrd_codec_i (0.99872 => 0.99003)
+>> ACC! opaque => isxh_alphapjsbho4st_dev (0.99003 => 0.90955)
+>> ACC! size => rma_alloc_tersNt_sizKen_xt (0.90955 => 0.73771)
+>> SUC! s => leftweigwhtKwrid_equng_le (0.73771 => 0.33834)
+Example time cost:  0.14 min
+ALL examples time cost:  28.13 min
+Query times in this attack:  270
+All Query times:  36092
+Success rate:  0.8173913043478261
+Successful items count:  94
+Total count:  115
+Index:  193
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.13 min
+Query times in this attack:  1
+All Query times:  36093
+Success rate:  0.8173913043478261
+Successful items count:  94
+Total count:  115
+Index:  194
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.14 min
+Query times in this attack:  1
+All Query times:  36094
+Success rate:  0.8173913043478261
+Successful items count:  94
+Total count:  115
+Index:  195
+
+>> SUC! src => hChrFilterV__ble_clusters (0.62197 => 0.32215)
+Example time cost:  0.1 min
+ALL examples time cost:  28.24 min
+Query times in this attack:  204
+All Query times:  36298
+Success rate:  0.8189655172413793
+Successful items count:  95
+Total count:  116
+Index:  196
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.25 min
+Query times in this attack:  1
+All Query times:  36299
+Success rate:  0.8189655172413793
+Successful items count:  95
+Total count:  116
+Index:  197
+
+>> SUC! s => refcunteftweiYhttGerlacin (0.50225 => 0.23733)
+Example time cost:  0.12 min
+ALL examples time cost:  28.36 min
+Query times in this attack:  246
+All Query times:  36545
+Success rate:  0.8205128205128205
+Successful items count:  96
+Total count:  117
+Index:  198
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.37 min
+Query times in this attack:  1
+All Query times:  36546
+Success rate:  0.8205128205128205
+Successful items count:  96
+Total count:  117
+Index:  199
+
+>> ACC! idx => tabls_cuustereinterlaci (0.98116 => 0.56610)
+>> SUC! dst => _leftlabteuindexsbtho_t (0.56610 => 0.05748)
+Example time cost:  0.07 min
+ALL examples time cost:  28.44 min
+Query times in this attack:  142
+All Query times:  36688
+Success rate:  0.8220338983050848
+Successful items count:  97
+Total count:  118
+Index:  200
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.45 min
+Query times in this attack:  1
+All Query times:  36689
+Success rate:  0.8220338983050848
+Successful items count:  97
+Total count:  118
+Index:  201
+
+Example time cost:  0.01 min
+ALL examples time cost:  28.46 min
+Query times in this attack:  1
+All Query times:  36690
+Success rate:  0.8220338983050848
+Successful items count:  97
+Total count:  118
+Index:  202
+
+>> SUC! stack_offset => adnumFUNNY_Sdr_coef_numF (0.79267 => 0.49382)
+Example time cost:  0.11 min
+ALL examples time cost:  28.57 min
+Query times in this attack:  231
+All Query times:  36921
+Success rate:  0.8235294117647058
+Successful items count:  98
+Total count:  119
+Index:  203
+
+>> ACC! r => clustersnb__ectdundancde (0.95349 => 0.87220)
+>> ACC! arg => brandweftablrecodeboh (0.87220 => 0.67142)
+>> ACC! running => preditioneib_termiaatnons (0.67142 => 0.52084)
+>> SUC! s => FUetOictiontquantidiza_ion (0.52084 => 0.46782)
+Example time cost:  0.12 min
+ALL examples time cost:  28.69 min
+Query times in this attack:  253
+All Query times:  37174
+Success rate:  0.825
+Successful items count:  99
+Total count:  120
+Index:  204
+
+>> SUC! arg => dec_aaminAtedrlacinrusters (0.53512 => 0.47494)
+Example time cost:  0.08 min
+ALL examples time cost:  28.77 min
+Query times in this attack:  161
+All Query times:  37335
+Success rate:  0.8264462809917356
+Successful items count:  100
+Total count:  121
+Index:  205
+
+>> SUC! opcode => lei_clustersgoMAX_D_st_d (0.63245 => 0.28587)
+Example time cost:  0.17 min
+ALL examples time cost:  28.93 min
+Query times in this attack:  236
+All Query times:  37571
+Success rate:  0.8278688524590164
+Successful items count:  101
+Total count:  122
+Index:  206
+
+>> ACC! rex => dghtingictionng_hlefweig (0.87511 => 0.67902)
+>> ACC! x => ks_clust_taslks_c_ustlt (0.67902 => 0.66421)
+>> SUC! r => st_dioe_cpenftweightrin (0.66421 => 0.44001)
+Example time cost:  0.11 min
+ALL examples time cost:  29.04 min
+Query times in this attack:  219
+All Query times:  37790
+Success rate:  0.8292682926829268
+Successful items count:  102
+Total count:  123
+Index:  207
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.05 min
+Query times in this attack:  1
+All Query times:  37791
+Success rate:  0.8292682926829268
+Successful items count:  102
+Total count:  123
+Index:  208
+
+>> ACC! ctx => _coenskerdne_filcoef_tang (0.99919 => 0.95530)
+max_iter: 10
+Example time cost:  0.27 min
+ALL examples time cost:  29.32 min
+Query times in this attack:  492
+All Query times:  38283
+Success rate:  0.8225806451612904
+Successful items count:  102
+Total count:  124
+Index:  209
+
+>> SUC! dst => minatFrdorer_buffr_no (0.64995 => 0.29129)
+Example time cost:  0.05 min
+ALL examples time cost:  29.37 min
+Query times in this attack:  78
+All Query times:  38361
+Success rate:  0.824
+Successful items count:  103
+Total count:  125
+Index:  210
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.38 min
+Query times in this attack:  1
+All Query times:  38362
+Success rate:  0.824
+Successful items count:  103
+Total count:  125
+Index:  211
+
+>> SUC! mr => sterseftweifheb_stersprecd (0.58815 => 0.39932)
+Example time cost:  0.06 min
+ALL examples time cost:  29.44 min
+Query times in this attack:  92
+All Query times:  38454
+Success rate:  0.8253968253968254
+Successful items count:  104
+Total count:  126
+Index:  212
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.45 min
+Query times in this attack:  1
+All Query times:  38455
+Success rate:  0.8253968253968254
+Successful items count:  104
+Total count:  126
+Index:  213
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.46 min
+Query times in this attack:  1
+All Query times:  38456
+Success rate:  0.8253968253968254
+Successful items count:  104
+Total count:  126
+Index:  214
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.47 min
+Query times in this attack:  1
+All Query times:  38457
+Success rate:  0.8253968253968254
+Successful items count:  104
+Total count:  126
+Index:  215
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.48 min
+Query times in this attack:  1
+All Query times:  38458
+Success rate:  0.8253968253968254
+Successful items count:  104
+Total count:  126
+Index:  216
+
+>> SUC! acb => eeop_nact_v_sost_devsdre (0.77726 => 0.47796)
+Example time cost:  0.07 min
+ALL examples time cost:  29.55 min
+Query times in this attack:  126
+All Query times:  38584
+Success rate:  0.8267716535433071
+Successful items count:  105
+Total count:  127
+Index:  217
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.56 min
+Query times in this attack:  1
+All Query times:  38585
+Success rate:  0.8267716535433071
+Successful items count:  105
+Total count:  127
+Index:  218
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.57 min
+Query times in this attack:  1
+All Query times:  38586
+Success rate:  0.8267716535433071
+Successful items count:  105
+Total count:  127
+Index:  219
+
+>> SUC! dst => ait_pn_target_amQ_com3ec_id (0.69375 => 0.01256)
+Example time cost:  0.05 min
+ALL examples time cost:  29.61 min
+Query times in this attack:  78
+All Query times:  38664
+Success rate:  0.828125
+Successful items count:  106
+Total count:  128
+Index:  220
+
+Example time cost:  0.01 min
+ALL examples time cost:  29.62 min
+Query times in this attack:  1
+All Query times:  38665
+Success rate:  0.828125
+Successful items count:  106
+Total count:  128
+Index:  221
+
+>> ACC! vqa_header => ionguRssed_coMecala7tir_sn (0.98799 => 0.93961)
+>> ACC! s => ng_shift_fmtMAX_D (0.93961 => 0.89777)
+max_iter: 35
+Example time cost:  0.73 min
+ALL examples time cost:  30.35 min
+Query times in this attack:  1285
+All Query times:  39950
+Success rate:  0.8217054263565892
+Successful items count:  106
+Total count:  129
+Index:  222
+
+Example time cost:  0.01 min
+ALL examples time cost:  30.36 min
+Query times in this attack:  1
+All Query times:  39951
+Success rate:  0.8217054263565892
+Successful items count:  106
+Total count:  129
+Index:  223
+
+>> SUC! mask => ing_l_minat7on_s5izerefcou (0.58306 => 0.48518)
+Example time cost:  0.06 min
+ALL examples time cost:  30.42 min
+Query times in this attack:  104
+All Query times:  40055
+Success rate:  0.823076923076923
+Successful items count:  107
+Total count:  130
+Index:  224
+
+>> SUC! ref => ountame9calax_e_clusters (0.58996 => 0.47999)
+Example time cost:  0.05 min
+ALL examples time cost:  30.47 min
+Query times in this attack:  92
+All Query times:  40147
+Success rate:  0.8244274809160306
+Successful items count:  108
+Total count:  131
+Index:  225
+
+Example time cost:  0.01 min
+ALL examples time cost:  30.47 min
+Query times in this attack:  1
+All Query times:  40148
+Success rate:  0.8244274809160306
+Successful items count:  108
+Total count:  131
+Index:  226
+
+Example time cost:  0.01 min
+ALL examples time cost:  30.48 min
+Query times in this attack:  1
+All Query times:  40149
+Success rate:  0.8244274809160306
+Successful items count:  108
+Total count:  131
+Index:  227
+
+>> ACC! dst => enZame_byteitieacing_zeasa (1.00000 => 1.00000)
+>> ACC! src => slrss_than_usb_hice_ope (1.00000 => 1.00000)
+>> ACC! stride => sotackage_Utace_readksa (1.00000 => 0.99998)
+max_iter: 20
+Example time cost:  0.59 min
+ALL examples time cost:  31.07 min
+Query times in this attack:  1248
+All Query times:  41397
+Success rate:  0.8181818181818182
+Successful items count:  108
+Total count:  132
+Index:  228
+
+Example time cost:  0.01 min
+ALL examples time cost:  31.08 min
+Query times in this attack:  1
+All Query times:  41398
+Success rate:  0.8181818181818182
+Successful items count:  108
+Total count:  132
+Index:  229
+
+>> SUC! p => hiygh_bbit_n_quantitization (0.61936 => 0.49567)
+Example time cost:  0.04 min
+ALL examples time cost:  31.12 min
+Query times in this attack:  72
+All Query times:  41470
+Success rate:  0.8195488721804511
+Successful items count:  109
+Total count:  133
+Index:  230
+
+Example time cost:  0.01 min
+ALL examples time cost:  31.13 min
+Query times in this attack:  1
+All Query times:  41471
+Success rate:  0.8195488721804511
+Successful items count:  109
+Total count:  133
+Index:  231
+
+>> SUC! filename => _Luattinizationinizatiwono (0.52902 => 0.32112)
+Example time cost:  0.14 min
+ALL examples time cost:  31.27 min
+Query times in this attack:  244
+All Query times:  41715
+Success rate:  0.8208955223880597
+Successful items count:  110
+Total count:  134
+Index:  232
+
+Example time cost:  0.01 min
+ALL examples time cost:  31.28 min
+Query times in this attack:  1
+All Query times:  41716
+Success rate:  0.8208955223880597
+Successful items count:  110
+Total count:  134
+Index:  233
+
+Example time cost:  0.01 min
+ALL examples time cost:  31.28 min
+Query times in this attack:  1
+All Query times:  41717
+Success rate:  0.8208955223880597
+Successful items count:  110
+Total count:  134
+Index:  234
+
+>> ACC! machine => eftw3eighnext_passe_in (0.91287 => 0.59845)
+max_iter: 10
+Example time cost:  0.25 min
+ALL examples time cost:  31.53 min
+Query times in this attack:  474
+All Query times:  42191
+Success rate:  0.8148148148148148
+Successful items count:  110
+Total count:  135
+Index:  235
+
+>> SUC! tmp2 => ts_mnmeb_teWrminaon (0.65492 => 0.40068)
+Example time cost:  0.06 min
+ALL examples time cost:  31.59 min
+Query times in this attack:  105
+All Query times:  42296
+Success rate:  0.8161764705882353
+Successful items count:  111
+Total count:  136
+Index:  236
+
+>> ACC! ret => es_1ppftweeghHtirusb_ho (0.95182 => 0.70557)
+>> ACC! errp => _quantitizationt_tizatin (0.70557 => 0.53599)
+>> SUC! id => ptenicror_coefit7rd_Zilewna (0.53599 => 0.48780)
+Example time cost:  0.09 min
+ALL examples time cost:  31.68 min
+Query times in this attack:  188
+All Query times:  42484
+Success rate:  0.8175182481751825
+Successful items count:  112
+Total count:  137
+Index:  237
+
+>> SUC! dev => erm_h9st_sntrctii5ec7urB_pt (0.52791 => 0.44254)
+Example time cost:  0.08 min
+ALL examples time cost:  31.76 min
+Query times in this attack:  149
+All Query times:  42633
+Success rate:  0.8188405797101449
+Successful items count:  113
+Total count:  138
+Index:  238
+
+>> ACC! f32 => ghtzepresb_homsp_device_o (1.00000 => 0.99999)
+>> ACC! farg => las_twable_sile_in9drms (0.99999 => 0.99955)
+>> ACC! arg => leftweiwgtselmcguFizwZation (0.99955 => 0.99180)
+>> ACC! env => refcblNclusterssend_Mcoesb (0.99180 => 0.88670)
+max_iter: 25
+Example time cost:  0.57 min
+ALL examples time cost:  32.33 min
+Query times in this attack:  1091
+All Query times:  43724
+Success rate:  0.8129496402877698
+Successful items count:  113
+Total count:  139
+Index:  239
+
+>> SUC! l => alphaonsitcPzationMftweigh (0.79474 => 0.35850)
+Example time cost:  0.04 min
+ALL examples time cost:  32.37 min
+Query times in this attack:  74
+All Query times:  43798
+Success rate:  0.8142857142857143
+Successful items count:  114
+Total count:  140
+Index:  240
+
+Example time cost:  0.01 min
+ALL examples time cost:  32.38 min
+Query times in this attack:  1
+All Query times:  43799
+Success rate:  0.8142857142857143
+Successful items count:  114
+Total count:  140
+Index:  241
+
+>> SUC! i => tniaeacki8TnweighCfilean (0.63126 => 0.46665)
+Example time cost:  0.05 min
+ALL examples time cost:  32.43 min
+Query times in this attack:  90
+All Query times:  43889
+Success rate:  0.8156028368794326
+Successful items count:  115
+Total count:  141
+Index:  242
+
+>> ACC! rule => amenb_yeraiknwtionluters (0.99840 => 0.98475)
+>> ACC! s => blusterPsformatCnNvBufpr (0.98475 => 0.96792)
+max_iter: 15
+Example time cost:  0.44 min
+ALL examples time cost:  32.87 min
+Query times in this attack:  851
+All Query times:  44740
+Success rate:  0.8098591549295775
+Successful items count:  115
+Total count:  142
+Index:  243
+
+>> ACC! s => lnterlaciSng_xe_index (0.85365 => 0.62197)
+>> SUC! dev => nitiYzationenteenterlacin (0.62197 => 0.33037)
+Example time cost:  0.07 min
+ALL examples time cost:  32.94 min
+Query times in this attack:  131
+All Query times:  44871
+Success rate:  0.8111888111888111
+Successful items count:  116
+Total count:  143
+Index:  244
+
+>> ACC! s => tupbtlpclog_ieftweight_ (0.98010 => 0.89235)
+>> ACC! ret => as_tweirhtgmiati4nsinctu (0.89235 => 0.75368)
+>> ACC! arg => puantitUwizationtion_quantiti (0.75368 => 0.70541)
+max_iter: 20
+Example time cost:  0.5 min
+ALL examples time cost:  33.43 min
+Query times in this attack:  913
+All Query times:  45784
+Success rate:  0.8055555555555556
+Successful items count:  116
+Total count:  144
+Index:  245
+
+>> ACC! be => tweigeCso3gg_overlady_fla (0.93129 => 0.83951)
+>> ACC! mode => fra_openo9pt5ioe_clurtess (0.83951 => 0.81668)
+>> SUC! fe => s_les_bu_less_thnstwei (0.81668 => 0.43141)
+Example time cost:  0.11 min
+ALL examples time cost:  33.54 min
+Query times in this attack:  213
+All Query times:  45997
+Success rate:  0.8068965517241379
+Successful items count:  117
+Total count:  145
+Index:  246
+
+>> SUC! dc => rlel_finifiallrSledundda (0.65917 => 0.20328)
+Example time cost:  0.09 min
+ALL examples time cost:  33.63 min
+Query times in this attack:  185
+All Query times:  46182
+Success rate:  0.8082191780821918
+Successful items count:  118
+Total count:  146
+Index:  247
+
+Example time cost:  0.01 min
+ALL examples time cost:  33.64 min
+Query times in this attack:  1
+All Query times:  46183
+Success rate:  0.8082191780821918
+Successful items count:  118
+Total count:  146
+Index:  248
+
+>> ACC! args_fmt => eboturmiknatiorderoKvBufl (0.67218 => 0.50563)
+>> SUC! opc_info => _evice_oUpGener_nhAi6h_bit_ (0.50563 => 0.48876)
+Example time cost:  0.12 min
+ALL examples time cost:  33.76 min
+Query times in this attack:  232
+All Query times:  46415
+Success rate:  0.8095238095238095
+Successful items count:  119
+Total count:  147
+Index:  249
+
+Example time cost:  0.01 min
+ALL examples time cost:  33.76 min
+Query times in this attack:  1
+All Query times:  46416
+Success rate:  0.8095238095238095
+Successful items count:  119
+Total count:  147
+Index:  250
+
+>> SUC! colour_default => tce_ojent3t_uEable_aDge (0.61290 => 0.30665)
+Example time cost:  0.04 min
+ALL examples time cost:  33.81 min
+Query times in this attack:  72
+All Query times:  46488
+Success rate:  0.8108108108108109
+Successful items count:  120
+Total count:  148
+Index:  251
+
+>> ACC! src => ntenmitQcinnt_erraci_re (0.74394 => 0.56298)
+>> SUC! dst => iredieto_53ab_le_clusters (0.56298 => 0.41372)
+Example time cost:  0.16 min
+ALL examples time cost:  33.97 min
+Query times in this attack:  174
+All Query times:  46662
+Success rate:  0.8120805369127517
+Successful items count:  121
+Total count:  149
+Index:  252
+
+>> ACC! f => crgedictor0_coef_tablhPeH (0.98934 => 0.60954)
+>> SUC! pv => vtetitizationruon_tationterf (0.60954 => 0.02917)
+Example time cost:  0.11 min
+ALL examples time cost:  34.08 min
+Query times in this attack:  132
+All Query times:  46794
+Success rate:  0.8133333333333334
+Successful items count:  122
+Total count:  150
+Index:  253
+
+>> SUC! dst => itn_xuantitizationY_Y_Cre (0.61092 => 0.46572)
+Example time cost:  0.14 min
+ALL examples time cost:  34.22 min
+Query times in this attack:  168
+All Query times:  46962
+Success rate:  0.8145695364238411
+Successful items count:  123
+Total count:  151
+Index:  254
+
+>> SUC! has_open_options => seersmntfrtia_lenviceLo (0.55027 => 0.41747)
+Example time cost:  0.11 min
+ALL examples time cost:  34.33 min
+Query times in this attack:  129
+All Query times:  47091
+Success rate:  0.8157894736842105
+Successful items count:  124
+Total count:  152
+Index:  255
+
+>> SUC! ret => he4ghtcluPJeer_nb_secto (0.58361 => 0.48310)
+Example time cost:  0.08 min
+ALL examples time cost:  34.41 min
+Query times in this attack:  89
+All Query times:  47180
+Success rate:  0.8169934640522876
+Successful items count:  125
+Total count:  153
+Index:  256
+
+>> ACC! ctx => lat6iVnkerneldrefecess_tZa (0.95994 => 0.53893)
+max_iter: 10
+Example time cost:  0.42 min
+ALL examples time cost:  34.84 min
+Query times in this attack:  489
+All Query times:  47669
+Success rate:  0.8116883116883117
+Successful items count:  125
+Total count:  154
+Index:  257
+
+>> ACC! farg1 => wid_qe_cmdldajc_nepme (1.00000 => 0.99996)
+>> ACC! farg2 => tabbellocks2_linefil (0.99996 => 0.99219)
+>> SUC! env => _de9vic6e_openi4AnterlaQ (0.99219 => 0.26683)
+Example time cost:  0.17 min
+ALL examples time cost:  35.01 min
+Query times in this attack:  207
+All Query times:  47876
+Success rate:  0.8129032258064516
+Successful items count:  126
+Total count:  155
+Index:  258
+
+>> ACC! listen_addr => cihg_leftweigntrnb_terGm (0.98921 => 0.95151)
+>> ACC! connect_addr => _er_openfilgenermitizatfio (0.95151 => 0.92506)
+>> ACC! async => kersxusb_hostHh_clusst_ (0.92506 => 0.82080)
+max_iter: 20
+Example time cost:  1.01 min
+ALL examples time cost:  36.02 min
+Query times in this attack:  1219
+All Query times:  49095
+Success rate:  0.8076923076923077
+Successful items count:  126
+Total count:  156
+Index:  259
+
+>> SUC! shift_max => tizatio5dceegWn_coecng_shif (0.66013 => 0.38676)
+Example time cost:  0.19 min
+ALL examples time cost:  36.2 min
+Query times in this attack:  214
+All Query times:  49309
+Success rate:  0.8089171974522293
+Successful items count:  127
+Total count:  157
+Index:  260
+
+Example time cost:  0.01 min
+ALL examples time cost:  36.21 min
+Query times in this attack:  1
+All Query times:  49310
+Success rate:  0.8089171974522293
+Successful items count:  127
+Total count:  157
+Index:  261
+
+>> ACC! op1 => er_nbesecpredictiPerf_r_p (0.99961 => 0.60726)
+>> SUC! op2 => erb_sef_nubse_liicMor_c (0.60726 => 0.35357)
+Example time cost:  0.11 min
+ALL examples time cost:  36.32 min
+Query times in this attack:  131
+All Query times:  49441
+Success rate:  0.810126582278481
+Successful items count:  128
+Total count:  158
+Index:  262
+
+>> SUC! tlvs => is_les_ucteructed_nQe (0.59338 => 0.42354)
+Example time cost:  0.1 min
+ALL examples time cost:  36.43 min
+Query times in this attack:  115
+All Query times:  49556
+Success rate:  0.8113207547169812
+Successful items count:  129
+Total count:  159
+Index:  263
+
+Example time cost:  0.01 min
+ALL examples time cost:  36.43 min
+Query times in this attack:  1
+All Query times:  49557
+Success rate:  0.8113207547169812
+Successful items count:  129
+Total count:  159
+Index:  264
+
+WARNING:root:WARNING: There is no reference data-flows extracted from the whole corpus, and the data-flow match score degenerates to 0. Please consider ignoring this score.
+Example time cost:  0.01 min
+ALL examples time cost:  36.44 min
+Query times in this attack:  1
+All Query times:  49558
+Success rate:  0.8113207547169812
+Successful items count:  129
+Total count:  159
+Index:  265
+
+>> SUC! insn => ehtw_eCitle_YlusbeZrfilna (0.77756 => 0.13178)
+Example time cost:  0.07 min
+ALL examples time cost:  36.51 min
+Query times in this attack:  78
+All Query times:  49636
+Success rate:  0.8125
+Successful items count:  130
+Total count:  160
+Index:  266
+
+>> ACC! t0 => iReikghtcalOtitizeftwReigh (0.99503 => 0.87357)
+>> SUC! reg => ster5Wlteeiihtnb_termin (0.87357 => 0.41135)
+Example time cost:  0.11 min
+ALL examples time cost:  36.63 min
+Query times in this attack:  134
+All Query times:  49770
+Success rate:  0.8136645962732919
+Successful items count:  131
+Total count:  161
+Index:  267
+
+>> ACC! access_flags => term_histY_zationhas_opcn (0.63948 => 0.51545)
+>> SUC! s => stersstrsusb_hgost_din (0.51545 => 0.45471)
+Example time cost:  0.13 min
+ALL examples time cost:  36.76 min
+Query times in this attack:  162
+All Query times:  49932
+Success rate:  0.8148148148148148
+Successful items count:  132
+Total count:  162
+Index:  268
+
+>> ACC! si => rsusbprvedirctor_sohf0tab (0.94421 => 0.80843)
+>> ACC! cpu => weightle_i_paice_open (0.80843 => 0.76113)
+>> ACC! arg => cy_ustefrsBuffec5upenzeor (0.76113 => 0.67490)
+max_iter: 25
+Example time cost:  1.12 min
+ALL examples time cost:  37.88 min
+Query times in this attack:  1350
+All Query times:  51282
+Success rate:  0.8098159509202454
+Successful items count:  132
+Total count:  163
+Index:  269
+
+>> ACC! env => nll4eXclzustersht_lass_er (0.93701 => 0.53126)
+>> SUC! n => itizationfefcooutiDngathonh (0.53126 => 0.17591)
+Example time cost:  0.14 min
+ALL examples time cost:  38.02 min
+Query times in this attack:  163
+All Query times:  51445
+Success rate:  0.8109756097560976
+Successful items count:  133
+Total count:  164
+Index:  270
+
+>> SUC! cb => weighttXeQrrrorcoefsonuminth (0.66679 => 0.34566)
+Example time cost:  0.07 min
+ALL examples time cost:  38.1 min
+Query times in this attack:  83
+All Query times:  51528
+Success rate:  0.8121212121212121
+Successful items count:  134
+Total count:  165
+Index:  271
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.11 min
+Query times in this attack:  1
+All Query times:  51529
+Success rate:  0.8121212121212121
+Successful items count:  134
+Total count:  165
+Index:  272
+
+>> SUC! pos => stPresr_n__UNNYt_luNste2as (0.57322 => 0.23218)
+Example time cost:  0.09 min
+ALL examples time cost:  38.19 min
+Query times in this attack:  95
+All Query times:  51624
+Success rate:  0.8132530120481928
+Successful items count:  135
+Total count:  166
+Index:  273
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.2 min
+Query times in this attack:  1
+All Query times:  51625
+Success rate:  0.8132530120481928
+Successful items count:  135
+Total count:  166
+Index:  274
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.21 min
+Query times in this attack:  1
+All Query times:  51626
+Success rate:  0.8132530120481928
+Successful items count:  135
+Total count:  166
+Index:  275
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.22 min
+Query times in this attack:  1
+All Query times:  51627
+Success rate:  0.8132530120481928
+Successful items count:  135
+Total count:  166
+Index:  276
+
+>> SUC! vaddr => quantitizationisnotcolmp4ion (0.53843 => 0.48420)
+Example time cost:  0.07 min
+ALL examples time cost:  38.29 min
+Query times in this attack:  79
+All Query times:  51706
+Success rate:  0.8143712574850299
+Successful items count:  136
+Total count:  167
+Index:  277
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.3 min
+Query times in this attack:  1
+All Query times:  51707
+Success rate:  0.8143712574850299
+Successful items count:  136
+Total count:  167
+Index:  278
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.31 min
+Query times in this attack:  1
+All Query times:  51708
+Success rate:  0.8143712574850299
+Successful items count:  136
+Total count:  167
+Index:  279
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.31 min
+Query times in this attack:  1
+All Query times:  51709
+Success rate:  0.8143712574850299
+Successful items count:  136
+Total count:  167
+Index:  280
+
+Example time cost:  0.01 min
+ALL examples time cost:  38.32 min
+Query times in this attack:  1
+All Query times:  51710
+Success rate:  0.8143712574850299
+Successful items count:  136
+Total count:  167
+Index:  281
+
+>> SUC! cpuflags_opts => inten4ss_thr_alpfustersZ (0.66822 => 0.45492)
+Example time cost:  0.08 min
+ALL examples time cost:  38.4 min
+Query times in this attack:  73
+All Query times:  51783
+Success rate:  0.8154761904761905
+Successful items count:  137
+Total count:  168
+Index:  282
+
+>> ACC! dst => teIrmlelusntersFUNNYg_Y_CO (1.00000 => 1.00000)
+>> ACC! src => eusren_quaytitizationrms2i (1.00000 => 1.00000)
+>> ACC! stride => slu5ter_nb_sectocrs (1.00000 => 1.00000)
+max_iter: 20
+Example time cost:  0.98 min
+ALL examples time cost:  39.38 min
+Query times in this attack:  1230
+All Query times:  53013
+Success rate:  0.8106508875739645
+Successful items count:  137
+Total count:  169
+Index:  283
+
+>> ACC! opaque => nb_sectoprshVfW3tweight (0.83934 => 0.65694)
+>> SUC! divider => le_sotrc_fbast_device_ole (0.65694 => 0.49598)
+Example time cost:  0.12 min
+ALL examples time cost:  39.5 min
+Query times in this attack:  140
+All Query times:  53153
+Success rate:  0.8117647058823529
+Successful items count:  138
+Total count:  170
+Index:  284
+
+Example time cost:  0.01 min
+ALL examples time cost:  39.51 min
+Query times in this attack:  1
+All Query times:  53154
+Success rate:  0.8117647058823529
+Successful items count:  138
+Total count:  170
+Index:  285
+
+>> SUC! env => stPl__Knamnn_thf_tanacnpr (0.75575 => 0.43467)
+Example time cost:  0.07 min
+ALL examples time cost:  39.58 min
+Query times in this attack:  78
+All Query times:  53232
+Success rate:  0.8128654970760234
+Successful items count:  139
+Total count:  171
+Index:  286
+
+Example time cost:  0.01 min
+ALL examples time cost:  39.59 min
+Query times in this attack:  1
+All Query times:  53233
+Success rate:  0.8128654970760234
+Successful items count:  139
+Total count:  171
+Index:  287
+
+Example time cost:  0.01 min
+ALL examples time cost:  39.6 min
+Query times in this attack:  1
+All Query times:  53234
+Success rate:  0.8128654970760234
+Successful items count:  139
+Total count:  171
+Index:  288
+
+>> SUC! s => redictvry_zoef_tabuEtrea (0.60841 => 0.12689)
+Example time cost:  0.07 min
+ALL examples time cost:  39.66 min
+Query times in this attack:  66
+All Query times:  53300
+Success rate:  0.813953488372093
+Successful items count:  140
+Total count:  172
+Index:  289
+
+>> SUC! c => reordehbuffeicenaZdgotges (0.69269 => 0.46684)
+Example time cost:  0.12 min
+ALL examples time cost:  39.79 min
+Query times in this attack:  119
+All Query times:  53419
+Success rate:  0.815028901734104
+Successful items count:  141
+Total count:  173
+Index:  290
+
+Example time cost:  0.01 min
+ALL examples time cost:  39.79 min
+Query times in this attack:  1
+All Query times:  53420
+Success rate:  0.815028901734104
+Successful items count:  141
+Total count:  173
+Index:  291
+
+>> SUC! s => pluhter_nb_dinatior4e_c (0.73887 => 0.43342)
+Example time cost:  0.11 min
+ALL examples time cost:  39.9 min
+Query times in this attack:  129
+All Query times:  53549
+Success rate:  0.8160919540229885
+Successful items count:  142
+Total count:  174
+Index:  292
+
+Example time cost:  0.01 min
+ALL examples time cost:  39.91 min
+Query times in this attack:  1
+All Query times:  53550
+Success rate:  0.8160919540229885
+Successful items count:  142
+Total count:  174
+Index:  293
+
+>> ACC! num => blnb_je_psenc__ustereiu (0.99561 => 0.95129)
+>> SUC! den => ititizratilndth_limgtcly_f (0.95129 => 0.38230)
+Example time cost:  0.11 min
+ALL examples time cost:  40.02 min
+Query times in this attack:  130
+All Query times:  53680
+Success rate:  0.8171428571428572
+Successful items count:  143
+Total count:  175
+Index:  294
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.03 min
+Query times in this attack:  1
+All Query times:  53681
+Success rate:  0.8171428571428572
+Successful items count:  143
+Total count:  175
+Index:  295
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.03 min
+Query times in this attack:  1
+All Query times:  53682
+Success rate:  0.8171428571428572
+Successful items count:  143
+Total count:  175
+Index:  296
+
+>> ACC! access_text => tor_coefpe_cu4stersrefcou (0.80111 => 0.53754)
+>> SUC! sr => greconshodrame_lor_c_ef_nu (0.53754 => 0.48264)
+Example time cost:  0.12 min
+ALL examples time cost:  40.16 min
+Query times in this attack:  143
+All Query times:  53825
+Success rate:  0.8181818181818182
+Successful items count:  144
+Total count:  176
+Index:  297
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.16 min
+Query times in this attack:  1
+All Query times:  53826
+Success rate:  0.8181818181818182
+Successful items count:  144
+Total count:  176
+Index:  298
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.17 min
+Query times in this attack:  1
+All Query times:  53827
+Success rate:  0.8181818181818182
+Successful items count:  144
+Total count:  176
+Index:  299
+
+>> SUC! result => rsfveFdUmNNwY_Y_idture (0.91678 => 0.40973)
+Example time cost:  0.07 min
+ALL examples time cost:  40.25 min
+Query times in this attack:  85
+All Query times:  53912
+Success rate:  0.8192090395480226
+Successful items count:  145
+Total count:  177
+Index:  300
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.25 min
+Query times in this attack:  1
+All Query times:  53913
+Success rate:  0.8192090395480226
+Successful items count:  145
+Total count:  177
+Index:  301
+
+>> ACC! ctx => goqriusbth_ost_de7viceo (0.99923 => 0.93435)
+>> SUC! h => ectoarskernelfilen (0.93435 => 0.12510)
+Example time cost:  0.13 min
+ALL examples time cost:  40.39 min
+Query times in this attack:  156
+All Query times:  54069
+Success rate:  0.8202247191011236
+Successful items count:  146
+Total count:  178
+Index:  302
+
+>> SUC! cur => subtitlQocf_dFc_n61eight (0.52048 => 0.49415)
+Example time cost:  0.08 min
+ALL examples time cost:  40.47 min
+Query times in this attack:  89
+All Query times:  54158
+Success rate:  0.8212290502793296
+Successful items count:  147
+Total count:  179
+Index:  303
+
+>> ACC! x0 => eyreadsalefzweiger__naion (0.99973 => 0.98232)
+>> ACC! x1 => tersguessved_codr_p_clud (0.98232 => 0.88241)
+>> SUC! b => s_less_jthan_alUN4Yq_Y_COD (0.88241 => 0.49443)
+Example time cost:  0.12 min
+ALL examples time cost:  40.59 min
+Query times in this attack:  198
+All Query times:  54356
+Success rate:  0.8222222222222222
+Successful items count:  148
+Total count:  180
+Index:  304
+
+>> SUC! i => lustersorig_o6erlo6erla (0.89388 => 0.46170)
+Example time cost:  0.06 min
+ALL examples time cost:  40.66 min
+Query times in this attack:  119
+All Query times:  54475
+Success rate:  0.8232044198895028
+Successful items count:  149
+Total count:  181
+Index:  305
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.66 min
+Query times in this attack:  1
+All Query times:  54476
+Success rate:  0.8232044198895028
+Successful items count:  149
+Total count:  181
+Index:  306
+
+>> SUC! vaddr => yeirabmtesinac_uffer_s (0.81035 => 0.38324)
+Example time cost:  0.04 min
+ALL examples time cost:  40.71 min
+Query times in this attack:  69
+All Query times:  54545
+Success rate:  0.8241758241758241
+Successful items count:  150
+Total count:  182
+Index:  307
+
+>> SUC! ssdt_ptr => _qurntiSizationaimterMtab (0.90052 => 0.47465)
+Example time cost:  0.05 min
+ALL examples time cost:  40.75 min
+Query times in this attack:  76
+All Query times:  54621
+Success rate:  0.825136612021858
+Successful items count:  151
+Total count:  183
+Index:  308
+
+>> ACC! ref_stride => _cltstersexu_bUactioVn_Ety (0.83141 => 0.74157)
+>> ACC! main_stride => atdJrewidth_lii_termi (0.74157 => 0.62345)
+>> SUC! ref => tatermhtweienwrid_req (0.62345 => 0.48445)
+Example time cost:  0.14 min
+ALL examples time cost:  40.89 min
+Query times in this attack:  221
+All Query times:  54842
+Success rate:  0.8260869565217391
+Successful items count:  152
+Total count:  184
+Index:  309
+
+Example time cost:  0.01 min
+ALL examples time cost:  40.9 min
+Query times in this attack:  1
+All Query times:  54843
+Success rate:  0.8260869565217391
+Successful items count:  152
+Total count:  184
+Index:  310
+
+>> ACC! local_err => r_is_SlWess_t3han_bBetis (0.99876 => 0.99742)
+>> ACC! bs => cphipwdrmpaghzaoixninpue_ (0.99742 => 0.98249)
+>> ACC! ret => srstwzsightinterlaRng1_ (0.98249 => 0.94482)
+>> ACC! flags => next_jagitable_endex (0.94482 => 0.89809)
+max_iter: 45
+Example time cost:  1.11 min
+ALL examples time cost:  42.01 min
+Query times in this attack:  1615
+All Query times:  56458
+Success rate:  0.8216216216216217
+Successful items count:  152
+Total count:  185
+Index:  311
+
+Example time cost:  0.01 min
+ALL examples time cost:  42.02 min
+Query times in this attack:  1
+All Query times:  56459
+Success rate:  0.8216216216216217
+Successful items count:  152
+Total count:  185
+Index:  312
+
+>> ACC! sub_packet_size => _cldstersXtSerm_histetis_ (0.72606 => 0.57879)
+>> ACC! sub_packets_D => usb_hosltainpnsjrrorgot (0.57879 => 0.55843)
+>> ACC! i => rdgxnb_termCwinationsi (0.55843 => 0.53459)
+>> SUC! packet_bytes => stersuterm_hisut_trf_hBs (0.53459 => 0.33630)
+Example time cost:  0.39 min
+ALL examples time cost:  42.41 min
+Query times in this attack:  562
+All Query times:  57021
+Success rate:  0.8225806451612904
+Successful items count:  153
+Total count:  186
+Index:  313
+
+>> SUC! filterSize => is__lemss_tiiizttionusb_h (0.87043 => 0.47182)
+Example time cost:  0.06 min
+ALL examples time cost:  42.47 min
+Query times in this attack:  89
+All Query times:  57110
+Success rate:  0.8235294117647058
+Successful items count:  154
+Total count:  187
+Index:  314
+
+Example time cost:  0.01 min
+ALL examples time cost:  42.48 min
+Query times in this attack:  1
+All Query times:  57111
+Success rate:  0.8235294117647058
+Successful items count:  154
+Total count:  187
+Index:  315
+
+Example time cost:  0.01 min
+ALL examples time cost:  42.49 min
+Query times in this attack:  1
+All Query times:  57112
+Success rate:  0.8235294117647058
+Successful items count:  154
+Total count:  187
+Index:  316
+
+Example time cost:  0.01 min
+ALL examples time cost:  42.5 min
+Query times in this attack:  1
+All Query times:  57113
+Success rate:  0.8235294117647058
+Successful items count:  154
+Total count:  187
+Index:  317
+
+>> ACC! h => _cod_yencmeprgis_a_sse (1.00000 => 0.99972)
+>> ACC! qp => eng_liftweigThtnbY_trmrin (0.99972 => 0.99744)
+>> ACC! stride => kitizationeerder__pmintor (0.99744 => 0.98909)
+>> ACC! bS => ptedictori_cobevf_nighr9 (0.98909 => 0.86898)
+>> ACC! tc => ationsinig_base_fuantrmina (0.86898 => 0.53651)
+max_iter: 35
+Example time cost:  0.34 min
+ALL examples time cost:  42.84 min
+Query times in this attack:  505
+All Query times:  57618
+Success rate:  0.824468085106383
+Successful items count:  155
+Total count:  188
+Index:  318
+
+>> ACC! hwdef => aysflafsstable_clesturs (0.55371 => 0.52644)
+>> ACC! sbi_cpu_irq => onsfilenamegreordereluste (0.52644 => 0.51759)
+>> SUC! env => taegweig2htiablustershig (0.51759 => 0.48776)
+Example time cost:  1.6 min
+ALL examples time cost:  44.45 min
+Query times in this attack:  2157
+All Query times:  59775
+Success rate:  0.8253968253968254
+Successful items count:  156
+Total count:  189
+Index:  319
+
+Example time cost:  0.01 min
+ALL examples time cost:  44.45 min
+Query times in this attack:  1
+All Query times:  59776
+Success rate:  0.8253968253968254
+Successful items count:  156
+Total count:  189
+Index:  320
+
+>> ACC! d => ntuitizationionFinceatn_qu (0.77961 => 0.53083)
+>> SUC! s => by_et_dtvesU_t5hans_thiS (0.53083 => 0.39028)
+Example time cost:  0.11 min
+ALL examples time cost:  44.56 min
+Query times in this attack:  155
+All Query times:  59931
+Success rate:  0.8263157894736842
+Successful items count:  157
+Total count:  190
+Index:  321
+
+>> SUC! d => dictiorA_quyantitizationtiza (0.62720 => 0.49946)
+Example time cost:  0.06 min
+ALL examples time cost:  44.62 min
+Query times in this attack:  76
+All Query times:  60007
+Success rate:  0.8272251308900523
+Successful items count:  158
+Total count:  191
+Index:  322
+
+>> SUC! s => rla8ingkiefNe_indexftweigh (0.60269 => 0.04587)
+Example time cost:  0.04 min
+ALL examples time cost:  44.66 min
+Query times in this attack:  64
+All Query times:  60071
+Success rate:  0.828125
+Successful items count:  159
+Total count:  192
+Index:  323
+
+Example time cost:  0.01 min
+ALL examples time cost:  44.67 min
+Query times in this attack:  1
+All Query times:  60072
+Success rate:  0.828125
+Successful items count:  159
+Total count:  192
+Index:  324
+
+>> SUC! cluster_bytes => terlaciFng_lefvtwsSEterssu (0.57804 => 0.47653)
+Example time cost:  0.1 min
+ALL examples time cost:  44.77 min
+Query times in this attack:  166
+All Query times:  60238
+Success rate:  0.8290155440414507
+Successful items count:  160
+Total count:  193
+Index:  325
+
+Example time cost:  0.01 min
+ALL examples time cost:  44.78 min
+Query times in this attack:  1
+All Query times:  60239
+Success rate:  0.8290155440414507
+Successful items count:  160
+Total count:  193
+Index:  326
+
+Example time cost:  0.01 min
+ALL examples time cost:  44.78 min
+Query times in this attack:  1
+All Query times:  60240
+Success rate:  0.8290155440414507
+Successful items count:  160
+Total count:  193
+Index:  327
+
+>> ACC! src_vt2 => iahtinisuYtitierQgciang (1.00000 => 0.99991)
+>> ACC! src_vt3 => ctoeess_than_eftweisht (0.99991 => 0.99919)
+>> ACC! src_vt0 => bandwidthlmif_num (0.99919 => 0.99712)
+>> ACC! src_vt1 => title_cohChyAFilterSquntzit (0.99712 => 0.99488)
+>> ACC! dst3 => intfrlacing_lehtwiql (0.99488 => 0.99287)
+>> ACC! hz_out0 => efcount_tabixel (0.99287 => 0.99163)
+max_iter: 165
+Example time cost:  2.33 min
+ALL examples time cost:  47.12 min
+Query times in this attack:  2473
+All Query times:  62713
+Success rate:  0.8298969072164949
+Successful items count:  161
+Total count:  194
+Index:  328
+
+>> ACC! s => sub_paskt_ble_clucters (0.92969 => 0.73765)
+>> SUC! cb => is_lessR_than_altweighefl (0.73765 => 0.40256)
+Example time cost:  0.11 min
+ALL examples time cost:  47.23 min
+Query times in this attack:  138
+All Query times:  62851
+Success rate:  0.8307692307692308
+Successful items count:  162
+Total count:  195
+Index:  329
+
+>> ACC! s => sbtitle_cHdeclefweightrD (0.91657 => 0.58839)
+>> ACC! size => r_Mlusteessubtleltweight (0.58839 => 0.51810)
+>> SUC! opaque => rlacng_leftwdeighRukb_ (0.51810 => 0.43012)
+Example time cost:  0.19 min
+ALL examples time cost:  47.42 min
+Query times in this attack:  232
+All Query times:  63083
+Success rate:  0.8316326530612245
+Successful items count:  163
+Total count:  196
+Index:  330
+
+>> ACC! alpha => rt_2tablle_Zclysteclusters (1.00000 => 0.99748)
+>> ACC! beta => age_sZtarSbanle_clusters (0.99748 => 0.99560)
+>> ACC! p0_asub_q0 => ntsb_het_devicerequndanzy_ (0.99560 => 0.97364)
+>> ACC! p0_or_q0_org => elN_fnileoamdeviceclusters (0.97364 => 0.93982)
+>> ACC! p1_asub_p0 => torig_joverlay_fla (0.93982 => 0.82654)
+>> SUC! beta_in => ss_devocele_clustertre (0.82654 => 0.44447)
+Example time cost:  0.69 min
+ALL examples time cost:  48.11 min
+Query times in this attack:  828
+All Query times:  63911
+Success rate:  0.8324873096446701
+Successful items count:  164
+Total count:  197
+Index:  331
+
+>> SUC! buf => as_eees_spuce_mr_namred (0.54195 => 0.47231)
+Example time cost:  0.15 min
+ALL examples time cost:  48.26 min
+Query times in this attack:  182
+All Query times:  64093
+Success rate:  0.8333333333333334
+Successful items count:  165
+Total count:  198
+Index:  332
+
+>> SUC! info => kefktweight_tefstab4eterm (0.52610 => 0.47668)
+Example time cost:  0.11 min
+ALL examples time cost:  48.37 min
+Query times in this attack:  133
+All Query times:  64226
+Success rate:  0.8341708542713567
+Successful items count:  166
+Total count:  199
+Index:  333
+
+>> ACC! s => coterl55acng_lehtweigft (0.87926 => 0.72191)
+max_iter: 10
+Example time cost:  0.44 min
+ALL examples time cost:  48.81 min
+Query times in this attack:  480
+All Query times:  64706
+Success rate:  0.83
+Successful items count:  166
+Total count:  200
+Index:  334
+
+Example time cost:  0.01 min
+ALL examples time cost:  48.82 min
+Query times in this attack:  1
+All Query times:  64707
+Success rate:  0.83
+Successful items count:  166
+Total count:  200
+Index:  335
+
+Example time cost:  0.01 min
+ALL examples time cost:  48.82 min
+Query times in this attack:  1
+All Query times:  64708
+Success rate:  0.83
+Successful items count:  166
+Total count:  200
+Index:  336
+
+>> SUC! st => inerlacN_spassubtitle_Oc (0.59740 => 0.37023)
+Example time cost:  0.1 min
+ALL examples time cost:  48.93 min
+Query times in this attack:  117
+All Query times:  64825
+Success rate:  0.8308457711442786
+Successful items count:  167
+Total count:  201
+Index:  337
+
+>> ACC! reg => reorderbuffeoeTf_tabFge (0.98526 => 0.54948)
+>> ACC! s => biPanIwidttabVlZ4e_indTx (0.54948 => 0.54832)
+max_iter: 15
+Example time cost:  0.25 min
+ALL examples time cost:  49.18 min
+Query times in this attack:  279
+All Query times:  65104
+Success rate:  0.8316831683168316
+Successful items count:  168
+Total count:  202
+Index:  338
+
+>> ACC! sl => able_clustersacall_msta (0.86548 => 0.73094)
+>> ACC! list => indexisleftweimhtVrma_al (0.73094 => 0.59701)
+>> SUC! h => gn_l1eftwIeighntrefcountx (0.59701 => 0.47964)
+Example time cost:  0.47 min
+ALL examples time cost:  49.65 min
+Query times in this attack:  498
+All Query times:  65602
+Success rate:  0.8325123152709359
+Successful items count:  169
+Total count:  203
+Index:  339
+
+>> ACC! size => usbhostcdusb_host_o__bet (0.95633 => 0.85984)
+>> ACC! opaque => lacinzg_lNeftweghuacenz (0.85984 => 0.63477)
+>> ACC! offset => efeftkeightinitrd_file (0.63477 => 0.62609)
+>> SUC! val => vsusterspredrmaealloc_i (0.62609 => 0.44428)
+Example time cost:  0.39 min
+ALL examples time cost:  50.04 min
+Query times in this attack:  483
+All Query times:  66085
+Success rate:  0.8333333333333334
+Successful items count:  170
+Total count:  204
+Index:  340
+
+>> SUC! sp_reg => e_b1its_sizereeantitizationt (0.69229 => 0.44587)
+Example time cost:  0.11 min
+ALL examples time cost:  50.15 min
+Query times in this attack:  128
+All Query times:  66213
+Success rate:  0.8341463414634146
+Successful items count:  171
+Total count:  205
+Index:  341
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.16 min
+Query times in this attack:  1
+All Query times:  66214
+Success rate:  0.8341463414634146
+Successful items count:  171
+Total count:  205
+Index:  342
+
+>> ACC! val => eightclustmZnb_iZng_Cleft (0.99916 => 0.97907)
+>> ACC! size => djrdictket_ess_thAa_be (0.97907 => 0.93813)
+>> ACC! addr => eeisterqsle_indefznOcis_le (0.93813 => 0.63032)
+>> ACC! opaque => table_clustersess_ess_o (0.63032 => 0.55431)
+>> SUC! s => Ppr6ediction_qantitizatiyon (0.55431 => 0.47941)
+Example time cost:  0.25 min
+ALL examples time cost:  50.41 min
+Query times in this attack:  311
+All Query times:  66525
+Success rate:  0.8349514563106796
+Successful items count:  172
+Total count:  206
+Index:  343
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.42 min
+Query times in this attack:  1
+All Query times:  66526
+Success rate:  0.8349514563106796
+Successful items count:  172
+Total count:  206
+Index:  344
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.42 min
+Query times in this attack:  1
+All Query times:  66527
+Success rate:  0.8349514563106796
+Successful items count:  172
+Total count:  206
+Index:  345
+
+>> ACC! end => patdwidn3_tablig_base_f9l (0.92015 => 0.65600)
+>> SUC! line => ioUnsinieighonkadress_spdc (0.65600 => 0.36083)
+Example time cost:  0.12 min
+ALL examples time cost:  50.54 min
+Query times in this attack:  135
+All Query times:  66662
+Success rate:  0.8357487922705314
+Successful items count:  173
+Total count:  207
+Index:  346
+
+>> SUC! k => txweigrtdress_sp8aceq_rm (0.95525 => 0.46584)
+Example time cost:  0.07 min
+ALL examples time cost:  50.61 min
+Query times in this attack:  76
+All Query times:  66738
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  347
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.62 min
+Query times in this attack:  1
+All Query times:  66739
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  348
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.63 min
+Query times in this attack:  1
+All Query times:  66740
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  349
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.64 min
+Query times in this attack:  1
+All Query times:  66741
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  350
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.65 min
+Query times in this attack:  1
+All Query times:  66742
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  351
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.65 min
+Query times in this attack:  1
+All Query times:  66743
+Success rate:  0.8365384615384616
+Successful items count:  174
+Total count:  208
+Index:  352
+
+>> SUC! s => ure_numbec_KnaUmenjumer (0.63688 => 0.34448)
+Example time cost:  0.11 min
+ALL examples time cost:  50.76 min
+Query times in this attack:  124
+All Query times:  66867
+Success rate:  0.8373205741626795
+Successful items count:  175
+Total count:  209
+Index:  353
+
+>> SUC! tmp => fblenameor_rmqa_alloc (0.67205 => 0.24390)
+Example time cost:  0.07 min
+ALL examples time cost:  50.83 min
+Query times in this attack:  81
+All Query times:  66948
+Success rate:  0.8380952380952381
+Successful items count:  176
+Total count:  210
+Index:  354
+
+Example time cost:  0.01 min
+ALL examples time cost:  50.84 min
+Query times in this attack:  1
+All Query times:  66949
+Success rate:  0.8380952380952381
+Successful items count:  176
+Total count:  210
+Index:  355
+
+>> SUC! cdlms => iaqMzttionolYector_numpes_ (0.63641 => 0.47014)
+Example time cost:  0.16 min
+ALL examples time cost:  51.0 min
+Query times in this attack:  206
+All Query times:  67155
+Success rate:  0.8388625592417062
+Successful items count:  177
+Total count:  211
+Index:  356
+
+Example time cost:  0.01 min
+ALL examples time cost:  51.01 min
+Query times in this attack:  1
+All Query times:  67156
+Success rate:  0.8388625592417062
+Successful items count:  177
+Total count:  211
+Index:  357
+
+>> ACC! s => _dictioueqnpantiHizationpr (0.89590 => 0.58562)
+>> ACC! i => enb_temintioGd_reqhat_bac (0.58562 => 0.53369)
+>> SUC! cbits => fcount_table_indexCh (0.53369 => 0.21791)
+Example time cost:  0.19 min
+ALL examples time cost:  51.19 min
+Query times in this attack:  226
+All Query times:  67382
+Success rate:  0.839622641509434
+Successful items count:  178
+Total count:  212
+Index:  358
+
+Example time cost:  0.01 min
+ALL examples time cost:  51.2 min
+Query times in this attack:  1
+All Query times:  67383
+Success rate:  0.839622641509434
+Successful items count:  178
+Total count:  212
+Index:  359
+
+>> SUC! s => tan_bet1snoAcomprerkNting (0.51076 => 0.48641)
+Example time cost:  0.14 min
+ALL examples time cost:  51.35 min
+Query times in this attack:  170
+All Query times:  67553
+Success rate:  0.8403755868544601
+Successful items count:  179
+Total count:  213
+Index:  360
+
+>> ACC! is_chroma => rmicquantitizationstenban (0.79215 => 0.63759)
+>> ACC! top => usbMieocing_Gleftweight7c (0.63759 => 0.53954)
+>> SUC! h => r_hcoef_numJeamslas (0.53954 => 0.32846)
+Example time cost:  0.18 min
+ALL examples time cost:  51.53 min
+Query times in this attack:  215
+All Query times:  67768
+Success rate:  0.8411214953271028
+Successful items count:  180
+Total count:  214
+Index:  361
+
+>> ACC! as => peubtitstest_device_ope (0.79816 => 0.52752)
+>> SUC! info => sb_Oho_tQdsvice_od_coQe_ (0.52752 => 0.43967)
+Example time cost:  0.12 min
+ALL examples time cost:  51.65 min
+Query times in this attack:  140
+All Query times:  67908
+Success rate:  0.8418604651162791
+Successful items count:  181
+Total count:  215
+Index:  362
+
+>> ACC! next => _openthanvrsh_limithas_e (0.62297 => 0.51914)
+>> SUC! ctx => camtnu_table_cunstersfi (0.51914 => 0.44670)
+Example time cost:  0.13 min
+ALL examples time cost:  51.78 min
+Query times in this attack:  153
+All Query times:  68061
+Success rate:  0.8425925925925926
+Successful items count:  182
+Total count:  216
+Index:  363
+
+>> ACC! size => quantitization4preioH_noinc (0.99348 => 0.89334)
+>> ACC! mr => htab_leKftweihgtprtdector (0.89334 => 0.67157)
+max_iter: 15
+Example time cost:  0.71 min
+ALL examples time cost:  52.49 min
+Query times in this attack:  869
+All Query times:  68930
+Success rate:  0.8387096774193549
+Successful items count:  182
+Total count:  217
+Index:  364
+
+>> ACC! fd => re_ptYrtermhist_ (0.97814 => 0.96852)
+>> ACC! ioc => ieigVhtredut_tatle_clusb (0.96852 => 0.89294)
+>> ACC! errp => yY_numtion_quantntizaioyi (0.89294 => 0.86346)
+>> ACC! localAddr => lrsorec_veulay_flagdefc (0.86346 => 0.72197)
+>> ACC! remoteAddr => rd_e_coiec_wedhsterGse_cl (0.72197 => 0.50824)
+max_iter: 30
+Example time cost:  1.19 min
+ALL examples time cost:  53.68 min
+Query times in this attack:  1475
+All Query times:  70405
+Success rate:  0.8348623853211009
+Successful items count:  182
+Total count:  218
+Index:  365
+
+>> SUC! t1 => _thanIRantitizaionngt_table (0.79726 => 0.45136)
+Example time cost:  0.12 min
+ALL examples time cost:  53.8 min
+Query times in this attack:  139
+All Query times:  70544
+Success rate:  0.8356164383561644
+Successful items count:  183
+Total count:  219
+Index:  366
+
+>> SUC! mr => eQOrminxaLtiersthslimiMa (0.78160 => 0.26737)
+Example time cost:  0.06 min
+ALL examples time cost:  53.86 min
+Query times in this attack:  67
+All Query times:  70611
+Success rate:  0.8363636363636363
+Successful items count:  184
+Total count:  220
+Index:  367
+
+>> ACC! s => as_t_ss_seble_cl3usters (0.99773 => 0.94048)
+>> ACC! r1 => antitizavijnredundonledun (0.94048 => 0.90713)
+>> ACC! r2 => rspitivqA_sborsusb_Y_Y_Cn (0.90713 => 0.74014)
+>> ACC! w => rsb_ho0s_device_cleftwei (0.74014 => 0.63008)
+>> ACC! pre => _numnsiitrd_frPforkrpr (0.63008 => 0.60044)
+>> SUC! insn => its_giznsubsiantitizSatioe (0.60044 => 0.46663)
+Example time cost:  0.31 min
+ALL examples time cost:  54.16 min
+Query times in this attack:  385
+All Query times:  70996
+Success rate:  0.8371040723981901
+Successful items count:  185
+Total count:  221
+Index:  368
+
+>> ACC! cpu => ghtcuedictinioialefiwei (0.96996 => 0.87264)
+>> ACC! opaque => bit3shLeduntiDnsireadsa (0.87264 => 0.55659)
+>> ACC! obj => Rdnpauqntitizationrlayteus (0.55659 => 0.52473)
+>> SUC! value => inteanitizhtlefntitizhtioe (0.52473 => 0.14750)
+Example time cost:  0.35 min
+ALL examples time cost:  54.52 min
+Query times in this attack:  443
+All Query times:  71439
+Success rate:  0.8378378378378378
+Successful items count:  186
+Total count:  222
+Index:  369
+
+Example time cost:  0.01 min
+ALL examples time cost:  54.53 min
+Query times in this attack:  1
+All Query times:  71440
+Success rate:  0.8378378378378378
+Successful items count:  186
+Total count:  222
+Index:  370
+
+>> ACC! h => shChPrFiltebySiorJig_ovec (0.78006 => 0.70853)
+>> ACC! parser => ks_clusteftweiustersJampi (0.70853 => 0.64245)
+>> ACC! psize => ghtactivtweithgblndwidtha (0.64245 => 0.50496)
+>> SUC! avctx => ghteightbag_leftweight (0.50496 => 0.46633)
+Example time cost:  0.31 min
+ALL examples time cost:  54.84 min
+Query times in this attack:  387
+All Query times:  71827
+Success rate:  0.8385650224215246
+Successful items count:  187
+Total count:  223
+Index:  371
+
+>> ACC! insn_len => ghtMcX_DWT_EaEVtpLieeA_ (0.99911 => 0.95763)
+>> ACC! t0 => rsteusbytFsWp3er_prefrri (0.95763 => 0.92596)
+>> SUC! dc => weiaghthasAe_leftweikght (0.92596 => 0.32837)
+Example time cost:  0.17 min
+ALL examples time cost:  55.01 min
+Query times in this attack:  209
+All Query times:  72036
+Success rate:  0.8392857142857143
+Successful items count:  188
+Total count:  224
+Index:  372
+
+>> ACC! dev => disMAusbnaopenclusersped (0.89684 => 0.60367)
+>> SUC! s => arget_erMAX_DWhiftbtic_id (0.60367 => 0.38296)
+Example time cost:  0.13 min
+ALL examples time cost:  55.14 min
+Query times in this attack:  149
+All Query times:  72185
+Success rate:  0.84
+Successful items count:  189
+Total count:  225
+Index:  373
+
+Example time cost:  0.01 min
+ALL examples time cost:  55.15 min
+Query times in this attack:  1
+All Query times:  72186
+Success rate:  0.84
+Successful items count:  189
+Total count:  225
+Index:  374
+
+>> ACC! img_count => landwidth_himationniqterlaC (0.68116 => 0.67926)
+>> SUC! s1 => oertghtfrZametlfBtBztwei (0.67926 => 0.44201)
+Example time cost:  0.19 min
+ALL examples time cost:  55.34 min
+Query times in this attack:  225
+All Query times:  72411
+Success rate:  0.8407079646017699
+Successful items count:  190
+Total count:  226
+Index:  375
+
+>> ACC! pb => iterlacisles_thna_aln_lf (0.96623 => 0.64143)
+>> SUC! i => tersle_clster_nb_secto (0.64143 => 0.40761)
+Example time cost:  0.28 min
+ALL examples time cost:  55.62 min
+Query times in this attack:  334
+All Query times:  72745
+Success rate:  0.8414096916299559
+Successful items count:  191
+Total count:  227
+Index:  376
+
+>> ACC! bs => titerlaing_weftlwepredi (0.96726 => 0.92058)
+>> ACC! nb_sectors => sterstabsweightlusternb_s (0.92058 => 0.79497)
+>> ACC! sector_num => erlay_hlagspredico (0.79497 => 0.79421)
+max_iter: 20
+Example time cost:  0.95 min
+ALL examples time cost:  56.58 min
+Query times in this attack:  1179
+All Query times:  73924
+Success rate:  0.8377192982456141
+Successful items count:  191
+Total count:  228
+Index:  377
+
+>> ACC! nb_sectors => s_lesteY_YmbandwidthVlimn (0.99447 => 0.90234)
+>> ACC! opaque => weighgtnotcompresizationpi (0.90234 => 0.56810)
+>> SUC! sector_num => Ug_leftweightinativnsin (0.56810 => 0.49772)
+Example time cost:  0.16 min
+ALL examples time cost:  56.74 min
+Query times in this attack:  199
+All Query times:  74123
+Success rate:  0.8384279475982532
+Successful items count:  192
+Total count:  229
+Index:  378
+
+>> SUC! proxy => actriacbe4s_otcol_iTlena (0.75255 => 0.48326)
+Example time cost:  0.06 min
+ALL examples time cost:  56.8 min
+Query times in this attack:  68
+All Query times:  74191
+Success rate:  0.8391304347826087
+Successful items count:  193
+Total count:  230
+Index:  379
+
+>> ACC! lhs => prediction_quatitzzation (0.89460 => 0.64058)
+>> ACC! rhs_is_const => ieeuCtersedi_coef_ne_cl (0.64058 => 0.56638)
+max_iter: 45
+Example time cost:  0.57 min
+ALL examples time cost:  57.37 min
+Query times in this attack:  634
+All Query times:  74825
+Success rate:  0.8398268398268398
+Successful items count:  194
+Total count:  231
+Index:  380
+
+>> SUC! i2c => _quantittizantittizaPioVni (0.52504 => 0.36704)
+Example time cost:  0.11 min
+ALL examples time cost:  57.48 min
+Query times in this attack:  134
+All Query times:  74959
+Success rate:  0.8405172413793104
+Successful items count:  195
+Total count:  232
+Index:  381
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.49 min
+Query times in this attack:  1
+All Query times:  74960
+Success rate:  0.8405172413793104
+Successful items count:  195
+Total count:  232
+Index:  382
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.5 min
+Query times in this attack:  1
+All Query times:  74961
+Success rate:  0.8405172413793104
+Successful items count:  195
+Total count:  232
+Index:  383
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.51 min
+Query times in this attack:  1
+All Query times:  74962
+Success rate:  0.8405172413793104
+Successful items count:  195
+Total count:  232
+Index:  384
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.51 min
+Query times in this attack:  1
+All Query times:  74963
+Success rate:  0.8405172413793104
+Successful items count:  195
+Total count:  232
+Index:  385
+
+>> SUC! l => tor_naer_se1tor_numlaswia (0.51849 => 0.18407)
+Example time cost:  0.06 min
+ALL examples time cost:  57.58 min
+Query times in this attack:  65
+All Query times:  75028
+Success rate:  0.8412017167381974
+Successful items count:  196
+Total count:  233
+Index:  386
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.59 min
+Query times in this attack:  1
+All Query times:  75029
+Success rate:  0.8412017167381974
+Successful items count:  196
+Total count:  233
+Index:  387
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.6 min
+Query times in this attack:  1
+All Query times:  75030
+Success rate:  0.8412017167381974
+Successful items count:  196
+Total count:  233
+Index:  388
+
+Example time cost:  0.01 min
+ALL examples time cost:  57.6 min
+Query times in this attack:  1
+All Query times:  75031
+Success rate:  0.8412017167381974
+Successful items count:  196
+Total count:  233
+Index:  389
+
+>> SUC! i => isniedSundanrub_packet_s (0.79798 => 0.46883)
+Example time cost:  0.11 min
+ALL examples time cost:  57.71 min
+Query times in this attack:  127
+All Query times:  75158
+Success rate:  0.8418803418803419
+Successful items count:  197
+Total count:  234
+Index:  390
+
+>> SUC! rsp => xrefcoehnt_table_9lust (0.57249 => 0.46464)
+Example time cost:  0.08 min
+ALL examples time cost:  57.79 min
+Query times in this attack:  81
+All Query times:  75239
+Success rate:  0.8425531914893617
+Successful items count:  198
+Total count:  235
+Index:  391
+
+>> ACC! h => _secutor_nn__secrorsexlv (1.00000 => 0.99996)
+>> ACC! qp => sunt_table_clustersusb_ (0.99996 => 0.99894)
+>> ACC! stride => ssectwor__sed_connasteodua (0.99894 => 0.99435)
+>> ACC! tc => ersusb_host_jdevice_Kope (0.99435 => 0.98292)
+>> ACC! pix => at6ionsincpciturredWucio (0.98292 => 0.95294)
+>> SUC! bS => smertkerneundt_tble_cers (0.95294 => 0.35142)
+Example time cost:  0.31 min
+ALL examples time cost:  58.1 min
+Query times in this attack:  388
+All Query times:  75627
+Success rate:  0.8432203389830508
+Successful items count:  199
+Total count:  236
+Index:  392
+
+>> SUC! role => radsamplesrnpg_clustersjad (0.67500 => 0.33410)
+Example time cost:  0.23 min
+ALL examples time cost:  58.33 min
+Query times in this attack:  286
+All Query times:  75913
+Success rate:  0.8438818565400844
+Successful items count:  200
+Total count:  237
+Index:  393
+
+Example time cost:  0.01 min
+ALL examples time cost:  58.34 min
+Query times in this attack:  1
+All Query times:  75914
+Success rate:  0.8438818565400844
+Successful items count:  200
+Total count:  237
+Index:  394
+
+>> ACC! reorder_buffer => termh_Sispntepictgtable_ (0.76280 => 0.76280)
+>> ACC! src => hCer_nb_asitrdl_fiAlevzt (0.76280 => 0.63332)
+>> ACC! x => trnml_flzen1esse_tCan_a (0.63332 => 0.60367)
+>> ACC! plane => eftweg7htisnhadFy_sizei (0.60367 => 0.50628)
+>> ACC! src_stride => x_nb_sectors_nalad (0.50628 => 0.50131)
+>> SUC! stride => t1erno_parget_errf_tabte (0.50131 => 0.46574)
+Example time cost:  1.44 min
+ALL examples time cost:  59.78 min
+Query times in this attack:  1801
+All Query times:  77715
+Success rate:  0.8445378151260504
+Successful items count:  201
+Total count:  238
+Index:  395
+
+Example time cost:  0.01 min
+ALL examples time cost:  59.78 min
+Query times in this attack:  1
+All Query times:  77716
+Success rate:  0.8445378151260504
+Successful items count:  201
+Total count:  238
+Index:  396
+
+>> ACC! pkt => __c2otf_eableer_sct5gi_ (0.98304 => 0.92489)
+>> ACC! ost => eYlusteP_nb_sice_Jpxs5n (0.92489 => 0.72956)
+>> ACC! s => bmanZwcaor_c3oef_ttr_od (0.72956 => 0.55669)
+>> SUC! avctx => iiedictrin_quantotizPptaon (0.55669 => 0.31939)
+Example time cost:  0.15 min
+ALL examples time cost:  59.94 min
+Query times in this attack:  296
+All Query times:  78012
+Success rate:  0.8451882845188284
+Successful items count:  202
+Total count:  239
+Index:  397
+
+Example time cost:  0.01 min
+ALL examples time cost:  59.94 min
+Query times in this attack:  1
+All Query times:  78013
+Success rate:  0.8451882845188284
+Successful items count:  202
+Total count:  239
+Index:  398
+
+Example time cost:  0.01 min
+ALL examples time cost:  59.95 min
+Query times in this attack:  1
+All Query times:  78014
+Success rate:  0.8451882845188284
+Successful items count:  202
+Total count:  239
+Index:  399
+
+Average Query times:  195.03
+Average drop max:  0.08
+Average drop min:  0.04
+Average codeblue max:  1.06
+Average codeblue min:  0.53
+Average diversity max:  292.97
+Average diversity min:  147.95
+ALL EXAMPLE time cost = 59.95 min
